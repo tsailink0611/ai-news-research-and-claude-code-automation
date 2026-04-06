@@ -101,12 +101,15 @@ def build_dashboard_json() -> dict:
         dashboard["stats"]["total_drafts"] = len(drafts)
         dashboard["x_drafts_preview"] = [
             {
-                "text": d.get("draft_text", "")[:140],
+                "text": d.get("draft_text", ""),
                 "style": d.get("style_label", ""),
+                "style_key": d.get("style", ""),
                 "topic": d.get("topic", ""),
                 "urgency": d.get("urgency", ""),
+                "char_count": d.get("char_count", 0),
+                "recommended_use": d.get("recommended_use", ""),
             }
-            for d in drafts[:10]
+            for d in drafts
         ]
 
     if digest_md:
