@@ -85,16 +85,46 @@ def build_dashboard_json() -> dict:
         dashboard["stats"]["total_articles"] = len(items)
         dashboard["stats"]["sources"] = processed.get("stats", {}).get("sources", [])
         dashboard["topics"] = processed.get("topics", [])[:10]
+
+        # スコア順ソート済みの全記事
+        sorted_items = sorted(
+            items,
+            key=lambda x: float(x.get("importance_score") or x.get("score") or 0),
+            reverse=True
+        )
+
+        # 上位15件（トップ記事）
         dashboard["top_articles"] = [
             {
                 "title": item.get("title") or item.get("text", "")[:80],
-                "score": item.get("importance_score", 0),
+                "score": float(item.get("importance_score") or item.get("score") or 0),
                 "source": item.get("source", ""),
                 "url": item.get("url", ""),
                 "topic": item.get("topic", ""),
+                "summary_ja": item.get("summary_ja", ""),
+                "point": item.get("point", ""),
             }
-            for item in items[:15]
+            for item in sorted_items[:15]
         ]
+
+        # カテゴリー別全記事
+        from collections import defaultdict
+        by_cat = defaultdict(list)
+        for item in sorted_items:
+            cat = item.get("topic") or "その他"
+            by_cat[cat].append({
+                "title": item.get("title") or item.get("text", "")[:80],
+                "score": float(item.get("importance_score") or item.get("score") or 0),
+                "source": item.get("source", ""),
+                "url": item.get("url", ""),
+                "summary_ja": item.get("summary_ja", ""),
+                "point": item.get("point", ""),
+            })
+        # カテゴリーを記事数順にソート
+        dashboard["articles_by_category"] = {
+            cat: articles
+            for cat, articles in sorted(by_cat.items(), key=lambda x: -len(x[1]))
+        }
 
     if drafts_data:
         drafts = drafts_data.get("drafts", [])
