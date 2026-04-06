@@ -148,10 +148,22 @@ def step_dashboard():
     return data
 
 
-def step_notify():
-    """Step 7: Telegram通知"""
+def step_notion():
+    """Step 7: Notion保存"""
     print("\n" + "=" * 60)
-    print("STEP 7: Telegram通知")
+    print("STEP 7: Notion保存（AI・NFC分類）")
+    print("=" * 60)
+
+    from notify_notion import run as save_notion
+    result = save_notion()
+    print(f"\n  Notion: AI={result['ai_saved']} NFC={result['nfc_saved']} skip={result['skipped']}")
+    return result
+
+
+def step_notify():
+    """Step 8: Telegram通知"""
+    print("\n" + "=" * 60)
+    print("STEP 8: Telegram通知")
     print("=" * 60)
 
     from notify_telegram import notify
@@ -170,10 +182,11 @@ STEPS = {
     "summarize": step_summarize,
     "drafts": step_drafts,
     "dashboard": step_dashboard,
+    "notion": step_notion,
     "notify": step_notify,
 }
 
-ALL_STEPS = ["fetch", "process", "digest", "summarize", "drafts", "dashboard", "notify"]
+ALL_STEPS = ["fetch", "process", "digest", "summarize", "drafts", "dashboard", "notion", "notify"]
 
 
 def run_pipeline(steps: list[str] | None = None):
@@ -213,6 +226,7 @@ def run_pipeline(steps: list[str] | None = None):
     print(f"  最新ダイジェスト: outputs/latest/latest_digest.md")
     print(f"  Xドラフト: outputs/latest/latest_x_drafts.md")
     print(f"  日次データ: outputs/daily/{date}/")
+    print(f"  Notion: https://notion.so")
 
     return results
 

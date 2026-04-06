@@ -40,6 +40,30 @@ AI_KEYWORDS = [
     "embedding", "fine-tuning", "mcp", "model context protocol",
     "n8n", "dify", "langchain", "llamaindex", "autogen",
     "cursor", "windsurf", "claude code", "devin",
+    "nfc", "near field communication", "contactless", "smart card", "nfc card",
+    "nfc tag", "nfc inlay", "rfid", "phygital", "physical digital",
+    "tap to pay", "tap and go", "digital business card", "nfc business",
+    "近场通信", "非接触", "スマートカード",
+]
+
+# NFCキーワード（NFC事業モニタリング専用）
+NFC_KEYWORDS = [
+    "nfc", "near field communication", "contactless card", "smart card",
+    "nfc card", "nfc tag", "nfc inlay", "rfid nfc", "phygital",
+    "tap to pay", "tap and go", "digital business card", "nfc business",
+    "nfc marketing", "nfc solution", "nfc retail", "nfc hospitality",
+    "nfc loyalty", "nfc payment", "nfc access", "nfc authentication",
+    "近场通信", "nfc卡", "智能卡", "非接触式", "nfc标签",
+]
+
+# NFC専用SerpApi検索クエリ
+NFC_SEARCH_QUERIES = [
+    "NFC business card solution USA 2025",
+    "NFC smart card marketing Europe 2025",
+    "NFC contactless business China 2025",
+    "NFC phygital retail case study",
+    "digital NFC card startup funding",
+    "NFC loyalty program business model",
 ]
 
 # Grok API (X AI)
