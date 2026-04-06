@@ -19,24 +19,18 @@ from config import ensure_dirs_for_today
 
 
 def step_fetch():
-    """Step 1: データ収集（全10ソース）"""
+    """Step 1: データ収集（厳選ソース）"""
     print("\n" + "=" * 60)
-    print("STEP 1: データ収集（10ソース）")
+    print("STEP 1: データ収集（厳選ソース）")
     print("=" * 60)
 
     results = {}
 
-    # 1. Grok API × X検索（速報系の最速手段）
-    from fetch_x_news import run as fetch_x
-    x_results = fetch_x(query="AI")
-    results["x_grok"] = len(x_results)
-    print(f"  [1/10] Grok×X検索: {len(x_results)} posts")
-
-    # 2. YouTube字幕取得（海外AI動画リサーチ）
-    from fetch_youtube import run as fetch_yt
-    yt_results = fetch_yt()
-    results["youtube"] = len(yt_results)
-    print(f"  [2/10] YouTube: {len(yt_results)} videos")
+    # 1. RSSフィード（TechCrunch / VentureBeat / The Verge / Ars Technica / MIT Tech Review）
+    from fetch_rss_news import run as fetch_rss
+    rss_results = fetch_rss(fetch_body=True)
+    results["rss"] = len(rss_results)
+    print(f"  [1] RSS記事: {len(rss_results)} 件（5ソース）")
 
     # 3. HackerNews（エンジニア・開発者トレンド）
     from fetch_hn import run as fetch_hn

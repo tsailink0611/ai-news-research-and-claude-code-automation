@@ -29,8 +29,11 @@ def load_raw_data(date: str) -> list[dict]:
         print(f"[PROCESS] Loading {f.name}")
         with open(f, "r", encoding="utf-8") as fh:
             data = json.load(fh)
+            # リスト形式（RSS等）
+            if isinstance(data, list):
+                all_items.extend(data)
             # HN形式
-            if "articles" in data:
+            elif "articles" in data:
                 all_items.extend(data["articles"])
             # X形式
             elif "posts" in data:
