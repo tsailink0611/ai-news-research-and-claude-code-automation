@@ -148,6 +148,21 @@ def step_dashboard():
     return data
 
 
+def step_notify():
+    """Step 7: Telegram通知"""
+    print("\n" + "=" * 60)
+    print("STEP 7: Telegram通知")
+    print("=" * 60)
+
+    from notify_telegram import notify
+    success = notify()
+    if success:
+        print(f"\n  Telegram notification sent!")
+    else:
+        print(f"\n  Telegram skipped (not configured or no data)")
+    return success
+
+
 STEPS = {
     "fetch": step_fetch,
     "process": step_process,
@@ -155,9 +170,10 @@ STEPS = {
     "summarize": step_summarize,
     "drafts": step_drafts,
     "dashboard": step_dashboard,
+    "notify": step_notify,
 }
 
-ALL_STEPS = ["fetch", "process", "digest", "summarize", "drafts", "dashboard"]
+ALL_STEPS = ["fetch", "process", "digest", "summarize", "drafts", "dashboard", "notify"]
 
 
 def run_pipeline(steps: list[str] | None = None):
