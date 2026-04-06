@@ -74,7 +74,17 @@ def step_fetch():
     results["x_bookmarks"] = len(bm_results)
     print(f"  [9/10] Xブックマーク: {len(bm_results)} posts")
 
-    # 10. (将来) Claude Codeログ検索はローカル専用のため除外
+    # 10. 日本語AIニュース（ITmedia / Zenn / Qiita / AINOW / Classmethod）
+    from fetch_japan_ai_news import run as fetch_japan
+    japan_results = fetch_japan()
+    results["japan_ai"] = len(japan_results)
+    print(f"  [10/11] 日本語AIニュース: {len(japan_results)} 件（国内動向・活用事例）")
+
+    # 11. GitHub Trending（AIリポジトリ・ツール・プラグイン）
+    from fetch_github_trending import run as fetch_github
+    github_results = fetch_github()
+    results["github_trending"] = len(github_results)
+    print(f"  [11/11] GitHub Trending: {len(github_results)} repos（AI関連）")
 
     total = sum(results.values())
     print(f"\n  合計: {total} items from {len(results)} sources")
@@ -205,8 +215,9 @@ def run_pipeline(steps: list[str] | None = None):
     print(f"\n{'#' * 60}")
     print(f"  AI News Pipeline - {date}")
     print(f"  Steps: {', '.join(steps)}")
-    print(f"  Sources: Grok/X, YouTube, HN, Reddit, China SNS,")
-    print(f"           Google Trends, Product Hunt, SerpApi, X Bookmarks")
+    print(f"  Sources: RSS(TechCrunch/VentureBeat/Verge/MIT), HN, Reddit,")
+    print(f"           China SNS, Google Trends, Product Hunt, SerpApi,")
+    print(f"           X Bookmarks, Japan AI(ITmedia/Zenn/Qiita/AINOW), GitHub Trending")
     print(f"{'#' * 60}")
 
     start = time.time()

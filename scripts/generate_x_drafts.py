@@ -101,52 +101,52 @@ def select_best_drafts(summaries: list[dict], count: int = 30) -> list[dict]:
 
 
 def polish_drafts_with_claude(drafts: list[dict], client) -> list[dict]:
-    """Claude API でドラフト一覧を一括レビュー・改善する"""
+    """Claude API でドラフトを一括レビュー・人間らしい日本語に改善する"""
     if not client or not drafts:
         return drafts
 
-    print(f"[X-DRAFTS] Polishing {len(drafts)} drafts with Claude API...")
+    print(f"[X-DRAFTS] {len(drafts)} 本を人間らしい文章にブラッシュアップ中...")
 
-    # ドラフトを一覧テキストにまとめて一括で改善依頼
     drafts_text = ""
     for i, d in enumerate(drafts):
-        drafts_text += f"\n--- Draft {i+1} (style: {d.get('style_label', '')}, topic: {d.get('topic', '')}) ---\n"
+        drafts_text += f"\n[{i}] topic={d.get('topic', '')} style={d.get('style_label', '')}\n"
         drafts_text += d.get("draft_text", "") + "\n"
 
-    prompt = f"""あなたはAIニュース専門のX(旧Twitter)投稿エディターです。
-以下の{len(drafts)}本のドラフトをレビューし、改善版を返してください。
+    prompt = f"""X（旧Twitter）投稿の日本語を見直してください。
+AI生成っぽさを消して、実際にその業界を知っている人が書いたような自然な文体にしてください。
 
-## 改善方針
-- 各ドラフトは最大280文字以内を厳守
-- 自然で魅力的な日本語表現にブラッシュアップ
-- 情報の正確性を維持
-- 各ドラフトの独自性を保ち、重複表現を避ける
-- ハッシュタグは2-3個（#AI は必須）
-- テンプレート感をなくし、人間が書いたような自然さにする
+## 改善ルール（必ず守ること）
+- 最大280文字以内を厳守
+- ハッシュタグは末尾に2〜3個（#AI は必須）
+- 以下の表現を使わない：「画期的」「革新的」「注目」「必見」「衝撃」「ですね」「ですよね」「〜してみた」
+- 【速報】【解説】のようなブラケット見出しを使わない
+- 「です・ます」調だが単調にならないよう語尾を変化させる
+- 絵文字は使わない
+- 具体的な内容・数値・事実を必ず1つ入れる
+- 「AIがすごい」「重要です」などの空虚な表現を避ける
+- 読んだ人が「なるほど」「へえ」と思える実質的な情報を入れる
+- 各ドラフトの内容は変えず、表現だけを自然にする
 
-## 現在のドラフト一覧
+## 対象ドラフト
 {drafts_text}
 
-## 出力形式
-JSON配列で返してください。各要素は {{"index": 0, "draft_text": "改善後テキスト"}} の形式。
-JSONのみを出力し、他のテキストは含めないでください。"""
+## 出力形式（JSONのみ、説明不要）
+[{{"index": 0, "draft_text": "改善後テキスト"}}, ...]"""
 
     try:
         response = client.messages.create(
             model=CLAUDE_MODEL,
-            max_tokens=4000,
+            max_tokens=3000,
             messages=[{"role": "user", "content": prompt}],
         )
         content = response.content[0].text.strip()
 
-        # JSON部分を抽出
         if content.startswith("```"):
             content = content.split("\n", 1)[1]
             content = content.rsplit("```", 1)[0]
 
         improvements = json.loads(content)
 
-        # 改善結果を反映
         improved_count = 0
         for imp in improvements:
             idx = imp.get("index", -1)
@@ -157,10 +157,10 @@ JSONのみを出力し、他のテキストは含めないでください。"""
                 drafts[idx]["polished_by"] = "claude"
                 improved_count += 1
 
-        print(f"[X-DRAFTS] Polished {improved_count}/{len(drafts)} drafts")
+        print(f"[X-DRAFTS] {improved_count}/{len(drafts)} 本を改善")
 
     except Exception as e:
-        print(f"[X-DRAFTS] Claude polish error: {e} (keeping original drafts)")
+        print(f"[X-DRAFTS] polish失敗: {e}（元のドラフトを使用）")
 
     return drafts
 

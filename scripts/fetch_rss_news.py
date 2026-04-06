@@ -21,8 +21,11 @@ import sys
 sys.path.insert(0, str(Path(__file__).parent))
 from config import RAW_DIR, ensure_dirs_for_today
 
-# 取得ソース定義（厳選5つ）
+# 取得ソース定義
+# ── 速報・業界メディア（5ソース）──────────────────────────
+# ── 実践・研究専門メディア（4ソース追加）─────────────────
 RSS_SOURCES = [
+    # 速報・業界ニュース
     {
         "name": "TechCrunch AI",
         "url": "https://techcrunch.com/category/artificial-intelligence/feed/",
@@ -47,6 +50,41 @@ RSS_SOURCES = [
         "name": "MIT Tech Review AI",
         "url": "https://www.technologyreview.com/feed/",
         "limit": 4,
+    },
+    # 実践・ツール解説（AIコンサル必読）
+    {
+        "name": "Simon Willison",
+        "url": "https://simonwillison.net/atom/everything/",
+        "limit": 5,
+        # AIツールの実践解説・世界最高品質の個人ブログ
+    },
+    {
+        "name": "Latent Space",
+        "url": "https://www.latent.space/feed",
+        "limit": 4,
+        # AI研究者・エンジニア向けDeep Dive。週次AIニュースまとめも充実
+    },
+    {
+        "name": "Import AI",
+        "url": "https://importai.substack.com/feed",
+        "limit": 3,
+        # Jack Clark（元OpenAI）の週次AI動向まとめ。政策・研究・産業を網羅
+    },
+    {
+        "name": "TheSequence",
+        "url": "https://thesequence.substack.com/feed",
+        "limit": 3,
+        # ML実務者向けニュースレター。モデル・ツール・ビジネス活用に特化
+    },
+    # HuggingFace（モデル・研究リリース情報）
+    {
+        "name": "HuggingFace Blog",
+        "url": "https://huggingface.co/blog/feed.xml",
+        "limit": 4,
+        "filter_keywords": [
+            "model", "llm", "agent", "fine-tun", "rag", "research",
+            "open source", "release", "benchmark", "multimodal"
+        ],
     },
 ]
 
@@ -84,6 +122,7 @@ def parse_feed(source: dict) -> list[dict]:
     name = source["name"]
     url = source["url"]
     limit = source["limit"]
+    filter_keywords = source.get("filter_keywords")  # キーワードフィルター（任意）
 
     print(f"  [{name}] 取得中...")
 
@@ -120,6 +159,12 @@ def parse_feed(source: dict) -> list[dict]:
 
             if not title or not link:
                 continue
+
+            # キーワードフィルター（HuggingFace等の全記事フィードに適用）
+            if filter_keywords:
+                text = (title + " " + summary_text).lower()
+                if not any(kw.lower() in text for kw in filter_keywords):
+                    continue
 
             article_id = hashlib.md5(link.encode()).hexdigest()[:12]
 

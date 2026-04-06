@@ -22,6 +22,9 @@ from config import PROCESSED_DIR, today_str
 NOTION_API_KEY = os.getenv("NOTION_API_KEY", "")
 NOTION_AI_DB_ID = os.getenv("NOTION_AI_DB_ID", "")
 NOTION_NFC_DB_ID = os.getenv("NOTION_NFC_DB_ID", "")
+# カテゴリー別サブページ整理用（設定するとDB直下ではなくカテゴリーページ配下に保存）
+NOTION_AI_PARENT_PAGE_ID = os.getenv("NOTION_AI_PARENT_PAGE_ID", "")
+NOTION_NFC_PARENT_PAGE_ID = os.getenv("NOTION_NFC_PARENT_PAGE_ID", "")
 
 # NFC系判定キーワード
 NFC_KEYWORDS = [
@@ -30,12 +33,15 @@ NFC_KEYWORDS = [
 
 # AIカテゴリ判定マッピング
 AI_CATEGORY_RULES = [
-    (["n8n", "dify", "langchain", "automate"], "n8n/Automation"),
-    (["agent", "agents"], "AI Agents"),
+    (["github", "github trending", "star", "repository", "plugin", "extension", "vscode", "cursor", "cline"], "AI Tools & GitHub"),
+    (["n8n", "dify", "langchain", "automate", "workflow", "自動化", "ノーコード", "rpa"], "n8n/Automation"),
+    (["agent", "agents", "エージェント"], "AI Agents"),
     (["mcp", "model context"], "MCP/Tools"),
-    (["rag", "retrieval", "embedding", "vector"], "RAG/Knowledge"),
-    (["prompt"], "Prompt Engineering"),
-    (["gpt", "claude", "gemini", "llm", "model"], "LLM/Models"),
+    (["rag", "retrieval", "embedding", "vector", "ベクトル"], "RAG/Knowledge"),
+    (["prompt", "プロンプト"], "Prompt Engineering"),
+    (["中小企業", "大企業", "企業", "dx", "デジタル", "活用事例", "導入", "business"], "Japan AI Business"),
+    (["itmedia", "zenn", "qiita", "classmethod", "ainow", "日本", "国内"], "Japan AI Industry"),
+    (["gpt", "claude", "gemini", "llm", "model", "大規模言語"], "LLM/Models"),
 ]
 
 # タグ判定マッピング
@@ -124,10 +130,18 @@ def detect_nfc_category(item: dict) -> str:
     return "Tech Trend"
 
 
-def _make_page_title(category: str, title: str, score: float) -> str:
-    """ページタイトルを生成する（カテゴリ + タイトル + スコア）"""
-    clean_title = title[:120] if title else "（タイトルなし）"
-    return f"[{category}] {clean_title} | score:{score:.1f}"
+def _make_page_title(category: str, title: str, score: float, point: str = "") -> str:
+    """ページタイトルを生成する
+    - 日本語の要点があればそれを先頭に
+    - なければ英語タイトルをそのまま使う
+    """
+    if point and len(point) > 5:
+        # 日本語要点を先頭に、英語タイトルは括弧内に短縮
+        en_short = title[:40] if title else ""
+        return f"{point[:80]}（{en_short}）"[:200]
+    else:
+        clean_title = title[:120] if title else "（タイトルなし）"
+        return f"[{category}] {clean_title}"
 
 
 def _get_ds_id(notion: "Client", db_id: str) -> str:
@@ -157,6 +171,46 @@ def title_exists_in_db(notion: "Client", db_id: str, page_title: str) -> bool:
         return False
 
 
+# カテゴリーページのキャッシュ（1実行セッション内で再利用）
+_category_page_cache: dict[str, str] = {}
+
+
+def get_or_create_category_page(notion: "Client", parent_page_id: str, category: str) -> str:
+    """カテゴリー用サブページのIDを取得（なければ作成）する"""
+    cache_key = f"{parent_page_id}::{category}"
+    if cache_key in _category_page_cache:
+        return _category_page_cache[cache_key]
+
+    # 既存の子ページを検索
+    try:
+        children = notion.blocks.children.list(block_id=parent_page_id)
+        for block in children.get("results", []):
+            if block.get("type") == "child_page":
+                title = block.get("child_page", {}).get("title", "")
+                if title == category:
+                    page_id = block["id"]
+                    _category_page_cache[cache_key] = page_id
+                    return page_id
+    except Exception:
+        pass
+
+    # 存在しなければ作成
+    try:
+        new_page = notion.pages.create(
+            parent={"page_id": parent_page_id},
+            properties={
+                "title": {"title": [{"text": {"content": category}}]}
+            }
+        )
+        page_id = new_page["id"]
+        _category_page_cache[cache_key] = page_id
+        print(f"[notion] カテゴリーページ作成: {category}")
+        return page_id
+    except Exception as e:
+        print(f"[notion] カテゴリーページ作成失敗 ({category}): {e}")
+        return ""
+
+
 def _make_blocks(meta: dict) -> list:
     """メタデータからNotionページブロックを生成する"""
     url = meta.get("url") or ""
@@ -167,22 +221,35 @@ def _make_blocks(meta: dict) -> list:
     region = meta.get("region") or ""
     tags = meta.get("tags") or []
     summary = meta.get("summary") or ""
+    en_title = meta.get("en_title") or ""
 
     blocks = []
+
+    # 元記事タイトル（英語）
+    if en_title:
+        blocks.append({
+            "object": "block",
+            "type": "callout",
+            "callout": {
+                "rich_text": [{"type": "text", "text": {"content": en_title[:300]}}],
+                "icon": {"emoji": "📰"},
+                "color": "gray_background"
+            }
+        })
 
     # メタデータブロック
     meta_items = []
     if category:
-        meta_items.append(f"Category: {category}")
+        meta_items.append(f"カテゴリー: {category}")
     if region:
-        meta_items.append(f"Region: {region}")
-    meta_items.append(f"Score: {score}")
+        meta_items.append(f"地域: {region}")
+    meta_items.append(f"スコア: {score}")
     if source:
-        meta_items.append(f"Source: {source}")
+        meta_items.append(f"ソース: {source}")
     if date_str:
-        meta_items.append(f"Date: {date_str}")
+        meta_items.append(f"日付: {date_str}")
     if tags:
-        meta_items.append(f"Tags: {', '.join(tags)}")
+        meta_items.append(f"タグ: {', '.join(tags)}")
 
     for item in meta_items:
         blocks.append({
@@ -250,7 +317,7 @@ def create_ai_page(notion: "Client", db_id: str, item: dict) -> bool:
     category = detect_ai_category(item)
     tags = detect_ai_tags(item, score)
 
-    page_title = _make_page_title(category, title, score)
+    page_title = _make_page_title(category, title, score, point=item.get("point", ""))
 
     blocks = _make_blocks({
         "url": url,
@@ -260,8 +327,23 @@ def create_ai_page(notion: "Client", db_id: str, item: dict) -> bool:
         "category": category,
         "tags": tags,
         "summary": summary,
+        "en_title": title,
     })
 
+    # 親ページが設定されている場合はカテゴリーページ配下に保存
+    if NOTION_AI_PARENT_PAGE_ID:
+        cat_page_id = get_or_create_category_page(notion, NOTION_AI_PARENT_PAGE_ID, category)
+        if cat_page_id:
+            notion.pages.create(
+                parent={"page_id": cat_page_id},
+                properties={
+                    "title": {"title": [{"text": {"content": page_title[:2000]}}]}
+                },
+                children=blocks
+            )
+            return True
+
+    # フォールバック: DB直下に保存
     notion.pages.create(
         parent={"database_id": db_id},
         properties={
@@ -294,7 +376,7 @@ def create_nfc_page(notion: "Client", db_id: str, item: dict) -> bool:
     region = detect_nfc_region(item)
     category = detect_nfc_category(item)
 
-    page_title = _make_page_title(f"NFC/{region}", title, score)
+    page_title = _make_page_title(f"NFC/{region}", title, score, point=item.get("point", ""))
 
     blocks = _make_blocks({
         "url": url,
@@ -304,8 +386,24 @@ def create_nfc_page(notion: "Client", db_id: str, item: dict) -> bool:
         "category": category,
         "region": region,
         "summary": summary,
+        "en_title": title,
     })
 
+    # 親ページが設定されている場合は地域別カテゴリーページ配下に保存
+    if NOTION_NFC_PARENT_PAGE_ID:
+        cat_label = f"NFC / {region}"
+        cat_page_id = get_or_create_category_page(notion, NOTION_NFC_PARENT_PAGE_ID, cat_label)
+        if cat_page_id:
+            notion.pages.create(
+                parent={"page_id": cat_page_id},
+                properties={
+                    "title": {"title": [{"text": {"content": page_title[:2000]}}]}
+                },
+                children=blocks
+            )
+            return True
+
+    # フォールバック: DB直下に保存
     notion.pages.create(
         parent={"database_id": db_id},
         properties={

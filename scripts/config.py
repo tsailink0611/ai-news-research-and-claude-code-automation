@@ -101,7 +101,7 @@ TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "")
 TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "")
 
 # X投稿ドラフト設定
-MAX_X_DRAFTS = int(os.getenv("MAX_X_DRAFTS", "30"))
+MAX_X_DRAFTS = int(os.getenv("MAX_X_DRAFTS", "10"))
 X_CHAR_LIMIT = 280
 
 # ドラフトスタイル定義
