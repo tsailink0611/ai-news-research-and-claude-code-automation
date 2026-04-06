@@ -148,6 +148,18 @@ def step_dashboard():
     return data
 
 
+def step_enrich():
+    """Step 6.5: 日本語要約生成"""
+    print("\n" + "=" * 60)
+    print("STEP 6.5: 日本語要約生成（Claude Haiku）")
+    print("=" * 60)
+
+    from enrich_summaries import run as enrich
+    result = enrich()
+    print(f"\n  Enriched: {result['enriched']} 件")
+    return result
+
+
 def step_notion():
     """Step 7: Notion保存"""
     print("\n" + "=" * 60)
@@ -182,11 +194,12 @@ STEPS = {
     "summarize": step_summarize,
     "drafts": step_drafts,
     "dashboard": step_dashboard,
+    "enrich": step_enrich,
     "notion": step_notion,
     "notify": step_notify,
 }
 
-ALL_STEPS = ["fetch", "process", "digest", "summarize", "drafts", "dashboard", "notion", "notify"]
+ALL_STEPS = ["fetch", "process", "digest", "summarize", "drafts", "dashboard", "enrich", "notion", "notify"]
 
 
 def run_pipeline(steps: list[str] | None = None):

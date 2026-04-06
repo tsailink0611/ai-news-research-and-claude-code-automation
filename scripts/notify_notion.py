@@ -130,11 +130,23 @@ def _make_page_title(category: str, title: str, score: float) -> str:
     return f"[{category}] {clean_title} | score:{score:.1f}"
 
 
+def _get_ds_id(notion: "Client", db_id: str) -> str:
+    """データベースのdata_source IDを取得する"""
+    try:
+        db = notion.databases.retrieve(database_id=db_id)
+        return db.get("data_sources", [{}])[0].get("id", "")
+    except Exception:
+        return ""
+
+
 def title_exists_in_db(notion: "Client", db_id: str, page_title: str) -> bool:
     """同じタイトルのページがDBに既に存在するか確認する"""
+    ds_id = _get_ds_id(notion, db_id)
+    if not ds_id:
+        return False
     try:
-        results = notion.databases.query(
-            database_id=db_id,
+        results = notion.data_sources.query(
+            data_source_id=ds_id,
             filter={
                 "property": "Name",
                 "title": {"equals": page_title}
@@ -222,7 +234,15 @@ def create_ai_page(notion: "Client", db_id: str, item: dict) -> bool:
     source = item.get("source") or ""
     score = float(item.get("score") or 0)
     date_str = item.get("date") or item.get("published_at") or today_str()
-    summary = item.get("summary") or item.get("memo") or ""
+    summary = (
+        item.get("summary_ja") or
+        item.get("summary") or
+        item.get("memo") or
+        item.get("text") or ""
+    )
+    point = item.get("point") or ""
+    if point:
+        summary = f"【要点】{point}\n\n{summary}" if summary else f"【要点】{point}"
 
     if "T" in date_str:
         date_str = date_str[:10]
@@ -259,7 +279,14 @@ def create_nfc_page(notion: "Client", db_id: str, item: dict) -> bool:
     source = item.get("source") or ""
     score = float(item.get("score") or 0)
     date_str = item.get("date") or item.get("published_at") or today_str()
-    summary = item.get("summary") or ""
+    summary = (
+        item.get("summary_ja") or
+        item.get("summary") or
+        item.get("text") or ""
+    )
+    point = item.get("point") or ""
+    if point:
+        summary = f"【要点】{point}\n\n{summary}" if summary else f"【要点】{point}"
 
     if "T" in date_str:
         date_str = date_str[:10]
