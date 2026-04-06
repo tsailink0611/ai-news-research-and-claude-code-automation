@@ -6,11 +6,13 @@ import os
 from pathlib import Path
 from datetime import datetime
 
-from dotenv import load_dotenv
-
 # .env ファイルを読み込む
 PROJECT_ROOT = Path(__file__).parent.parent
-load_dotenv(PROJECT_ROOT / ".env")
+try:
+    from dotenv import load_dotenv
+    load_dotenv(PROJECT_ROOT / ".env")
+except ImportError:
+    pass  # python-dotenv 未インストール時はシステム環境変数のみ使用
 SCRIPTS_DIR = PROJECT_ROOT / "scripts"
 DATA_DIR = PROJECT_ROOT / "data"
 OUTPUTS_DIR = PROJECT_ROOT / "outputs"
