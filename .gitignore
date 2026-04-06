@@ -1,0 +1,37 @@
+# Environment
+.env
+.env.local
+
+# Python
+__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Data (keep structure, ignore contents)
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+# Outputs (keep structure, ignore daily data)
+outputs/daily/*
+!outputs/daily/.gitkeep
+outputs/x-drafts/*
+!outputs/x-drafts/.gitkeep
+
+# Keep latest as reference
+!outputs/latest/
+
+# Dashboard generated data
+dashboard/data/*.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/

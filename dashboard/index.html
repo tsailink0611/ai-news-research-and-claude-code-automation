@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI News Dashboard</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --border: #334155;
+      --text: #e2e8f0;
+      --text-muted: #94a3b8;
+      --accent: #3b82f6;
+      --green: #22c55e;
+      --yellow: #eab308;
+      --red: #ef4444;
+      --orange: #f97316;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+    header {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 20px 0; border-bottom: 1px solid var(--border); margin-bottom: 24px;
+    }
+    header h1 { font-size: 1.5rem; }
+    header .meta { color: var(--text-muted); font-size: 0.85rem; }
+    .stats-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px; margin-bottom: 24px;
+    }
+    .stat-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 8px; padding: 16px;
+    }
+    .stat-card .label { color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; }
+    .stat-card .value { font-size: 2rem; font-weight: bold; color: var(--accent); }
+    .stat-card .sub { color: var(--text-muted); font-size: 0.85rem; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px; }
+    @media (max-width: 768px) { .grid-2 { grid-template-columns: 1fr; } }
+    .card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 8px; padding: 20px;
+    }
+    .card h2 { font-size: 1.1rem; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+    .card h2 .icon { font-size: 1.2rem; }
+    .topic-list { list-style: none; }
+    .topic-list li {
+      padding: 8px 0; border-bottom: 1px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .topic-list li:last-child { border-bottom: none; }
+    .topic-name { font-weight: 500; }
+    .topic-score {
+      background: var(--accent); color: white; padding: 2px 8px;
+      border-radius: 12px; font-size: 0.75rem;
+    }
+    .article-list { list-style: none; }
+    .article-list li { padding: 10px 0; border-bottom: 1px solid var(--border); }
+    .article-list li:last-child { border-bottom: none; }
+    .article-title { font-weight: 500; }
+    .article-title a { color: var(--text); text-decoration: none; }
+    .article-title a:hover { color: var(--accent); }
+    .article-meta { color: var(--text-muted); font-size: 0.8rem; margin-top: 4px; }
+    .draft-list { list-style: none; }
+    .draft-list li {
+      padding: 12px; margin-bottom: 8px;
+      background: rgba(59, 130, 246, 0.1); border-radius: 6px;
+      border-left: 3px solid var(--accent); cursor: pointer;
+      position: relative;
+    }
+    .draft-list li:hover { background: rgba(59, 130, 246, 0.2); }
+    .draft-text { font-size: 0.9rem; white-space: pre-wrap; }
+    .draft-meta {
+      display: flex; gap: 8px; margin-top: 6px; font-size: 0.75rem; color: var(--text-muted);
+    }
+    .badge {
+      padding: 1px 6px; border-radius: 4px; font-size: 0.7rem;
+    }
+    .badge-high { background: rgba(239, 68, 68, 0.2); color: var(--red); }
+    .badge-medium { background: rgba(234, 179, 8, 0.2); color: var(--yellow); }
+    .badge-low { background: rgba(34, 197, 94, 0.2); color: var(--green); }
+    .dates-list { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+    .dates-list li {
+      background: var(--border); padding: 4px 12px; border-radius: 4px;
+      font-size: 0.85rem; font-family: monospace;
+    }
+    .digest-preview {
+      background: rgba(0,0,0,0.3); padding: 16px; border-radius: 6px;
+      font-size: 0.85rem; white-space: pre-wrap; max-height: 300px;
+      overflow-y: auto; font-family: monospace;
+    }
+    .copied-toast {
+      position: fixed; bottom: 20px; right: 20px;
+      background: var(--green); color: white; padding: 8px 16px;
+      border-radius: 6px; display: none; font-size: 0.9rem; z-index: 100;
+    }
+    .empty-state { color: var(--text-muted); text-align: center; padding: 40px; }
+    #loading { text-align: center; padding: 60px; color: var(--text-muted); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>AI News Dashboard</h1>
+      <div class="meta">
+        <span id="last-updated">Loading...</span>
+        <br>
+        <button onclick="loadData()" style="background:var(--accent);color:white;border:none;padding:4px 12px;border-radius:4px;cursor:pointer;margin-top:4px;">Reload</button>
+      </div>
+    </header>
+
+    <div id="loading">Loading dashboard data...</div>
+    <div id="content" style="display:none;">
+
+      <!-- Stats -->
+      <div class="stats-grid" id="stats-grid"></div>
+
+      <!-- Topics + Articles -->
+      <div class="grid-2">
+        <div class="card">
+          <h2><span class="icon">🔥</span> 主要トピック</h2>
+          <ul class="topic-list" id="topics-list"></ul>
+        </div>
+        <div class="card">
+          <h2><span class="icon">📰</span> 注目記事</h2>
+          <ul class="article-list" id="articles-list"></ul>
+        </div>
+      </div>
+
+      <!-- X Drafts -->
+      <div class="card" style="margin-bottom:24px;">
+        <h2><span class="icon">✍️</span> X投稿ドラフト候補 <span style="color:var(--text-muted);font-size:0.8rem;">(クリックでコピー)</span></h2>
+        <ul class="draft-list" id="drafts-list"></ul>
+      </div>
+
+      <!-- Digest + Dates -->
+      <div class="grid-2">
+        <div class="card">
+          <h2><span class="icon">📋</span> 最新ダイジェスト</h2>
+          <div class="digest-preview" id="digest-preview"></div>
+        </div>
+        <div class="card">
+          <h2><span class="icon">📅</span> 保存済み日付一覧</h2>
+          <ul class="dates-list" id="dates-list"></ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="copied-toast" id="toast">Copied!</div>
+
+  <script>
+    const DATA_URL = 'data/dashboard.json';
+
+    async function loadData() {
+      try {
+        const resp = await fetch(DATA_URL + '?t=' + Date.now());
+        if (!resp.ok) throw new Error('Data not found');
+        const data = await resp.json();
+        render(data);
+      } catch (e) {
+        document.getElementById('loading').innerHTML =
+          '<p>Dashboard data not found.</p>' +
+          '<p style="margin-top:8px;font-size:0.9rem;">Run the pipeline first:</p>' +
+          '<code style="background:#1e293b;padding:8px 16px;border-radius:4px;display:inline-block;margin-top:8px;">' +
+          'python scripts/run_pipeline.py</code>';
+      }
+    }
+
+    function render(data) {
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+
+      const updated = data.generated_at ? new Date(data.generated_at).toLocaleString('ja-JP') : 'N/A';
+      document.getElementById('last-updated').textContent = 'Updated: ' + updated;
+
+      // Stats
+      const stats = data.stats || {};
+      document.getElementById('stats-grid').innerHTML = `
+        <div class="stat-card">
+          <div class="label">収集記事数</div>
+          <div class="value">${stats.total_articles || 0}</div>
+          <div class="sub">${(stats.sources || []).join(', ') || 'No sources'}</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Xドラフト数</div>
+          <div class="value">${stats.total_drafts || 0}</div>
+          <div class="sub">Ready for posting</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">保存日数</div>
+          <div class="value">${stats.total_dates || 0}</div>
+          <div class="sub">days of data</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">最新日付</div>
+          <div class="value" style="font-size:1.2rem;">${data.latest_date || 'N/A'}</div>
+          <div class="sub">Latest collection</div>
+        </div>
+      `;
+
+      // Topics
+      const topicsList = document.getElementById('topics-list');
+      const topics = data.topics || [];
+      if (topics.length === 0) {
+        topicsList.innerHTML = '<li class="empty-state">No topics yet</li>';
+      } else {
+        topicsList.innerHTML = topics.map(t => `
+          <li>
+            <span class="topic-name">${t.topic} <span style="color:var(--text-muted);font-size:0.8rem;">(${t.count} items)</span></span>
+            <span class="topic-score">${t.max_score.toFixed(1)}</span>
+          </li>
+        `).join('');
+      }
+
+      // Articles
+      const articlesList = document.getElementById('articles-list');
+      const articles = data.top_articles || [];
+      if (articles.length === 0) {
+        articlesList.innerHTML = '<li class="empty-state">No articles yet</li>';
+      } else {
+        articlesList.innerHTML = articles.slice(0, 10).map(a => `
+          <li>
+            <div class="article-title">
+              ${a.url ? `<a href="${a.url}" target="_blank">${a.title}</a>` : a.title}
+            </div>
+            <div class="article-meta">Score: ${a.score.toFixed(1)} | ${a.source} ${a.topic ? '| ' + a.topic : ''}</div>
+          </li>
+        `).join('');
+      }
+
+      // Drafts
+      const draftsList = document.getElementById('drafts-list');
+      const drafts = data.x_drafts_preview || [];
+      if (drafts.length === 0) {
+        draftsList.innerHTML = '<li class="empty-state">No drafts yet</li>';
+      } else {
+        draftsList.innerHTML = drafts.map(d => {
+          const urgencyClass = 'badge-' + (d.urgency || 'low');
+          return `
+            <li onclick="copyDraft(this)">
+              <div class="draft-text">${d.text}</div>
+              <div class="draft-meta">
+                <span class="badge ${urgencyClass}">${d.urgency || 'low'}</span>
+                <span>${d.style || ''}</span>
+                <span>${d.topic || ''}</span>
+              </div>
+            </li>
+          `;
+        }).join('');
+      }
+
+      // Digest
+      const digestEl = document.getElementById('digest-preview');
+      digestEl.textContent = data.digest_preview || 'No digest available. Run: python scripts/run_pipeline.py';
+
+      // Dates
+      const datesList = document.getElementById('dates-list');
+      const dates = data.available_dates || [];
+      if (dates.length === 0) {
+        datesList.innerHTML = '<li>No data yet</li>';
+      } else {
+        datesList.innerHTML = dates.map(d => `<li>${d}</li>`).join('');
+      }
+    }
+
+    function copyDraft(el) {
+      const text = el.querySelector('.draft-text').textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        const toast = document.getElementById('toast');
+        toast.style.display = 'block';
+        setTimeout(() => { toast.style.display = 'none'; }, 1500);
+      });
+    }
+
+    loadData();
+  </script>
+</body>
+</html>
