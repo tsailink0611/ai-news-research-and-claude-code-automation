@@ -1,6 +1,7 @@
 """
 X向け再要約スクリプト
-保存済みデータを元に、X投稿に適した短文要約を生成する
+保存済みデータを元に、Claude API で X投稿に適した短文要約を生成する。
+APIキー未設定時はテンプレートベースにフォールバック。
 
 使い方:
     python scripts/summarize_for_x.py
@@ -15,8 +16,17 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 from config import (
     PROCESSED_DIR, DAILY_DIR, LATEST_DIR, X_CHAR_LIMIT,
-    DRAFT_STYLES, ensure_dirs_for_today, today_str
+    DRAFT_STYLES, ANTHROPIC_API_KEY, CLAUDE_MODEL,
+    ensure_dirs_for_today, today_str
 )
+
+
+def _get_claude_client():
+    """Anthropic クライアントを生成する"""
+    if not ANTHROPIC_API_KEY:
+        return None
+    import anthropic
+    return anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
 
 
 def load_processed(date: str) -> dict | None:
@@ -27,24 +37,18 @@ def load_processed(date: str) -> dict | None:
         return json.load(f)
 
 
-def create_summary_for_item(item: dict, style: str) -> dict:
+def create_summary_for_item(item: dict, style: str, client=None) -> dict:
     """1アイテムに対して指定スタイルの要約を作成する"""
     title = item.get("title") or item.get("text", "")[:80]
     topic = item.get("topic", "AI")
     source = item.get("source", "unknown")
     score = item.get("importance_score", 0)
+    url = item.get("url", "")
 
-    templates = {
-        "breaking": _template_breaking,
-        "explainer": _template_explainer,
-        "comparison": _template_comparison,
-        "opinion": _template_opinion,
-        "beginner": _template_beginner,
-        "practical": _template_practical,
-    }
-
-    generator = templates.get(style, _template_breaking)
-    text = generator(title, topic)
+    if client:
+        text = _summarize_with_claude(client, title, topic, style, url)
+    else:
+        text = _summarize_with_template(title, topic, style)
 
     return {
         "topic": topic,
@@ -56,7 +60,58 @@ def create_summary_for_item(item: dict, style: str) -> dict:
         "draft_text": text[:X_CHAR_LIMIT],
         "char_count": len(text[:X_CHAR_LIMIT]),
         "original_title": title,
+        "generated_by": "claude" if client else "template",
     }
+
+
+def _summarize_with_claude(client, title: str, topic: str, style: str, url: str) -> str:
+    """Claude API を使って高品質な要約を生成する"""
+    style_info = DRAFT_STYLES.get(style, {})
+    style_label = style_info.get("label", style)
+    style_desc = style_info.get("description", "")
+
+    prompt = f"""あなたはAIニュース専門のX(旧Twitter)投稿ライターです。
+以下の記事について、指定されたスタイルでX投稿用の日本語テキストを1つ作成してください。
+
+## 記事情報
+- タイトル: {title}
+- トピック: {topic}
+- URL: {url}
+
+## スタイル指定
+- スタイル名: {style_label}
+- スタイル説明: {style_desc}
+
+## 制約
+- 最大280文字以内（日本語）
+- ハッシュタグは2-3個まで（#AI は必ず含める）
+- 絵文字は先頭に1つだけ使用可
+- URLは含めない（別途付与するため）
+- 自然な日本語で、フォロワーの関心を引く内容にする
+- 情報の正確性を重視し、誇張しない
+
+投稿テキストのみを出力してください（余計な説明は不要）。"""
+
+    response = client.messages.create(
+        model=CLAUDE_MODEL,
+        max_tokens=300,
+        messages=[{"role": "user", "content": prompt}],
+    )
+    return response.content[0].text.strip()
+
+
+def _summarize_with_template(title: str, topic: str, style: str) -> str:
+    """テンプレートベースのフォールバック要約"""
+    templates = {
+        "breaking": _template_breaking,
+        "explainer": _template_explainer,
+        "comparison": _template_comparison,
+        "opinion": _template_opinion,
+        "beginner": _template_beginner,
+        "practical": _template_practical,
+    }
+    generator = templates.get(style, _template_breaking)
+    return generator(title, topic)
 
 
 def _template_breaking(title: str, topic: str) -> str:
@@ -106,11 +161,24 @@ def summarize_all(date: str, styles: list[str] | None = None) -> list[dict]:
     if styles is None:
         styles = list(DRAFT_STYLES.keys())
 
+    # Claude API クライアント初期化
+    client = _get_claude_client()
+    if client:
+        print(f"[X-SUMMARY] Using Claude API ({CLAUDE_MODEL}) for summarization")
+    else:
+        print("[X-SUMMARY] Using template-based summarization (set ANTHROPIC_API_KEY for AI summaries)")
+
     summaries = []
     for item in items:
         for style in styles:
-            summary = create_summary_for_item(item, style)
-            summaries.append(summary)
+            try:
+                summary = create_summary_for_item(item, style, client)
+                summaries.append(summary)
+            except Exception as e:
+                print(f"[X-SUMMARY] Error summarizing '{item.get('title', '')[:30]}' ({style}): {e}")
+                # Claude APIエラー時はテンプレートにフォールバック
+                summary = create_summary_for_item(item, style, client=None)
+                summaries.append(summary)
 
     print(f"[X-SUMMARY] Generated {len(summaries)} summaries from {len(items)} items")
     return summaries

@@ -1,6 +1,7 @@
 """
 X(旧Twitter) AI速報確認スクリプト
-現時点では仮実装。後からGrok API / X検索APIに差し替え可能。
+Grok API を使ってリアルタイムのAIニュースを取得する。
+APIキー未設定時はモックデータにフォールバック。
 
 使い方:
     python scripts/fetch_x_news.py
@@ -9,32 +10,109 @@ X(旧Twitter) AI速報確認スクリプト
 import json
 import sys
 import argparse
+import requests
 from datetime import datetime
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from config import RAW_DIR, AI_KEYWORDS, ensure_dirs_for_today
+from config import RAW_DIR, AI_KEYWORDS, GROK_API_KEY, GROK_API_BASE, ensure_dirs_for_today
 
 
-# TODO: X API (Bearer Token) または Grok API に接続する
-# TODO: SerpApi の Twitter 検索を利用する選択肢もある
 def search_x_news(query: str = "AI", limit: int = 20) -> list[dict]:
     """
-    X上のAI関連投稿を検索する
-    現在は仮実装。APIキー設定後に実データ取得に切り替え。
+    X上のAI関連投稿を検索する。
+    Grok APIキーがあれば実データ取得、なければモックデータ。
     """
     print(f"[X-NEWS] Searching for: {query} (limit: {limit})")
-    print("[X-NEWS] NOTE: Using mock data. Set X_BEARER_TOKEN in .env for real data.")
 
-    # 仮データ: 実際のAPI接続時はここを差し替える
-    return _get_mock_x_data(query)
+    if GROK_API_KEY:
+        try:
+            return _fetch_via_grok(query, limit)
+        except Exception as e:
+            print(f"[X-NEWS] Grok API error: {e}")
+            print("[X-NEWS] Falling back to mock data.")
+            return _get_mock_x_data(query)
+    else:
+        print("[X-NEWS] NOTE: Using mock data. Set GROK_API_KEY in .env for real data.")
+        return _get_mock_x_data(query)
+
+
+def _fetch_via_grok(query: str, limit: int) -> list[dict]:
+    """Grok API (xAI) を使ってAIニュースを取得する"""
+    print(f"[X-NEWS] Fetching via Grok API...")
+
+    headers = {
+        "Authorization": f"Bearer {GROK_API_KEY}",
+        "Content-Type": "application/json",
+    }
+
+    # Grok にAIニュースの検索・要約を依頼する
+    prompt = f"""You are an AI news researcher. Search for the latest AI-related news and discussions on X (Twitter) about: {query}
+
+Return exactly {limit} recent noteworthy posts/topics as a JSON array. Each item should have:
+- "id": a unique identifier string
+- "text": the post content or topic summary in Japanese (100-200 chars)
+- "author": author handle (e.g. @username)
+- "likes": estimated engagement (integer)
+- "retweets": estimated shares (integer)
+- "created_at": ISO timestamp
+- "topic": main topic keyword
+- "source": "x_grok"
+
+Focus on: AI models, tools, frameworks, industry news, breakthroughs.
+Return ONLY the JSON array, no other text."""
+
+    payload = {
+        "model": "grok-3-latest",
+        "messages": [
+            {"role": "system", "content": "You are a helpful AI news researcher. Always respond with valid JSON."},
+            {"role": "user", "content": prompt},
+        ],
+        "temperature": 0.7,
+    }
+
+    response = requests.post(
+        f"{GROK_API_BASE}/chat/completions",
+        headers=headers,
+        json=payload,
+        timeout=30,
+    )
+    response.raise_for_status()
+
+    result = response.json()
+    content = result["choices"][0]["message"]["content"]
+
+    # JSON部分を抽出（コードブロックで囲まれている場合に対応）
+    content = content.strip()
+    if content.startswith("```"):
+        content = content.split("\n", 1)[1]  # 最初の ```json\n を除去
+        content = content.rsplit("```", 1)[0]  # 最後の ``` を除去
+
+    posts = json.loads(content)
+
+    # 必須フィールドのバリデーション
+    validated = []
+    for post in posts:
+        validated.append({
+            "id": post.get("id", f"grok_{len(validated)}"),
+            "text": post.get("text", ""),
+            "author": post.get("author", "@unknown"),
+            "likes": int(post.get("likes", 0)),
+            "retweets": int(post.get("retweets", 0)),
+            "created_at": post.get("created_at", datetime.now().isoformat()),
+            "topic": post.get("topic", "AI"),
+            "source": "x_grok",
+        })
+
+    print(f"[X-NEWS] Grok API returned {len(validated)} posts")
+    return validated
 
 
 def _get_mock_x_data(query: str) -> list[dict]:
     """モックデータ生成（API未接続時）"""
     now = datetime.now().isoformat()
     mock_posts = [
-        {"id": "x_001", "text": "🚀 Claude Code がさらに進化。MCP対応で外部ツール連携が簡単に。開発者の生産性が劇的に変わりそう。",
+        {"id": "x_001", "text": "Claude Code がさらに進化。MCP対応で外部ツール連携が簡単に。開発者の生産性が劇的に変わりそう。",
          "author": "@ai_watcher_jp", "likes": 342, "retweets": 89, "created_at": now,
          "topic": "Claude Code", "source": "x_mock"},
         {"id": "x_002", "text": "GPT-5のリリースが近いとの噂。マルチモーダル強化と推論能力の大幅向上が焦点か。OpenAIの次の一手に注目。",

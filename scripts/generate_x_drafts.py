@@ -1,6 +1,7 @@
 """
 Xドラフト量産スクリプト
-保存済みデータから20〜30本のX投稿ドラフトを生成する
+保存済みデータから20〜30本のX投稿ドラフトを生成する。
+Claude API が利用可能な場合は、最終ドラフトをAIで磨き上げる。
 
 使い方:
     python scripts/generate_x_drafts.py
@@ -16,8 +17,17 @@ sys.path.insert(0, str(Path(__file__).parent))
 from config import (
     PROCESSED_DIR, DAILY_DIR, LATEST_DIR, X_DRAFTS_DIR,
     MAX_X_DRAFTS, X_CHAR_LIMIT, DRAFT_STYLES,
+    ANTHROPIC_API_KEY, CLAUDE_MODEL,
     ensure_dirs_for_today, today_str
 )
+
+
+def _get_claude_client():
+    """Anthropic クライアントを生成する"""
+    if not ANTHROPIC_API_KEY:
+        return None
+    import anthropic
+    return anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
 
 
 def load_summaries(date: str) -> list[dict]:
@@ -90,6 +100,71 @@ def select_best_drafts(summaries: list[dict], count: int = 30) -> list[dict]:
     return selected[:count]
 
 
+def polish_drafts_with_claude(drafts: list[dict], client) -> list[dict]:
+    """Claude API でドラフト一覧を一括レビュー・改善する"""
+    if not client or not drafts:
+        return drafts
+
+    print(f"[X-DRAFTS] Polishing {len(drafts)} drafts with Claude API...")
+
+    # ドラフトを一覧テキストにまとめて一括で改善依頼
+    drafts_text = ""
+    for i, d in enumerate(drafts):
+        drafts_text += f"\n--- Draft {i+1} (style: {d.get('style_label', '')}, topic: {d.get('topic', '')}) ---\n"
+        drafts_text += d.get("draft_text", "") + "\n"
+
+    prompt = f"""あなたはAIニュース専門のX(旧Twitter)投稿エディターです。
+以下の{len(drafts)}本のドラフトをレビューし、改善版を返してください。
+
+## 改善方針
+- 各ドラフトは最大280文字以内を厳守
+- 自然で魅力的な日本語表現にブラッシュアップ
+- 情報の正確性を維持
+- 各ドラフトの独自性を保ち、重複表現を避ける
+- ハッシュタグは2-3個（#AI は必須）
+- テンプレート感をなくし、人間が書いたような自然さにする
+
+## 現在のドラフト一覧
+{drafts_text}
+
+## 出力形式
+JSON配列で返してください。各要素は {{"index": 0, "draft_text": "改善後テキスト"}} の形式。
+JSONのみを出力し、他のテキストは含めないでください。"""
+
+    try:
+        response = client.messages.create(
+            model=CLAUDE_MODEL,
+            max_tokens=4000,
+            messages=[{"role": "user", "content": prompt}],
+        )
+        content = response.content[0].text.strip()
+
+        # JSON部分を抽出
+        if content.startswith("```"):
+            content = content.split("\n", 1)[1]
+            content = content.rsplit("```", 1)[0]
+
+        improvements = json.loads(content)
+
+        # 改善結果を反映
+        improved_count = 0
+        for imp in improvements:
+            idx = imp.get("index", -1)
+            new_text = imp.get("draft_text", "")
+            if 0 <= idx < len(drafts) and new_text:
+                drafts[idx]["draft_text"] = new_text[:X_CHAR_LIMIT]
+                drafts[idx]["char_count"] = len(drafts[idx]["draft_text"])
+                drafts[idx]["polished_by"] = "claude"
+                improved_count += 1
+
+        print(f"[X-DRAFTS] Polished {improved_count}/{len(drafts)} drafts")
+
+    except Exception as e:
+        print(f"[X-DRAFTS] Claude polish error: {e} (keeping original drafts)")
+
+    return drafts
+
+
 def format_drafts_markdown(drafts: list[dict], date: str) -> str:
     """ドラフト一覧をMarkdownで整形する"""
     lines = []
@@ -97,6 +172,11 @@ def format_drafts_markdown(drafts: list[dict], date: str) -> str:
     lines.append(f"\n> 生成日時: {datetime.now().strftime('%Y-%m-%d %H:%M')}")
     lines.append(f"> ドラフト数: {len(drafts)}本")
     lines.append(f"> スタイル: {', '.join(set(d.get('style_label', '') for d in drafts))}")
+
+    # AI生成の統計
+    claude_count = sum(1 for d in drafts if d.get("generated_by") == "claude" or d.get("polished_by") == "claude")
+    if claude_count:
+        lines.append(f"> AI生成/改善: {claude_count}本")
 
     lines.append("\n---\n")
 
@@ -122,6 +202,8 @@ def format_drafts_markdown(drafts: list[dict], date: str) -> str:
         lines.append(f"- **推奨用途**: {draft.get('recommended_use', 'N/A')}")
         lines.append(f"- **ソース**: {draft.get('source_type', 'N/A')}")
         lines.append(f"- **文字数**: {len(draft.get('draft_text', ''))}文字")
+        if draft.get("generated_by") == "claude" or draft.get("polished_by") == "claude":
+            lines.append(f"- **生成**: 🤖 Claude AI")
         lines.append("")
         lines.append("```")
         lines.append(draft.get("draft_text", ""))
@@ -191,6 +273,14 @@ def run(date: str | None = None, count: int | None = None) -> list[dict]:
         return []
 
     drafts = select_best_drafts(summaries, count)
+
+    # Claude API でドラフトを磨き上げ
+    client = _get_claude_client()
+    if client:
+        drafts = polish_drafts_with_claude(drafts, client)
+    else:
+        print("[X-DRAFTS] Skipping AI polish (set ANTHROPIC_API_KEY for better drafts)")
+
     markdown = format_drafts_markdown(drafts, date)
     save_drafts(drafts, markdown, date)
 

@@ -6,8 +6,11 @@ import os
 from pathlib import Path
 from datetime import datetime
 
-# プロジェクトルート
+from dotenv import load_dotenv
+
+# .env ファイルを読み込む
 PROJECT_ROOT = Path(__file__).parent.parent
+load_dotenv(PROJECT_ROOT / ".env")
 SCRIPTS_DIR = PROJECT_ROOT / "scripts"
 DATA_DIR = PROJECT_ROOT / "data"
 OUTPUTS_DIR = PROJECT_ROOT / "outputs"
@@ -36,6 +39,36 @@ AI_KEYWORDS = [
     "n8n", "dify", "langchain", "llamaindex", "autogen",
     "cursor", "windsurf", "claude code", "devin",
 ]
+
+# Grok API (X AI)
+GROK_API_KEY = os.getenv("GROK_API_KEY", "")
+GROK_API_BASE = os.getenv("GROK_API_BASE", "https://api.x.ai/v1")
+
+# Anthropic Claude API
+ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY", "")
+CLAUDE_MODEL = os.getenv("CLAUDE_MODEL", "claude-sonnet-4-20250514")
+
+# YouTube Data API v3
+YOUTUBE_API_KEY = os.getenv("YOUTUBE_API_KEY", "")
+
+# Reddit (公開JSON APIはキー不要、OAuth使用時のみ必要)
+REDDIT_CLIENT_ID = os.getenv("REDDIT_CLIENT_ID", "")
+REDDIT_CLIENT_SECRET = os.getenv("REDDIT_CLIENT_SECRET", "")
+REDDIT_SUBREDDITS = [
+    "ClaudeAI", "ChatGPT", "LocalLLaMA", "MachineLearning",
+    "artificial", "singularity",
+]
+
+# Google Trends (pytrends、APIキー不要)
+
+# Product Hunt API
+PRODUCTHUNT_ACCESS_TOKEN = os.getenv("PRODUCTHUNT_ACCESS_TOKEN", "")
+
+# SerpApi
+SERPAPI_KEY = os.getenv("SERPAPI_KEY", "")
+
+# X API (ブックマーク取得用)
+X_BEARER_TOKEN = os.getenv("X_BEARER_TOKEN", "")
 
 # X投稿ドラフト設定
 MAX_X_DRAFTS = int(os.getenv("MAX_X_DRAFTS", "30"))

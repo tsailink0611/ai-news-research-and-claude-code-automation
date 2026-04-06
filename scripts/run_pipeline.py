@@ -19,20 +19,72 @@ from config import ensure_dirs_for_today
 
 
 def step_fetch():
-    """Step 1: データ収集"""
+    """Step 1: データ収集（全10ソース）"""
     print("\n" + "=" * 60)
-    print("STEP 1: データ収集")
+    print("STEP 1: データ収集（10ソース）")
     print("=" * 60)
 
-    from fetch_hn import run as fetch_hn
+    results = {}
+
+    # 1. Grok API × X検索（速報系の最速手段）
     from fetch_x_news import run as fetch_x
-
-    hn_results = fetch_hn(limit=50)
     x_results = fetch_x(query="AI")
+    results["x_grok"] = len(x_results)
+    print(f"  [1/10] Grok×X検索: {len(x_results)} posts")
 
-    print(f"\n  HN: {len(hn_results)} articles")
-    print(f"  X:  {len(x_results)} posts")
-    return hn_results, x_results
+    # 2. YouTube字幕取得（海外AI動画リサーチ）
+    from fetch_youtube import run as fetch_yt
+    yt_results = fetch_yt()
+    results["youtube"] = len(yt_results)
+    print(f"  [2/10] YouTube: {len(yt_results)} videos")
+
+    # 3. HackerNews（エンジニア・開発者トレンド）
+    from fetch_hn import run as fetch_hn
+    hn_results = fetch_hn(limit=50)
+    results["hackernews"] = len(hn_results)
+    print(f"  [3/10] HackerNews: {len(hn_results)} articles")
+
+    # 4. Reddit分析（海外ユーザーのリアルな声）
+    from fetch_reddit import run as fetch_reddit
+    reddit_results = fetch_reddit()
+    results["reddit"] = len(reddit_results)
+    print(f"  [4/10] Reddit: {len(reddit_results)} posts")
+
+    # 5. 中国SNSトレンド
+    from fetch_china_news import run as fetch_china
+    china_results = fetch_china()
+    results["china"] = len(china_results)
+    print(f"  [5/10] 中国SNS: {len(china_results)} posts")
+
+    # 6. Google Trends（検索ボリュームのトレンド）
+    from fetch_google_trends import run as fetch_trends
+    trends_results = fetch_trends()
+    results["google_trends"] = len(trends_results)
+    print(f"  [6/10] Google Trends: {len(trends_results)} items")
+
+    # 7. Product Hunt（新サービスの発見）
+    from fetch_producthunt import run as fetch_ph
+    ph_results = fetch_ph()
+    results["producthunt"] = len(ph_results)
+    print(f"  [7/10] Product Hunt: {len(ph_results)} products")
+
+    # 8. SerpApi × Google検索分析
+    from fetch_serpapi import run as fetch_serp
+    serp_results = fetch_serp()
+    results["serpapi"] = len(serp_results)
+    print(f"  [8/10] SerpApi: {len(serp_results)} items")
+
+    # 9. Xブックマーク
+    from fetch_x_bookmarks import run as fetch_bm
+    bm_results = fetch_bm()
+    results["x_bookmarks"] = len(bm_results)
+    print(f"  [9/10] Xブックマーク: {len(bm_results)} posts")
+
+    # 10. (将来) Claude Codeログ検索はローカル専用のため除外
+
+    total = sum(results.values())
+    print(f"\n  合計: {total} items from {len(results)} sources")
+    return results
 
 
 def step_process():
@@ -117,6 +169,8 @@ def run_pipeline(steps: list[str] | None = None):
     print(f"\n{'#' * 60}")
     print(f"  AI News Pipeline - {date}")
     print(f"  Steps: {', '.join(steps)}")
+    print(f"  Sources: Grok/X, YouTube, HN, Reddit, China SNS,")
+    print(f"           Google Trends, Product Hunt, SerpApi, X Bookmarks")
     print(f"{'#' * 60}")
 
     start = time.time()
@@ -138,7 +192,7 @@ def run_pipeline(steps: list[str] | None = None):
     print(f"{'#' * 60}")
 
     # 確認先を表示
-    print("\n📍 確認先:")
+    print("\n  確認先:")
     print(f"  ダッシュボード: dashboard/index.html")
     print(f"  最新ダイジェスト: outputs/latest/latest_digest.md")
     print(f"  Xドラフト: outputs/latest/latest_x_drafts.md")
