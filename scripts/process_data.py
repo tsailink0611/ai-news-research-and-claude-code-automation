@@ -13,7 +13,12 @@ from datetime import datetime
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from config import RAW_DIR, PROCESSED_DIR, AI_KEYWORDS, ensure_dirs_for_today, today_str
+from config import (
+    RAW_DIR, PROCESSED_DIR, AI_KEYWORDS, ensure_dirs_for_today, today_str,
+    FRONTIER_SOURCES, PROPOSAL_SOURCES,
+    FRONTIER_KEYWORDS, PROPOSAL_INDUSTRY_KEYWORDS,
+    PROPOSAL_TOOL_KEYWORDS, PROPOSAL_SUBSIDY_KEYWORDS,
+)
 
 
 def load_raw_data(date: str) -> list[dict]:
@@ -77,10 +82,116 @@ def score_item(item: dict) -> float:
     return round(score, 2)
 
 
+def assign_lane(item: dict) -> str:
+    """ソース名からFrontier/Proposalレーンを判定する"""
+    source = item.get("source", "")
+    source_type = item.get("source_type", "")
+    if source in FRONTIER_SOURCES or source_type == "github_trending":
+        return "frontier"
+    if source in PROPOSAL_SOURCES or source_type == "japan_rss":
+        return "proposal"
+    # lang=ja の記事はデフォルトでproposal
+    if item.get("lang") == "ja":
+        return "proposal"
+    return "frontier"
+
+
+def calc_frontier_score(item: dict) -> float:
+    """Frontier Score: 先端性・商材化候補としての価値"""
+    score = 0.0
+    text = (
+        (item.get("title") or "") + " " +
+        (item.get("summary") or "") + " " +
+        (item.get("url") or "")
+    ).lower()
+
+    # キーワードマッチ
+    kw_hits = sum(1 for kw in FRONTIER_KEYWORDS if kw in text)
+    score += min(kw_hits * 0.6, 3.0)
+
+    # GitHub Trending: スター数ボーナス
+    stars = item.get("stars_today", 0)
+    if stars:
+        score += min(stars / 100, 2.0)
+        score += 1.0  # GitHub自体がフロンティア
+
+    # HackerNews: スコアボーナス
+    if "hackernews" in (item.get("source") or "").lower():
+        score += min(item.get("score", 0) / 200, 1.5)
+
+    # Product Hunt
+    if "product hunt" in (item.get("source") or "").lower():
+        score += 1.0
+
+    # 中国ソース（先行シグナル）
+    if "china" in (item.get("source") or "").lower():
+        score += 1.5
+
+    # エンゲージメント補正
+    score += min(item.get("importance_score", 0) * 0.3, 1.5)
+
+    return round(min(score, 10.0), 1)
+
+
+def calc_proposal_score(item: dict) -> float:
+    """Proposal Score: 今すぐ提案に転用できる価値"""
+    import re
+    score = 0.0
+    text = (
+        (item.get("title") or "") + " " +
+        (item.get("summary") or "") + " " +
+        (item.get("summary_ja") or "")
+    ).lower()
+
+    # 業種キーワード（最重要）
+    industry_hits = sum(1 for kw in PROPOSAL_INDUSTRY_KEYWORDS if kw in text)
+    score += min(industry_hits * 1.5, 4.0)
+
+    # ツール・サービスキーワード
+    tool_hits = sum(1 for kw in PROPOSAL_TOOL_KEYWORDS if kw in text)
+    score += min(tool_hits * 1.0, 3.0)
+
+    # 補助金・助成金（最高優先度）
+    subsidy_hits = sum(1 for kw in PROPOSAL_SUBSIDY_KEYWORDS if kw in text)
+    score += min(subsidy_hits * 2.0, 4.0)
+
+    # 数値・定量情報（提案根拠として機能する）
+    if re.search(r'\d+\s*[%倍時間件万円分]', text):
+        score += 1.0
+
+    # 日本語・国内ソースボーナス
+    if item.get("lang") == "ja" or item.get("source") in PROPOSAL_SOURCES:
+        score += 1.0
+
+    # いいね数（実際に読まれている国内記事）
+    likes = item.get("likes", 0)
+    if likes >= 10:
+        score += min(likes / 20, 1.5)
+
+    return round(min(score, 10.0), 1)
+
+
 def enrich_items(items: list[dict]) -> list[dict]:
     """各アイテムにメタデータを追加する"""
     for item in items:
         item["importance_score"] = score_item(item)
+        # レーン付与
+        item["lane"] = assign_lane(item)
+        # F軸・P軸スコア
+        item["frontier_score"] = calc_frontier_score(item)
+        item["proposal_score"] = calc_proposal_score(item)
+        # 出力ブロック判定
+        f = item["frontier_score"]
+        p = item["proposal_score"]
+        if p >= 5:
+            item["output_block"] = "A"   # 今すぐ提案ネタ
+        elif f >= 6 and p >= 2:
+            item["output_block"] = "B"   # 今週触るべき先端シグナル
+        elif f >= 4:
+            item["output_block"] = "C"   # 将来ネタ保存
+        else:
+            item["output_block"] = "C"
+
         text = f"{item.get('title', '')} {item.get('text', '')}".lower()
         item["matched_keywords"] = [kw for kw in AI_KEYWORDS if kw in text]
         item["processed_at"] = datetime.now().isoformat()
