@@ -6,8 +6,13 @@ import os
 from pathlib import Path
 from datetime import datetime
 
-# プロジェクトルート
+# .env ファイルを読み込む
 PROJECT_ROOT = Path(__file__).parent.parent
+try:
+    from dotenv import load_dotenv
+    load_dotenv(PROJECT_ROOT / ".env")
+except ImportError:
+    pass  # python-dotenv 未インストール時はシステム環境変数のみ使用
 SCRIPTS_DIR = PROJECT_ROOT / "scripts"
 DATA_DIR = PROJECT_ROOT / "data"
 OUTPUTS_DIR = PROJECT_ROOT / "outputs"
@@ -35,10 +40,68 @@ AI_KEYWORDS = [
     "embedding", "fine-tuning", "mcp", "model context protocol",
     "n8n", "dify", "langchain", "llamaindex", "autogen",
     "cursor", "windsurf", "claude code", "devin",
+    "nfc", "near field communication", "contactless", "smart card", "nfc card",
+    "nfc tag", "nfc inlay", "rfid", "phygital", "physical digital",
+    "tap to pay", "tap and go", "digital business card", "nfc business",
+    "近场通信", "非接触", "スマートカード",
 ]
 
+# NFCキーワード（NFC事業モニタリング専用）
+NFC_KEYWORDS = [
+    "nfc", "near field communication", "contactless card", "smart card",
+    "nfc card", "nfc tag", "nfc inlay", "rfid nfc", "phygital",
+    "tap to pay", "tap and go", "digital business card", "nfc business",
+    "nfc marketing", "nfc solution", "nfc retail", "nfc hospitality",
+    "nfc loyalty", "nfc payment", "nfc access", "nfc authentication",
+    "近场通信", "nfc卡", "智能卡", "非接触式", "nfc标签",
+]
+
+# NFC専用SerpApi検索クエリ
+NFC_SEARCH_QUERIES = [
+    "NFC business card solution USA 2025",
+    "NFC smart card marketing Europe 2025",
+    "NFC contactless business China 2025",
+    "NFC phygital retail case study",
+    "digital NFC card startup funding",
+    "NFC loyalty program business model",
+]
+
+# Grok API (X AI)
+GROK_API_KEY = os.getenv("GROK_API_KEY", "")
+GROK_API_BASE = os.getenv("GROK_API_BASE", "https://api.x.ai/v1")
+
+# Anthropic Claude API
+ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY", "")
+CLAUDE_MODEL = os.getenv("CLAUDE_MODEL", "claude-sonnet-4-20250514")
+
+# YouTube Data API v3
+YOUTUBE_API_KEY = os.getenv("YOUTUBE_API_KEY", "")
+
+# Reddit (公開JSON APIはキー不要、OAuth使用時のみ必要)
+REDDIT_CLIENT_ID = os.getenv("REDDIT_CLIENT_ID", "")
+REDDIT_CLIENT_SECRET = os.getenv("REDDIT_CLIENT_SECRET", "")
+REDDIT_SUBREDDITS = [
+    "ClaudeAI", "ChatGPT", "LocalLLaMA", "MachineLearning",
+    "artificial", "singularity",
+]
+
+# Google Trends (pytrends、APIキー不要)
+
+# Product Hunt API
+PRODUCTHUNT_ACCESS_TOKEN = os.getenv("PRODUCTHUNT_ACCESS_TOKEN", "")
+
+# SerpApi
+SERPAPI_KEY = os.getenv("SERPAPI_KEY", "")
+
+# X API (ブックマーク取得用)
+X_BEARER_TOKEN = os.getenv("X_BEARER_TOKEN", "")
+
+# Telegram Bot（プッシュ通知用）
+TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "")
+TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "")
+
 # X投稿ドラフト設定
-MAX_X_DRAFTS = int(os.getenv("MAX_X_DRAFTS", "30"))
+MAX_X_DRAFTS = int(os.getenv("MAX_X_DRAFTS", "10"))
 X_CHAR_LIMIT = 280
 
 # ドラフトスタイル定義

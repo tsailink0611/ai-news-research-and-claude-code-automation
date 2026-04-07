@@ -1,10 +1,14 @@
 """
-X向け再要約スクリプト
-保存済みデータを元に、X投稿に適した短文要約を生成する
+X投稿 3エージェント生成パイプライン
 
-使い方:
-    python scripts/summarize_for_x.py
-    python scripts/summarize_for_x.py --date 2026-04-06
+リサーチャー → ライター → エディターの3段階で高品質なX投稿文を生成する。
+
+エージェント構成:
+  Researcher : 記事の核心・文脈・投稿角度を分析（バッチ1回）
+  Writer     : 分析を元に投稿文の初稿を生成（バッチ1回）
+  Editor     : 全ドラフトを統一感・自然さで仕上げ（バッチ1回）
+
+合計 Claude API 呼び出し: 3回（記事数に依存しない）
 """
 import json
 import sys
@@ -14,9 +18,19 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 from config import (
-    PROCESSED_DIR, DAILY_DIR, LATEST_DIR, X_CHAR_LIMIT,
-    DRAFT_STYLES, ensure_dirs_for_today, today_str
+    PROCESSED_DIR, DAILY_DIR, X_CHAR_LIMIT,
+    DRAFT_STYLES, ANTHROPIC_API_KEY, CLAUDE_MODEL,
+    ensure_dirs_for_today, today_str
 )
+
+TOP_N_FOR_X = 10  # X向けに絞る記事数
+
+
+def _get_claude_client():
+    if not ANTHROPIC_API_KEY:
+        return None
+    import anthropic
+    return anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
 
 
 def load_processed(date: str) -> dict | None:
@@ -27,97 +41,296 @@ def load_processed(date: str) -> dict | None:
         return json.load(f)
 
 
-def create_summary_for_item(item: dict, style: str) -> dict:
-    """1アイテムに対して指定スタイルの要約を作成する"""
-    title = item.get("title") or item.get("text", "")[:80]
-    topic = item.get("topic", "AI")
-    source = item.get("source", "unknown")
-    score = item.get("importance_score", 0)
-
-    templates = {
-        "breaking": _template_breaking,
-        "explainer": _template_explainer,
-        "comparison": _template_comparison,
-        "opinion": _template_opinion,
-        "beginner": _template_beginner,
-        "practical": _template_practical,
-    }
-
-    generator = templates.get(style, _template_breaking)
-    text = generator(title, topic)
-
-    return {
-        "topic": topic,
-        "source_type": source,
-        "style": style,
-        "style_label": DRAFT_STYLES.get(style, {}).get("label", style),
-        "urgency": "high" if score >= 5.0 else "medium" if score >= 3.0 else "low",
-        "recommended_use": _get_recommended_use(style, score),
-        "draft_text": text[:X_CHAR_LIMIT],
-        "char_count": len(text[:X_CHAR_LIMIT]),
-        "original_title": title,
-    }
-
-
-def _template_breaking(title: str, topic: str) -> str:
-    return f"🚀【速報】{title}\n\n{topic}の最新動向。AI業界に大きなインパクトを与えそうな展開です。\n\n詳細は続報で。\n#AI #{topic.replace(' ', '')}"
-
-
-def _template_explainer(title: str, topic: str) -> str:
-    return f"📝【解説】{title}\n\nなぜこれが重要なのか？\n→ {topic}分野での技術的ブレークスルーの可能性\n→ 開発者・ビジネス両面への影響\n\n要点を整理します👇\n#AI #{topic.replace(' ', '')}"
-
-
-def _template_comparison(title: str, topic: str) -> str:
-    return f"⚖️【比較】{title}\n\n他のアプローチとの違いは？\n✅ 強み: 新しい技術的アプローチ\n⚠️ 課題: まだ発展途上の部分も\n\n選ぶ基準を解説。\n#AI #{topic.replace(' ', '')}"
-
-
-def _template_opinion(title: str, topic: str) -> str:
-    return f"💭【考察】{title}\n\n個人的な見解ですが、{topic}の方向性として非常に示唆的。\n\nこの流れが加速すると、AI開発の常識が変わるかもしれません。\n#AI #{topic.replace(' ', '')}"
-
-
-def _template_beginner(title: str, topic: str) -> str:
-    return f"📚【初心者向け】{title}\n\nわかりやすく言うと...\n{topic}とは、AIをより便利に使うための技術のこと。\n\n今知っておくべきポイントをまとめました。\n#AI入門 #{topic.replace(' ', '')}"
-
-
-def _template_practical(title: str, topic: str) -> str:
-    return f"💼【実務活用】{title}\n\nこれ、実際の仕事でどう使える？\n→ 作業効率化のヒント\n→ 導入時の注意点\n\n明日から試せるアクションプランを紹介。\n#AI活用 #{topic.replace(' ', '')}"
-
-
-def _get_recommended_use(style: str, score: float) -> str:
+def _pick_urgency(score: float) -> str:
     if score >= 5.0:
-        return "即時投稿推奨 - 速報性が高い"
-    if style == "explainer":
-        return "フォロワー教育・価値提供に最適"
-    if style == "practical":
-        return "エンゲージメント重視の投稿に"
-    if style == "beginner":
-        return "新規フォロワー獲得向け"
-    return "通常投稿スケジュールで"
+        return "high"
+    if score >= 3.0:
+        return "medium"
+    return "low"
 
 
-def summarize_all(date: str, styles: list[str] | None = None) -> list[dict]:
-    """全アイテムを複数スタイルで要約する"""
+def _recommended_use(angle: str, urgency: str) -> str:
+    if urgency == "high":
+        return "即時投稿推奨"
+    map_ = {
+        "解説": "教育・価値提供向け",
+        "実務": "エンゲージメント重視",
+        "比較": "議論喚起向け",
+        "速報": "タイムリー投稿",
+    }
+    return map_.get(angle, "通常スケジュール投稿")
+
+
+# ───────────────────────────────────────────────────────────────
+# Agent 1: Researcher
+# 役割: 各記事の「何が重要か」「なぜ今か」「どう伝えるか」を分析する
+# ───────────────────────────────────────────────────────────────
+
+def run_researcher(client, items: list[dict]) -> list[dict]:
+    """
+    記事リストを一括分析し、各記事の投稿戦略を返す。
+    出力: [{key_insight, context, angle, hook, tags}, ...]
+    """
+    print(f"[Researcher] {len(items)} 件を分析中...")
+
+    articles_text = ""
+    for i, item in enumerate(items):
+        title = item.get("title") or ""
+        summary = item.get("summary_ja") or item.get("summary") or item.get("point") or ""
+        source = item.get("source") or ""
+        score = item.get("importance_score", 0)
+        articles_text += (
+            f"\n[{i}]\n"
+            f"タイトル: {title}\n"
+            f"要約: {summary[:200]}\n"
+            f"ソース: {source} | スコア: {score}\n"
+        )
+
+    prompt = f"""あなたはAI・テクノロジー分野の記事分析の専門家です。
+以下の記事リストを読み、X（旧Twitter）投稿に最適な切り口を分析してください。
+
+## 分析対象記事
+{articles_text}
+
+## 各記事について以下を返してください
+- key_insight: この記事で最も重要な事実・数値・発見（30文字以内）
+- context: なぜ今これが重要か、何が変わるのか（40文字以内）
+- angle: 投稿の切り口（「解説」「実務」「比較」「速報」から1つ）
+- hook: 読者が思わず止まる書き出し案（体言止めか問いかけ、25文字以内）
+- tags: おすすめハッシュタグ 2〜3個（#付き、スペース区切り）
+
+## 出力形式（JSONのみ、説明不要）
+[
+  {{"index": 0, "key_insight": "...", "context": "...", "angle": "...", "hook": "...", "tags": "..."}},
+  ...
+]"""
+
+    try:
+        response = client.messages.create(
+            model=CLAUDE_MODEL,
+            max_tokens=2000,
+            messages=[{"role": "user", "content": prompt}],
+        )
+        content = response.content[0].text.strip()
+        if content.startswith("```"):
+            content = content.split("\n", 1)[1].rsplit("```", 1)[0]
+        analyses = json.loads(content)
+        print(f"[Researcher] {len(analyses)} 件の分析完了")
+        return analyses
+    except Exception as e:
+        print(f"[Researcher] エラー: {e}")
+        return [{"index": i, "key_insight": "", "context": "", "angle": "速報", "hook": "", "tags": "#AI"} for i in range(len(items))]
+
+
+# ───────────────────────────────────────────────────────────────
+# Agent 2: Writer
+# 役割: Researcher の分析を元に投稿文の初稿を生成する
+# ───────────────────────────────────────────────────────────────
+
+def run_writer(client, items: list[dict], analyses: list[dict]) -> list[dict]:
+    """
+    記事 + 分析結果を元に X 投稿の初稿を一括生成する。
+    出力: [{index, draft_text}, ...]
+    """
+    print(f"[Writer] {len(items)} 本の初稿を生成中...")
+
+    input_text = ""
+    for a in analyses:
+        idx = a.get("index", 0)
+        item = items[idx] if idx < len(items) else {}
+        title = item.get("title") or ""
+        input_text += (
+            f"\n[{idx}]\n"
+            f"タイトル: {title}\n"
+            f"核心: {a.get('key_insight', '')}\n"
+            f"文脈: {a.get('context', '')}\n"
+            f"切り口: {a.get('angle', '')}\n"
+            f"書き出し案: {a.get('hook', '')}\n"
+            f"タグ案: {a.get('tags', '#AI')}\n"
+        )
+
+    prompt = f"""あなたはAI・DX分野のX投稿ライターです。
+以下の記事分析を元に、X投稿文の初稿を生成してください。
+
+## 記事・分析データ
+{input_text}
+
+## 書き方のルール
+- 140〜200文字で書く（URLは含めない）
+- 提示されたハッシュタグを末尾に使う（#AI は必須）
+- 「です・ます」調。ただし語尾を全て同じにしない
+- 具体的な事実・数値を1つ以上入れる
+- 禁止表現: 「画期的」「革新的」「注目」「必見」「衝撃」「〜ですね」「〜してみた」
+- ブラケット見出し禁止（【速報】など）
+- 絵文字なし
+- 書き出しはhookを参考に、そのまま使わず自分の言葉で
+
+## 出力形式（JSONのみ）
+[{{"index": 0, "draft_text": "投稿文"}}, ...]"""
+
+    try:
+        response = client.messages.create(
+            model=CLAUDE_MODEL,
+            max_tokens=3000,
+            messages=[{"role": "user", "content": prompt}],
+        )
+        content = response.content[0].text.strip()
+        if content.startswith("```"):
+            content = content.split("\n", 1)[1].rsplit("```", 1)[0]
+        drafts = json.loads(content)
+        print(f"[Writer] {len(drafts)} 本の初稿完成")
+        return drafts
+    except Exception as e:
+        print(f"[Writer] エラー: {e}")
+        return [{"index": i, "draft_text": (items[i].get("title") or "")[:100] + "\n#AI"} for i in range(len(items))]
+
+
+# ───────────────────────────────────────────────────────────────
+# Agent 3: Editor
+# 役割: 全ドラフトを読み比べ、語尾・書き出し・文体の単調さを直し仕上げる
+# ───────────────────────────────────────────────────────────────
+
+def run_editor(client, drafts: list[dict]) -> list[dict]:
+    """
+    全初稿を一括でレビューし、最終版に仕上げる。
+    出力: [{index, draft_text}, ...]
+    """
+    print(f"[Editor] {len(drafts)} 本を最終仕上げ中...")
+
+    drafts_text = ""
+    for d in drafts:
+        drafts_text += f"\n[{d['index']}]\n{d.get('draft_text', '')}\n"
+
+    prompt = f"""あなたはX投稿の編集者です。
+以下の初稿を読み比べ、投稿文として最適な形に仕上げてください。
+
+## チェック・修正ポイント
+1. 全10本の書き出しが単調でないか（同じ書き出しパターンが3本以上あれば直す）
+2. 語尾のバリエーション（「〜です」「〜ます」「〜でしょう」「〜から」等を自然に混在させる）
+3. 内容の薄いドラフトに具体性を足す（数値・固有名詞・具体的な用途など）
+4. 文字数が140文字未満なら情報を足す。200文字超なら削る
+5. ハッシュタグは末尾2〜3個のみ（#AI は必須）
+6. 禁止表現の最終確認: 「画期的」「革新的」「注目」「必見」「〜ですね」「〜してみた」
+
+## 方針
+- 内容の本質は変えない。表現と構造のみ調整する
+- AIが書いた感を排除し、実際にAI・DXの実務を知っている人が書いた文体にする
+- 10本全体を1人の人間が書いたように統一する
+
+## 初稿
+{drafts_text}
+
+## 出力形式（JSONのみ）
+[{{"index": 0, "draft_text": "最終テキスト"}}, ...]"""
+
+    try:
+        response = client.messages.create(
+            model=CLAUDE_MODEL,
+            max_tokens=3000,
+            messages=[{"role": "user", "content": prompt}],
+        )
+        content = response.content[0].text.strip()
+        if content.startswith("```"):
+            content = content.split("\n", 1)[1].rsplit("```", 1)[0]
+        final = json.loads(content)
+        print(f"[Editor] {len(final)} 本の最終版完成")
+        return final
+    except Exception as e:
+        print(f"[Editor] エラー: {e}（Writerの初稿をそのまま使用）")
+        return drafts
+
+
+# ───────────────────────────────────────────────────────────────
+# フォールバック（API なし）
+# ───────────────────────────────────────────────────────────────
+
+def _fallback_drafts(items: list[dict]) -> list[dict]:
+    """Claude APIなし時のテンプレート生成"""
+    results = []
+    for i, item in enumerate(items):
+        title = item.get("title") or ""
+        point = item.get("point") or item.get("summary_ja") or ""
+        topic = item.get("topic", "AI").replace(" ", "")
+        text = point if point else title[:100]
+        results.append({
+            "index": i,
+            "draft_text": f"{text[:150]}\n#AI #{topic}"
+        })
+    return results
+
+
+# ───────────────────────────────────────────────────────────────
+# 統合・保存
+# ───────────────────────────────────────────────────────────────
+
+def summarize_all(date: str) -> list[dict]:
+    """3エージェントパイプラインを実行し、X投稿ドラフトを返す"""
     data = load_processed(date)
     if not data:
-        print(f"[X-SUMMARY] No processed data for {date}")
+        print(f"[X-SUMMARY] データなし: {date}")
         return []
 
-    items = data.get("items", [])[:15]  # 上位15件に絞る
-    if styles is None:
-        styles = list(DRAFT_STYLES.keys())
+    items = data.get("items", [])
+    items = sorted(items, key=lambda x: x.get("importance_score", 0), reverse=True)
+    items = items[:TOP_N_FOR_X]
+
+    print(f"\n[X-SUMMARY] 3エージェントパイプライン開始（{len(items)} 件）")
+
+    client = _get_claude_client()
+
+    if not client:
+        print("[X-SUMMARY] APIキーなし → テンプレート生成")
+        final_drafts = _fallback_drafts(items)
+        analyses = [{"index": i, "angle": "速報", "tags": "#AI"} for i in range(len(items))]
+    else:
+        print(f"[X-SUMMARY] モデル: {CLAUDE_MODEL}")
+
+        # Agent 1: Researcher
+        analyses = run_researcher(client, items)
+
+        # Agent 2: Writer
+        writer_drafts = run_writer(client, items, analyses)
+
+        # Agent 3: Editor
+        final_drafts = run_editor(client, writer_drafts)
+
+    # 分析結果とドラフトをマージして summaries を構築
+    analysis_map = {a.get("index", i): a for i, a in enumerate(analyses)}
+    draft_map = {d.get("index", i): d for i, d in enumerate(final_drafts)}
 
     summaries = []
-    for item in items:
-        for style in styles:
-            summary = create_summary_for_item(item, style)
-            summaries.append(summary)
+    for i, item in enumerate(items):
+        analysis = analysis_map.get(i, {})
+        draft = draft_map.get(i, {})
 
-    print(f"[X-SUMMARY] Generated {len(summaries)} summaries from {len(items)} items")
+        text = draft.get("draft_text") or (item.get("title") or "")[:100] + "\n#AI"
+        text = text[:X_CHAR_LIMIT]
+        score = item.get("importance_score", 0)
+        angle = analysis.get("angle", "速報")
+        urgency = _pick_urgency(score)
+
+        summaries.append({
+            "topic": item.get("topic", "AI"),
+            "source_type": item.get("source", "unknown"),
+            "style": angle,
+            "style_label": angle,
+            "urgency": urgency,
+            "recommended_use": _recommended_use(angle, urgency),
+            "draft_text": text,
+            "char_count": len(text),
+            "original_title": item.get("title") or "",
+            "importance_score": score,
+            "key_insight": analysis.get("key_insight", ""),
+            "context": analysis.get("context", ""),
+            "generated_by": "3-agent-pipeline" if client else "template",
+        })
+        print(f"  [{i+1}/{len(items)}] [{angle}] {(item.get('title') or '')[:40]}")
+
+    print(f"\n[X-SUMMARY] {len(summaries)} 件生成完了（3エージェント）")
     return summaries
 
 
 def save_summaries(summaries: list[dict], date: str) -> Path:
-    """要約をJSONで保存する"""
     filepath = DAILY_DIR / date / "x_summaries.json"
     filepath.parent.mkdir(parents=True, exist_ok=True)
     with open(filepath, "w", encoding="utf-8") as f:
@@ -125,17 +338,16 @@ def save_summaries(summaries: list[dict], date: str) -> Path:
             "date": date,
             "generated_at": datetime.now().isoformat(),
             "count": len(summaries),
+            "pipeline": "researcher → writer → editor",
             "summaries": summaries,
         }, f, ensure_ascii=False, indent=2)
-    print(f"[X-SUMMARY] Saved to {filepath}")
+    print(f"[X-SUMMARY] 保存: {filepath}")
     return filepath
 
 
 def run(date: str | None = None) -> list[dict]:
-    """メイン実行"""
     if date is None:
         date = ensure_dirs_for_today()
-
     summaries = summarize_all(date)
     if summaries:
         save_summaries(summaries, date)
@@ -143,10 +355,10 @@ def run(date: str | None = None) -> list[dict]:
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Summarize for X posts")
-    parser.add_argument("--date", default=None, help="Date (YYYY-MM-DD)")
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--date", default=None)
     args = parser.parse_args()
     results = run(args.date)
-    print(f"\n=== {len(results)} summaries generated ===")
+    print(f"\n=== {len(results)} summaries (3-agent pipeline) ===")
     for s in results[:5]:
-        print(f"  [{s['style_label']}] {s['draft_text'][:60]}...")
+        print(f"  [{s['style_label']}] {s['draft_text'][:80]}...")

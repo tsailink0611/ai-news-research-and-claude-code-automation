@@ -1,10 +1,13 @@
 """
-Xドラフト量産スクリプト
-保存済みデータから20〜30本のX投稿ドラフトを生成する
+Xドラフト管理スクリプト
+summarize_for_x.py（3エージェント）が生成した summaries を読み込み、
+選定・保存・Markdown整形を担当する。
+
+Claude API 呼び出しはここでは行わない（全て summarize_for_x.py 側で完結）。
 
 使い方:
     python scripts/generate_x_drafts.py
-    python scripts/generate_x_drafts.py --date 2026-04-06 --count 30
+    python scripts/generate_x_drafts.py --date 2026-04-06 --count 10
 """
 import json
 import sys
@@ -98,6 +101,11 @@ def format_drafts_markdown(drafts: list[dict], date: str) -> str:
     lines.append(f"> ドラフト数: {len(drafts)}本")
     lines.append(f"> スタイル: {', '.join(set(d.get('style_label', '') for d in drafts))}")
 
+    # AI生成の統計
+    claude_count = sum(1 for d in drafts if d.get("generated_by") == "claude" or d.get("polished_by") == "claude")
+    if claude_count:
+        lines.append(f"> AI生成/改善: {claude_count}本")
+
     lines.append("\n---\n")
 
     # スタイル別の統計
@@ -122,6 +130,8 @@ def format_drafts_markdown(drafts: list[dict], date: str) -> str:
         lines.append(f"- **推奨用途**: {draft.get('recommended_use', 'N/A')}")
         lines.append(f"- **ソース**: {draft.get('source_type', 'N/A')}")
         lines.append(f"- **文字数**: {len(draft.get('draft_text', ''))}文字")
+        if draft.get("generated_by") == "claude" or draft.get("polished_by") == "claude":
+            lines.append(f"- **生成**: 🤖 Claude AI")
         lines.append("")
         lines.append("```")
         lines.append(draft.get("draft_text", ""))
@@ -191,6 +201,8 @@ def run(date: str | None = None, count: int | None = None) -> list[dict]:
         return []
 
     drafts = select_best_drafts(summaries, count)
+
+    # 3エージェントによる仕上げは summarize_for_x.py 側で完了済み
     markdown = format_drafts_markdown(drafts, date)
     save_drafts(drafts, markdown, date)
 

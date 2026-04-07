@@ -1,0 +1,74 @@
+name: AI News Daily Pipeline
+
+on:
+  schedule:
+    # 毎朝9時（JST）= UTC 0:00
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+    inputs:
+      step:
+        description: "実行するステップ（空白で全ステップ）"
+        required: false
+        default: ""
+
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run pipeline
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GROK_API_KEY: ${{ secrets.GROK_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
+          PRODUCTHUNT_ACCESS_TOKEN: ${{ secrets.PRODUCTHUNT_ACCESS_TOKEN }}
+          X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
+        run: |
+          if [ -n "${{ github.event.inputs.step }}" ]; then
+            python scripts/run_pipeline.py --step ${{ github.event.inputs.step }}
+          else
+            python scripts/run_pipeline.py
+          fi
+
+      - name: Upload outputs as artifact
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pipeline-outputs-${{ github.run_number }}
+          path: |
+            outputs/latest/
+            outputs/daily/
+          retention-days: 7
+
+      - name: Notify on failure
+        if: failure()
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          python -c "
+          import os, requests
+          token = os.getenv('TELEGRAM_BOT_TOKEN', '')
+          chat_id = os.getenv('TELEGRAM_CHAT_ID', '')
+          if token and chat_id:
+              requests.post(
+                  f'https://api.telegram.org/bot{token}/sendMessage',
+                  json={'chat_id': chat_id, 'text': '❌ AI News Pipeline failed. Check GitHub Actions.'}
+              )
+          "
