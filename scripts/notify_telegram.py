@@ -26,6 +26,7 @@ from config import (
     TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID,
     ensure_dirs_for_today, today_str,
 )
+from db import get_supabase, update_telegram_state, get_current_run_id
 
 TELEGRAM_API = "https://api.telegram.org/bot{token}"
 MAX_MESSAGE_LENGTH = 4096  # Telegram の1メッセージ上限
@@ -131,7 +132,7 @@ def build_digest_message(date: str) -> str | None:
             if url and url.startswith("http"):
                 lines.append(f"   <a href=\"{url}\">記事を読む</a>")
     else:
-        lines.append("   <i>今日は該当なし（P&gt;=5の記事なし）</i>")
+        lines.append("   <i>今日は該当なし（P≥5の記事なし）</i>")
 
     # ── Block B: 今週触るべき先端シグナル ───────────────────
     lines.append("")
@@ -152,7 +153,7 @@ def build_digest_message(date: str) -> str | None:
             if url and url.startswith("http"):
                 lines.append(f"   <a href=\"{url}\">記事を読む</a>")
     else:
-        lines.append("   <i>今日は該当なし（F&gt;=6かつP&gt;=2の記事なし）</i>")
+        lines.append("   <i>今日は該当なし（F≥6かつP≥2の記事なし）</i>")
 
     # ── Block C: 将来ネタ保存（件数のみ） ────────────────────
     lines.append("")
@@ -261,6 +262,26 @@ def send_test() -> bool:
     return success
 
 
+def _update_telegram_delivery_state(supabase, date: str, run_id: str | None) -> None:
+    """Telegramに送信したBlock A/B記事のdelivery_stateを更新する"""
+    processed_path = PROCESSED_DIR / date / "processed_articles.json"
+    if not processed_path.exists():
+        return
+    try:
+        with open(processed_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        items = data.get("items", [])
+        for item in items:
+            block = item.get("output_block")
+            if block not in ("A", "B"):
+                continue
+            article_id = item.get("supabase_id")
+            if article_id:
+                update_telegram_state(supabase, article_id, run_id, block)
+    except Exception as e:
+        print(f"[TELEGRAM] delivery_state 更新失敗: {e}")
+
+
 def notify(date: str | None = None, compact: bool = False) -> bool:
     """パイプライン結果をTelegramに送信する"""
     if date is None:
@@ -269,6 +290,9 @@ def notify(date: str | None = None, compact: bool = False) -> bool:
     if not TELEGRAM_BOT_TOKEN or not TELEGRAM_CHAT_ID:
         print("[TELEGRAM] Skipped: TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID not set")
         return False
+
+    supabase = get_supabase()
+    run_id = get_current_run_id(date)
 
     print(f"[TELEGRAM] Sending notifications for {date}...")
 
@@ -287,6 +311,8 @@ def notify(date: str | None = None, compact: bool = False) -> bool:
     if digest_msg:
         if send_message(digest_msg):
             print("[TELEGRAM] Digest sent")
+            # Telegramに送信したBlock A/Bの記事のdelivery_stateを更新する
+            _update_telegram_delivery_state(supabase, date, run_id)
         else:
             success = False
 
