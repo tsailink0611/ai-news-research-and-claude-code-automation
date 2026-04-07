@@ -17,6 +17,7 @@ except ImportError:
     Client = None
 
 from config import PROCESSED_DIR, today_str
+from db import get_supabase, update_notion_state, get_current_run_id
 
 # Notion設定
 NOTION_API_KEY = os.getenv("NOTION_API_KEY", "")
@@ -360,7 +361,7 @@ def _make_blocks(meta: dict) -> list:
     return blocks
 
 
-def create_ai_page(notion: "Client", db_id: str, item: dict) -> bool:
+def create_ai_page(notion: "Client", db_id: str, item: dict) -> "str | None":
     """AI技術・ナレッジDBにページを作成する（ブロック形式）"""
     title = item.get("title") or "（タイトルなし）"
     url = item.get("url") or ""
@@ -400,7 +401,7 @@ def create_ai_page(notion: "Client", db_id: str, item: dict) -> bool:
     # ※日付ページはパイプライン実行日（今日）で固定
     if NOTION_AI_PARENT_PAGE_ID:
         run_date = today_str()
-        saved = False
+        first_page_id: "str | None" = None
 
         # ── 📆 日別アーカイブ: 日付 → カテゴリー → 記事 ──────────────
         daily_section_id = get_or_create_subpage(
@@ -412,14 +413,15 @@ def create_ai_page(notion: "Client", db_id: str, item: dict) -> bool:
             if date_page_id:
                 cat_page_id = get_or_create_category_page(notion, date_page_id, category)
                 if cat_page_id:
-                    notion.pages.create(
+                    created = notion.pages.create(
                         parent={"page_id": cat_page_id},
                         properties={
                             "title": {"title": [{"text": {"content": page_title[:2000]}}]}
                         },
                         children=blocks
                     )
-                    saved = True
+                    if first_page_id is None:
+                        first_page_id = created.get("id")
 
         # ── 📚 カテゴリー別ナレッジ: カテゴリー → 日付 → 記事 ──────────
         cat_section_id = get_or_create_subpage(
@@ -431,30 +433,31 @@ def create_ai_page(notion: "Client", db_id: str, item: dict) -> bool:
             if top_cat_page_id:
                 date_page_id2 = get_or_create_date_page(notion, top_cat_page_id, run_date)
                 if date_page_id2:
-                    notion.pages.create(
+                    created2 = notion.pages.create(
                         parent={"page_id": date_page_id2},
                         properties={
                             "title": {"title": [{"text": {"content": page_title[:2000]}}]}
                         },
                         children=blocks
                     )
-                    saved = True
+                    if first_page_id is None:
+                        first_page_id = created2.get("id")
 
-        if saved:
-            return True
+        if first_page_id is not None:
+            return first_page_id
 
     # フォールバック: DB直下に保存
-    notion.pages.create(
+    created_fb = notion.pages.create(
         parent={"database_id": db_id},
         properties={
             "Name": {"title": [{"text": {"content": page_title[:2000]}}]}
         },
         children=blocks
     )
-    return True
+    return created_fb.get("id") or None
 
 
-def create_nfc_page(notion: "Client", db_id: str, item: dict) -> bool:
+def create_nfc_page(notion: "Client", db_id: str, item: dict) -> "str | None":
     """NFC Business Intelligence DBにページを作成する（ブロック形式）"""
     title = item.get("title") or "（タイトルなし）"
     url = item.get("url") or ""
@@ -493,7 +496,7 @@ def create_nfc_page(notion: "Client", db_id: str, item: dict) -> bool:
     if NOTION_NFC_PARENT_PAGE_ID:
         run_date = today_str()
         cat_label = f"NFC / {region}"
-        saved = False
+        first_page_id: "str | None" = None
 
         # ── 📆 日別アーカイブ: 日付 → 地域カテゴリー → 記事 ────────────
         daily_section_id = get_or_create_subpage(
@@ -505,14 +508,15 @@ def create_nfc_page(notion: "Client", db_id: str, item: dict) -> bool:
             if date_page_id:
                 cat_page_id = get_or_create_category_page(notion, date_page_id, cat_label)
                 if cat_page_id:
-                    notion.pages.create(
+                    created = notion.pages.create(
                         parent={"page_id": cat_page_id},
                         properties={
                             "title": {"title": [{"text": {"content": page_title[:2000]}}]}
                         },
                         children=blocks
                     )
-                    saved = True
+                    if first_page_id is None:
+                        first_page_id = created.get("id")
 
         # ── 📚 カテゴリー別ナレッジ: 地域カテゴリー → 日付 → 記事 ────────
         cat_section_id = get_or_create_subpage(
@@ -524,27 +528,28 @@ def create_nfc_page(notion: "Client", db_id: str, item: dict) -> bool:
             if top_cat_page_id:
                 date_page_id2 = get_or_create_date_page(notion, top_cat_page_id, run_date)
                 if date_page_id2:
-                    notion.pages.create(
+                    created2 = notion.pages.create(
                         parent={"page_id": date_page_id2},
                         properties={
                             "title": {"title": [{"text": {"content": page_title[:2000]}}]}
                         },
                         children=blocks
                     )
-                    saved = True
+                    if first_page_id is None:
+                        first_page_id = created2.get("id")
 
-        if saved:
-            return True
+        if first_page_id is not None:
+            return first_page_id
 
     # フォールバック: DB直下に保存
-    notion.pages.create(
+    created_fb = notion.pages.create(
         parent={"database_id": db_id},
         properties={
             "Name": {"title": [{"text": {"content": page_title[:2000]}}]}
         },
         children=blocks
     )
-    return True
+    return created_fb.get("id") or None
 
 
 def run(date: str = None, dry_run: bool = False) -> dict:
@@ -562,6 +567,9 @@ def run(date: str = None, dry_run: bool = False) -> dict:
         date = today_str()
 
     result = {"ai_saved": 0, "nfc_saved": 0, "skipped": 0}
+
+    supabase = get_supabase()
+    run_id = get_current_run_id(date)
 
     processed_file = PROCESSED_DIR / date / "processed_articles.json"
     if not processed_file.exists():
@@ -581,6 +589,13 @@ def run(date: str = None, dry_run: bool = False) -> dict:
         return result
 
     print(f"[notify_notion] {len(articles)} 件を処理対象として読み込みました")
+
+    # Supabaseがcanonical storeになったため、NotionはBlock A/Bのみ保存する
+    articles = [a for a in articles if a.get("output_block") in ("A", "B")]
+    if not articles:
+        print("[notify_notion] Block A/B の記事なし - スキップ")
+        return result
+    print(f"[notify_notion] Block A/B フィルター後: {len(articles)} 件")
 
     if dry_run:
         ai_count = sum(1 for a in articles if not is_nfc_item(a))
@@ -615,9 +630,13 @@ def run(date: str = None, dry_run: bool = False) -> dict:
                 result["skipped"] += 1
                 continue
             try:
-                create_nfc_page(notion, NOTION_NFC_DB_ID, article)
+                notion_page_id = create_nfc_page(notion, NOTION_NFC_DB_ID, article)
                 print(f"[NFC] 保存: {title[:60]}")
                 result["nfc_saved"] += 1
+                if notion_page_id:
+                    article_id = article.get("supabase_id")
+                    if article_id:
+                        update_notion_state(supabase, article_id, run_id, notion_page_id)
             except Exception as e:
                 print(f"[error] NFC保存失敗: {e} | {title[:60]}")
                 result["skipped"] += 1
@@ -634,9 +653,13 @@ def run(date: str = None, dry_run: bool = False) -> dict:
                 result["skipped"] += 1
                 continue
             try:
-                create_ai_page(notion, NOTION_AI_DB_ID, article)
+                notion_page_id = create_ai_page(notion, NOTION_AI_DB_ID, article)
                 print(f"[AI] 保存: {title[:60]}")
                 result["ai_saved"] += 1
+                if notion_page_id:
+                    article_id = article.get("supabase_id")
+                    if article_id:
+                        update_notion_state(supabase, article_id, run_id, notion_page_id)
             except Exception as e:
                 print(f"[error] AI保存失敗: {e} | {title[:60]}")
                 result["skipped"] += 1
