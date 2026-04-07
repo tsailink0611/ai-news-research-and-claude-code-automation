@@ -87,7 +87,7 @@ def _split_message(text: str, max_len: int) -> list[str]:
 
 
 def build_digest_message(date: str) -> str | None:
-    """ダイジェスト通知メッセージを構築する"""
+    """Block A/B/C 形式のダイジェストメッセージを構築する"""
     processed_path = PROCESSED_DIR / date / "processed_articles.json"
     if not processed_path.exists():
         return None
@@ -96,41 +96,77 @@ def build_digest_message(date: str) -> str | None:
         data = json.load(f)
 
     items = data.get("items", [])
-    topics = data.get("topics", [])
     stats = data.get("stats", {})
     sources = stats.get("sources", [])
 
+    # ブロック別に分類
+    block_a = [i for i in items if i.get("output_block") == "A"]
+    block_b = [i for i in items if i.get("output_block") == "B"]
+    block_c = [i for i in items if i.get("output_block") == "C"]
+
+    # P軸・F軸でそれぞれソート
+    block_a.sort(key=lambda x: x.get("proposal_score", 0), reverse=True)
+    block_b.sort(key=lambda x: x.get("frontier_score", 0), reverse=True)
+
     lines = []
-    lines.append(f"<b>AI ニュース日次レポート  {date}</b>")
-    lines.append(f"<code>{len(items)} 件収集 | {len(sources)} ソース</code>")
+    lines.append(f"<b>案件化支援OS  {date}</b>")
+    lines.append(f"<code>{len(items)} 件収集 | A:{len(block_a)} B:{len(block_b)} C:{len(block_c)}</code>")
+
+    # ── Block A: 今すぐ提案ネタ ──────────────────────────────
     lines.append("")
+    lines.append("<b>Block A — 今すぐ提案ネタ</b>")
+    if block_a:
+        for i, item in enumerate(block_a[:3], 1):
+            title = _escape_html((item.get("title") or "")[:60])
+            p = item.get("proposal_score", 0)
+            f = item.get("frontier_score", 0)
+            source = item.get("source", "")
+            point = item.get("summary_ja") or item.get("point") or ""
+            url = item.get("url", "")
 
-    # 主要トピック
-    lines.append("<b>今日のホットトピック</b>")
-    topic_emojis = ["1.", "2.", "3.", "4.", "5.", "6."]
-    for i, topic in enumerate(topics[:6]):
-        count = topic.get("count", 0)
-        name = _escape_html(topic.get("topic", ""))
-        score = topic.get("max_score", 0)
-        bar = "█" * min(int(score), 8) + "░" * (8 - min(int(score), 8))
-        lines.append(f"{topic_emojis[i]} <b>{name}</b>  {count}件  <code>{bar}</code>")
+            lines.append(f"\n<b>{i}. {title}</b>")
+            lines.append(f"   P:{p}  F:{f}  |  {source}")
+            if point:
+                lines.append(f"   <i>{_escape_html(point[:90])}</i>")
+            if url and url.startswith("http"):
+                lines.append(f"   <a href=\"{url}\">記事を読む</a>")
+    else:
+        lines.append("   <i>今日は該当なし（P&gt;=5の記事なし）</i>")
+
+    # ── Block B: 今週触るべき先端シグナル ───────────────────
     lines.append("")
+    lines.append("<b>Block B — 今週触るべき先端シグナル</b>")
+    if block_b:
+        for i, item in enumerate(block_b[:3], 1):
+            title = _escape_html((item.get("title") or "")[:60])
+            p = item.get("proposal_score", 0)
+            f = item.get("frontier_score", 0)
+            source = item.get("source", "")
+            point = item.get("summary_ja") or item.get("point") or ""
+            url = item.get("url", "")
 
-    # 注目記事 TOP 5
-    lines.append("<b>注目記事 TOP 5</b>")
-    for i, item in enumerate(items[:5], 1):
-        title = _escape_html((item.get("title") or item.get("text", ""))[:65])
-        score = item.get("importance_score", 0)
-        source = item.get("source", "")
-        url = item.get("url", "")
-        point = item.get("point") or item.get("summary_ja", "")
+            lines.append(f"\n<b>{i}. {title}</b>")
+            lines.append(f"   F:{f}  P:{p}  |  {source}")
+            if point:
+                lines.append(f"   <i>{_escape_html(point[:90])}</i>")
+            if url and url.startswith("http"):
+                lines.append(f"   <a href=\"{url}\">記事を読む</a>")
+    else:
+        lines.append("   <i>今日は該当なし（F&gt;=6かつP&gt;=2の記事なし）</i>")
 
-        lines.append(f"\n<b>{i}. {title}</b>")
-        lines.append(f"   {source}  |  スコア {score:.1f}")
-        if point:
-            lines.append(f"   <i>{_escape_html(point[:80])}</i>")
-        if url and url.startswith("http"):
-            lines.append(f"   <a href=\"{url}\">記事を読む</a>")
+    # ── Block C: 将来ネタ保存（件数のみ） ────────────────────
+    lines.append("")
+    lines.append("<b>Block C — 将来ネタ保存</b>")
+    if block_c:
+        # カテゴリ別集計
+        cat_count: dict[str, int] = {}
+        for item in block_c:
+            lane = item.get("lane", "frontier")
+            cat_count[lane] = cat_count.get(lane, 0) + 1
+        detail = "  ".join(f"{k}:{v}件" for k, v in cat_count.items())
+        lines.append(f"   Notionに {len(block_c)} 件を保存  |  {detail}")
+    else:
+        lines.append("   <i>なし</i>")
 
     return "\n".join(lines)
 
