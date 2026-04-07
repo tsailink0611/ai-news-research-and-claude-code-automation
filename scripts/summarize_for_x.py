@@ -22,6 +22,7 @@ from config import (
     DRAFT_STYLES, ANTHROPIC_API_KEY, CLAUDE_MODEL,
     ensure_dirs_for_today, today_str
 )
+from db import get_supabase, insert_x_draft, get_current_run_id
 
 TOP_N_FOR_X = 10  # X向けに絞る記事数
 
@@ -333,6 +334,20 @@ def summarize_all(date: str) -> list[dict]:
             "generated_by": "3-agent-pipeline" if client else "template",
         })
         print(f"  [{i+1}/{len(items)}] [{angle}] {(item.get('title') or '')[:40]}")
+
+    # Supabase に x_draft を保存
+    supabase = get_supabase()
+    run_id = get_current_run_id(date)
+    saved_count = 0
+    for i, summary in enumerate(summaries):
+        item = items[i] if i < len(items) else {}
+        article_id = item.get("supabase_id")
+        try:
+            insert_x_draft(supabase, summary, run_id, article_id)
+            saved_count += 1
+        except Exception as e:
+            print(f"[X-SUMMARY] Supabase insert error (index {i}): {e}")
+    print(f"[X-SUMMARY] Supabase に {saved_count}/{len(summaries)} 件のドラフトを保存")
 
     print(f"\n[X-SUMMARY] {len(summaries)} 件生成完了（3エージェント）")
     return summaries
