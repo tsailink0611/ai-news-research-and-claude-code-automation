@@ -88,7 +88,6 @@ def _split_message(text: str, max_len: int) -> list[str]:
 
 def build_digest_message(date: str) -> str | None:
     """ダイジェスト通知メッセージを構築する"""
-    # 処理済みデータを読み込む
     processed_path = PROCESSED_DIR / date / "processed_articles.json"
     if not processed_path.exists():
         return None
@@ -102,38 +101,42 @@ def build_digest_message(date: str) -> str | None:
     sources = stats.get("sources", [])
 
     lines = []
-    lines.append(f"<b>AI News Daily Digest</b>")
-    lines.append(f"<b>{date}</b>")
-    lines.append("")
-    lines.append(f"<code>{len(items)}件</code> collected from <code>{len(sources)}</code> sources")
+    lines.append(f"<b>AI ニュース日次レポート  {date}</b>")
+    lines.append(f"<code>{len(items)} 件収集 | {len(sources)} ソース</code>")
     lines.append("")
 
     # 主要トピック
-    lines.append("<b>--- Hot Topics ---</b>")
-    for i, topic in enumerate(topics[:6], 1):
-        score_bar = "+" * min(int(topic['max_score']), 10)
-        lines.append(f"{i}. <b>{topic['topic']}</b> ({topic['count']}件) [{score_bar}]")
+    lines.append("<b>今日のホットトピック</b>")
+    topic_emojis = ["1.", "2.", "3.", "4.", "5.", "6."]
+    for i, topic in enumerate(topics[:6]):
+        count = topic.get("count", 0)
+        name = _escape_html(topic.get("topic", ""))
+        score = topic.get("max_score", 0)
+        bar = "█" * min(int(score), 8) + "░" * (8 - min(int(score), 8))
+        lines.append(f"{topic_emojis[i]} <b>{name}</b>  {count}件  <code>{bar}</code>")
     lines.append("")
 
     # 注目記事 TOP 5
-    lines.append("<b>--- Top 5 Articles ---</b>")
+    lines.append("<b>注目記事 TOP 5</b>")
     for i, item in enumerate(items[:5], 1):
-        title = item.get("title") or item.get("text", "")[:80]
+        title = _escape_html((item.get("title") or item.get("text", ""))[:65])
         score = item.get("importance_score", 0)
         source = item.get("source", "")
         url = item.get("url", "")
+        point = item.get("point") or item.get("summary_ja", "")
 
-        lines.append(f"\n<b>{i}. {_escape_html(title[:70])}</b>")
-        lines.append(f"   Score: {score:.1f} | Source: {source}")
+        lines.append(f"\n<b>{i}. {title}</b>")
+        lines.append(f"   {source}  |  スコア {score:.1f}")
+        if point:
+            lines.append(f"   <i>{_escape_html(point[:80])}</i>")
         if url and url.startswith("http"):
-            lines.append(f"   {url}")
+            lines.append(f"   <a href=\"{url}\">記事を読む</a>")
 
     return "\n".join(lines)
 
 
 def build_drafts_message(date: str) -> str | None:
     """Xドラフト通知メッセージを構築する"""
-    # ドラフトを読み込む
     drafts_path = LATEST_DIR / "latest_x_drafts.json"
     if not drafts_path.exists():
         return None
@@ -146,33 +149,34 @@ def build_drafts_message(date: str) -> str | None:
         return None
 
     lines = []
-    lines.append(f"<b>X Draft Candidates</b>")
-    lines.append(f"<code>{len(drafts)}本</code> generated")
+    lines.append(f"<b>X 投稿ドラフト  {len(drafts)} 本</b>")
     lines.append("")
 
-    # 緊急度高のドラフトを優先表示
+    # 緊急度高 → 中 の順で最大5本表示
     high = [d for d in drafts if d.get("urgency") == "high"]
     medium = [d for d in drafts if d.get("urgency") == "medium"]
+    show_drafts = (high + medium)[:5]
 
-    show_drafts = (high + medium)[:8]
+    urgency_label = {"high": "急", "medium": "推", "low": ""}
 
     for i, draft in enumerate(show_drafts, 1):
-        urgency = {"high": "!!!", "medium": "!", "low": ""}.get(draft.get("urgency", ""), "")
+        urgency = urgency_label.get(draft.get("urgency", ""), "")
         style = draft.get("style_label", "")
-        text = draft.get("draft_text", "")[:200]
+        text = _escape_html(draft.get("draft_text", "")[:220])
 
-        lines.append(f"<b>#{i} [{style}] {urgency}</b>")
-        lines.append(f"<code>{_escape_html(text)}</code>")
+        label = f"[{urgency}]" if urgency else ""
+        lines.append(f"<b>#{i} {label} {style}</b>")
+        lines.append(f"{text}")
         lines.append("")
 
     if len(drafts) > len(show_drafts):
-        lines.append(f"<i>... and {len(drafts) - len(show_drafts)} more drafts</i>")
+        lines.append(f"<i>他 {len(drafts) - len(show_drafts)} 本は Notion で確認できます</i>")
 
     return "\n".join(lines)
 
 
 def build_summary_message(date: str) -> str | None:
-    """1メッセージのコンパクトサマリーを構築する"""
+    """コンパクトサマリーを構築する（--compact オプション用）"""
     processed_path = PROCESSED_DIR / date / "processed_articles.json"
     if not processed_path.exists():
         return None
@@ -186,20 +190,19 @@ def build_summary_message(date: str) -> str | None:
     sources = stats.get("sources", [])
 
     lines = []
-    lines.append(f"<b>AI News {date}</b>")
-    lines.append(f"{len(items)}件 / {len(sources)}ソース")
+    lines.append(f"<b>AI News  {date}</b>")
+    lines.append(f"<code>{len(items)} 件  |  {len(sources)} ソース</code>")
     lines.append("")
 
-    # トップ3トピック
+    lines.append("<b>トピック</b>")
     for topic in topics[:3]:
-        lines.append(f"  <b>{topic['topic']}</b> ({topic['count']})")
+        lines.append(f"  <b>{_escape_html(topic['topic'])}</b>  {topic['count']}件")
 
     lines.append("")
-
-    # トップ3記事（タイトルのみ）
+    lines.append("<b>注目記事</b>")
     for i, item in enumerate(items[:3], 1):
-        title = item.get("title") or item.get("text", "")[:60]
-        lines.append(f"{i}. {_escape_html(title[:60])}")
+        title = _escape_html((item.get("title") or item.get("text", ""))[:60])
+        lines.append(f"{i}. {title}")
 
     return "\n".join(lines)
 

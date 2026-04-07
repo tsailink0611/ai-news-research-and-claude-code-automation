@@ -22,9 +22,13 @@ from config import PROCESSED_DIR, today_str
 NOTION_API_KEY = os.getenv("NOTION_API_KEY", "")
 NOTION_AI_DB_ID = os.getenv("NOTION_AI_DB_ID", "")
 NOTION_NFC_DB_ID = os.getenv("NOTION_NFC_DB_ID", "")
-# カテゴリー別サブページ整理用（設定するとDB直下ではなくカテゴリーページ配下に保存）
+# 親ページ設定（設定するとサブページ階層で保存）
 NOTION_AI_PARENT_PAGE_ID = os.getenv("NOTION_AI_PARENT_PAGE_ID", "")
 NOTION_NFC_PARENT_PAGE_ID = os.getenv("NOTION_NFC_PARENT_PAGE_ID", "")
+
+# 固定サブページ名
+DAILY_SECTION_TITLE = "📆 日別アーカイブ"
+CATEGORY_SECTION_TITLE = "📚 カテゴリー別ナレッジ"
 
 # NFC系判定キーワード
 NFC_KEYWORDS = [
@@ -171,44 +175,106 @@ def title_exists_in_db(notion: "Client", db_id: str, page_title: str) -> bool:
         return False
 
 
-# カテゴリーページのキャッシュ（1実行セッション内で再利用）
-_category_page_cache: dict[str, str] = {}
+# ページキャッシュ（1実行セッション内で再利用）
+_page_cache: dict[str, str] = {}
+
+# カテゴリー絵文字マップ
+CATEGORY_EMOJI = {
+    "LLM/Models":         "🧠",
+    "AI Agents":          "🤖",
+    "AI Tools & GitHub":  "🛠️",
+    "n8n/Automation":     "⚡",
+    "MCP/Tools":          "🔧",
+    "RAG/Knowledge":      "📚",
+    "Prompt Engineering": "✏️",
+    "Japan AI Business":  "🏢",
+    "Japan AI Industry":  "🇯🇵",
+    "Other":              "📌",
+    "NFC / Global":       "🌐",
+    "NFC / Japan":        "🇯🇵",
+    "NFC / China":        "🇨🇳",
+    "NFC / USA":          "🇺🇸",
+    "NFC / Europe":       "🇪🇺",
+}
+
+
+def _find_child_page(notion: "Client", parent_id: str, title: str) -> str:
+    """親ページ配下から指定タイトルの子ページIDを探す"""
+    try:
+        children = notion.blocks.children.list(block_id=parent_id)
+        for block in children.get("results", []):
+            if block.get("type") == "child_page":
+                if block.get("child_page", {}).get("title", "") == title:
+                    return block["id"]
+    except Exception:
+        pass
+    return ""
+
+
+def get_or_create_subpage(notion: "Client", parent_id: str, title: str,
+                           icon_emoji: str = "📁", description: str = "") -> str:
+    """サブページを取得または作成する（キャッシュ付き）"""
+    cache_key = f"{parent_id}::{title}"
+    if cache_key in _page_cache:
+        return _page_cache[cache_key]
+
+    # 既存ページを探す
+    page_id = _find_child_page(notion, parent_id, title)
+    if page_id:
+        _page_cache[cache_key] = page_id
+        return page_id
+
+    # 新規作成
+    try:
+        children_blocks = []
+        if description:
+            children_blocks.append({
+                "object": "block",
+                "type": "callout",
+                "callout": {
+                    "rich_text": [{"type": "text", "text": {"content": description}}],
+                    "icon": {"emoji": icon_emoji},
+                    "color": "blue_background",
+                }
+            })
+
+        new_page = notion.pages.create(
+            parent={"page_id": parent_id},
+            icon={"type": "emoji", "emoji": icon_emoji},
+            properties={
+                "title": {"title": [{"text": {"content": title}}]}
+            },
+            children=children_blocks if children_blocks else [],
+        )
+        page_id = new_page["id"]
+        _page_cache[cache_key] = page_id
+        try:
+            print(f"[notion] ページ作成: {title}")
+        except UnicodeEncodeError:
+            print(f"[notion] page created: {title.encode('ascii', errors='replace').decode()}")
+        return page_id
+    except Exception as e:
+        try:
+            print(f"[notion] ページ作成失敗 ({title}): {e}")
+        except UnicodeEncodeError:
+            pass
+        return ""
+
+
+def get_or_create_date_page(notion: "Client", parent_id: str, date_str: str) -> str:
+    """日付ページを取得または作成する（例: 2026-04-07）"""
+    title = f"{date_str}"
+    return get_or_create_subpage(
+        notion, parent_id, title,
+        icon_emoji="📅",
+        description=f"{date_str} のAIニュースまとめ",
+    )
 
 
 def get_or_create_category_page(notion: "Client", parent_page_id: str, category: str) -> str:
-    """カテゴリー用サブページのIDを取得（なければ作成）する"""
-    cache_key = f"{parent_page_id}::{category}"
-    if cache_key in _category_page_cache:
-        return _category_page_cache[cache_key]
-
-    # 既存の子ページを検索
-    try:
-        children = notion.blocks.children.list(block_id=parent_page_id)
-        for block in children.get("results", []):
-            if block.get("type") == "child_page":
-                title = block.get("child_page", {}).get("title", "")
-                if title == category:
-                    page_id = block["id"]
-                    _category_page_cache[cache_key] = page_id
-                    return page_id
-    except Exception:
-        pass
-
-    # 存在しなければ作成
-    try:
-        new_page = notion.pages.create(
-            parent={"page_id": parent_page_id},
-            properties={
-                "title": {"title": [{"text": {"content": category}}]}
-            }
-        )
-        page_id = new_page["id"]
-        _category_page_cache[cache_key] = page_id
-        print(f"[notion] カテゴリーページ作成: {category}")
-        return page_id
-    except Exception as e:
-        print(f"[notion] カテゴリーページ作成失敗 ({category}): {e}")
-        return ""
+    """カテゴリーページを取得または作成する"""
+    emoji = CATEGORY_EMOJI.get(category, "📁")
+    return get_or_create_subpage(notion, parent_page_id, category, icon_emoji=emoji)
 
 
 def _make_blocks(meta: dict) -> list:
@@ -330,17 +396,51 @@ def create_ai_page(notion: "Client", db_id: str, item: dict) -> bool:
         "en_title": title,
     })
 
-    # 親ページが設定されている場合はカテゴリーページ配下に保存
+    # 親ページが設定されている場合はデュアル階層で保存
+    # ※日付ページはパイプライン実行日（今日）で固定
     if NOTION_AI_PARENT_PAGE_ID:
-        cat_page_id = get_or_create_category_page(notion, NOTION_AI_PARENT_PAGE_ID, category)
-        if cat_page_id:
-            notion.pages.create(
-                parent={"page_id": cat_page_id},
-                properties={
-                    "title": {"title": [{"text": {"content": page_title[:2000]}}]}
-                },
-                children=blocks
-            )
+        run_date = today_str()
+        saved = False
+
+        # ── 📆 日別アーカイブ: 日付 → カテゴリー → 記事 ──────────────
+        daily_section_id = get_or_create_subpage(
+            notion, NOTION_AI_PARENT_PAGE_ID, DAILY_SECTION_TITLE,
+            icon_emoji="📆", description="日別のAIニュースアーカイブ",
+        )
+        if daily_section_id:
+            date_page_id = get_or_create_date_page(notion, daily_section_id, run_date)
+            if date_page_id:
+                cat_page_id = get_or_create_category_page(notion, date_page_id, category)
+                if cat_page_id:
+                    notion.pages.create(
+                        parent={"page_id": cat_page_id},
+                        properties={
+                            "title": {"title": [{"text": {"content": page_title[:2000]}}]}
+                        },
+                        children=blocks
+                    )
+                    saved = True
+
+        # ── 📚 カテゴリー別ナレッジ: カテゴリー → 日付 → 記事 ──────────
+        cat_section_id = get_or_create_subpage(
+            notion, NOTION_AI_PARENT_PAGE_ID, CATEGORY_SECTION_TITLE,
+            icon_emoji="📚", description="カテゴリー別のAIナレッジベース",
+        )
+        if cat_section_id:
+            top_cat_page_id = get_or_create_category_page(notion, cat_section_id, category)
+            if top_cat_page_id:
+                date_page_id2 = get_or_create_date_page(notion, top_cat_page_id, run_date)
+                if date_page_id2:
+                    notion.pages.create(
+                        parent={"page_id": date_page_id2},
+                        properties={
+                            "title": {"title": [{"text": {"content": page_title[:2000]}}]}
+                        },
+                        children=blocks
+                    )
+                    saved = True
+
+        if saved:
             return True
 
     # フォールバック: DB直下に保存
@@ -389,18 +489,51 @@ def create_nfc_page(notion: "Client", db_id: str, item: dict) -> bool:
         "en_title": title,
     })
 
-    # 親ページが設定されている場合は地域別カテゴリーページ配下に保存
+    # 親ページが設定されている場合はデュアル階層で保存
     if NOTION_NFC_PARENT_PAGE_ID:
+        run_date = today_str()
         cat_label = f"NFC / {region}"
-        cat_page_id = get_or_create_category_page(notion, NOTION_NFC_PARENT_PAGE_ID, cat_label)
-        if cat_page_id:
-            notion.pages.create(
-                parent={"page_id": cat_page_id},
-                properties={
-                    "title": {"title": [{"text": {"content": page_title[:2000]}}]}
-                },
-                children=blocks
-            )
+        saved = False
+
+        # ── 📆 日別アーカイブ: 日付 → 地域カテゴリー → 記事 ────────────
+        daily_section_id = get_or_create_subpage(
+            notion, NOTION_NFC_PARENT_PAGE_ID, DAILY_SECTION_TITLE,
+            icon_emoji="📆", description="日別のNFCニュースアーカイブ",
+        )
+        if daily_section_id:
+            date_page_id = get_or_create_date_page(notion, daily_section_id, run_date)
+            if date_page_id:
+                cat_page_id = get_or_create_category_page(notion, date_page_id, cat_label)
+                if cat_page_id:
+                    notion.pages.create(
+                        parent={"page_id": cat_page_id},
+                        properties={
+                            "title": {"title": [{"text": {"content": page_title[:2000]}}]}
+                        },
+                        children=blocks
+                    )
+                    saved = True
+
+        # ── 📚 カテゴリー別ナレッジ: 地域カテゴリー → 日付 → 記事 ────────
+        cat_section_id = get_or_create_subpage(
+            notion, NOTION_NFC_PARENT_PAGE_ID, CATEGORY_SECTION_TITLE,
+            icon_emoji="📚", description="地域別のNFCナレッジベース",
+        )
+        if cat_section_id:
+            top_cat_page_id = get_or_create_category_page(notion, cat_section_id, cat_label)
+            if top_cat_page_id:
+                date_page_id2 = get_or_create_date_page(notion, top_cat_page_id, run_date)
+                if date_page_id2:
+                    notion.pages.create(
+                        parent={"page_id": date_page_id2},
+                        properties={
+                            "title": {"title": [{"text": {"content": page_title[:2000]}}]}
+                        },
+                        children=blocks
+                    )
+                    saved = True
+
+        if saved:
             return True
 
     # フォールバック: DB直下に保存

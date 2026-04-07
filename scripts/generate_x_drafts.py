@@ -1,11 +1,13 @@
 """
-Xドラフト量産スクリプト
-保存済みデータから20〜30本のX投稿ドラフトを生成する。
-Claude API が利用可能な場合は、最終ドラフトをAIで磨き上げる。
+Xドラフト管理スクリプト
+summarize_for_x.py（3エージェント）が生成した summaries を読み込み、
+選定・保存・Markdown整形を担当する。
+
+Claude API 呼び出しはここでは行わない（全て summarize_for_x.py 側で完結）。
 
 使い方:
     python scripts/generate_x_drafts.py
-    python scripts/generate_x_drafts.py --date 2026-04-06 --count 30
+    python scripts/generate_x_drafts.py --date 2026-04-06 --count 10
 """
 import json
 import sys
@@ -17,17 +19,8 @@ sys.path.insert(0, str(Path(__file__).parent))
 from config import (
     PROCESSED_DIR, DAILY_DIR, LATEST_DIR, X_DRAFTS_DIR,
     MAX_X_DRAFTS, X_CHAR_LIMIT, DRAFT_STYLES,
-    ANTHROPIC_API_KEY, CLAUDE_MODEL,
     ensure_dirs_for_today, today_str
 )
-
-
-def _get_claude_client():
-    """Anthropic クライアントを生成する"""
-    if not ANTHROPIC_API_KEY:
-        return None
-    import anthropic
-    return anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
 
 
 def load_summaries(date: str) -> list[dict]:
@@ -98,71 +91,6 @@ def select_best_drafts(summaries: list[dict], count: int = 30) -> list[dict]:
                 break
 
     return selected[:count]
-
-
-def polish_drafts_with_claude(drafts: list[dict], client) -> list[dict]:
-    """Claude API でドラフトを一括レビュー・人間らしい日本語に改善する"""
-    if not client or not drafts:
-        return drafts
-
-    print(f"[X-DRAFTS] {len(drafts)} 本を人間らしい文章にブラッシュアップ中...")
-
-    drafts_text = ""
-    for i, d in enumerate(drafts):
-        drafts_text += f"\n[{i}] topic={d.get('topic', '')} style={d.get('style_label', '')}\n"
-        drafts_text += d.get("draft_text", "") + "\n"
-
-    prompt = f"""X（旧Twitter）投稿の日本語を見直してください。
-AI生成っぽさを消して、実際にその業界を知っている人が書いたような自然な文体にしてください。
-
-## 改善ルール（必ず守ること）
-- 最大280文字以内を厳守
-- ハッシュタグは末尾に2〜3個（#AI は必須）
-- 以下の表現を使わない：「画期的」「革新的」「注目」「必見」「衝撃」「ですね」「ですよね」「〜してみた」
-- 【速報】【解説】のようなブラケット見出しを使わない
-- 「です・ます」調だが単調にならないよう語尾を変化させる
-- 絵文字は使わない
-- 具体的な内容・数値・事実を必ず1つ入れる
-- 「AIがすごい」「重要です」などの空虚な表現を避ける
-- 読んだ人が「なるほど」「へえ」と思える実質的な情報を入れる
-- 各ドラフトの内容は変えず、表現だけを自然にする
-
-## 対象ドラフト
-{drafts_text}
-
-## 出力形式（JSONのみ、説明不要）
-[{{"index": 0, "draft_text": "改善後テキスト"}}, ...]"""
-
-    try:
-        response = client.messages.create(
-            model=CLAUDE_MODEL,
-            max_tokens=3000,
-            messages=[{"role": "user", "content": prompt}],
-        )
-        content = response.content[0].text.strip()
-
-        if content.startswith("```"):
-            content = content.split("\n", 1)[1]
-            content = content.rsplit("```", 1)[0]
-
-        improvements = json.loads(content)
-
-        improved_count = 0
-        for imp in improvements:
-            idx = imp.get("index", -1)
-            new_text = imp.get("draft_text", "")
-            if 0 <= idx < len(drafts) and new_text:
-                drafts[idx]["draft_text"] = new_text[:X_CHAR_LIMIT]
-                drafts[idx]["char_count"] = len(drafts[idx]["draft_text"])
-                drafts[idx]["polished_by"] = "claude"
-                improved_count += 1
-
-        print(f"[X-DRAFTS] {improved_count}/{len(drafts)} 本を改善")
-
-    except Exception as e:
-        print(f"[X-DRAFTS] polish失敗: {e}（元のドラフトを使用）")
-
-    return drafts
 
 
 def format_drafts_markdown(drafts: list[dict], date: str) -> str:
@@ -274,13 +202,7 @@ def run(date: str | None = None, count: int | None = None) -> list[dict]:
 
     drafts = select_best_drafts(summaries, count)
 
-    # Claude API でドラフトを磨き上げ
-    client = _get_claude_client()
-    if client:
-        drafts = polish_drafts_with_claude(drafts, client)
-    else:
-        print("[X-DRAFTS] Skipping AI polish (set ANTHROPIC_API_KEY for better drafts)")
-
+    # 3エージェントによる仕上げは summarize_for_x.py 側で完了済み
     markdown = format_drafts_markdown(drafts, date)
     save_drafts(drafts, markdown, date)
 
