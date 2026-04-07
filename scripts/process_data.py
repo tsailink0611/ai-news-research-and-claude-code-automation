@@ -19,6 +19,7 @@ from config import (
     FRONTIER_KEYWORDS, PROPOSAL_INDUSTRY_KEYWORDS,
     PROPOSAL_TOOL_KEYWORDS, PROPOSAL_SUBSIDY_KEYWORDS,
 )
+from db import get_supabase, upsert_article, create_pipeline_run, close_pipeline_run
 
 
 def load_raw_data(date: str) -> list[dict]:
@@ -225,6 +226,9 @@ def process(date: str | None = None) -> dict:
     else:
         (PROCESSED_DIR / date).mkdir(parents=True, exist_ok=True)
 
+    supabase = get_supabase()
+    run_id = create_pipeline_run(supabase, date, trigger_type="cron")
+
     items = load_raw_data(date)
     if not items:
         print("[PROCESS] No items to process")
@@ -232,6 +236,17 @@ def process(date: str | None = None) -> dict:
 
     items = deduplicate(items)
     items = enrich_items(items)
+
+    # Supabase upsert（失敗してもパイプラインを止めない）
+    try:
+        for item in items:
+            article_id = upsert_article(supabase, item, date)
+            item["supabase_id"] = article_id
+        upserted_count = sum(1 for i in items if i.get("supabase_id") is not None)
+        print(f"[PROCESS] Supabase upserted: {upserted_count}/{len(items)} articles")
+    except Exception as e:
+        print(f"[PROCESS] Supabase upsert error (skipped): {e}")
+
     items.sort(key=lambda x: x.get("importance_score", 0), reverse=True)
     topics = extract_topics(items)
 
@@ -252,6 +267,15 @@ def process(date: str | None = None) -> dict:
     with open(filepath, "w", encoding="utf-8") as f:
         json.dump(result, f, ensure_ascii=False, indent=2)
     print(f"[PROCESS] Saved {len(items)} processed items to {filepath}")
+
+    close_pipeline_run(
+        supabase, run_id, status="success",
+        articles_raw=len(items),
+        articles_processed=len(items),
+        block_a_count=sum(1 for i in items if i.get("output_block") == "A"),
+        block_b_count=sum(1 for i in items if i.get("output_block") == "B"),
+        block_c_count=sum(1 for i in items if i.get("output_block") == "C"),
+    )
 
     return result
 
