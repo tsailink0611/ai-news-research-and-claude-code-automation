@@ -96,6 +96,10 @@ SERPAPI_KEY = os.getenv("SERPAPI_KEY", "")
 # X API (ブックマーク取得用)
 X_BEARER_TOKEN = os.getenv("X_BEARER_TOKEN", "")
 
+# Supabase（canonical store）
+SUPABASE_URL = os.getenv("SUPABASE_URL", "")
+SUPABASE_KEY = os.getenv("SUPABASE_KEY", "")
+
 # Telegram Bot（プッシュ通知用）
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "")
 TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "")
