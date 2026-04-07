@@ -104,6 +104,45 @@ TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "")
 MAX_X_DRAFTS = int(os.getenv("MAX_X_DRAFTS", "10"))
 X_CHAR_LIMIT = 280
 
+# ─── 二層レーン定義 ──────────────────────────────────────────────
+# Frontier Radar: 先端探索・R&D・未来の商材候補
+FRONTIER_SOURCES = {
+    "TechCrunch AI", "VentureBeat AI", "The Verge AI", "Ars Technica Tech",
+    "MIT Tech Review AI", "Simon Willison", "Latent Space", "Import AI",
+    "TheSequence", "HuggingFace Blog", "GitHub Trending",
+    "HackerNews", "Reddit", "Product Hunt", "China SNS",
+}
+
+# Proposal Radar: 今すぐ提案に使える国内事例・ツール・業種情報
+PROPOSAL_SOURCES = {
+    "ITmedia AI+", "AINOW", "日経クロステック",
+    "Zenn AI", "Qiita AI",
+    "Google Trends", "SerpApi", "X Bookmarks",
+}
+
+# Frontier Score 計算用キーワード
+FRONTIER_KEYWORDS = [
+    "llm", "agent", "mcp", "rag", "embedding", "transformer", "fine-tun",
+    "benchmark", "architecture", "open source", "release", "github", "model",
+    "arxiv", "research", "multimodal", "reasoning", "autonomous", "agentic",
+    "中国", "china", "alibaba", "tencent", "baidu", "wechat",
+    "plugin", "extension", "workflow", "automation tool",
+]
+
+# Proposal Score 計算用キーワード
+PROPOSAL_INDUSTRY_KEYWORDS = [
+    "不動産", "建設", "製造", "士業", "中小企業", "smb", "工務店",
+    "ショールーム", "内覧", "施工", "受発注", "現場",
+]
+PROPOSAL_TOOL_KEYWORDS = [
+    "n8n", "dify", "chatbot", "チャットボット", "自動化", "ノーコード",
+    "ローコード", "rpa", "業務効率", "業務自動化", "工数削減", "コスト削減",
+    "導入事例", "活用事例", "成功事例",
+]
+PROPOSAL_SUBSIDY_KEYWORDS = [
+    "補助金", "助成金", "it導入", "ものづくり補助", "公募", "申請", "交付",
+]
+
 # ドラフトスタイル定義
 DRAFT_STYLES = {
     "breaking": {"label": "速報型", "description": "速報・最新ニュースを端的に伝える"},
