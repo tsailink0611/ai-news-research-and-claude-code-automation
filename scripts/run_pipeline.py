@@ -216,7 +216,7 @@ STEPS = {
     "notify": step_notify,
 }
 
-ALL_STEPS = ["fetch", "influencers", "process", "digest", "summarize", "drafts", "dashboard", "enrich", "notion", "notify"]
+ALL_STEPS = ["fetch", "influencers", "process", "enrich", "digest", "summarize", "drafts", "dashboard", "notion", "notify"]
 
 
 def run_pipeline(steps: list[str] | None = None):
