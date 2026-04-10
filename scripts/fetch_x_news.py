@@ -29,12 +29,11 @@ def search_x_news(query: str = "AI", limit: int = 20) -> list[dict]:
         try:
             return _fetch_via_grok(query, limit)
         except Exception as e:
-            print(f"[X-NEWS] Grok API error: {e}")
-            print("[X-NEWS] Falling back to mock data.")
-            return _get_mock_x_data(query)
+            print(f"[X-NEWS] Grok API error: {e} → スキップ")
+            return []
     else:
-        print("[X-NEWS] NOTE: Using mock data. Set GROK_API_KEY in .env for real data.")
-        return _get_mock_x_data(query)
+        print("[X-NEWS] GROK_API_KEY未設定 → スキップ（モックデータは使用しない）")
+        return []
 
 
 def _fetch_via_grok(query: str, limit: int) -> list[dict]:

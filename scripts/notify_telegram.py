@@ -212,6 +212,46 @@ def build_drafts_message(date: str) -> str | None:
     return "\n".join(lines)
 
 
+def build_influencer_message(date: str) -> str | None:
+    """AIインフルエンサーの直近投稿ハイライトを構築する"""
+    influencer_path = Path(__file__).parent.parent / "data" / "raw" / date / "ai_influencers_raw.json"
+    if not influencer_path.exists():
+        return None
+
+    try:
+        with open(influencer_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+    except Exception:
+        return None
+
+    posts = data.get("posts", [])
+    if not posts:
+        return None
+
+    # 重要度5 → 4 → いいね数の順で上位5件
+    posts = sorted(posts, key=lambda x: (x.get("importance", 0), x.get("likes", 0)), reverse=True)
+    top = posts[:5]
+
+    lines = []
+    lines.append(f"<b>AI インフルエンサー速報 (48h)  {len(posts)} 件</b>")
+    lines.append("")
+
+    for i, post in enumerate(top, 1):
+        author = _escape_html(post.get("author", ""))
+        topic = _escape_html(post.get("topic", ""))
+        imp = post.get("importance", 1)
+        likes = post.get("likes", 0)
+        text_ja = _escape_html(post.get("text_ja", "") or post.get("text", "")[:100])
+        hours_ago = post.get("posted_hours_ago", "?")
+        stars = "★" * min(imp, 5)
+
+        lines.append(f"<b>{i}. {author}</b>  {stars}  {likes:,}♥  {hours_ago}h前")
+        lines.append(f"   [{topic}] {text_ja[:120]}")
+        lines.append("")
+
+    return "\n".join(lines)
+
+
 def build_summary_message(date: str) -> str | None:
     """コンパクトサマリーを構築する（--compact オプション用）"""
     processed_path = PROCESSED_DIR / date / "processed_articles.json"
@@ -304,8 +344,15 @@ def notify(date: str | None = None, compact: bool = False) -> bool:
         print("[TELEGRAM] No data to send")
         return False
 
-    # フル版: ダイジェスト + ドラフト候補
+    # フル版: インフルエンサー速報 + ダイジェスト + ドラフト候補
     success = True
+
+    influencer_msg = build_influencer_message(date)
+    if influencer_msg:
+        if send_message(influencer_msg):
+            print("[TELEGRAM] Influencer highlights sent")
+        else:
+            success = False
 
     digest_msg = build_digest_message(date)
     if digest_msg:

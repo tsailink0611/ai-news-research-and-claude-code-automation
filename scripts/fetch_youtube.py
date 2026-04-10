@@ -23,26 +23,39 @@ YT_SEARCH_URL = "https://www.googleapis.com/youtube/v3/search"
 YT_VIDEOS_URL = "https://www.googleapis.com/youtube/v3/videos"
 
 DEFAULT_QUERIES = [
-    "AI news today",
-    "Claude Code tutorial",
-    "GPT new features",
-    "AI agents framework",
+    "AI news this week",
+    "Claude AI latest",
+    "ChatGPT OpenAI news",
+    "AI agents 2025",
     "LLM benchmark comparison",
+    "Andrej Karpathy AI",
+    "Sam Altman OpenAI",
+    "Google DeepMind AI research",
+    "AI coding tools cursor windsurf",
+    "local LLM ollama 2025",
 ]
+
+# 人気AIYouTuberチャンネルID（直接検索用）
+AI_INFLUENCER_CHANNELS = {
+    "Lex Fridman": "UCSHZKyawb77ixDdsGog4iWA",
+    "Two Minute Papers": "UCbfYPyITQ-7l4upoX8nvctg",
+    "Yannic Kilcher": "UCZHmQk67mSJgfCCTn7xBfew",
+    "AI Explained": "UCNJ1Ymd5yFuUPtn21xtRbbw",
+    "Matt Wolfe": "UCkCJ9-4FkADOz_n_hCHbQ2A",
+}
 
 
 def search_videos(query: str, limit: int = 5) -> list[dict]:
     """YouTube Data API v3 で動画を検索する"""
     if not YOUTUBE_API_KEY:
-        print(f"[YOUTUBE] NOTE: Using mock data. Set YOUTUBE_API_KEY in .env for real data.")
-        return _get_mock_data(query)
+        print(f"[YOUTUBE] YOUTUBE_API_KEY未設定 → スキップ（モックデータは使用しない）")
+        return []
 
     try:
         return _search_via_api(query, limit)
     except Exception as e:
-        print(f"[YOUTUBE] API error: {e}")
-        print("[YOUTUBE] Falling back to mock data.")
-        return _get_mock_data(query)
+        print(f"[YOUTUBE] API error: {e} → スキップ")
+        return []
 
 
 def _search_via_api(query: str, limit: int) -> list[dict]:
@@ -51,7 +64,7 @@ def _search_via_api(query: str, limit: int) -> list[dict]:
         "part": "snippet",
         "q": query,
         "type": "video",
-        "order": "viewCount",
+        "order": "date",
         "maxResults": limit,
         "relevanceLanguage": "en",
         "publishedAfter": _recent_date(),
@@ -138,7 +151,7 @@ def _get_transcript(video_id: str) -> str | None:
 def _recent_date() -> str:
     """7日前のISO日付を返す"""
     from datetime import timedelta
-    dt = datetime.now() - timedelta(days=7)
+    dt = datetime.now() - timedelta(days=2)
     return dt.strftime("%Y-%m-%dT00:00:00Z")
 
 
@@ -192,6 +205,53 @@ def _get_mock_data(query: str) -> list[dict]:
     ]
 
 
+def fetch_from_channels(limit: int = 3) -> list[dict]:
+    """人気AIチャンネルから直近48時間の動画を取得する"""
+    if not YOUTUBE_API_KEY:
+        return []
+
+    all_videos = []
+    seen_ids = set()
+    for channel_name, channel_id in AI_INFLUENCER_CHANNELS.items():
+        params = {
+            "part": "snippet",
+            "channelId": channel_id,
+            "type": "video",
+            "order": "date",
+            "maxResults": limit,
+            "publishedAfter": _recent_date(),
+            "key": YOUTUBE_API_KEY,
+        }
+        try:
+            resp = requests.get(YT_SEARCH_URL, params=params, timeout=15)
+            resp.raise_for_status()
+            data = resp.json()
+            for item in data.get("items", []):
+                vid = item["id"]["videoId"]
+                if vid in seen_ids:
+                    continue
+                seen_ids.add(vid)
+                snippet = item.get("snippet", {})
+                all_videos.append({
+                    "id": vid,
+                    "title": snippet.get("title", ""),
+                    "text": snippet.get("description", "")[:500],
+                    "url": f"https://www.youtube.com/watch?v={vid}",
+                    "channel": channel_name,
+                    "published_at": snippet.get("publishedAt", ""),
+                    "views": 0,
+                    "likes": 0,
+                    "comments": 0,
+                    "score": 50,
+                    "topic": _extract_topic(snippet.get("title", "")),
+                    "source": "youtube_influencer",
+                })
+            print(f"[YOUTUBE] {channel_name}: {len(data.get('items', []))} 件")
+        except Exception as e:
+            print(f"[YOUTUBE] {channel_name} error: {e}")
+    return all_videos
+
+
 def fetch_all(queries: list[str] | None = None, limit: int = 5) -> list[dict]:
     """複数クエリで一括検索"""
     if queries is None:
@@ -206,6 +266,15 @@ def fetch_all(queries: list[str] | None = None, limit: int = 5) -> list[dict]:
             if v["id"] not in seen_ids:
                 seen_ids.add(v["id"])
                 all_videos.append(v)
+
+    # 人気チャンネルから直近動画を追加
+    channel_videos = fetch_from_channels(limit=3)
+    for v in channel_videos:
+        if v["id"] not in seen_ids:
+            seen_ids.add(v["id"])
+            all_videos.append(v)
+    if channel_videos:
+        print(f"[YOUTUBE] インフルエンサーチャンネル: +{len(channel_videos)} 件")
 
     print(f"[YOUTUBE] Total: {len(all_videos)} unique videos")
     return all_videos
