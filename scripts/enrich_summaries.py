@@ -17,7 +17,7 @@ from config import PROCESSED_DIR, today_str, ANTHROPIC_API_KEY, CLAUDE_MODEL
 
 HAIKU_MODEL = "claude-haiku-4-5-20251001"
 BATCH_SIZE = 5  # 1回のAPIコールで処理する記事数
-TOP_N = 60      # 要約対象の上位N件（スコア順）
+TOP_N = 40      # 要約対象の上位N件（スコア順）
 
 
 def build_batch_prompt(articles: list) -> str:

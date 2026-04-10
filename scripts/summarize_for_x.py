@@ -19,9 +19,11 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 from config import (
     PROCESSED_DIR, DAILY_DIR, X_CHAR_LIMIT,
-    DRAFT_STYLES, ANTHROPIC_API_KEY, CLAUDE_MODEL,
+    DRAFT_STYLES, ANTHROPIC_API_KEY,
     ensure_dirs_for_today, today_str
 )
+
+CLAUDE_MODEL = "claude-haiku-4-5-20251001"  # コスト最適化: Haiku使用
 from db import get_supabase, insert_x_draft, get_current_run_id
 
 TOP_N_FOR_X = 10  # X向けに絞る記事数
