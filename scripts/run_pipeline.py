@@ -191,8 +191,21 @@ def step_notify():
     return success
 
 
+def step_influencers():
+    """Step X: AIインフルエンサー投稿取得（Grok API）"""
+    print("\n" + "=" * 60)
+    print("STEP X: AIインフルエンサー投稿取得（Grok API）")
+    print("=" * 60)
+
+    from fetch_ai_influencers import run as fetch_inf
+    results = fetch_inf(hours=48)
+    print(f"\n  AIインフルエンサー投稿: {len(results)} 件")
+    return results
+
+
 STEPS = {
     "fetch": step_fetch,
+    "influencers": step_influencers,
     "process": step_process,
     "digest": step_digest,
     "summarize": step_summarize,
@@ -203,7 +216,7 @@ STEPS = {
     "notify": step_notify,
 }
 
-ALL_STEPS = ["fetch", "process", "digest", "summarize", "drafts", "dashboard", "enrich", "notion", "notify"]
+ALL_STEPS = ["fetch", "influencers", "process", "enrich", "digest", "summarize", "drafts", "dashboard", "notion", "notify"]
 
 
 def run_pipeline(steps: list[str] | None = None):
