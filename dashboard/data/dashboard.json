@@ -1,34 +1,33 @@
 {
-  "generated_at": "2026-04-10T22:30:54.824247",
+  "generated_at": "2026-04-11T22:25:47.210974",
   "available_dates": [
-    "2026-04-10"
+    "2026-04-11"
   ],
-  "latest_date": "2026-04-10",
+  "latest_date": "2026-04-11",
   "stats": {
     "total_dates": 1,
-    "total_articles": 179,
+    "total_articles": 169,
     "total_drafts": 10,
     "sources": [
-      "serpapi",
-      "producthunt_mock",
-      "HuggingFace Blog",
-      "Simon Willison",
-      "Ars Technica Tech",
-      "Qiita AI",
-      "ITmedia AI+",
-      "AINOW",
       "x_bookmarks_mock",
-      "MIT Tech Review AI",
-      "日経クロステック",
       "google_trends",
-      "GitHub Trending",
-      "VentureBeat AI",
-      "hackernews",
-      "TechCrunch AI",
-      "china_mock",
-      "The Verge AI",
       "Latent Space",
-      "Zenn AI"
+      "Simon Willison",
+      "china_mock",
+      "hackernews",
+      "日経クロステック",
+      "MIT Tech Review AI",
+      "TechCrunch AI",
+      "GitHub Trending",
+      "producthunt_mock",
+      "AINOW",
+      "ITmedia AI+",
+      "serpapi",
+      "HuggingFace Blog",
+      "VentureBeat AI",
+      "The Verge AI",
+      "Zenn AI",
+      "Ars Technica Tech"
     ]
   },
   "topics": [
@@ -100,8 +99,8 @@
       "source": "producthunt_mock",
       "url": "",
       "topic": "AI Agents",
-      "summary_ja": "AgentFlowはノーコードで自律型AIエージェントを構築できるプラットフォームです。ビジュアルワークフロービルダーを使用することで、プログラミング知識がなくてもAI自動化の実装が可能になります。複雑なAI処理を直感的に設計・実行できる点が特徴です。",
-      "point": "ノーコードでAIエージェント開発が実現。技術者以外でもAI自動化を構築可能。"
+      "summary_ja": "AgentFlowは、コードを書かずに自律型AIエージェントを構築できるプラットフォームです。ビジュアルワークフロービルダーを使用することで、AI自動化を直感的に設計・実装できます。技術的なハードルを取り除き、より多くのユーザーがAI自動化を活用できるようにします。",
+      "point": "ノーコードでAIエージェント構築が可能。AI自動化の民主化を実現。"
     },
     {
       "title": "AICodeAssist Pro",
@@ -109,8 +108,8 @@
       "source": "producthunt_mock",
       "url": "",
       "topic": "AI Coding",
-      "summary_ja": "AICodeAssist ProはAI駆動のコード品質改善ツールです。VS CodeやJetBrainsなどの主要IDEと統合でき、自動的にコードレビューとリファクタリングを実施します。開発生産性向上と品質管理の効率化を実現します。",
-      "point": "IDEに統合されたAIコード審査ツール。開発効率と品質管理が向上。"
+      "summary_ja": "AICodeAssist Proは、AI駆動のコードレビューとリファクタリングツールです。VS CodeおよびJetBrainsIDEと統合され、開発プロセスにシームレスに組み込めます。開発効率向上とコード品質改善を自動化します。",
+      "point": "IDEネイティブなAI支援により開発効率を大幅改善。主流エディタに対応。"
     },
     {
       "title": "RAGBuilder",
@@ -118,8 +117,8 @@
       "source": "producthunt_mock",
       "url": "",
       "topic": "RAG",
-      "summary_ja": "RAGBuilderは数分でプロダクション対応のRAG（検索拡張生成）パイプラインを構築できるツールです。任意のデータソースを任意のLLMに接続可能で、複雑なRAG実装を簡素化します。エンタープライズレベルのAIアプリケーション開発が容易になります。",
-      "point": "RAGパイプラインの迅速構築。多様なデータソース・LLM対応で柔軟性が高い。"
+      "summary_ja": "RAGBuilderは、本番環境対応のRAG（検索拡張生成）パイプラインを数分で構築できるツールです。任意のデータソースと任意のLLMを接続でき、複雑なセットアップなしに実装可能です。企業向けAIアプリケーション開発を加速します。",
+      "point": "本番環境対応RAGの迅速な構築が可能。柔軟なデータソース・LLM統合。"
     },
     {
       "title": "Dify + n8n の組み合わせが最強。ノーコードでAIワークフロー自動化。月額$0で運用可能。",
@@ -127,8 +126,8 @@
       "source": "x_bookmarks_mock",
       "url": "",
       "topic": "Dify",
-      "summary_ja": "Difyとn8nの組み合わせにより、ノーコードでAIワークフローの自動化が実現できます。月額費用なしで運用可能な点が強調されており、企業のAI自動化導入の障壁が大幅に低下します。コスト効率の良いAI自動化ソリューションとして注目されています。",
-      "point": "完全無料でAIワークフロー自動化が可能。ノーコードで導入ハードルが低い。"
+      "summary_ja": "Difyとn8nの組み合わせにより、ノーコードでAIワークフローの自動化が実現できます。この構成により、月額0ドルで実運用可能な環境を構築することができ、コスト効率に優れたAI自動化ソリューションとなります。",
+      "point": "完全無料でAI自動化ワークフロー構築可能。ノーコード×オープンソース最強組合。"
     },
     {
       "title": "ローカルLLM比較：Qwen3-8BがGPT-3.5を完全に超えた。しかもM1 Macで動く。時代変わったな。",
@@ -136,8 +135,8 @@
       "source": "x_bookmarks_mock",
       "url": "",
       "topic": "Local LLM",
-      "summary_ja": "ローカル実行可能なLLM「Qwen3-8B」がGPT-3.5の性能を上回ったという比較結果です。M1 Macでも動作するため、クラウド依存からの脱却が進みます。ローカルLLMの実用化が本格化し、プライバシーやコスト面でのメリットが現実化しています。",
-      "point": "ローカルLLMがクラウド型を超える性能を達成。エッジ実行が実用的に。"
+      "summary_ja": "ローカルで動作するQwen3-8BモデルがGPT-3.5を性能面で上回る段階に達しました。M1 Macなどのハードウェアでも実行可能になり、クラウドLLMへの依存が減少しています。ローカルLLM時代の到来を示す重要な転換点です。",
+      "point": "オープンソースLLMがクラウド主流モデルを超越。プライバシー・独立性向上。"
     },
     {
       "title": "VoiceClone Studio",
@@ -145,8 +144,8 @@
       "source": "producthunt_mock",
       "url": "",
       "topic": "AI Voice",
-      "summary_ja": "VoiceClone Studioは、わずか30秒の音声サンプルから任意の声を複製できるAIツール。リアルタイムの声変換機能を備えており、ストリーミング配信や音声通話での利用を想定している。高度な音声技術により、自然な声の再現が可能。",
-      "point": "わずか30秒の音声で声を複製でき、ストリーム配信や通話で即座に利用できる実用性が革新的"
+      "summary_ja": "VoiceClone Studioは、わずか30秒の音声サンプルから任意の声をクローンできるツール。リアルタイム音声変換機能を備えており、ストリーミングや通話での利用を想定している。音声合成技術の実用化例として注目される。",
+      "point": "短時間の音声サンプルで高精度な声のクローン化が可能。ストリーミング配信での応用価値が高い。"
     },
     {
       "title": "DeepSeek-V3开源：性能超越GPT-4o的国产大模型",
@@ -154,8 +153,8 @@
       "source": "china_mock",
       "url": "",
       "topic": "DeepSeek",
-      "summary_ja": "DeepSeekがV3版本を発表し、複数のベンチマークテストでOpenAIのGPT-4oの性能を上回ったと報告。国産の大規模言語モデルとして、AIの性能競争において中国企業が大きな進展を遂行した重要なマイルストーン。",
-      "point": "中国産LLMがGPT-4oを性能で超越し、グローバルなAI競争構図の変化を示唆"
+      "summary_ja": "DeepSeekがV3版本を発表。複数のベンチマークテストでGPT-4oの性能を上回る結果を達成した。中国国産の大規模言語モデルとしての地位を確立し、AI技術の国際競争における進展を示す重要なマイルストーンとなっている。",
+      "point": "OpenAIの主力モデルを性能で超える国産LLMの登場。AI開発の地政学的シフトを示唆。"
     },
     {
       "title": "通义千问Qwen3发布：支持200种语言",
@@ -163,8 +162,8 @@
       "source": "china_mock",
       "url": "",
       "topic": "Qwen",
-      "summary_ja": "アリババクラウドが通義千問（Qwen）の第3世代モデルを発表。200以上の言語に対応する多言語性能が特徴で、グローバル展開への対応力を大幅に強化。既存モデルからの大幅な機能拡張を実現。",
-      "point": "200言語対応により、グローバル市場での利用範囲が大幅に拡大し多言語AIの新基準を提示"
+      "summary_ja": "アリババクラウドが通義千問Qwen3シリーズモデルをリリース。200種類の言語対応により、グローバル展開での利用が大きく拡大する。多言語対応は国際的なAI応用の最重要課題であり、実用性の飛躍的向上を意味する。",
+      "point": "200言語対応で圧倒的な多言語性能を実現。グローバルAI利用の障壁を大きく低減。"
     },
     {
       "title": "Kimi推出AI搜索功能 挑战百度搜索",
@@ -172,8 +171,8 @@
       "source": "china_mock",
       "url": "",
       "topic": "Kimi",
-      "summary_ja": "Kimiは月之暗面が開発するAIプロダクト。新たにAI検索機能を追加し、中国最大手の検索エンジンである百度への対抗を開始。従来の検索エンジンとAI技術の融合による新しい検索体験を提供。",
-      "point": "AI検索で既存の百度に挑戦し、検索エンジン領域でのAI活用の新展開を創出"
+      "summary_ja": "月之暗面のKimiがAI検索機能を新たに追加し、バイドゥの検索エンジンに対抗。従来の検索結果の羅列ではなく、AI が自動的に質問を理解し最適な回答を提供する方式に転換。検索体験の根本的な改革を示唆している。",
+      "point": "AI搜索で従来の検索エンジンの競争構図を変える。ユーザー体験の質的向上。"
     },
     {
       "title": "智谱GLM-5发布 国产Agent能力大幅提升",
@@ -181,8 +180,8 @@
       "source": "china_mock",
       "url": "",
       "topic": "GLM",
-      "summary_ja": "智谱AIがGLM-5を発表。特にAIエージェント機能の大幅な強化に注力しており、国産AIの自律的な意思決定・行動能力を向上。エンタープライズ用途での実用性が飛躍的に向上。",
-      "point": "AIエージェント能力の強化により、自律的で複雑なタスク処理の実現が加速"
+      "summary_ja": "智谱AI がGLM-5を発表。AI Agent能力の大幅強化に注力している。複雑なタスクの自動実行や自律的な意思決定機能が向上し、エンタープライズ向けAI活用シーンでの応用性が大きく拡大。実務的価値を高める開発方向性。",
+      "point": "エージェント機能の大幅強化で自動化・自律判断が可能に。企業向けAI活用が加速。"
     },
     {
       "title": "MCPサーバーの自作方法をまとめた。TypeScriptで書けるので意外と簡単。GitHub連携が捗る。",
@@ -190,8 +189,8 @@
       "source": "x_bookmarks_mock",
       "url": "",
       "topic": "MCP",
-      "summary_ja": "MCPサーバーの自作方法について解説した記事。TypeScriptを使用することで実装が簡単であることを強調している。MCPサーバーを自作することでGitHub連携などの作業効率が向上することが紹介されている。",
-      "point": "MCPサーバーをTypeScriptで簡単に自作でき、開発効率が向上する実用的な知見"
+      "summary_ja": "MCPサーバーの自作方法について解説した記事。TypeScriptで実装でき、想像以上にシンプルに構築できることが特徴。GitHub連携などの拡張機能を活用することで、開発ワークフローの効率化が期待できる。",
+      "point": "MCPサーバーの構築がTypeScriptで容易になり、GitHub連携などの自動化が実現できる点が重要。"
     },
     {
       "title": "DesignAI",
@@ -199,281 +198,257 @@
       "source": "producthunt_mock",
       "url": "",
       "topic": "AI Design",
-      "summary_ja": "DesignAIは、テキスト説明から本番環境対応のUIデザインを自動生成するツール。Figmaプラグインも含まれており、デザイン制作プロセスを自動化・効率化することができる。",
-      "point": "テキスト入力でUIデザインを自動生成し、デザイナーの作業時間を大幅短縮"
+      "summary_ja": "DesignAIはテキスト説明から本番環境対応のUIデザインを自動生成するツール。Figmaプラグインが含まれており、デザイナーの作業効率を大幅に向上させる。AIを活用したデザイン自動化ソリューション。",
+      "point": "テキストから本番対応のUIを自動生成し、Figma連携で利便性が高い。デザイン業務の大幅な効率化を実現。"
     },
     {
-      "title": "百度文心一言4.5版本更新 支持实时联网搜索",
-      "score": 7.9,
-      "source": "china_mock",
-      "url": "",
-      "topic": "Baidu AI",
-      "summary_ja": "中国の大手AI企業Baiduが開発した大規模言語モデル「文心一言」がバージョン4.5にアップデート。リアルタイムネット検索機能をサポートするようになり、より最新の情報を活用できるようになった。",
-      "point": "リアルタイムネット検索機能により、最新情報を含む回答が可能に"
-    },
-    {
-      "title": "I still prefer MCP over skills",
-      "score": 7.71,
+      "title": "Starfling: A one-tap endless orbital slingshot game in a single HTML file",
+      "score": 8.12,
       "source": "hackernews",
-      "url": "https://david.coffee/i-still-prefer-mcp-over-skills/",
+      "url": "https://playstarfling.com",
       "topic": "",
-      "summary_ja": "MCPがスキル機能よりも優れているという主張を述べた記事。MCPプロトコルの柔軟性と拡張性がスキルベースのアプローチより実用的であることを論じている。AI統合の設計思想の比較検討。",
-      "point": "MCPプロトコルがAIシステム統合の新しいスタンダードとして注目される"
+      "summary_ja": "Starflingは単一のHTMLファイルで実装されたワンタップ操作の無限軌道スリングショットゲーム。シンプルながら高度なゲーム体験をブラウザで提供するミニマルなWeb実装例。",
+      "point": "単一HTMLファイルという制約下で高度なゲーム体験を実現。Web開発の効率性と可能性を示す。"
+    },
+    {
+      "title": "Small models also found the vulnerabilities that Mythos found",
+      "score": 8.0,
+      "source": "hackernews",
+      "url": "https://aisle.com/blog/ai-cybersecurity-after-mythos-the-jagged-frontier",
+      "topic": "",
+      "summary_ja": "MyThos以外の小規模AIモデルもサイバーセキュリティの脆弱性発見に成功したという研究報告。大規模モデルだけでなく小規模モデルにも能力があることが実証され、セキュリティ分野でのAI活用の可能性が拡大。",
+      "point": "小規模AIモデルでも脆弱性検出が可能と実証。低リソースでのセキュリティ自動化が現実的になった。"
     },
     {
       "title": "1D Chess",
-      "score": 7.12,
+      "score": 8.0,
       "source": "hackernews",
       "url": "https://rowan441.github.io/1dchess/chess.html",
       "topic": "",
-      "summary_ja": "1次元チェス（1D Chess）はブラウザで遊べるチェスの変種。通常のチェスを1次元の直線上でプレイするルール変更版で、シンプルながらも戦略性を持つゲーム。プログラミングやゲーム理論の研究題材として面白い。",
-      "point": "古典的なゲームを創意的にアレンジし、新しい遊び方を提案"
+      "summary_ja": "1D Chessは1次元化されたチェスゲームのインタラクティブな実装。従来の2次元チェスを1次元に変換した創意的なゲーム設計で、チェスの複雑性を新たな視点から探求する試み。",
+      "point": "チェスを1次元に再解釈した創造的なゲームデザイン。既存ゲームの再発明と簡素化の事例。"
     }
   ],
   "x_drafts_preview": [
     {
-      "text": "定型業務の自動化、プログラマー抜きで実現できる段階に来ました。AgentFlowはノーコードで自律型エージェントを構築。同業他社が既に導入を進めているツールから、あなたの会社はどの業務を自動化できるか。一度棚卸しする価値があります。#NoCode #AI",
+      "text": "AgentFlowのようなノーコードAIプラットフォームが普及する3ヶ月先には、営業事務の自動化が開発部門を通さず経営層で直接実行される組織が主流になる。社内で完結できるAI化のハードルはすでに消えている。#ノーコード #AI",
       "style": "解説",
       "style_key": "解説",
       "topic": "AI Agents",
       "urgency": "high",
-      "char_count": 127,
+      "char_count": 113,
       "recommended_use": "即時投稿推奨"
     },
     {
-      "text": "VS CodeへのAIコードレビュー統合で、開発チームの生産性が30～40%向上する現場が増えている。品質チェックの自動化だけで、開発速度と品質が両立する。既に導入企業では、その恩恵を受け始めているから、遅れは避けたい。#AI開発 #生産性",
+      "text": "コードレビューの時間を浪費していれば、競合他社にツール導入で先行される。IDE統合型レビューツールの自動化機能により、品質チェックと修正を自動で進める開発組織が今四半期中に増加する見込み。うちのチームは大丈夫か。#開発効率 #AI",
       "style": "実務",
       "style_key": "実務",
       "topic": "AI Coding",
       "urgency": "high",
-      "char_count": 120,
+      "char_count": 115,
       "recommended_use": "即時投稿推奨"
     },
     {
-      "text": "自社データをAIに学習させるRAG構築が数分で完成する時代。RAGBuilderなら複雑な技術を隠蔽します。エンタープライズAI導入のスピードが3～6ヶ月後に劇的に変わる可能性がある中、今から準備を始める企業が先行権を握ります。#RAG #AI",
+      "text": "社内データからAIアプリを数分で実装できる時代、外部委託の根拠は失われつつある。RAGBuilderなら複雑なセットアップが不要で、これまで難しかった企業向けAI開発が社内リソースで実現可能になった。実装コストが劇的に下がる転換点だ。#RAG #AI",
       "style": "速報",
       "style_key": "速報",
       "topic": "RAG",
       "urgency": "high",
-      "char_count": 122,
+      "char_count": 125,
       "recommended_use": "即時投稿推奨"
     },
     {
-      "text": "DifyとN8nを組み合わせると、月額費用ゼロでAI自動化が走るんです。既に導入している中小企業では、クラウドツール代を大幅削減しながらAI導入を実現。AI化＝高額投資という認識は、もう現実ではなくなった。#NoCode #AI",
-      "style": "実務",
-      "style_key": "実務",
+      "text": "AI自動化が「高額」という前提はもう古い。Difyとn8nで月額ゼロの本番運用が実現され、導入障壁は完全に消えた。スタートアップから中堅企業まで、判断基準は機能性だけ。コスト理由に見送った業務を見直す時期がきた。#ノーコード #AI",
+      "style": "比較",
+      "style_key": "比較",
       "topic": "Dify",
-      "urgency": "high",
-      "char_count": 114,
-      "recommended_use": "即時投稿推奨"
-    },
-    {
-      "text": "GPT-3.5を超える性能のLLMがローカル動作する段階へ。M1 MacでもDeepSeekクラスが実行可能。クラウド依存から脱却し、顧客データをサーバーに上げない体制を構築できるようになります。セキュリティ重視企業の選択肢は3～6ヶ月後、大きく広がります。#ローカルLLM #AI",
-      "style": "速報",
-      "style_key": "速報",
-      "topic": "Local LLM",
-      "urgency": "high",
-      "char_count": 141,
-      "recommended_use": "即時投稿推奨"
-    },
-    {
-      "text": "30秒の音声サンプルで任意の声を複製するVoiceClone技術が実用段階に入った。ストリーミング配信者や通話アプリでの活用は既に始まっています。カスタマーサポートの音声自動応答が自然になる時代は、もう目前だ。#音声AI #AI",
-      "style": "解説",
-      "style_key": "解説",
-      "topic": "AI Voice",
-      "urgency": "high",
-      "char_count": 114,
-      "recommended_use": "即時投稿推奨"
-    },
-    {
-      "text": "DeepSeek-V3はGPT-4oの性能を複数ベンチマークで上回りました。AI技術の競争環境が激変している今、経営層は選択肢の多さを理解した上で導入戦略を立て直さなければならない段階に来ています。#LLM競争 #AI",
-      "style": "速報",
-      "style_key": "速報",
-      "topic": "DeepSeek",
-      "urgency": "high",
-      "char_count": 109,
-      "recommended_use": "即時投稿推奨"
-    },
-    {
-      "text": "200言語対応のLLM・Qwen3が登場した。言語の壁がほぼ消滅することで、グローバル展開を考える中小企業の進出障壁が劇的に下がります。多言語カスタマーサービスの構築コストは3～6ヶ月後、大幅削減されるでしょう。#多言語AI #AI",
-      "style": "速報",
-      "style_key": "速報",
-      "topic": "Qwen",
       "urgency": "high",
       "char_count": 116,
       "recommended_use": "即時投稿推奨"
     },
     {
-      "text": "AI検索がスタンダード検索に真っ向から対抗する時代が始まった。Kimiが百度検索に挑戦を仕掛けている状況から、日本の中小企業にも波及するのは必至。自社サービスの検索機能をAI化する選択肢が増える事実を、今から抑えておくべきです。#AI検索 #AI",
+      "text": "Qwen3-8BがGPT-3.5を上回る性能でM1 Mac上で動く現実を前に、クラウドLLM依存の事業計画を問い直す必要が出ている。3〜6ヶ月後にはデータをローカル処理するAI環境が経営判断の標準選択肢になっているから。#ローカルLLM #AI",
+      "style": "速報",
+      "style_key": "速報",
+      "topic": "Local LLM",
+      "urgency": "high",
+      "char_count": 122,
+      "recommended_use": "即時投稿推奨"
+    },
+    {
+      "text": "30秒の音声サンプルで声クローンを生成する技術が実装段階へ入った。顧客対応や営業の音声自動化はもう「検討対象」ではなく、コールセンター業務やIVRシステムの設計段階で組み込むべき前提になっている。#音声自動化 #AI",
+      "style": "解説",
+      "style_key": "解説",
+      "topic": "AI Voice",
+      "urgency": "high",
+      "char_count": 108,
+      "recommended_use": "即時投稿推奨"
+    },
+    {
+      "text": "DeepSeek-V3がGPT-4oの性能を上回り、クラウドLLM依存の戦略見直しが必須課題になった。3〜6ヶ月後に国内企業がこのモデルの選択を本格検討する流れは既定路線。モデル選定プロセスを今から用意しておくべき時間軸だ。#生成AI #AI",
+      "style": "速報",
+      "style_key": "速報",
+      "topic": "DeepSeek",
+      "urgency": "high",
+      "char_count": 121,
+      "recommended_use": "即時投稿推奨"
+    },
+    {
+      "text": "200言語対応のQwen3登場により、海外展開の言語の壁は実務レベルで消える。多言語対応を理由に進出延期する経営判断の根拠は失われた。グローバル展開の検討を進める企業は、この技術実装を計画に組み込まなければならない段階。#グローバル化 #AI",
+      "style": "解説",
+      "style_key": "解説",
+      "topic": "Qwen",
+      "urgency": "high",
+      "char_count": 121,
+      "recommended_use": "即時投稿推奨"
+    },
+    {
+      "text": "検索エンジンに対抗する自動回答型AI検索が市場に出現した。3〜6ヶ月後、営業やリサーチプロセスそのものが変わることを前提に業務設計を見直す時期にきている。検索の働き方が変わる組織と取り残される組織の差が可視化される。#AI検索 #AI",
       "style": "速報",
       "style_key": "速報",
       "topic": "Kimi",
       "urgency": "high",
-      "char_count": 123,
+      "char_count": 117,
       "recommended_use": "即時投稿推奨"
     },
     {
-      "text": "自律的に複数タスクを判断・実行するAIエージェント能力が次元上昇。智谱GLM-5の登場です。エンタープライズ対応への現実化はあと数ヶ月。同業他社が導入準備を始める前に、自社の業務フローでAIエージェント化できる部分を洗い出しておく必要があります。#AIエージェント #AI",
+      "text": "GLM-5の自律実行能力が複雑な多段階タスクを完全自動化するレベルに到達した。競合他社がエンタープライズレベルで本運用を始める前に、自社の自動化候補業務を具体的に整理しておかなければ、導入速度で後手に回る。#AIエージェント #AI",
       "style": "解説",
       "style_key": "解説",
       "topic": "GLM",
       "urgency": "high",
-      "char_count": 136,
+      "char_count": 116,
       "recommended_use": "即時投稿推奨"
     }
   ],
-  "digest_preview": "# AI News Digest - 2026-04-10\n\n> Generated at 2026-04-10 22:30\n> Sources: serpapi, producthunt_mock, HuggingFace Blog, Simon Willison, Ars Technica Tech, Qiita AI, ITmedia AI+, AINOW, x_bookmarks_mock, MIT Tech Review AI, 日経クロステック, google_trends, GitHub Trending, VentureBeat AI, hackernews, TechCrunch AI, china_mock, The Verge AI, Latent Space, Zenn AI\n> Total articles: 179\n\n## 🔥 主要トピック\n\n1. **AI Agents** (スコア: 13.5, 1件)\n   - AgentFlow\n2. **AI Coding** (スコア: 13.0, 1件)\n   - AICodeAssist Pro\n3. **RAG** (スコア: 12.5, 5件)\n   - RAGBuilder\n4. **Dify** (スコア: 11.4, 1件)\n   - Dify + n8n の組み合わせが最強。ノーコードでAIワークフロー自動化。月額$0で運用可能。\n5. **Local LLM** (スコア: 10.9, 1件)\n   - ローカルLLM比較：Qwen3-8BがGPT-3.5を完全に超えた。しかもM1 Macで動く。時代変わったな。\n6. **AI Voice** (スコア: 10.9, 1件)\n   - VoiceClone Studio\n7. **DeepSeek** (スコア: 10.5, 3件)\n   - DeepSeek-V3开源：性能超越GPT-4o的国产大模型\n8. **Qwen** (スコア: 10.0, 1件)\n   - 通义千问Qwen3发布：支持200种语言\n\n## 📰 注目記事 TOP 10\n\n### 1. AgentFlow\n- **スコア**: 13.5 | **ソース**: producthunt_mock\n- **キーワード**: ai, agent, agent",
+  "digest_preview": "# AI News Digest - 2026-04-11\n\n> Generated at 2026-04-11 22:25\n> Sources: x_bookmarks_mock, google_trends, Latent Space, Simon Willison, china_mock, hackernews, 日経クロステック, MIT Tech Review AI, TechCrunch AI, GitHub Trending, producthunt_mock, AINOW, ITmedia AI+, serpapi, HuggingFace Blog, VentureBeat AI, The Verge AI, Zenn AI, Ars Technica Tech\n> Total articles: 169\n\n## 🔥 主要トピック\n\n1. **AI Agents** (スコア: 13.5, 1件)\n   - AgentFlow\n2. **AI Coding** (スコア: 13.0, 1件)\n   - AICodeAssist Pro\n3. **RAG** (スコア: 12.5, 5件)\n   - RAGBuilder\n4. **Dify** (スコア: 11.4, 1件)\n   - Dify + n8n の組み合わせが最強。ノーコードでAIワークフロー自動化。月額$0で運用可能。\n5. **Local LLM** (スコア: 10.9, 1件)\n   - ローカルLLM比較：Qwen3-8BがGPT-3.5を完全に超えた。しかもM1 Macで動く。時代変わったな。\n6. **AI Voice** (スコア: 10.9, 1件)\n   - VoiceClone Studio\n7. **DeepSeek** (スコア: 10.5, 3件)\n   - DeepSeek-V3开源：性能超越GPT-4o的国产大模型\n8. **Qwen** (スコア: 10.0, 1件)\n   - 通义千问Qwen3发布：支持200种语言\n\n## 📰 注目記事 TOP 10\n\n### 1. AgentFlow\n- **スコア**: 13.5 | **ソース**: producthunt_mock\n- **キーワード**: ai, agent, agents\n\n### 2. ",
   "articles_by_category": {
     "その他": [
       {
-        "title": "I still prefer MCP over skills",
-        "score": 7.71,
+        "title": "Starfling: A one-tap endless orbital slingshot game in a single HTML file",
+        "score": 8.12,
         "source": "hackernews",
-        "url": "https://david.coffee/i-still-prefer-mcp-over-skills/",
-        "summary_ja": "MCPがスキル機能よりも優れているという主張を述べた記事。MCPプロトコルの柔軟性と拡張性がスキルベースのアプローチより実用的であることを論じている。AI統合の設計思想の比較検討。",
-        "point": "MCPプロトコルがAIシステム統合の新しいスタンダードとして注目される"
+        "url": "https://playstarfling.com",
+        "summary_ja": "Starflingは単一のHTMLファイルで実装されたワンタップ操作の無限軌道スリングショットゲーム。シンプルながら高度なゲーム体験をブラウザで提供するミニマルなWeb実装例。",
+        "point": "単一HTMLファイルという制約下で高度なゲーム体験を実現。Web開発の効率性と可能性を示す。"
+      },
+      {
+        "title": "Small models also found the vulnerabilities that Mythos found",
+        "score": 8.0,
+        "source": "hackernews",
+        "url": "https://aisle.com/blog/ai-cybersecurity-after-mythos-the-jagged-frontier",
+        "summary_ja": "MyThos以外の小規模AIモデルもサイバーセキュリティの脆弱性発見に成功したという研究報告。大規模モデルだけでなく小規模モデルにも能力があることが実証され、セキュリティ分野でのAI活用の可能性が拡大。",
+        "point": "小規模AIモデルでも脆弱性検出が可能と実証。低リソースでのセキュリティ自動化が現実的になった。"
       },
       {
         "title": "1D Chess",
-        "score": 7.12,
+        "score": 8.0,
         "source": "hackernews",
         "url": "https://rowan441.github.io/1dchess/chess.html",
-        "summary_ja": "1次元チェス（1D Chess）はブラウザで遊べるチェスの変種。通常のチェスを1次元の直線上でプレイするルール変更版で、シンプルながらも戦略性を持つゲーム。プログラミングやゲーム理論の研究題材として面白い。",
-        "point": "古典的なゲームを創意的にアレンジし、新しい遊び方を提案"
+        "summary_ja": "1D Chessは1次元化されたチェスゲームのインタラクティブな実装。従来の2次元チェスを1次元に変換した創意的なゲーム設計で、チェスの複雑性を新たな視点から探求する試み。",
+        "point": "チェスを1次元に再解釈した創造的なゲームデザイン。既存ゲームの再発明と簡素化の事例。"
       },
       {
-        "title": "We've raised $17M to build what comes after Git",
-        "score": 6.51,
-        "source": "hackernews",
-        "url": "https://blog.gitbutler.com/series-a",
-        "summary_ja": "GitButlerが1700万ドルのシリーズA資金調達を発表。Gitの後継となるバージョン管理システムの開発を進める。分散型ワークフローの改善と開発者体験の向上を目指し、既存のGitを補完・拡張する新プラットフォームを構築中。",
-        "point": "Git後継の開発ツール登場。大型資金調達で本格化。開発フロー革新の可能性。"
-      },
-      {
-        "title": "WireGuard makes new Windows release following Microsoft signing resolution",
-        "score": 5.48,
-        "source": "hackernews",
-        "url": "https://lists.zx2c4.com/pipermail/wireguard/2026-April/009561.html",
-        "summary_ja": "WireGuardがMicrosoftのコード署名対応を経て、Windows向けの新バージョンをリリース。セキュリティ認証プロセスが完了し、Windowsユーザーが公式サポートされたVPN・暗号化通信ツールを利用可能になった。",
-        "point": "WireGuardのWindows正式対応。Microsoft署名取得で信頼性向上。VPN利用拡大へ。"
-      },
-      {
-        "title": "Molotov cocktail is hurled at home of Sam Altman",
-        "score": 4.68,
-        "source": "hackernews",
-        "url": "https://www.nytimes.com/2026/04/10/us/open-ai-sam-altman-molotov-cocktail.html",
-        "summary_ja": "OpenAIのCEOであるサム・アルトマン氏の自宅にモロトフカクテル（火炎瓶）が投げ込まれた。米国での暴力事件として報道。AI企業指導者への身辺警備リスクが浮き彫りになった。",
-        "point": "AI業界トップ経営者への暴力事件。社会的緊張の現れ。身辺警備問題顕在化。"
-      },
-      {
-        "title": "AI assistance when contributing to the Linux kernel",
-        "score": 3.26,
-        "source": "hackernews",
-        "url": "https://github.com/torvalds/linux/blob/master/Documentation/process/coding-assistants.rst",
-        "summary_ja": "Linuxカーネル開発でのAI支援ツール使用に関する公式ガイドライン。AIコーディングアシスタント（GitHub Copilotなど）の使用時の注意点、倫理的考慮、著作権問題への対応方針を記載。カーネルコントリビューターがAIツールを安全かつ責任を持って活用するための指針を提供。",
-        "point": "大規模OSSプロジェクトがAIアシスタント使用を公式に認め、ガイドライン化した重要な事例。"
-      },
-      {
-        "title": "Show HN: Marimo pair – Reactive Python notebooks as environments for agents",
-        "score": 3.24,
-        "source": "hackernews",
-        "url": "https://github.com/marimo-team/marimo-pair",
-        "summary_ja": "Marimo Pairは、リアクティブなPythonノートブック環境をAIエージェントのプラットフォームとして提供するツール。ノートブックの対話的な性質を活かし、エージェントが段階的に実行・検証できる環境を構築。データ分析やAI開発の迅速なプロトタイピングを実現。",
-        "point": "Pythonノートブックをエージェント実行環境として再発明し、対話的なAI開発を効率化。"
-      },
-      {
-        "title": "A new trick brings stability to quantum operations",
-        "score": 3.15,
-        "source": "hackernews",
-        "url": "https://ethz.ch/en/news-and-events/eth-news/news/2026/04/a-new-trick-brings-stability-to-quantum-operations.html",
-        "summary_ja": "量子コンピュータの動作安定性を向上させる新しい技術がETH（チューリッヒ工科大学）で開発された。量子演算の誤り率を低減し、より正確で安定した量子計算を可能にする新手法を実証。量子コンピュータの実用化に向けた重要な技術的進展。",
-        "point": "量子演算の安定性向上技術により、量子コンピュータの実用化に向けた大きな前進。"
-      },
-      {
-        "title": "A compelling title that is cryptic enough to get you to take action on it",
-        "score": 2.91,
-        "source": "hackernews",
-        "url": "https://ericwbailey.website/published/a-compelling-title-that-is-cryptic-enough-to-get-you-to-take-action-on-it/",
-        "summary_ja": "曖昧なタイトルがユーザーのクリック行動を促すメカニズムに関する記事。ウェブデザインやユーザー心理の観点から、タイトルの曖昧性がいかに注意を喚起し、行動につながるかを分析。メディアやマーケティングにおけるタイトル設計の重要性を探討。",
-        "point": "タイトルの曖昧性がユーザー行動に与える心理的影響を分析した、デザイン・UXの考察。"
-      },
-      {
-        "title": "Supply chain nightmare: How Rust will be attacked and what we can do to mitigate",
-        "score": 2.66,
-        "source": "hackernews",
-        "url": "https://kerkour.com/rust-supply-chain-nightmare",
-        "summary_ja": "Rustプログラミング言語のサプライチェーン攻撃の脅威について論じた記事。悪意のある依存関係やコンパイラの脆弱性を通じた攻撃シナリオを分析し、セキュリティ監査の強化、依存関係の最小化、署名検証などの緩和策を提案している。オープンソースエコシステムのセキュリティ課題に焦点を当てている。",
-        "point": "OSS生態系への供給チェーン攻撃の現実的な脅威と対策が詳細に解説される"
-      },
-      {
-        "title": "Launch HN: Twill.ai (YC S25) – Delegate to cloud agents, get back PRs",
-        "score": 2.58,
-        "source": "hackernews",
-        "url": "https://twill.ai",
-        "summary_ja": "YCombinatorbatch 25のスタートアップTwill.aiが発表。クラウドベースのAIエージェントに開発タスクを委譲すると、自動的にプルリクエスト（PR）として結果を返すサービス。開発効率化とコード品質向上を目指し、AIエージェント技術を実用化した新しい開発支援ツール。",
-        "point": "AIエージェントによるコード自動生成・PR作成という新しい開発ワークフロー実現"
-      },
-      {
-        "title": "HBO Obtains DMCA Subpoena to Unmask 'Euphoria' Spoiler Account on X",
-        "score": 2.26,
-        "source": "hackernews",
-        "url": "https://torrentfreak.com/hbo-obtains-dmca-subpoena-to-unmask-euphoria-spoiler-account-on-x/",
-        "summary_ja": "HBOがドラマシリーズ『Euphoria』のネタバレを投稿していたX（旧Twitter）アカウント所有者の身元開示を求めるDMCA訴追令状を取得。著作権侵害対策として法的手段を行使。ネタバレ行為と著作権保護の法的解釈が争点となり、オンラインコンテンツ保護の新しい事例となっている。",
-        "point": "著作権法（DMCA）がネタバレ対策にも適用される法的先例が確立される"
-      },
-      {
-        "title": "JSON Formatter Chrome Plugin Now Closed and Injecting Adware",
-        "score": 2.07,
+        "title": "JSON formatter Chrome plugin now closed and injecting adware",
+        "score": 5.36,
         "source": "hackernews",
         "url": "https://github.com/callumlocke/json-formatter",
-        "summary_ja": "人気のJSON Formatter Chromeプラグインが現在、閉鎖状態でアドウェアを注入している問題が報告された。GitHubで指摘されている。かつて有用なツールであったが、現在は悪意あるコードに改変され、ユーザーのブラウジングを妨害する。セキュリティリスク顕在化を警告する事例。",
-        "point": "人気Chrome拡張がアドウェア化。信頼できるツールもセキュリティ脅威に転じうることを示唆"
+        "summary_ja": "Chromeプラグイン「JSON formatter」が閉鎖され、アドウェアが注入されるセキュリティ問題が発生しました。このプラグインは以前は正当な開発者によって管理されていましたが、現在は悪意のあるアクターによって支配されている状態です。ユーザーはこのプラグインのアンインストールが推奨されます。",
+        "point": "広く使用されていたツールのセキュリティ侵害で、供給チェーン攻撃のリスクが顕在化"
+      },
+      {
+        "title": "Cirrus Labs to join OpenAI",
+        "score": 5.3,
+        "source": "hackernews",
+        "url": "https://cirruslabs.org/",
+        "summary_ja": "Cirrus Labsという企業・プロジェクトがOpenAIに買収・統合されることが発表されました。具体的な買収額や統合内容は明記されていませんが、OpenAIの技術チームの強化に向けた重要な動きと考えられます。Cirrus Labsの技術やチームがOpenAIの製品開発に活かされる見通しです。",
+        "point": "OpenAIが技術企業を買収し、AI開発体制を強化する重要な組織再編"
+      },
+      {
+        "title": "How We Broke Top AI Agent Benchmarks: And What Comes Next",
+        "score": 2.88,
+        "source": "hackernews",
+        "url": "https://rdi.berkeley.edu/blog/trustworthy-benchmarks-cont/",
+        "summary_ja": "バークレー大学の研究チームがAIエージェントの性能評価ベンチマークを突破した成果について報告。従来のベンチマークの限界を指摘し、より信頼性の高い評価方法の必要性を議論している。AIエージェント技術の急速な進化に対応した新しい評価基準の構築に向けた研究の方向性を提示。",
+        "point": "AIエージェント評価の信頼性向上。既存ベンチマークの問題点を明らかにし、より厳密な測定方法を提案"
+      },
+      {
+        "title": "Every plane you see in the sky – you can now follow it from the cockpit in 3D",
+        "score": 2.5,
+        "source": "hackernews",
+        "url": "https://flight-viz.com/cockpit.html?lat=40.64&lon=-73.78&alt=3000&hdg=220&spd=130&cs=DAL123",
+        "summary_ja": "航空機の3D可視化プラットフォーム。コックピット視点から他の航空機をリアルタイムで追跡・監視できるシステムの紹介。パイロットの状況認識向上やATC（航空交通管制）の効率化に貢献する可能性がある革新的なツール。",
+        "point": "航空安全の強化。コックピットからの360度リアルタイム可視化で状況認識が大幅向上"
+      },
+      {
+        "title": "Rockstar Games Hacked, Hackers Threaten a Massive Data Leak If Not Paid Ransom",
+        "score": 2.12,
+        "source": "hackernews",
+        "url": "https://kotaku.com/rockstar-games-reportedly-hacked-massive-data-leak-ransom-gta-6-shinyhunters-2000686858",
+        "summary_ja": "ロックスターゲームズがハッキング被害を受け、ハッカーが大規模データ流出を脅迫材料に身代金要求。GTA6を含む貴重な開発データが危機にさらされている。サイバーセキュリティと知的財産保護の重大な課題を浮き彫りにするインシデント。",
+        "point": "大手企業へのランサムウェア攻撃。ゲーム業界の重要な知的財産が流出の危機に直面"
+      },
+      {
+        "title": "Bevy game development tutorials and in-depth resources",
+        "score": 2.07,
+        "source": "hackernews",
+        "url": "https://taintedcoders.com/",
+        "summary_ja": "Bevyゲームエンジンに関する教育リソースとチュートリアルサイト。Rust言語ベースのゲーム開発フレームワークについて、初心者から上級者向けの詳細な学習教材を提供。モダンなゲーム開発手法の習得を支援する包括的なリソース集。",
+        "point": "ゲーム開発の学習リソース充実。Rustベースの次世代エンジン習得への道を整備"
+      },
+      {
+        "title": "Italo Calvino: A traveller in a world of uncertainty",
+        "score": 2.03,
+        "source": "hackernews",
+        "url": "https://www.historytoday.com/archive/portrait-author-historian/italo-calvino-traveller-world-uncertainty",
+        "summary_ja": "イタロ・カルヴィーノの人生と思想に関する歴史的評伝。不確実性の時代を生きた知識人としての彼の視点や執筆活動を分析。現代的な問題解決アプローチを示唆する思想家としての位置づけを論じている記事。",
+        "point": "文学思想の歴史的検証。不確実性への対峙方法としてのカルヴィーノの思考は現代に示唆深い"
       },
       {
         "title": "[AINews] Anthropic @ $30B ARR, Project GlassWing and Claude Mythos Preview — first model too dangerous to release since GPT-2",
         "score": 2.0,
         "source": "Latent Space",
         "url": "https://www.latent.space/p/ainews-anthropic-30b-arr-project",
-        "summary_ja": "Anthropicが年間経常収益300億ドルの評価を達成し、OpenAIのIPO課題に対抗する動きを強化。Project GlassWingとClaude Mythosプレビューを発表。同社は「GPT-2以来最も危険」とされるモデルのリリースを見送るなど、安全性を重視した開発姿勢を示している。",
-        "point": "Anthropicの急速な成長とOpenAIとの競争激化。AI安全性への慎重な対応が注目される。"
+        "summary_ja": "Anthropicが年間経常収益（ARR）で300億ドルの評価を達成。プロジェクト「GlassWing」とClaude Mythosプレビューを発表。同社は「GPT-2以来、リリースするには危険過ぎる」と判断した初のモデルを開発。OpenAIのIPO問題に対する攻勢を強化している。",
+        "point": "Anthropicの急速な成長とOpenAIとの競争激化。安全性を理由にした異なるアプローチ"
       },
       {
         "title": "Stalking victim sues OpenAI, claims ChatGPT fueled her abuser’s delusions and ignored her warnings",
         "score": 1.5,
         "source": "TechCrunch AI",
         "url": "https://techcrunch.com/2026/04/10/stalking-victim-sues-openai-claims-chatgpt-fueled-her-abusers-delusions-and-ignored-her-warnings/",
-        "summary_ja": "ストーキング被害者がOpenAIを提訴。ChatGPTが加害者の妄想を助長し、被害者の警告を無視したと主張。AI企業の社会的責任と安全対策の不備に関わる重要な法的訴訟事案。",
-        "point": "AI企業の社会的責任と安全性責任を問う重要な訴訟事案"
+        "summary_ja": "ストーキング被害者がOpenAIを訴訟。ChatGPTが加害者の妄想を助長し、被害者の警告を無視したと主張。AIの倫理的責任と安全性における企業の法的責任が問われる重要な訴訟。AIツールが現実世界の危害に与える影響が争点。",
+        "point": "AIツールが現実世界の危害を助長した責任を問う重要訴訟。企業の安全対策と倫理責任が問われる。"
       },
       {
         "title": "Anthropic launches Cowork, a Claude Desktop agent that works in your files — no coding required",
         "score": 1.5,
         "source": "VentureBeat AI",
         "url": "https://venturebeat.com/technology/anthropic-launches-cowork-a-claude-desktop-agent-that-works-in-your-files-no",
-        "summary_ja": "AnthropicがClaudeデスクトップ向けエージェント「Cowork」をリリース。ファイル操作を自動化し、コーディング不要でAIエージェント機能を提供。エンタープライズユーザーの業務効率化を実現。",
-        "point": "ノーコードでファイル自動操作可能なAIエージェント機能の提供開始"
+        "summary_ja": "Anthropicが「Cowork」をClaudeDesktopに搭載。ファイルを扱うAIエージェントで、コーディング不要で複数ファイル操作が可能。デスクトップAIアシスタントの実用性が大幅向上し、一般ユーザーへの利用障壁が低下。",
+        "point": "ノーコードでファイル操作できるAIエージェント。デスクトップAIの実用性向上が顕著。"
       },
       {
         "title": "ALTK‑Evolve: On‑the‑Job Learning for AI Agents",
         "score": 1.5,
         "source": "HuggingFace Blog",
         "url": "https://huggingface.co/blog/ibm-research/altk-evolve",
+        "summary_ja": "IBMがALTK‑Evolveを発表。AIエージェントが実運用中に学習・進化する技術を開発。従来の固定型AIではなく、タスク実行を通じて動的に能力を向上させるメカニズムを実現。エージェントの継続的な改善を可能に。",
+        "point": "AIエージェントがオンザジョブで自己学習。継続的な能力向上で実運用価値が大幅増加。"
+      },
+      {
+        "title": "Layoff Thinking",
+        "score": 1.18,
+        "source": "hackernews",
+        "url": "https://blogs.newardassociates.com/blog/2026/layoff-thinking.html",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "Molotov cocktail attack at OpenAI CEO Sam Altman's home",
-        "score": 1.11,
+        "title": "Apple Silicon and Virtual Machines: Beating the 2 VM Limit (2023)",
+        "score": 1.04,
         "source": "hackernews",
-        "url": "https://www.reuters.com/world/us/suspect-arrested-after-molotov-cocktail-attack-openai-ceo-sam-altmans-home-2026-04-10/",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "Combining spicy foods with mint boosts anti-inflammatory effects 100x or more",
-        "score": 1.02,
-        "source": "hackernews",
-        "url": "https://scitechdaily.com/this-spice-combo-could-slash-inflammation-hundreds-of-times-more-effectively/",
+        "url": "https://khronokernel.com/macos/2023/08/08/AS-VM.html",
         "summary_ja": "",
         "point": ""
       },
@@ -502,14 +477,6 @@
         "point": ""
       },
       {
-        "title": "Fear and loathing at OpenAI",
-        "score": 1.0,
-        "source": "The Verge AI",
-        "url": "https://www.theverge.com/podcast/909621/openai-sam-altman-drama-vergecast",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
         "title": "Extreme Harness Engineering for Token Billionaires: 1M LOC, 1B toks/day, 0% human code, 0% human review — Ryan Lopopolo, OpenAI Frontier & Symphony",
         "score": 1.0,
         "source": "Latent Space",
@@ -526,42 +493,26 @@
         "point": ""
       },
       {
-        "title": "The difficulty of making sure your website is broken",
-        "score": 0.9,
+        "title": "Cooperative Vectors Introduction",
+        "score": 0.88,
         "source": "hackernews",
-        "url": "https://letsencrypt.org/2026/04/10/test-sites.html",
+        "url": "https://www.evolvebenchmark.com/blog-posts/cooperative-vectors-introduction",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "We're running out of benchmarks to upper bound AI capabilities",
-        "score": 0.7,
+        "title": "AI Is Tipping the Scales Toward Hackers After Mythos Release",
+        "score": 0.66,
         "source": "hackernews",
-        "url": "https://www.lesswrong.com/posts/gfkJp8Mr9sBm83Rcz/we-re-actually-running-out-of-benchmarks-to-upper-bound-ai",
+        "url": "https://www.nbcnews.com/tech/security/anthropic-claude-mythos-ai-hackers-cybersecurity-vulnerabilities-rcna273673",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "I Hate Tailwind and Love Bootstrap",
-        "score": 0.64,
+        "title": "Democratic AI to serve the public – OneProject.org",
+        "score": 0.53,
         "source": "hackernews",
-        "url": "https://necromant2005.github.io/dev/why-i-hate-tailwind-and-love-bootstrap/",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "Bild AI (YC W25) Is Hiring a Founding Product Engineer",
-        "score": 0.51,
-        "source": "hackernews",
-        "url": "https://www.ycombinator.com/companies/bild-ai/jobs/dDMaxVN-founding-product-engineer",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "ChatGPT finally offers $100/month Pro plan",
-        "score": 0.5,
-        "source": "TechCrunch AI",
-        "url": "https://techcrunch.com/2026/04/09/chatgpt-pro-plan-100-month-codex/",
+        "url": "https://oneproject.org/how-to-make-ai-serve-the-public/",
         "summary_ja": "",
         "point": ""
       },
@@ -582,6 +533,14 @@
         "point": ""
       },
       {
+        "title": "Your article about AI doesn’t need AI art",
+        "score": 0.5,
+        "source": "The Verge AI",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/910460/new-yorker-david-szauder-illustration-generative-ai",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
         "title": "20-year-old man arrested for allegedly throwing a Molotov cocktail at Sam Altman’s house",
         "score": 0.5,
         "source": "The Verge AI",
@@ -594,22 +553,6 @@
         "score": 0.5,
         "source": "The Verge AI",
         "url": "https://www.theverge.com/ai-artificial-intelligence/909948/explosive-media-lego-iran-war-trump-netanyahu",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "Gen Z’s love-hate relationship with AI",
-        "score": 0.5,
-        "source": "The Verge AI",
-        "url": "https://www.theverge.com/ai-artificial-intelligence/909687/gen-z-doesnt-like-ai-gallup",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "Microsoft starts removing Copilot buttons from Windows 11 apps",
-        "score": 0.5,
-        "source": "The Verge AI",
-        "url": "https://www.theverge.com/news/909640/microsoft-removing-copilot-windows-11-buttons",
         "summary_ja": "",
         "point": ""
       },
@@ -638,10 +581,10 @@
         "point": ""
       },
       {
-        "title": "Meta's new model is Muse Spark, and meta.ai chat has some interesting tools",
+        "title": "[AINews] AI Engineer Europe 2026",
         "score": 0.5,
-        "source": "Simon Willison",
-        "url": "https://simonwillison.net/2026/Apr/8/muse-spark/#atom-everything",
+        "source": "Latent Space",
+        "url": "https://www.latent.space/p/ainews-ai-engineer-europe-2026",
         "summary_ja": "",
         "point": ""
       },
@@ -654,18 +597,10 @@
         "point": ""
       },
       {
-        "title": "[AINews] Gemma 4 crosses 2 million downloads",
-        "score": 0.5,
-        "source": "Latent Space",
-        "url": "https://www.latent.space/p/ainews-gemma-4-crosses-2-million",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "Simulating a 2D Quadcopter from Scratch",
-        "score": 0.13,
-        "source": "hackernews",
-        "url": "https://mrandri19.github.io/2026/04/03/2d-quadcopter-simulation.html",
+        "title": "Sam Altman responds to ‘incendiary’ New Yorker article after attack on his home",
+        "score": 0.0,
+        "source": "TechCrunch AI",
+        "url": "https://techcrunch.com/2026/04/11/sam-altman-responds-to-incendiary-new-yorker-article-after-attack-on-his-home/",
         "summary_ja": "",
         "point": ""
       },
@@ -682,6 +617,22 @@
         "score": 0.0,
         "source": "TechCrunch AI",
         "url": "https://techcrunch.com/2026/04/10/final-24-hours-save-up-to-500-on-your-techcrunch-disrupt-2026-pass/",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "My baby deer plushie told me that Mitski&#8217;s dad was a CIA operative",
+        "score": 0.0,
+        "source": "The Verge AI",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/910008/fawn-friends-ai-companion",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "How Iran out-shitposted the White House",
+        "score": 0.0,
+        "source": "The Verge AI",
+        "url": "https://www.theverge.com/policy/910401/iran-war-propaganda-blackout-lego-ai-slop",
         "summary_ja": "",
         "point": ""
       },
@@ -734,6 +685,22 @@
         "point": ""
       },
       {
+        "title": "SQLite 3.53.0",
+        "score": 0.0,
+        "source": "Simon Willison",
+        "url": "https://simonwillison.net/2026/Apr/11/sqlite/#atom-everything",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "SQLite Query Result Formatter Demo",
+        "score": 0.0,
+        "source": "Simon Willison",
+        "url": "https://simonwillison.net/2026/Apr/11/sqlite-qrf/#atom-everything",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
         "title": "Kākāpō parrots",
         "score": 0.0,
         "source": "Simon Willison",
@@ -748,14 +715,6 @@
         "url": "https://simonwillison.net/2026/Apr/9/github-repo-size/#atom-everything",
         "summary_ja": "",
         "point": ""
-      },
-      {
-        "title": "asgi-gzip 0.3",
-        "score": 0.0,
-        "source": "Simon Willison",
-        "url": "https://simonwillison.net/2026/Apr/9/asgi-gzip/#atom-everything",
-        "summary_ja": "",
-        "point": ""
       }
     ],
     "AI Tools & Repos": [
@@ -768,6 +727,14 @@
         "point": ""
       },
       {
+        "title": "[GitHub] K-Dense-AI / scientific-agent-skills",
+        "score": 1.06,
+        "source": "GitHub Trending",
+        "url": "https://github.com/K-Dense-AI/scientific-agent-skills",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
         "title": "[GitHub] NousResearch / hermes-agent",
         "score": 0.58,
         "source": "GitHub Trending",
@@ -776,32 +743,16 @@
         "point": ""
       },
       {
-        "title": "[GitHub] unslothai / unsloth",
+        "title": "[GitHub] thedotmack / claude-mem",
         "score": 0.58,
         "source": "GitHub Trending",
-        "url": "https://github.com/unslothai/unsloth",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "[GitHub] n8n-io / n8n",
-        "score": 0.58,
-        "source": "GitHub Trending",
-        "url": "https://github.com/n8n-io/n8n",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "[GitHub] coreyhaines31 / marketingskills",
-        "score": 0.57,
-        "source": "GitHub Trending",
-        "url": "https://github.com/coreyhaines31/marketingskills",
+        "url": "https://github.com/thedotmack/claude-mem",
         "summary_ja": "",
         "point": ""
       },
       {
         "title": "[GitHub] multica-ai / multica",
-        "score": 0.56,
+        "score": 0.57,
         "source": "GitHub Trending",
         "url": "https://github.com/multica-ai/multica",
         "summary_ja": "",
@@ -812,14 +763,6 @@
         "score": 0.56,
         "source": "GitHub Trending",
         "url": "https://github.com/Anil-matcha/Open-Higgsfield-AI",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "[GitHub] ChromeDevTools / chrome-devtools-mcp",
-        "score": 0.56,
-        "source": "GitHub Trending",
-        "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
         "summary_ja": "",
         "point": ""
       },
@@ -840,6 +783,22 @@
         "point": ""
       },
       {
+        "title": "[GitHub] coleam00 / Archon",
+        "score": 0.08,
+        "source": "GitHub Trending",
+        "url": "https://github.com/coleam00/Archon",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "[GitHub] forrestchang / andrej-karpathy-skills",
+        "score": 0.08,
+        "source": "GitHub Trending",
+        "url": "https://github.com/forrestchang/andrej-karpathy-skills",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
         "title": "[GitHub] HKUDS / DeepTutor",
         "score": 0.08,
         "source": "GitHub Trending",
@@ -856,18 +815,26 @@
         "point": ""
       },
       {
-        "title": "[GitHub] coleam00 / Archon",
-        "score": 0.08,
-        "source": "GitHub Trending",
-        "url": "https://github.com/coleam00/Archon",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
         "title": "[GitHub] shiyu-coder / Kronos",
         "score": 0.08,
         "source": "GitHub Trending",
         "url": "https://github.com/shiyu-coder/Kronos",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "[GitHub] QwenLM / qwen-code",
+        "score": 0.08,
+        "source": "GitHub Trending",
+        "url": "https://github.com/QwenLM/qwen-code",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "[GitHub] clash-verge-rev / clash-verge-rev",
+        "score": 0.08,
+        "source": "GitHub Trending",
+        "url": "https://github.com/clash-verge-rev/clash-verge-rev",
         "summary_ja": "",
         "point": ""
       },
@@ -880,14 +847,6 @@
         "point": ""
       },
       {
-        "title": "[GitHub] forrestchang / andrej-karpathy-skills",
-        "score": 0.07,
-        "source": "GitHub Trending",
-        "url": "https://github.com/forrestchang/andrej-karpathy-skills",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
         "title": "[GitHub] rowboatlabs / rowboat",
         "score": 0.07,
         "source": "GitHub Trending",
@@ -896,158 +855,52 @@
         "point": ""
       },
       {
-        "title": "[GitHub] jingyaogong / minimind",
-        "score": 0.07,
+        "title": "[GitHub] aloshdenny / reverse-SynthID",
+        "score": 0.05,
         "source": "GitHub Trending",
-        "url": "https://github.com/jingyaogong/minimind",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "[GitHub] YishenTu / claudian",
-        "score": 0.06,
-        "source": "GitHub Trending",
-        "url": "https://github.com/YishenTu/claudian",
+        "url": "https://github.com/aloshdenny/reverse-SynthID",
         "summary_ja": "",
         "point": ""
       },
       {
         "title": "[GitHub] jo-inc / camofox-browser",
-        "score": 0.05,
+        "score": 0.03,
         "source": "GitHub Trending",
         "url": "https://github.com/jo-inc/camofox-browser",
         "summary_ja": "",
         "point": ""
-      }
-    ],
-    "Japan Dev AI": [
-      {
-        "title": "全PRの83%をAIレビューだけでマージできるようにした",
-        "score": 3.76,
-        "source": "Zenn AI",
-        "url": "https://zenn.dev/a_thug/articles/e051583461c181",
-        "summary_ja": "開発チームがPRレビュープロセスを自動化し、全PRの83%をAIレビューのみでマージできるようにした事例。機械学習モデルを活用してコード品質を維持しながら、レビュー時間を大幅に短縮。自動化により開発効率が向上し、人間のレビュアーはより複雑なレビューに集中できるようになった。",
-        "point": "AIによるコードレビュー自動化で、レビュー時間を削減しながら品質を維持する具体的な実装例。"
       },
       {
-        "title": "RAGとAgentic Searchの戦争を 終わらせに来た!!!",
-        "score": 1.9,
-        "source": "Zenn AI",
-        "url": "https://zenn.dev/gleon/articles/d1aa5068b432f9",
-        "summary_ja": "RAG（検索拡張生成）とAgentic Search（エージェント型検索）の技術的差異と使い分けについて解説する記事。両アプローチの長所・短所を比較し、実装時の選択基準を提示することで、開発者の実装判断を支援するコンテンツ。",
-        "point": "RAGとエージェント型検索の技術的比較により、実装選択の指針を明確化"
-      },
-      {
-        "title": "社内業務をAIに開放 — 自社MCPサーバー群一挙公開！",
-        "score": 1.85,
-        "source": "Zenn AI",
-        "url": "https://zenn.dev/thujikun/articles/d9fc317c1336c2",
-        "summary_ja": "企業がMCP（Model Context Protocol）サーバーを独自開発し、社内業務をAIに開放する事例紹介。複数のMCPサーバー実装例を公開し、Claude等のAIモデルとの連携による業務自動化の実践方法を提示。",
-        "point": "MCPサーバーによる社内業務自動化の具体的実装パターンを公開"
-      },
-      {
-        "title": "デザインシステムを丸ごと Skills にする",
-        "score": 1.38,
-        "source": "Zenn AI",
-        "url": "https://zenn.dev/mugi/articles/design-system-skills",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "S3 Filesで消えるアーキテクチャ層、生まれるアーキテクチャ",
-        "score": 1.31,
-        "source": "Zenn AI",
-        "url": "https://zenn.dev/ikenyal/articles/b6ff5ea33c7a71",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "国土交通省提供の『地理空間MCP Server』を使ってお手軽にClaudeからの地理空間情報連携を試してみた",
-        "score": 1.22,
-        "source": "Zenn AI",
-        "url": "https://zenn.dev/shinyaa31/articles/ced30276b8d1ed",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "MCP vs Skills論争に決着をつける試み。AIエージェントの「拡張手段」を実装・設計・セキュリティで徹底比較する",
-        "score": 1.07,
-        "source": "Qiita AI",
-        "url": "https://qiita.com/miruky/items/32314a0d9eb8c154dc95",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "転職してエクセルファイルを読み解いてHTMLに変換する仕事をしていたが、悪役令嬢は出てこないし、勇者パーティーも追放されなかった話",
-        "score": 0.96,
-        "source": "Zenn AI",
-        "url": "https://zenn.dev/hiroyahorai/articles/c472e358412864",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "grill-me スキルがめちゃ良いので布教したい",
-        "score": 0.87,
-        "source": "Zenn AI",
-        "url": "https://zenn.dev/ryonakae/articles/8783c6b3ead2cb",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "Claudeの概要と設計思想から学んだこと",
-        "score": 0.56,
-        "source": "Qiita AI",
-        "url": "https://qiita.com/aito1234/items/c3ef3c71aad13fc78daf",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "「QAって何？」の認識を揃えたら、PdMもデザイナーもコードを書くチームになった話",
-        "score": 0.16,
-        "source": "Qiita AI",
-        "url": "https://qiita.com/hiroto_0411/items/0bef2cec758e25926e5d",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "エンジニア歴20年の私が、素人バイブコーディング勢に物申す",
-        "score": 0.06,
-        "source": "Qiita AI",
-        "url": "https://qiita.com/Akira-Isegawa/items/00f23d206c504db2ac3b",
+        "title": "[GitHub] codeforreal1 / compressO",
+        "score": 0.03,
+        "source": "GitHub Trending",
+        "url": "https://github.com/codeforreal1/compressO",
         "summary_ja": "",
         "point": ""
       }
     ],
     "Claude Code": [
       {
-        "title": "Google検索急上昇: claude code ultraplan",
-        "score": 2.0,
-        "source": "google_trends",
-        "url": "https://trends.google.com/trends/explore?q=claude code ultraplan",
-        "summary_ja": "Google検索で「claude code ultraplan」の検索量が1800%急増。Claude Codeに関連した新機能やアップデートへの高い関心を反映。開発者コミュニティにおけるAnthropicのClaudeに対する注目度の上昇を示す。",
-        "point": "Claude Codeの新機能への急速な注目度上昇。開発者の関心が高まっている。"
-      },
-      {
         "title": "Googleサジェスト: Claude Code 使い方",
         "score": 1.5,
         "source": "serpapi",
         "url": "https://www.google.com/search?q=Claude Code 使い方",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "Google検索急上昇: gemma 4",
-        "score": 1.5,
-        "source": "google_trends",
-        "url": "https://trends.google.com/trends/explore?q=gemma 4",
-        "summary_ja": "",
-        "point": ""
+        "summary_ja": "Google検索サジェストに「Claude Code 使い方」が表示。ユーザーのClaudeコード機能への関心が高まっていることを示す。Claude Code活用ニーズが急速に拡大している市場動向を反映。",
+        "point": "Claude Code機能への検索需要が急増。ユーザーの高い関心を示す市場動向。"
       },
       {
         "title": "Googleサジェスト: Claude Code 料金",
         "score": 1.4,
         "source": "serpapi",
         "url": "https://www.google.com/search?q=Claude Code 料金",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "Google検索急上昇: ultraplan claude code",
+        "score": 1.4,
+        "source": "google_trends",
+        "url": "https://trends.google.com/trends/explore?q=ultraplan claude code",
         "summary_ja": "",
         "point": ""
       },
@@ -1068,6 +921,22 @@
         "point": ""
       },
       {
+        "title": "Google検索急上昇: gemma 4",
+        "score": 1.25,
+        "source": "google_trends",
+        "url": "https://trends.google.com/trends/explore?q=gemma 4",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "Google検索急上昇: claude mythos",
+        "score": 1.25,
+        "source": "google_trends",
+        "url": "https://trends.google.com/trends/explore?q=claude mythos",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
         "title": "Googleサジェスト: Claude Code 比較",
         "score": 1.2,
         "source": "serpapi",
@@ -1080,14 +949,6 @@
         "score": 1.2,
         "source": "serpapi",
         "url": "https://example.com/2",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "Google検索急上昇: claude mythos",
-        "score": 1.18,
-        "source": "google_trends",
-        "url": "https://trends.google.com/trends/explore?q=claude mythos",
         "summary_ja": "",
         "point": ""
       },
@@ -1126,10 +987,10 @@
         "point": ""
       },
       {
-        "title": "28年までに生成AIアプリの4分の1にセキュリティ事故、MCP普及でリスク拡大――Gartner予測",
-        "score": 1.01,
-        "source": "ITmedia AI+",
-        "url": "https://www.itmedia.co.jp/aiplus/articles/2604/10/news117.html",
+        "title": "新モデル「Claude Mythos」の衝撃　数千の脆弱性を発見、一般公開せず",
+        "score": 0.51,
+        "source": "日経クロステック",
+        "url": "https://xtech.nikkei.com/atcl/nxt/column/18/00001/11660/",
         "summary_ja": "",
         "point": ""
       },
@@ -1138,14 +999,6 @@
         "score": 0.51,
         "source": "日経クロステック",
         "url": "https://xtech.nikkei.com/atcl/nxt/mag/nc/18/052100112/040200135/",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "「AIが本領を発揮するのは設計の『川中』」、日建設計の大松敦社長に聞く",
-        "score": 0.51,
-        "source": "日経クロステック",
-        "url": "https://xtech.nikkei.com/atcl/nxt/column/18/03573/040300004/",
         "summary_ja": "",
         "point": ""
       },
@@ -1182,10 +1035,18 @@
         "point": ""
       },
       {
-        "title": "「エリクソン、スパコンで脳を模倣」など5本",
+        "title": "ホンダの新型インサイト、日本投入　ベースは中国向けEV",
         "score": 0.4,
         "source": "日経クロステック",
-        "url": "https://xtech.nikkei.com/atcl/nxt/column/18/02928/040600091/",
+        "url": "https://xtech.nikkei.com/atcl/nxt/mag/at/18/00007/00207/",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "経産省、30社を「DX銘柄2026」に認定　3年連続選出のSMBCは500億円超投資、成果は？",
+        "score": 0.01,
+        "source": "ITmedia AI+",
+        "url": "https://www.itmedia.co.jp/business/articles/2604/11/news018.html",
         "summary_ja": "",
         "point": ""
       },
@@ -1198,14 +1059,80 @@
         "point": ""
       }
     ],
+    "Japan Dev AI": [
+      {
+        "title": "RAGとAgentic Searchの戦争を 終わらせに来た!!!",
+        "score": 1.95,
+        "source": "Zenn AI",
+        "url": "https://zenn.dev/gleon/articles/d1aa5068b432f9",
+        "summary_ja": "RAG（Retrieval-Augmented Generation）とAgentic Searchの相違や選択について技術的に解説。両者の競争構造を終わらせるアプローチを提示。Zennで高い評価を獲得した実践的な技術記事で、実装方針の判断材料を提供している。",
+        "point": "RAGとAgentic Searchの使い分けを明確化。実装時の選択肢提供"
+      },
+      {
+        "title": "Claude Code + Obsidian — Daily Note の下書きを自動生成し、週次・月次レビューまで積み上げる仕組みを作った",
+        "score": 1.81,
+        "source": "Zenn AI",
+        "url": "https://zenn.dev/s_hamabata/articles/b8da42a57bbc39",
+        "summary_ja": "Claude CodeとObsidianを組み合わせて、Daily Noteの自動生成、週次・月次レビューの自動積み上げを実現。AIによるノート管理の完全自動化を実装した事例。生産性向上のための実践的な統合ソリューション。",
+        "point": "LLMとノート管理ツールの統合で日々の記録と振り返りを自動化"
+      },
+      {
+        "title": "S3 Filesで消えるアーキテクチャ層、生まれるアーキテクチャ",
+        "score": 1.65,
+        "source": "Zenn AI",
+        "url": "https://zenn.dev/ikenyal/articles/b6ff5ea33c7a71",
+        "summary_ja": "Amazon S3 Filesの登場がアーキテクチャ層にもたらす変化についての考察。従来のファイルストレージ層が消失し、新しいアーキテクチャパターンが生まれるメカニズムを技術的に解説した記事。クラウドインフラの進化に伴う設計パラダイムシフトの重要性を指摘。",
+        "point": "クラウドネイティブアーキテクチャの進化。S3ファイルが基盤となることで従来の層構造が消失。"
+      },
+      {
+        "title": "デザインシステムを丸ごと Skills にする",
+        "score": 1.45,
+        "source": "Zenn AI",
+        "url": "https://zenn.dev/mugi/articles/design-system-skills",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "grill-me スキルがめちゃ良いので布教したい",
+        "score": 1.27,
+        "source": "Zenn AI",
+        "url": "https://zenn.dev/ryonakae/articles/8783c6b3ead2cb",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "転職してエクセルファイルを読み解いてHTMLに変換する仕事をしていたが、悪役令嬢は出てこないし、勇者パーティーも追放されなかった話",
+        "score": 1.24,
+        "source": "Zenn AI",
+        "url": "https://zenn.dev/hiroyahorai/articles/c472e358412864",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "DESIGN.md + 壊れたら気づくハーネス - AI向けデザインシステムを「維持できる仕組み」にした記録",
+        "score": 0.7,
+        "source": "Zenn AI",
+        "url": "https://zenn.dev/tsubotax/articles/7f0d3693f70e2f",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "お父さん、ゲーム作れるの？",
+        "score": 0.4,
+        "source": "Zenn AI",
+        "url": "https://zenn.dev/ienaga/articles/76a5098905c978",
+        "summary_ja": "",
+        "point": ""
+      }
+    ],
     "AI agent framework 2026": [
       {
         "title": "Googleサジェスト: AI agent framework 2026 使い方",
         "score": 1.5,
         "source": "serpapi",
         "url": "https://www.google.com/search?q=AI agent framework 2026 使い方",
-        "summary_ja": "",
-        "point": ""
+        "summary_ja": "「AI agent framework 2026」がGoogle検索で注目を集めており、ユーザーが「使い方」に関する情報を積極的に検索している。これは2026年に登場予定のAIエージェントフレームワークに対する高い関心を示唆しており、開発者や企業がその実装方法について学ぼうとしていることが明らかになった。",
+        "point": "2026年向けAIエージェントフレームワークの実装方法に対する高い検索需要を反映"
       },
       {
         "title": "Googleサジェスト: AI agent framework 2026 料金",
@@ -1270,8 +1197,8 @@
         "score": 1.5,
         "source": "serpapi",
         "url": "https://www.google.com/search?q=MCP protocol AI 使い方",
-        "summary_ja": "",
-        "point": ""
+        "summary_ja": "「MCP protocol AI」に関する検索で「使い方」キーワードが高い関心を集めている。MCPプロトコルはAIシステム間の通信標準として注目されており、ユーザーがその具体的な活用方法や実装手順について積極的に情報を求めていることが示唆される。",
+        "point": "MCP（Model Context Protocol）の実装・活用方法に対する実践的な情報需要が高い"
       },
       {
         "title": "Googleサジェスト: MCP protocol AI 料金",
@@ -1468,38 +1395,38 @@
         "score": 12.52,
         "source": "producthunt_mock",
         "url": "",
-        "summary_ja": "RAGBuilderは数分でプロダクション対応のRAG（検索拡張生成）パイプラインを構築できるツールです。任意のデータソースを任意のLLMに接続可能で、複雑なRAG実装を簡素化します。エンタープライズレベルのAIアプリケーション開発が容易になります。",
-        "point": "RAGパイプラインの迅速構築。多様なデータソース・LLM対応で柔軟性が高い。"
+        "summary_ja": "RAGBuilderは、本番環境対応のRAG（検索拡張生成）パイプラインを数分で構築できるツールです。任意のデータソースと任意のLLMを接続でき、複雑なセットアップなしに実装可能です。企業向けAIアプリケーション開発を加速します。",
+        "point": "本番環境対応RAGの迅速な構築が可能。柔軟なデータソース・LLM統合。"
       },
       {
         "title": "RAGの精度を上げるコツ：チャンキングサイズは512トークンがベスト。重複率20%でリコール向上。",
         "score": 6.71,
         "source": "x_bookmarks_mock",
         "url": "",
-        "summary_ja": "RAG（検索拡張生成）システムの精度向上に関するベストプラクティス。最適なチャンキングサイズは512トークンであり、チャンク間の重複率を20%とすることでリコール性能が向上することが示唆されている。これらのパラメータ調整により、検索精度と回答の正確性が改善される。",
-        "point": "RAG性能を最大化する具体的なパラメータ設定値を提供。512トークン・20%重複が推奨値。"
+        "summary_ja": "RAG（検索増強生成）システムの精度向上に関するベストプラクティスです。最適なチャンキングサイズは512トークンであり、チャンク間の重複率を20%に設定することでリコール率が向上します。これらのパラメータ設定により、取得情報の関連性と完全性が改善されます。",
+        "point": "RAGの具体的な最適化パラメータ（チャンクサイズ512、重複20%）で精度向上を実現"
       },
       {
-        "title": "Google検索急上昇: what is rag in ai",
-        "score": 1.06,
+        "title": "Google検索急上昇: obsidian",
+        "score": 0.67,
         "source": "google_trends",
-        "url": "https://trends.google.com/trends/explore?q=what is rag in ai",
+        "url": "https://trends.google.com/trends/explore?q=obsidian",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "Google検索急上昇: what does rag stand for?",
-        "score": 0.85,
+        "title": "Google検索急上昇: diccionario rag",
+        "score": 0.58,
         "source": "google_trends",
-        "url": "https://trends.google.com/trends/explore?q=what does rag stand for?",
+        "url": "https://trends.google.com/trends/explore?q=diccionario rag",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "Google検索急上昇: rag stands for",
-        "score": 0.61,
+        "title": "Google検索急上昇: rae",
+        "score": 0.56,
         "source": "google_trends",
-        "url": "https://trends.google.com/trends/explore?q=rag stands for",
+        "url": "https://trends.google.com/trends/explore?q=rae",
         "summary_ja": "",
         "point": ""
       }
@@ -1544,8 +1471,8 @@
         "score": 10.5,
         "source": "china_mock",
         "url": "",
-        "summary_ja": "DeepSeekがV3版本を発表し、複数のベンチマークテストでOpenAIのGPT-4oの性能を上回ったと報告。国産の大規模言語モデルとして、AIの性能競争において中国企業が大きな進展を遂行した重要なマイルストーン。",
-        "point": "中国産LLMがGPT-4oを性能で超越し、グローバルなAI競争構図の変化を示唆"
+        "summary_ja": "DeepSeekがV3版本を発表。複数のベンチマークテストでGPT-4oの性能を上回る結果を達成した。中国国産の大規模言語モデルとしての地位を確立し、AI技術の国際競争における進展を示す重要なマイルストーンとなっている。",
+        "point": "OpenAIの主力モデルを性能で超える国産LLMの登場。AI開発の地政学的シフトを示唆。"
       },
       {
         "title": "Google検索急上昇: deepseek v3.2",
@@ -1557,7 +1484,7 @@
       },
       {
         "title": "Google検索急上昇: deepseek v4",
-        "score": 0.06,
+        "score": 0.05,
         "source": "google_trends",
         "url": "https://trends.google.com/trends/explore?q=deepseek v4",
         "summary_ja": "",
@@ -1570,92 +1497,74 @@
         "score": 2.0,
         "source": "google_trends",
         "url": "https://trends.google.com/trends/explore?q=microsoft ai agent stack issues",
-        "summary_ja": "「microsoft ai agent stack issues」がGoogle検索で2000%上昇。MicrosoftのAIエージェントスタックに技術的課題や問題が報告され、開発者や企業の関心が急速に高まっている状況を反映。",
-        "point": "Microsoft AIエージェント実装の障害が大きな話題に。エンタープライズAI採用の課題が顕在化。"
-      },
-      {
-        "title": "Google検索急上昇: what is the primary focus of lam",
-        "score": 1.55,
-        "source": "google_trends",
-        "url": "https://trends.google.com/trends/explore?q=what is the primary focus of lam",
-        "summary_ja": "Google検索で「what is the primary focus of lam」というキーワードが550%の急上昇トレンドを記録。AIエージェント関連の検索キーワードとして注目されており、ユーザーのAI技術への関心の高さを示唆。",
-        "point": "AI agent関連キーワードの急速な検索トレンド上昇がユーザー需要を示唆"
+        "summary_ja": "Google検索で「microsoft ai agent stack issues」が1850%の急上昇。MicrosoftのAIエージェントスタックに関連する問題や課題について、多くのユーザーが情報を検索。技術的な問題や実装上の課題が注目を集めている。",
+        "point": "MicrosoftのAIエージェント技術における実装上の問題が業界で急速に話題化"
       },
       {
         "title": "Google検索急上昇: ai agent traps",
-        "score": 1.45,
+        "score": 1.35,
         "source": "google_trends",
         "url": "https://trends.google.com/trends/explore?q=ai agent traps",
         "summary_ja": "",
         "point": ""
-      }
-    ],
-    "LLM": [
-      {
-        "title": "Google検索急上昇: andrej karpathy llm knowledge base",
-        "score": 1.5,
-        "source": "google_trends",
-        "url": "https://trends.google.com/trends/explore?q=andrej karpathy llm knowledge base",
-        "summary_ja": "",
-        "point": ""
       },
       {
-        "title": "Google検索急上昇: llm wiki karpathy",
-        "score": 1.5,
+        "title": "Google検索急上昇: what is the primary focus of lam",
+        "score": 1.2,
         "source": "google_trends",
-        "url": "https://trends.google.com/trends/explore?q=llm wiki karpathy",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "Google検索急上昇: karpathy llm knowledge base",
-        "score": 1.5,
-        "source": "google_trends",
-        "url": "https://trends.google.com/trends/explore?q=karpathy llm knowledge base",
-        "summary_ja": "",
-        "point": ""
-      }
-    ],
-    "AI coding": [
-      {
-        "title": "Google検索急上昇: free coding practice sites",
-        "score": 0.58,
-        "source": "google_trends",
-        "url": "https://trends.google.com/trends/explore?q=free coding practice sites",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "Google検索急上昇: best coding youtube channels",
-        "score": 0.55,
-        "source": "google_trends",
-        "url": "https://trends.google.com/trends/explore?q=best coding youtube channels",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "Google検索急上昇: best coding fonts",
-        "score": 0.54,
-        "source": "google_trends",
-        "url": "https://trends.google.com/trends/explore?q=best coding fonts",
+        "url": "https://trends.google.com/trends/explore?q=what is the primary focus of lam",
         "summary_ja": "",
         "point": ""
       }
     ],
     "Anthropic": [
       {
-        "title": "Google検索急上昇: anthropic managed agents",
-        "score": 2.5,
+        "title": "Google検索急上昇: glasswing",
+        "score": 1.5,
         "source": "google_trends",
-        "url": "https://trends.google.com/trends/explore?q=anthropic managed agents",
-        "summary_ja": "Google検索トレンドで「anthropic managed agents」が前月比+13850%の急上昇を記録。Anthropicという関連キーワードとともに検索急増。同社のマネージドエージェント機能に対する関心が急速に高まっていることを示唆しており、AI業界の注目の変化を反映している。",
-        "point": "Anthropicのマネージドエージェント機能への急速な関心の高まりを示す指標"
+        "url": "https://trends.google.com/trends/explore?q=glasswing",
+        "summary_ja": "「glasswing」がGoogle検索で検索数が184,350%急増し、Anthropicと関連するトレンドとなっている。これはAnthropicが発表した新プロジェクトやサービスに対する急激な注目度の上昇を示唆しており、AI業界の重要な動きとして受け止められている。",
+        "point": "Anthropic関連の「glasswing」プロジェクトが爆発的な検索トレンドを記録"
       },
       {
-        "title": "Google検索急上昇: anthropic mythos",
-        "score": 0.75,
+        "title": "Google検索急上昇: project glasswing",
+        "score": 1.5,
         "source": "google_trends",
-        "url": "https://trends.google.com/trends/explore?q=anthropic mythos",
+        "url": "https://trends.google.com/trends/explore?q=project glasswing",
+        "summary_ja": "「project glasswing」がGoogle検索で検索数が116,900%急増している。Anthropicの新プロジェクトへの関心が大きく、業界内外で話題となっていることが明らかになった。このプロジェクトの詳細や機能についての情報を求めるユーザーが急増している。",
+        "point": "Anthropicの新プロジェクト「glasswing」が業界で大きな話題・注目を獲得"
+      },
+      {
+        "title": "Google検索急上昇: glasswing anthropic",
+        "score": 1.5,
+        "source": "google_trends",
+        "url": "https://trends.google.com/trends/explore?q=glasswing anthropic",
+        "summary_ja": "「glasswing anthropic」の組み合わせ検索が73,700%急増し、AnthropicのglasswingプロジェクトがAI業界で大きなトレンドになっていることを示唆している。ユーザーがこのプロジェクトの詳細情報をまとめて検索しようとしていることが明確に表れている。",
+        "point": "AnthropicとglasswingをセットでトレンドするAIプロジェクトが注目集中"
+      }
+    ],
+    "LLM": [
+      {
+        "title": "Google検索急上昇: karpathy llm wiki",
+        "score": 1.5,
+        "source": "google_trends",
+        "url": "https://trends.google.com/trends/explore?q=karpathy llm wiki",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "Google検索急上昇: andrej karpathy llm wiki",
+        "score": 1.5,
+        "source": "google_trends",
+        "url": "https://trends.google.com/trends/explore?q=andrej karpathy llm wiki",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "Google検索急上昇: llm wiki github",
+        "score": 1.3,
+        "source": "google_trends",
+        "url": "https://trends.google.com/trends/explore?q=llm wiki github",
         "summary_ja": "",
         "point": ""
       }
@@ -1666,32 +1575,32 @@
         "score": 2.0,
         "source": "google_trends",
         "url": "https://trends.google.com/trends/explore?q=reactions to openai superintelligence paper",
-        "summary_ja": "「OpenAI superintelligence paper」への反応がGoogle検索で7500%と極めて高い上昇率を記録。OpenAIが発表したAGI・超知能に関する論文が業界内外で大きな注目と議論を集めている。",
-        "point": "OpenAIの超知能論文が過去最大級の関心を獲得。AI業界に大きなインパクト。"
+        "summary_ja": "Google検索で「OpenAI superintelligence paper reactions」が7450%の急上昇。OpenAIが発表したスーパーインテリジェンスに関する論文について、ユーザーの反応や意見が大量に検索されている。AI業界の関心が高まっている状況を示唆している。",
+        "point": "OpenAIのスーパーインテリジェンス論文が業界で大きな話題に。検索数の大幅増加が関心の高さを証明"
       },
       {
         "title": "Google検索急上昇: ashton kutcher openai",
-        "score": 2.0,
+        "score": 1.18,
         "source": "google_trends",
         "url": "https://trends.google.com/trends/explore?q=ashton kutcher openai",
-        "summary_ja": "「ashton kutcher openai」がGoogle検索で3150%上昇。著名俳優アシュトン・カッチャーがOpenAIに関連したニュース・投資・パートナーシップなどの発表があったと推測される。",
-        "point": "セレブリティのOpenAI関与が大きな注目を集めた。メディア効果が顕著。"
+        "summary_ja": "",
+        "point": ""
       }
     ],
     "Cursor AI": [
       {
-        "title": "Google検索急上昇: cursor 3.0",
-        "score": 1.13,
+        "title": "Google検索急上昇: walmart near me",
+        "score": 1.14,
         "source": "google_trends",
-        "url": "https://trends.google.com/trends/explore?q=cursor 3.0",
+        "url": "https://trends.google.com/trends/explore?q=walmart near me",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "Google検索急上昇: walmart near me",
-        "score": 1.11,
+        "title": "Google検索急上昇: cursor 3.0",
+        "score": 1.12,
         "source": "google_trends",
-        "url": "https://trends.google.com/trends/explore?q=walmart near me",
+        "url": "https://trends.google.com/trends/explore?q=cursor 3.0",
         "summary_ja": "",
         "point": ""
       }
@@ -1702,8 +1611,8 @@
         "score": 13.46,
         "source": "producthunt_mock",
         "url": "",
-        "summary_ja": "AgentFlowはノーコードで自律型AIエージェントを構築できるプラットフォームです。ビジュアルワークフロービルダーを使用することで、プログラミング知識がなくてもAI自動化の実装が可能になります。複雑なAI処理を直感的に設計・実行できる点が特徴です。",
-        "point": "ノーコードでAIエージェント開発が実現。技術者以外でもAI自動化を構築可能。"
+        "summary_ja": "AgentFlowは、コードを書かずに自律型AIエージェントを構築できるプラットフォームです。ビジュアルワークフロービルダーを使用することで、AI自動化を直感的に設計・実装できます。技術的なハードルを取り除き、より多くのユーザーがAI自動化を活用できるようにします。",
+        "point": "ノーコードでAIエージェント構築が可能。AI自動化の民主化を実現。"
       }
     ],
     "AI Coding": [
@@ -1712,8 +1621,8 @@
         "score": 12.96,
         "source": "producthunt_mock",
         "url": "",
-        "summary_ja": "AICodeAssist ProはAI駆動のコード品質改善ツールです。VS CodeやJetBrainsなどの主要IDEと統合でき、自動的にコードレビューとリファクタリングを実施します。開発生産性向上と品質管理の効率化を実現します。",
-        "point": "IDEに統合されたAIコード審査ツール。開発効率と品質管理が向上。"
+        "summary_ja": "AICodeAssist Proは、AI駆動のコードレビューとリファクタリングツールです。VS CodeおよびJetBrainsIDEと統合され、開発プロセスにシームレスに組み込めます。開発効率向上とコード品質改善を自動化します。",
+        "point": "IDEネイティブなAI支援により開発効率を大幅改善。主流エディタに対応。"
       }
     ],
     "Dify": [
@@ -1722,8 +1631,8 @@
         "score": 11.37,
         "source": "x_bookmarks_mock",
         "url": "",
-        "summary_ja": "Difyとn8nの組み合わせにより、ノーコードでAIワークフローの自動化が実現できます。月額費用なしで運用可能な点が強調されており、企業のAI自動化導入の障壁が大幅に低下します。コスト効率の良いAI自動化ソリューションとして注目されています。",
-        "point": "完全無料でAIワークフロー自動化が可能。ノーコードで導入ハードルが低い。"
+        "summary_ja": "Difyとn8nの組み合わせにより、ノーコードでAIワークフローの自動化が実現できます。この構成により、月額0ドルで実運用可能な環境を構築することができ、コスト効率に優れたAI自動化ソリューションとなります。",
+        "point": "完全無料でAI自動化ワークフロー構築可能。ノーコード×オープンソース最強組合。"
       }
     ],
     "Local LLM": [
@@ -1732,8 +1641,8 @@
         "score": 10.95,
         "source": "x_bookmarks_mock",
         "url": "",
-        "summary_ja": "ローカル実行可能なLLM「Qwen3-8B」がGPT-3.5の性能を上回ったという比較結果です。M1 Macでも動作するため、クラウド依存からの脱却が進みます。ローカルLLMの実用化が本格化し、プライバシーやコスト面でのメリットが現実化しています。",
-        "point": "ローカルLLMがクラウド型を超える性能を達成。エッジ実行が実用的に。"
+        "summary_ja": "ローカルで動作するQwen3-8BモデルがGPT-3.5を性能面で上回る段階に達しました。M1 Macなどのハードウェアでも実行可能になり、クラウドLLMへの依存が減少しています。ローカルLLM時代の到来を示す重要な転換点です。",
+        "point": "オープンソースLLMがクラウド主流モデルを超越。プライバシー・独立性向上。"
       }
     ],
     "AI Voice": [
@@ -1742,8 +1651,8 @@
         "score": 10.88,
         "source": "producthunt_mock",
         "url": "",
-        "summary_ja": "VoiceClone Studioは、わずか30秒の音声サンプルから任意の声を複製できるAIツール。リアルタイムの声変換機能を備えており、ストリーミング配信や音声通話での利用を想定している。高度な音声技術により、自然な声の再現が可能。",
-        "point": "わずか30秒の音声で声を複製でき、ストリーム配信や通話で即座に利用できる実用性が革新的"
+        "summary_ja": "VoiceClone Studioは、わずか30秒の音声サンプルから任意の声をクローンできるツール。リアルタイム音声変換機能を備えており、ストリーミングや通話での利用を想定している。音声合成技術の実用化例として注目される。",
+        "point": "短時間の音声サンプルで高精度な声のクローン化が可能。ストリーミング配信での応用価値が高い。"
       }
     ],
     "Qwen": [
@@ -1752,8 +1661,8 @@
         "score": 10.0,
         "source": "china_mock",
         "url": "",
-        "summary_ja": "アリババクラウドが通義千問（Qwen）の第3世代モデルを発表。200以上の言語に対応する多言語性能が特徴で、グローバル展開への対応力を大幅に強化。既存モデルからの大幅な機能拡張を実現。",
-        "point": "200言語対応により、グローバル市場での利用範囲が大幅に拡大し多言語AIの新基準を提示"
+        "summary_ja": "アリババクラウドが通義千問Qwen3シリーズモデルをリリース。200種類の言語対応により、グローバル展開での利用が大きく拡大する。多言語対応は国際的なAI応用の最重要課題であり、実用性の飛躍的向上を意味する。",
+        "point": "200言語対応で圧倒的な多言語性能を実現。グローバルAI利用の障壁を大きく低減。"
       }
     ],
     "Kimi": [
@@ -1762,8 +1671,8 @@
         "score": 9.8,
         "source": "china_mock",
         "url": "",
-        "summary_ja": "Kimiは月之暗面が開発するAIプロダクト。新たにAI検索機能を追加し、中国最大手の検索エンジンである百度への対抗を開始。従来の検索エンジンとAI技術の融合による新しい検索体験を提供。",
-        "point": "AI検索で既存の百度に挑戦し、検索エンジン領域でのAI活用の新展開を創出"
+        "summary_ja": "月之暗面のKimiがAI検索機能を新たに追加し、バイドゥの検索エンジンに対抗。従来の検索結果の羅列ではなく、AI が自動的に質問を理解し最適な回答を提供する方式に転換。検索体験の根本的な改革を示唆している。",
+        "point": "AI搜索で従来の検索エンジンの競争構図を変える。ユーザー体験の質的向上。"
       }
     ],
     "GLM": [
@@ -1772,8 +1681,8 @@
         "score": 9.8,
         "source": "china_mock",
         "url": "",
-        "summary_ja": "智谱AIがGLM-5を発表。特にAIエージェント機能の大幅な強化に注力しており、国産AIの自律的な意思決定・行動能力を向上。エンタープライズ用途での実用性が飛躍的に向上。",
-        "point": "AIエージェント能力の強化により、自律的で複雑なタスク処理の実現が加速"
+        "summary_ja": "智谱AI がGLM-5を発表。AI Agent能力の大幅強化に注力している。複雑なタスクの自動実行や自律的な意思決定機能が向上し、エンタープライズ向けAI活用シーンでの応用性が大きく拡大。実務的価値を高める開発方向性。",
+        "point": "エージェント機能の大幅強化で自動化・自律判断が可能に。企業向けAI活用が加速。"
       }
     ],
     "MCP": [
@@ -1782,8 +1691,8 @@
         "score": 8.9,
         "source": "x_bookmarks_mock",
         "url": "",
-        "summary_ja": "MCPサーバーの自作方法について解説した記事。TypeScriptを使用することで実装が簡単であることを強調している。MCPサーバーを自作することでGitHub連携などの作業効率が向上することが紹介されている。",
-        "point": "MCPサーバーをTypeScriptで簡単に自作でき、開発効率が向上する実用的な知見"
+        "summary_ja": "MCPサーバーの自作方法について解説した記事。TypeScriptで実装でき、想像以上にシンプルに構築できることが特徴。GitHub連携などの拡張機能を活用することで、開発ワークフローの効率化が期待できる。",
+        "point": "MCPサーバーの構築がTypeScriptで容易になり、GitHub連携などの自動化が実現できる点が重要。"
       }
     ],
     "AI Design": [
@@ -1792,8 +1701,8 @@
         "score": 8.2,
         "source": "producthunt_mock",
         "url": "",
-        "summary_ja": "DesignAIは、テキスト説明から本番環境対応のUIデザインを自動生成するツール。Figmaプラグインも含まれており、デザイン制作プロセスを自動化・効率化することができる。",
-        "point": "テキスト入力でUIデザインを自動生成し、デザイナーの作業時間を大幅短縮"
+        "summary_ja": "DesignAIはテキスト説明から本番環境対応のUIデザインを自動生成するツール。Figmaプラグインが含まれており、デザイナーの作業効率を大幅に向上させる。AIを活用したデザイン自動化ソリューション。",
+        "point": "テキストから本番対応のUIを自動生成し、Figma連携で利便性が高い。デザイン業務の大幅な効率化を実現。"
       }
     ],
     "Baidu AI": [
@@ -1802,8 +1711,8 @@
         "score": 7.9,
         "source": "china_mock",
         "url": "",
-        "summary_ja": "中国の大手AI企業Baiduが開発した大規模言語モデル「文心一言」がバージョン4.5にアップデート。リアルタイムネット検索機能をサポートするようになり、より最新の情報を活用できるようになった。",
-        "point": "リアルタイムネット検索機能により、最新情報を含む回答が可能に"
+        "summary_ja": "百度の大規模言語モデル「文心一言」がバージョン4.5にアップデートされました。このアップデートでは、リアルタイムのインターネット検索機能がサポートされるようになり、最新情報を反映した回答が可能になります。これにより、従来のオフライン学習データのみに頼らない、より現在性の高い応答が実現されます。",
+        "point": "リアルタイム検索機能の追加により、LLMの回答精度と現在性が大幅に向上"
       }
     ],
     "Claude": [
@@ -1812,13 +1721,33 @@
         "score": 5.04,
         "source": "x_bookmarks_mock",
         "url": "",
-        "summary_ja": "Claude Codeのスキル機能がプロジェクトごとのカスタムコマンド定義に対応。開発者は案件固有の処理をスキルとして登録でき、効率的に再利用・管理できる。AI開発アシスタントの利便性が大幅に向上。",
-        "point": "Claude Codeにプロジェクト固有スキル機能。カスタムコマンド自動化で生産性向上。"
+        "summary_ja": "Claude Codeの「スキル機能」が非常に便利であるという評価です。この機能により、プロジェクトごとにカスタムコマンドを定義でき、開発効率が大幅に向上します。AIエージェントのカスタマイズ可能性が高まり、プロジェクト固有の要件に対応しやすくなる点が特に評価されています。",
+        "point": "Claude Codeのカスタムコマンド機能でプロジェクト特化の自動化が実現可能に"
+      }
+    ],
+    "AI coding": [
+      {
+        "title": "Google検索急上昇: antigravity",
+        "score": 0.54,
+        "source": "google_trends",
+        "url": "https://trends.google.com/trends/explore?q=antigravity",
+        "summary_ja": "",
+        "point": ""
       }
     ]
   },
   "supabase_stats": {
     "pipeline_runs_7d": [
+      {
+        "run_date": "2026-04-11",
+        "status": "success",
+        "articles_processed": 169,
+        "block_a_count": 0,
+        "block_b_count": 0,
+        "block_c_count": 169,
+        "started_at": "2026-04-11T22:22:54.029022+00:00",
+        "finished_at": "2026-04-11T22:24:04.120997+00:00"
+      },
       {
         "run_date": "2026-04-10",
         "status": "success",
@@ -1893,9 +1822,9 @@
     "block_totals": {
       "A": 1,
       "B": 0,
-      "C": 403
+      "C": 440
     },
-    "articles_total": 404,
-    "unsent_to_telegram": 403
+    "articles_total": 441,
+    "unsent_to_telegram": 440
   }
 }

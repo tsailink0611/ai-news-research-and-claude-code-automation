@@ -1,8 +1,8 @@
-# AI News Digest - 2026-04-10
+# AI News Digest - 2026-04-11
 
-> Generated at 2026-04-10 22:30
-> Sources: serpapi, producthunt_mock, HuggingFace Blog, Simon Willison, Ars Technica Tech, Qiita AI, ITmedia AI+, AINOW, x_bookmarks_mock, MIT Tech Review AI, 日経クロステック, google_trends, GitHub Trending, VentureBeat AI, hackernews, TechCrunch AI, china_mock, The Verge AI, Latent Space, Zenn AI
-> Total articles: 179
+> Generated at 2026-04-11 22:25
+> Sources: x_bookmarks_mock, google_trends, Latent Space, Simon Willison, china_mock, hackernews, 日経クロステック, MIT Tech Review AI, TechCrunch AI, GitHub Trending, producthunt_mock, AINOW, ITmedia AI+, serpapi, HuggingFace Blog, VentureBeat AI, The Verge AI, Zenn AI, Ars Technica Tech
+> Total articles: 169
 
 ## 🔥 主要トピック
 
@@ -80,176 +80,166 @@
 | 10 | 智谱GLM-5发布 国产Agent能力大幅提升 | 9.8 | china_mock |
 | 11 | MCPサーバーの自作方法をまとめた。TypeScriptで書けるので意外と簡単。GitHub連携が捗る。 | 8.9 | x_bookmarks_mock |
 | 12 | DesignAI | 8.2 | producthunt_mock |
-| 13 | 百度文心一言4.5版本更新 支持实时联网搜索 | 7.9 | china_mock |
-| 14 | I still prefer MCP over skills | 7.7 | hackernews |
-| 15 | 1D Chess | 7.1 | hackernews |
-| 16 | RAGの精度を上げるコツ：チャンキングサイズは512トークンがベスト。重複率20%でリコール向上。 | 6.7 | x_bookmarks_mock |
-| 17 | We've raised $17M to build what comes after Git | 6.5 | hackernews |
-| 18 | WireGuard makes new Windows release following Microsoft sign | 5.5 | hackernews |
-| 19 | Claude Codeのスキル機能が便利すぎる。プロジェクトごとにカスタムコマンドを定義できるの最高。 | 5.0 | x_bookmarks_mock |
-| 20 | Molotov cocktail is hurled at home of Sam Altman | 4.7 | hackernews |
-| 21 | 全PRの83%をAIレビューだけでマージできるようにした | 3.8 | Zenn AI |
-| 22 | AI assistance when contributing to the Linux kernel | 3.3 | hackernews |
-| 23 | Show HN: Marimo pair – Reactive Python notebooks as environm | 3.2 | hackernews |
-| 24 | A new trick brings stability to quantum operations | 3.1 | hackernews |
-| 25 | A compelling title that is cryptic enough to get you to take | 2.9 | hackernews |
-| 26 | Supply chain nightmare: How Rust will be attacked and what w | 2.7 | hackernews |
-| 27 | Launch HN: Twill.ai (YC S25) – Delegate to cloud agents, get | 2.6 | hackernews |
-| 28 | Google検索急上昇: anthropic managed agents | 2.5 | google_trends |
-| 29 | HBO Obtains DMCA Subpoena to Unmask 'Euphoria' Spoiler Accou | 2.3 | hackernews |
-| 30 | JSON Formatter Chrome Plugin Now Closed and Injecting Adware | 2.1 | hackernews |
-| 31 | [AINews] Anthropic @ $30B ARR, Project GlassWing and Claude  | 2.0 | Latent Space |
-| 32 | Google検索急上昇: claude code ultraplan | 2.0 | google_trends |
-| 33 | Google検索急上昇: reactions to openai superintelligence paper | 2.0 | google_trends |
-| 34 | Google検索急上昇: ashton kutcher openai | 2.0 | google_trends |
-| 35 | Google検索急上昇: microsoft ai agent stack issues | 2.0 | google_trends |
-| 36 | RAGとAgentic Searchの戦争を 終わらせに来た!!! | 1.9 | Zenn AI |
-| 37 | 社内業務をAIに開放 — 自社MCPサーバー群一挙公開！ | 1.9 | Zenn AI |
-| 38 | Google検索急上昇: what is the primary focus of lam | 1.6 | google_trends |
-| 39 | Stalking victim sues OpenAI, claims ChatGPT fueled her abuse | 1.5 | TechCrunch AI |
-| 40 | Anthropic launches Cowork, a Claude Desktop agent that works | 1.5 | VentureBeat AI |
-| 41 | ALTK‑Evolve: On‑the‑Job Learning for AI Agents | 1.5 | HuggingFace Blog |
-| 42 | Googleサジェスト: Claude Code 使い方 | 1.5 | serpapi |
-| 43 | Googleサジェスト: AI agent framework 2026 使い方 | 1.5 | serpapi |
-| 44 | Googleサジェスト: MCP protocol AI 使い方 | 1.5 | serpapi |
-| 45 | Google検索急上昇: gemma 4 | 1.5 | google_trends |
-| 46 | Google検索急上昇: andrej karpathy llm knowledge base | 1.5 | google_trends |
-| 47 | Google検索急上昇: llm wiki karpathy | 1.5 | google_trends |
-| 48 | Google検索急上昇: karpathy llm knowledge base | 1.5 | google_trends |
-| 49 | Google検索急上昇: ai agent traps | 1.4 | google_trends |
-| 50 | Googleサジェスト: Claude Code 料金 | 1.4 | serpapi |
-| 51 | Googleサジェスト: AI agent framework 2026 料金 | 1.4 | serpapi |
-| 52 | Googleサジェスト: MCP protocol AI 料金 | 1.4 | serpapi |
-| 53 | デザインシステムを丸ごと Skills にする | 1.4 | Zenn AI |
-| 54 | S3 Filesで消えるアーキテクチャ層、生まれるアーキテクチャ | 1.3 | Zenn AI |
-| 55 | Googleサジェスト: Claude Code API | 1.3 | serpapi |
-| 56 | Googleサジェスト: AI agent framework 2026 API | 1.3 | serpapi |
-| 57 | Googleサジェスト: MCP protocol AI API | 1.3 | serpapi |
-| 58 | Claude Code - 最新情報まとめ | 1.2 | serpapi |
-| 59 | AI agent framework 2026 - 最新情報まとめ | 1.2 | serpapi |
-| 60 | MCP protocol AI - 最新情報まとめ | 1.2 | serpapi |
-| 61 | 国土交通省提供の『地理空間MCP Server』を使ってお手軽にClaudeからの地理空間情報連携を試してみた | 1.2 | Zenn AI |
-| 62 | Googleサジェスト: Claude Code 比較 | 1.2 | serpapi |
-| 63 | Googleサジェスト: AI agent framework 2026 比較 | 1.2 | serpapi |
-| 64 | Googleサジェスト: MCP protocol AI 比較 | 1.2 | serpapi |
-| 65 | Claude Code の使い方・始め方ガイド | 1.2 | serpapi |
-| 66 | AI agent framework 2026 の使い方・始め方ガイド | 1.2 | serpapi |
-| 67 | MCP protocol AI の使い方・始め方ガイド | 1.2 | serpapi |
-| 68 | Google検索急上昇: claude mythos | 1.2 | google_trends |
+| 13 | Starfling: A one-tap endless orbital slingshot game in a sin | 8.1 | hackernews |
+| 14 | Small models also found the vulnerabilities that Mythos foun | 8.0 | hackernews |
+| 15 | 1D Chess | 8.0 | hackernews |
+| 16 | 百度文心一言4.5版本更新 支持实时联网搜索 | 7.9 | china_mock |
+| 17 | RAGの精度を上げるコツ：チャンキングサイズは512トークンがベスト。重複率20%でリコール向上。 | 6.7 | x_bookmarks_mock |
+| 18 | JSON formatter Chrome plugin now closed and injecting adware | 5.4 | hackernews |
+| 19 | Cirrus Labs to join OpenAI | 5.3 | hackernews |
+| 20 | Claude Codeのスキル機能が便利すぎる。プロジェクトごとにカスタムコマンドを定義できるの最高。 | 5.0 | x_bookmarks_mock |
+| 21 | How We Broke Top AI Agent Benchmarks: And What Comes Next | 2.9 | hackernews |
+| 22 | Every plane you see in the sky – you can now follow it from  | 2.5 | hackernews |
+| 23 | Rockstar Games Hacked, Hackers Threaten a Massive Data Leak  | 2.1 | hackernews |
+| 24 | Bevy game development tutorials and in-depth resources | 2.1 | hackernews |
+| 25 | Italo Calvino: A traveller in a world of uncertainty | 2.0 | hackernews |
+| 26 | [AINews] Anthropic @ $30B ARR, Project GlassWing and Claude  | 2.0 | Latent Space |
+| 27 | Google検索急上昇: reactions to openai superintelligence paper | 2.0 | google_trends |
+| 28 | Google検索急上昇: microsoft ai agent stack issues | 2.0 | google_trends |
+| 29 | RAGとAgentic Searchの戦争を 終わらせに来た!!! | 1.9 | Zenn AI |
+| 30 | Claude Code + Obsidian — Daily Note の下書きを自動生成し、週次・月次レビューまで積み | 1.8 | Zenn AI |
+| 31 | S3 Filesで消えるアーキテクチャ層、生まれるアーキテクチャ | 1.6 | Zenn AI |
+| 32 | Stalking victim sues OpenAI, claims ChatGPT fueled her abuse | 1.5 | TechCrunch AI |
+| 33 | Anthropic launches Cowork, a Claude Desktop agent that works | 1.5 | VentureBeat AI |
+| 34 | ALTK‑Evolve: On‑the‑Job Learning for AI Agents | 1.5 | HuggingFace Blog |
+| 35 | Googleサジェスト: Claude Code 使い方 | 1.5 | serpapi |
+| 36 | Googleサジェスト: AI agent framework 2026 使い方 | 1.5 | serpapi |
+| 37 | Googleサジェスト: MCP protocol AI 使い方 | 1.5 | serpapi |
+| 38 | Google検索急上昇: glasswing | 1.5 | google_trends |
+| 39 | Google検索急上昇: project glasswing | 1.5 | google_trends |
+| 40 | Google検索急上昇: glasswing anthropic | 1.5 | google_trends |
+| 41 | Google検索急上昇: karpathy llm wiki | 1.5 | google_trends |
+| 42 | Google検索急上昇: andrej karpathy llm wiki | 1.5 | google_trends |
+| 43 | デザインシステムを丸ごと Skills にする | 1.4 | Zenn AI |
+| 44 | Googleサジェスト: Claude Code 料金 | 1.4 | serpapi |
+| 45 | Googleサジェスト: AI agent framework 2026 料金 | 1.4 | serpapi |
+| 46 | Googleサジェスト: MCP protocol AI 料金 | 1.4 | serpapi |
+| 47 | Google検索急上昇: ultraplan claude code | 1.4 | google_trends |
+| 48 | Google検索急上昇: ai agent traps | 1.4 | google_trends |
+| 49 | Googleサジェスト: Claude Code API | 1.3 | serpapi |
+| 50 | Googleサジェスト: AI agent framework 2026 API | 1.3 | serpapi |
+| 51 | Googleサジェスト: MCP protocol AI API | 1.3 | serpapi |
+| 52 | Google検索急上昇: llm wiki github | 1.3 | google_trends |
+| 53 | grill-me スキルがめちゃ良いので布教したい | 1.3 | Zenn AI |
+| 54 | Claude Code - 最新情報まとめ | 1.2 | serpapi |
+| 55 | AI agent framework 2026 - 最新情報まとめ | 1.2 | serpapi |
+| 56 | MCP protocol AI - 最新情報まとめ | 1.2 | serpapi |
+| 57 | Google検索急上昇: gemma 4 | 1.2 | google_trends |
+| 58 | Google検索急上昇: claude mythos | 1.2 | google_trends |
+| 59 | 転職してエクセルファイルを読み解いてHTMLに変換する仕事をしていたが、悪役令嬢は出てこないし、勇者パーティーも追放され | 1.2 | Zenn AI |
+| 60 | Googleサジェスト: Claude Code 比較 | 1.2 | serpapi |
+| 61 | Googleサジェスト: AI agent framework 2026 比較 | 1.2 | serpapi |
+| 62 | Googleサジェスト: MCP protocol AI 比較 | 1.2 | serpapi |
+| 63 | Claude Code の使い方・始め方ガイド | 1.2 | serpapi |
+| 64 | AI agent framework 2026 の使い方・始め方ガイド | 1.2 | serpapi |
+| 65 | MCP protocol AI の使い方・始め方ガイド | 1.2 | serpapi |
+| 66 | Google検索急上昇: what is the primary focus of lam | 1.2 | google_trends |
+| 67 | Layoff Thinking | 1.2 | hackernews |
+| 68 | Google検索急上昇: ashton kutcher openai | 1.2 | google_trends |
 | 69 | Claude Code vs 競合比較 2026年版 | 1.1 | serpapi |
 | 70 | AI agent framework 2026 vs 競合比較 2026年版 | 1.1 | serpapi |
 | 71 | MCP protocol AI vs 競合比較 2026年版 | 1.1 | serpapi |
-| 72 | Google検索急上昇: cursor 3.0 | 1.1 | google_trends |
-| 73 | Molotov cocktail attack at OpenAI CEO Sam Altman's home | 1.1 | hackernews |
-| 74 | Google検索急上昇: walmart near me | 1.1 | google_trends |
-| 75 | Googleサジェスト: Claude Code チュートリアル | 1.1 | serpapi |
-| 76 | Googleサジェスト: AI agent framework 2026 チュートリアル | 1.1 | serpapi |
-| 77 | Googleサジェスト: MCP protocol AI チュートリアル | 1.1 | serpapi |
-| 78 | [GitHub] shanraisshan / claude-code-best-practice | 1.1 | GitHub Trending |
-| 79 | MCP vs Skills論争に決着をつける試み。AIエージェントの「拡張手段」を実装・設計・セキュリティで徹底比較する | 1.1 | Qiita AI |
-| 80 | Google検索急上昇: what is rag in ai | 1.1 | google_trends |
-| 81 | Combining spicy foods with mint boosts anti-inflammatory eff | 1.0 | hackernews |
-| 82 | 米財務長官とFRB議長が銀行幹部に警告　Anthropicの最新AI巡り、サイバーセキュリティに懸念 | 1.0 | ITmedia AI+ |
-| 83 | Claudeを“コスパ良く”利用可能に　性能の異なるモデルが“適材適所”で稼働、Anthropicの新ツール | 1.0 | ITmedia AI+ |
-| 84 | 28年までに生成AIアプリの4分の1にセキュリティ事故、MCP普及でリスク拡大――Gartner予測 | 1.0 | ITmedia AI+ |
-| 85 | Anthropic temporarily banned OpenClaw’s creator from accessi | 1.0 | TechCrunch AI |
-| 86 | Claude Code costs up to $200 a month. Goose does the same th | 1.0 | VentureBeat AI |
-| 87 | Salesforce rolls out new Slackbot AI agent as it battles Mic | 1.0 | VentureBeat AI |
-| 88 | Fear and loathing at OpenAI | 1.0 | The Verge AI |
-| 89 | Extreme Harness Engineering for Token Billionaires: 1M LOC,  | 1.0 | Latent Space |
-| 90 | Multimodal Embedding & Reranker Models with Sentence Transfo | 1.0 | HuggingFace Blog |
-| 91 | Googleサジェスト: GPT-5 release 使い方 | 1.0 | serpapi |
-| 92 | Googleサジェスト: best AI coding tools 使い方 | 1.0 | serpapi |
-| 93 | 転職してエクセルファイルを読み解いてHTMLに変換する仕事をしていたが、悪役令嬢は出てこないし、勇者パーティーも追放され | 1.0 | Zenn AI |
-| 94 | The difficulty of making sure your website is broken | 0.9 | hackernews |
-| 95 | Googleサジェスト: GPT-5 release 料金 | 0.9 | serpapi |
-| 96 | Googleサジェスト: best AI coding tools 料金 | 0.9 | serpapi |
-| 97 | grill-me スキルがめちゃ良いので布教したい | 0.9 | Zenn AI |
-| 98 | Google検索急上昇: what does rag stand for? | 0.8 | google_trends |
-| 99 | Googleサジェスト: GPT-5 release API | 0.8 | serpapi |
-| 100 | Googleサジェスト: best AI coding tools API | 0.8 | serpapi |
-| 101 | GPT-5 release - 最新情報まとめ | 0.8 | serpapi |
-| 102 | best AI coding tools - 最新情報まとめ | 0.8 | serpapi |
-| 103 | Google検索急上昇: anthropic mythos | 0.8 | google_trends |
-| 104 | We're running out of benchmarks to upper bound AI capabiliti | 0.7 | hackernews |
-| 105 | Googleサジェスト: GPT-5 release 比較 | 0.7 | serpapi |
-| 106 | Googleサジェスト: best AI coding tools 比較 | 0.7 | serpapi |
-| 107 | GPT-5 release の使い方・始め方ガイド | 0.7 | serpapi |
-| 108 | best AI coding tools の使い方・始め方ガイド | 0.7 | serpapi |
-| 109 | GPT-5 release vs 競合比較 2026年版 | 0.7 | serpapi |
-| 110 | best AI coding tools vs 競合比較 2026年版 | 0.7 | serpapi |
-| 111 | I Hate Tailwind and Love Bootstrap | 0.6 | hackernews |
-| 112 | Google検索急上昇: rag stands for | 0.6 | google_trends |
-| 113 | Googleサジェスト: GPT-5 release チュートリアル | 0.6 | serpapi |
-| 114 | Googleサジェスト: best AI coding tools チュートリアル | 0.6 | serpapi |
-| 115 | Google検索急上昇: free coding practice sites | 0.6 | google_trends |
-| 116 | [GitHub] NousResearch / hermes-agent | 0.6 | GitHub Trending |
-| 117 | [GitHub] unslothai / unsloth | 0.6 | GitHub Trending |
-| 118 | [GitHub] n8n-io / n8n | 0.6 | GitHub Trending |
-| 119 | [GitHub] coreyhaines31 / marketingskills | 0.6 | GitHub Trending |
-| 120 | Claudeの概要と設計思想から学んだこと | 0.6 | Qiita AI |
-| 121 | [GitHub] multica-ai / multica | 0.6 | GitHub Trending |
-| 122 | [GitHub] Anil-matcha / Open-Higgsfield-AI | 0.6 | GitHub Trending |
-| 123 | [GitHub] ChromeDevTools / chrome-devtools-mcp | 0.6 | GitHub Trending |
-| 124 | Google検索急上昇: best coding youtube channels | 0.6 | google_trends |
-| 125 | Google検索急上昇: best coding fonts | 0.5 | google_trends |
-| 126 | 生成AI導入はどの部署が主導すべき？情シス・DX推進・現場別の進め方 | 0.5 | AINOW |
-| 127 | Bild AI (YC W25) Is Hiring a Founding Product Engineer | 0.5 | hackernews |
-| 128 | 情シス主導で生成AIツール導入の稟議を通すには？AIツール比較表テンプレートも紹介 | 0.5 | AINOW |
-| 129 | AIがプログラミング言語を考案　実際につくって動かしてみた | 0.5 | 日経クロステック |
-| 130 | 「AIが本領を発揮するのは設計の『川中』」、日建設計の大松敦社長に聞く | 0.5 | 日経クロステック |
-| 131 | 小野田紀美AI戦略担当相、自身のAI利用は「業務で必要性感じず」　人材育成を推進 | 0.5 | ITmedia AI+ |
-| 132 | アニメ「本好きの下剋上」OP映像差し替え　“AI禁止”のはずが「AI使用と判明」、制作会社が謝罪 | 0.5 | ITmedia AI+ |
-| 133 | AI導入の不安を減らすための5ステップ！顧客対応の切替基準チェックリストも | 0.5 | AINOW |
-| 134 | 生成AIのROIを計算する方法！5項目×3パターンで投資回収を即試算 | 0.5 | AINOW |
-| 135 | ChatGPT finally offers $100/month Pro plan | 0.5 | TechCrunch AI |
-| 136 | Railway secures $100 million to challenge AWS with AI-native | 0.5 | VentureBeat AI |
-| 137 | Listen Labs raises $69M after viral billboard hiring stunt t | 0.5 | VentureBeat AI |
-| 138 | 20-year-old man arrested for allegedly throwing a Molotov co | 0.5 | The Verge AI |
-| 139 | The Iranian Lego AI video creators credit their virality to  | 0.5 | The Verge AI |
-| 140 | Gen Z’s love-hate relationship with AI | 0.5 | The Verge AI |
-| 141 | Microsoft starts removing Copilot buttons from Windows 11 ap | 0.5 | The Verge AI |
-| 142 | The Download: an exclusive Jeff VanderMeer story and AI mode | 0.5 | MIT Tech Review AI |
-| 143 | The Download: AstroTurf wars and exponential AI growth | 0.5 | MIT Tech Review AI |
-| 144 | ChatGPT voice mode is a weaker model | 0.5 | Simon Willison |
-| 145 | Meta's new model is Muse Spark, and meta.ai chat has some in | 0.5 | Simon Willison |
-| 146 | [AINews] Meta Superintelligence Labs announces Muse Spark, f | 0.5 | Latent Space |
-| 147 | [AINews] Gemma 4 crosses 2 million downloads | 0.5 | Latent Space |
-| 148 | AI代替で消える新卒枠……中途も影響半数で「売り手市場」に暗雲 | 0.5 | ITmedia AI+ |
-| 149 | 「QAって何？」の認識を揃えたら、PdMもデザイナーもコードを書くチームになった話 | 0.2 | Qiita AI |
-| 150 | Simulating a 2D Quadcopter from Scratch | 0.1 | hackernews |
-| 151 | Google検索急上昇: deepseek v3.2 | 0.1 | google_trends |
-| 152 | [GitHub] microsoft / markitdown | 0.1 | GitHub Trending |
-| 153 | [GitHub] obra / superpowers | 0.1 | GitHub Trending |
-| 154 | [GitHub] HKUDS / DeepTutor | 0.1 | GitHub Trending |
-| 155 | [GitHub] opendataloader-project / opendataloader-pdf | 0.1 | GitHub Trending |
-| 156 | [GitHub] coleam00 / Archon | 0.1 | GitHub Trending |
-| 157 | [GitHub] shiyu-coder / Kronos | 0.1 | GitHub Trending |
-| 158 | [GitHub] pbakaus / impeccable | 0.1 | GitHub Trending |
-| 159 | [GitHub] forrestchang / andrej-karpathy-skills | 0.1 | GitHub Trending |
-| 160 | [GitHub] rowboatlabs / rowboat | 0.1 | GitHub Trending |
-| 161 | [GitHub] jingyaogong / minimind | 0.1 | GitHub Trending |
-| 162 | Google検索急上昇: deepseek v4 | 0.1 | google_trends |
-| 163 | エンジニア歴20年の私が、素人バイブコーディング勢に物申す | 0.1 | Qiita AI |
-| 164 | [GitHub] YishenTu / claudian | 0.1 | GitHub Trending |
-| 165 | [GitHub] jo-inc / camofox-browser | 0.1 | GitHub Trending |
-| 166 | 盛り上がる「推論専用チップ」　メモリーの壁を乗り越えられるか | 0.0 | 日経クロステック |
-| 167 | TechCrunch is heading to Tokyo — and bringing the Startup Ba | 0.0 | TechCrunch AI |
-| 168 | Last 24 hours: Save up to $500 on your TechCrunch Disrupt 20 | 0.0 | TechCrunch AI |
-| 169 | “Negative” views of Broadcom driving thousands of VMware mig | 0.0 | Ars Technica Tech |
-| 170 | Iran-linked hackers disrupt operations at US critical infras | 0.0 | Ars Technica Tech |
-| 171 | Thousands of consumer routers hacked by Russia's military | 0.0 | Ars Technica Tech |
-| 172 | OpenClaw gives users yet another reason to be freaked out ab | 0.0 | Ars Technica Tech |
-| 173 | What’s in a name? Moderna’s “vaccine” vs. “therapy” dilemma | 0.0 | MIT Tech Review AI |
-| 174 | Constellations | 0.0 | MIT Tech Review AI |
-| 175 | Kākāpō parrots | 0.0 | Simon Willison |
-| 176 | GitHub Repo Size | 0.0 | Simon Willison |
-| 177 | asgi-gzip 0.3 | 0.0 | Simon Willison |
-| 178 | DX銘柄2026、グランプリはブリヂストン・ミスミグループ本社・三井住友FG | 0.0 | 日経クロステック |
-| 179 | 「エリクソン、スパコンで脳を模倣」など5本 | 0.0 | 日経クロステック |
+| 72 | Google検索急上昇: walmart near me | 1.1 | google_trends |
+| 73 | Google検索急上昇: cursor 3.0 | 1.1 | google_trends |
+| 74 | Googleサジェスト: Claude Code チュートリアル | 1.1 | serpapi |
+| 75 | Googleサジェスト: AI agent framework 2026 チュートリアル | 1.1 | serpapi |
+| 76 | Googleサジェスト: MCP protocol AI チュートリアル | 1.1 | serpapi |
+| 77 | [GitHub] shanraisshan / claude-code-best-practice | 1.1 | GitHub Trending |
+| 78 | [GitHub] K-Dense-AI / scientific-agent-skills | 1.1 | GitHub Trending |
+| 79 | Apple Silicon and Virtual Machines: Beating the 2 VM Limit ( | 1.0 | hackernews |
+| 80 | 米財務長官とFRB議長が銀行幹部に警告　Anthropicの最新AI巡り、サイバーセキュリティに懸念 | 1.0 | ITmedia AI+ |
+| 81 | Claudeを“コスパ良く”利用可能に　性能の異なるモデルが“適材適所”で稼働、Anthropicの新ツール | 1.0 | ITmedia AI+ |
+| 82 | Anthropic temporarily banned OpenClaw’s creator from accessi | 1.0 | TechCrunch AI |
+| 83 | Claude Code costs up to $200 a month. Goose does the same th | 1.0 | VentureBeat AI |
+| 84 | Salesforce rolls out new Slackbot AI agent as it battles Mic | 1.0 | VentureBeat AI |
+| 85 | Extreme Harness Engineering for Token Billionaires: 1M LOC,  | 1.0 | Latent Space |
+| 86 | Multimodal Embedding & Reranker Models with Sentence Transfo | 1.0 | HuggingFace Blog |
+| 87 | Googleサジェスト: GPT-5 release 使い方 | 1.0 | serpapi |
+| 88 | Googleサジェスト: best AI coding tools 使い方 | 1.0 | serpapi |
+| 89 | Googleサジェスト: GPT-5 release 料金 | 0.9 | serpapi |
+| 90 | Googleサジェスト: best AI coding tools 料金 | 0.9 | serpapi |
+| 91 | Cooperative Vectors Introduction | 0.9 | hackernews |
+| 92 | Googleサジェスト: GPT-5 release API | 0.8 | serpapi |
+| 93 | Googleサジェスト: best AI coding tools API | 0.8 | serpapi |
+| 94 | GPT-5 release - 最新情報まとめ | 0.8 | serpapi |
+| 95 | best AI coding tools - 最新情報まとめ | 0.8 | serpapi |
+| 96 | Googleサジェスト: GPT-5 release 比較 | 0.7 | serpapi |
+| 97 | Googleサジェスト: best AI coding tools 比較 | 0.7 | serpapi |
+| 98 | GPT-5 release の使い方・始め方ガイド | 0.7 | serpapi |
+| 99 | best AI coding tools の使い方・始め方ガイド | 0.7 | serpapi |
+| 100 | DESIGN.md + 壊れたら気づくハーネス - AI向けデザインシステムを「維持できる仕組み」にした記録 | 0.7 | Zenn AI |
+| 101 | Google検索急上昇: obsidian | 0.7 | google_trends |
+| 102 | AI Is Tipping the Scales Toward Hackers After Mythos Release | 0.7 | hackernews |
+| 103 | GPT-5 release vs 競合比較 2026年版 | 0.7 | serpapi |
+| 104 | best AI coding tools vs 競合比較 2026年版 | 0.7 | serpapi |
+| 105 | Googleサジェスト: GPT-5 release チュートリアル | 0.6 | serpapi |
+| 106 | Googleサジェスト: best AI coding tools チュートリアル | 0.6 | serpapi |
+| 107 | Google検索急上昇: diccionario rag | 0.6 | google_trends |
+| 108 | [GitHub] NousResearch / hermes-agent | 0.6 | GitHub Trending |
+| 109 | [GitHub] thedotmack / claude-mem | 0.6 | GitHub Trending |
+| 110 | [GitHub] multica-ai / multica | 0.6 | GitHub Trending |
+| 111 | Google検索急上昇: rae | 0.6 | google_trends |
+| 112 | [GitHub] Anil-matcha / Open-Higgsfield-AI | 0.6 | GitHub Trending |
+| 113 | Google検索急上昇: antigravity | 0.5 | google_trends |
+| 114 | Democratic AI to serve the public – OneProject.org | 0.5 | hackernews |
+| 115 | 生成AI導入はどの部署が主導すべき？情シス・DX推進・現場別の進め方 | 0.5 | AINOW |
+| 116 | 情シス主導で生成AIツール導入の稟議を通すには？AIツール比較表テンプレートも紹介 | 0.5 | AINOW |
+| 117 | 新モデル「Claude Mythos」の衝撃　数千の脆弱性を発見、一般公開せず | 0.5 | 日経クロステック |
+| 118 | AIがプログラミング言語を考案　実際につくって動かしてみた | 0.5 | 日経クロステック |
+| 119 | 小野田紀美AI戦略担当相、自身のAI利用は「業務で必要性感じず」　人材育成を推進 | 0.5 | ITmedia AI+ |
+| 120 | アニメ「本好きの下剋上」OP映像差し替え　“AI禁止”のはずが「AI使用と判明」、制作会社が謝罪 | 0.5 | ITmedia AI+ |
+| 121 | AI導入の不安を減らすための5ステップ！顧客対応の切替基準チェックリストも | 0.5 | AINOW |
+| 122 | 生成AIのROIを計算する方法！5項目×3パターンで投資回収を即試算 | 0.5 | AINOW |
+| 123 | Railway secures $100 million to challenge AWS with AI-native | 0.5 | VentureBeat AI |
+| 124 | Listen Labs raises $69M after viral billboard hiring stunt t | 0.5 | VentureBeat AI |
+| 125 | Your article about AI doesn’t need AI art | 0.5 | The Verge AI |
+| 126 | 20-year-old man arrested for allegedly throwing a Molotov co | 0.5 | The Verge AI |
+| 127 | The Iranian Lego AI video creators credit their virality to  | 0.5 | The Verge AI |
+| 128 | The Download: an exclusive Jeff VanderMeer story and AI mode | 0.5 | MIT Tech Review AI |
+| 129 | The Download: AstroTurf wars and exponential AI growth | 0.5 | MIT Tech Review AI |
+| 130 | ChatGPT voice mode is a weaker model | 0.5 | Simon Willison |
+| 131 | [AINews] AI Engineer Europe 2026 | 0.5 | Latent Space |
+| 132 | [AINews] Meta Superintelligence Labs announces Muse Spark, f | 0.5 | Latent Space |
+| 133 | AI代替で消える新卒枠……中途も影響半数で「売り手市場」に暗雲 | 0.5 | ITmedia AI+ |
+| 134 | お父さん、ゲーム作れるの？ | 0.4 | Zenn AI |
+| 135 | Google検索急上昇: deepseek v3.2 | 0.1 | google_trends |
+| 136 | [GitHub] microsoft / markitdown | 0.1 | GitHub Trending |
+| 137 | [GitHub] obra / superpowers | 0.1 | GitHub Trending |
+| 138 | [GitHub] coleam00 / Archon | 0.1 | GitHub Trending |
+| 139 | [GitHub] forrestchang / andrej-karpathy-skills | 0.1 | GitHub Trending |
+| 140 | [GitHub] HKUDS / DeepTutor | 0.1 | GitHub Trending |
+| 141 | [GitHub] opendataloader-project / opendataloader-pdf | 0.1 | GitHub Trending |
+| 142 | [GitHub] shiyu-coder / Kronos | 0.1 | GitHub Trending |
+| 143 | [GitHub] QwenLM / qwen-code | 0.1 | GitHub Trending |
+| 144 | [GitHub] clash-verge-rev / clash-verge-rev | 0.1 | GitHub Trending |
+| 145 | [GitHub] pbakaus / impeccable | 0.1 | GitHub Trending |
+| 146 | [GitHub] rowboatlabs / rowboat | 0.1 | GitHub Trending |
+| 147 | Google検索急上昇: deepseek v4 | 0.1 | google_trends |
+| 148 | [GitHub] aloshdenny / reverse-SynthID | 0.1 | GitHub Trending |
+| 149 | [GitHub] jo-inc / camofox-browser | 0.0 | GitHub Trending |
+| 150 | [GitHub] codeforreal1 / compressO | 0.0 | GitHub Trending |
+| 151 | 経産省、30社を「DX銘柄2026」に認定　3年連続選出のSMBCは500億円超投資、成果は？ | 0.0 | ITmedia AI+ |
+| 152 | 盛り上がる「推論専用チップ」　メモリーの壁を乗り越えられるか | 0.0 | 日経クロステック |
+| 153 | Sam Altman responds to ‘incendiary’ New Yorker article after | 0.0 | TechCrunch AI |
+| 154 | TechCrunch is heading to Tokyo — and bringing the Startup Ba | 0.0 | TechCrunch AI |
+| 155 | Last 24 hours: Save up to $500 on your TechCrunch Disrupt 20 | 0.0 | TechCrunch AI |
+| 156 | My baby deer plushie told me that Mitski&#8217;s dad was a C | 0.0 | The Verge AI |
+| 157 | How Iran out-shitposted the White House | 0.0 | The Verge AI |
+| 158 | “Negative” views of Broadcom driving thousands of VMware mig | 0.0 | Ars Technica Tech |
+| 159 | Iran-linked hackers disrupt operations at US critical infras | 0.0 | Ars Technica Tech |
+| 160 | Thousands of consumer routers hacked by Russia's military | 0.0 | Ars Technica Tech |
+| 161 | OpenClaw gives users yet another reason to be freaked out ab | 0.0 | Ars Technica Tech |
+| 162 | What’s in a name? Moderna’s “vaccine” vs. “therapy” dilemma | 0.0 | MIT Tech Review AI |
+| 163 | Constellations | 0.0 | MIT Tech Review AI |
+| 164 | SQLite 3.53.0 | 0.0 | Simon Willison |
+| 165 | SQLite Query Result Formatter Demo | 0.0 | Simon Willison |
+| 166 | Kākāpō parrots | 0.0 | Simon Willison |
+| 167 | GitHub Repo Size | 0.0 | Simon Willison |
+| 168 | DX銘柄2026、グランプリはブリヂストン・ミスミグループ本社・三井住友FG | 0.0 | 日経クロステック |
+| 169 | ホンダの新型インサイト、日本投入　ベースは中国向けEV | 0.0 | 日経クロステック |
 
 ## 💡 今日のポイント
 
 - 上位トピックを中心にX投稿ドラフトを作成可能
 - `python scripts/generate_x_drafts.py` でドラフト量産
-- 全179件のデータが保存済み
+- 全169件のデータが保存済み
