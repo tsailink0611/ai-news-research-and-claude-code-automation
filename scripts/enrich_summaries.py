@@ -4,6 +4,7 @@ processed_articles.json の各記事にClaudeで日本語要約を追加する
 """
 import os
 import json
+import sys
 import time
 import argparse
 from pathlib import Path
@@ -183,6 +184,23 @@ def run(date: str = None, top_n: int = TOP_N, force: bool = False) -> dict:
         json.dump(save_data, f, ensure_ascii=False, indent=2)
 
     print(f"\n[enrich] 完了 — 要約追加: {result['enriched']} 件 / スキップ: {result['skipped']} 件")
+
+    # enriched summary_ja を使って output_block を再判定する
+    try:
+        sys.path.insert(0, str(Path(__file__).parent))
+        from process_data import enrich_items as rescore_items
+        if isinstance(data, dict):
+            data["items"] = rescore_items(data["items"])
+            with open(processed_file, "w", encoding="utf-8") as f:
+                json.dump(data, f, ensure_ascii=False, indent=2)
+        block_counts = {}
+        for item in (data.get("items", []) if isinstance(data, dict) else data):
+            b = item.get("output_block", "C")
+            block_counts[b] = block_counts.get(b, 0) + 1
+        print(f"[enrich] 再スコアリング完了 — Block A:{block_counts.get('A',0)} B:{block_counts.get('B',0)} C:{block_counts.get('C',0)}")
+    except Exception as e:
+        print(f"[enrich] 再スコアリングスキップ: {e}")
+
     return result
 
 
