@@ -452,7 +452,10 @@ def create_ai_page(notion: "Client", db_id: str, item: dict) -> "str | None":
         if first_page_id is not None:
             return first_page_id
 
-    # フォールバック: DB直下に保存
+    # フォールバック: DB直下に保存（DB IDが設定されている場合のみ）
+    if not db_id:
+        print(f"[notify_notion] AI保存スキップ: NOTION_AI_DB_IDもNOTION_AI_PARENT_PAGE_IDも未設定")
+        return None
     created_fb = notion.pages.create(
         parent={"database_id": db_id},
         properties={
@@ -547,7 +550,10 @@ def create_nfc_page(notion: "Client", db_id: str, item: dict) -> "str | None":
         if first_page_id is not None:
             return first_page_id
 
-    # フォールバック: DB直下に保存
+    # フォールバック: DB直下に保存（DB IDが設定されている場合のみ）
+    if not db_id:
+        print(f"[notify_notion] NFC保存スキップ: NOTION_NFC_DB_IDもNOTION_NFC_PARENT_PAGE_IDも未設定")
+        return None
     created_fb = notion.pages.create(
         parent={"database_id": db_id},
         properties={
@@ -738,17 +744,24 @@ def run(date: str = None, dry_run: bool = False) -> dict:
 
     notion = Client(auth=NOTION_API_KEY)
 
+    # 設定状況を出力（デバッグ用）
+    print(f"[notify_notion] 設定確認 — "
+          f"AI_DB:{bool(NOTION_AI_DB_ID)} "
+          f"AI_PAGE:{bool(NOTION_AI_PARENT_PAGE_ID)} "
+          f"NFC_DB:{bool(NOTION_NFC_DB_ID)} "
+          f"NFC_PAGE:{bool(NOTION_NFC_PARENT_PAGE_ID)}")
+
     for article in ab_articles:
         if is_nfc_item(article):
-            if not NOTION_NFC_DB_ID:
+            # DB IDも親ページIDも両方未設定の場合のみスキップ
+            if not NOTION_NFC_DB_ID and not NOTION_NFC_PARENT_PAGE_ID:
                 result["skipped"] += 1
                 continue
-            # タイトルベースの重複チェック
             title = article.get("title") or ""
             score = float(article.get("score") or 0)
             region = detect_nfc_region(article)
             page_title = _make_page_title(f"NFC/{region}", title, score)
-            if title_exists_in_db(notion, NOTION_NFC_DB_ID, page_title):
+            if NOTION_NFC_DB_ID and title_exists_in_db(notion, NOTION_NFC_DB_ID, page_title):
                 print(f"[skip] NFC重複: {title[:60]}")
                 result["skipped"] += 1
                 continue
@@ -764,14 +777,15 @@ def run(date: str = None, dry_run: bool = False) -> dict:
                 print(f"[error] NFC保存失敗: {e} | {title[:60]}")
                 result["skipped"] += 1
         else:
-            if not NOTION_AI_DB_ID:
+            # DB IDも親ページIDも両方未設定の場合のみスキップ
+            if not NOTION_AI_DB_ID and not NOTION_AI_PARENT_PAGE_ID:
                 result["skipped"] += 1
                 continue
             title = article.get("title") or ""
             score = float(article.get("score") or 0)
             category = detect_ai_category(article)
             page_title = _make_page_title(category, title, score)
-            if title_exists_in_db(notion, NOTION_AI_DB_ID, page_title):
+            if NOTION_AI_DB_ID and title_exists_in_db(notion, NOTION_AI_DB_ID, page_title):
                 print(f"[skip] AI重複: {title[:60]}")
                 result["skipped"] += 1
                 continue
