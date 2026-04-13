@@ -16,7 +16,7 @@ try:
 except ImportError:
     Client = None
 
-from config import PROCESSED_DIR, today_str
+from config import PROCESSED_DIR, RAW_DIR, today_str
 from db import get_supabase, update_notion_state, get_current_run_id
 
 # Notion設定
@@ -552,6 +552,124 @@ def create_nfc_page(notion: "Client", db_id: str, item: dict) -> "str | None":
     return created_fb.get("id") or None
 
 
+def save_influencer_posts_to_notion(notion: "Client", date: str) -> int:
+    """AIインフルエンサー投稿を全件Notionに保存する"""
+    if not NOTION_AI_PARENT_PAGE_ID and not NOTION_AI_DB_ID:
+        return 0
+
+    influencer_path = RAW_DIR / date / "ai_influencers_raw.json"
+    if not influencer_path.exists():
+        print("[notify_notion] インフルエンサーデータなし: スキップ")
+        return 0
+
+    try:
+        with open(influencer_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+    except Exception as e:
+        print(f"[notify_notion] インフルエンサーデータ読み込みエラー: {e}")
+        return 0
+
+    posts = data.get("posts", [])
+    if not posts:
+        return 0
+
+    print(f"[notify_notion] インフルエンサー投稿 {len(posts)} 件をNotionに保存中...")
+    saved = 0
+    run_date = date
+
+    for post in posts:
+        author = post.get("author", "@unknown")
+        author_name = post.get("author_name", author)
+        text = post.get("text", "")
+        text_ja = post.get("text_ja", "")
+        topic = post.get("topic", "AI")
+        likes = post.get("likes", 0)
+        retweets = post.get("retweets", 0)
+        importance = post.get("importance", 1)
+        hours_ago = post.get("posted_hours_ago", 48)
+
+        # ページタイトル: 著者 + 日本語要約冒頭
+        ja_preview = text_ja[:60] if text_ja else text[:60]
+        page_title = f"[{topic}] {author} — {ja_preview}"[:200]
+
+        # コンテンツブロック
+        stars = "★" * min(importance, 5)
+        blocks = []
+
+        # メタ情報
+        meta_text = f"{author_name}  {stars}  ♥{likes:,}  RT{retweets:,}  {hours_ago}h前 | {topic}"
+        blocks.append({
+            "object": "block",
+            "type": "callout",
+            "callout": {
+                "rich_text": [{"type": "text", "text": {"content": meta_text}}],
+                "icon": {"emoji": "🐦"},
+                "color": "blue_background",
+            }
+        })
+
+        # 原文
+        if text:
+            blocks.append({
+                "object": "block",
+                "type": "paragraph",
+                "paragraph": {
+                    "rich_text": [{"type": "text", "text": {"content": text[:2000]}}]
+                }
+            })
+
+        # 日本語訳
+        if text_ja:
+            blocks.append({"object": "block", "type": "divider", "divider": {}})
+            blocks.append({
+                "object": "block",
+                "type": "paragraph",
+                "paragraph": {
+                    "rich_text": [{"type": "text", "text": {"content": f"【日本語】{text_ja[:1000]}"}}]
+                }
+            })
+
+        try:
+            if NOTION_AI_PARENT_PAGE_ID:
+                # 📆 日別アーカイブ → 日付 → AI Influencers → 投稿
+                daily_section_id = get_or_create_subpage(
+                    notion, NOTION_AI_PARENT_PAGE_ID, DAILY_SECTION_TITLE,
+                    icon_emoji="📆", description="日別のAIニュースアーカイブ",
+                )
+                if daily_section_id:
+                    date_page_id = get_or_create_date_page(notion, daily_section_id, run_date)
+                    if date_page_id:
+                        inf_section_id = get_or_create_subpage(
+                            notion, date_page_id, "AI Influencers",
+                            icon_emoji="🐦", description="AIインフルエンサーの直近投稿",
+                        )
+                        if inf_section_id:
+                            notion.pages.create(
+                                parent={"page_id": inf_section_id},
+                                properties={
+                                    "title": {"title": [{"text": {"content": page_title}}]}
+                                },
+                                children=blocks
+                            )
+                            saved += 1
+                            print(f"[INF] 保存: {author} — {topic}")
+            else:
+                # フォールバック: AI DB直下
+                notion.pages.create(
+                    parent={"database_id": NOTION_AI_DB_ID},
+                    properties={
+                        "Name": {"title": [{"text": {"content": page_title}}]}
+                    },
+                    children=blocks
+                )
+                saved += 1
+        except Exception as e:
+            print(f"[error] インフルエンサー保存失敗 ({author}): {e}")
+
+    print(f"[notify_notion] インフルエンサー投稿: {saved}/{len(posts)} 件保存完了")
+    return saved
+
+
 def run(date: str = None, dry_run: bool = False) -> dict:
     """
     処理済みデータをNotionに保存する
@@ -566,7 +684,7 @@ def run(date: str = None, dry_run: bool = False) -> dict:
     if date is None:
         date = today_str()
 
-    result = {"ai_saved": 0, "nfc_saved": 0, "skipped": 0}
+    result = {"ai_saved": 0, "nfc_saved": 0, "skipped": 0, "influencer_saved": 0}
 
     supabase = get_supabase()
     run_id = get_current_run_id(date)
@@ -586,20 +704,19 @@ def run(date: str = None, dry_run: bool = False) -> dict:
 
     if not articles:
         print("[notify_notion] 記事データが空です")
-        return result
 
     print(f"[notify_notion] {len(articles)} 件を処理対象として読み込みました")
 
     # Supabaseがcanonical storeになったため、NotionはBlock A/Bのみ保存する
-    articles = [a for a in articles if a.get("output_block") in ("A", "B")]
-    if not articles:
-        print("[notify_notion] Block A/B の記事なし - スキップ")
-        return result
-    print(f"[notify_notion] Block A/B フィルター後: {len(articles)} 件")
+    ab_articles = [a for a in articles if a.get("output_block") in ("A", "B")]
+    if not ab_articles:
+        print("[notify_notion] Block A/B の記事なし")
+    else:
+        print(f"[notify_notion] Block A/B フィルター後: {len(ab_articles)} 件")
 
     if dry_run:
-        ai_count = sum(1 for a in articles if not is_nfc_item(a))
-        nfc_count = sum(1 for a in articles if is_nfc_item(a))
+        ai_count = sum(1 for a in ab_articles if not is_nfc_item(a))
+        nfc_count = sum(1 for a in ab_articles if is_nfc_item(a))
         print(f"[dry-run] AI系: {ai_count} 件 / NFC系: {nfc_count} 件")
         result["ai_saved"] = ai_count
         result["nfc_saved"] = nfc_count
@@ -615,7 +732,7 @@ def run(date: str = None, dry_run: bool = False) -> dict:
 
     notion = Client(auth=NOTION_API_KEY)
 
-    for article in articles:
+    for article in ab_articles:
         if is_nfc_item(article):
             if not NOTION_NFC_DB_ID:
                 result["skipped"] += 1
@@ -664,9 +781,16 @@ def run(date: str = None, dry_run: bool = False) -> dict:
                 print(f"[error] AI保存失敗: {e} | {title[:60]}")
                 result["skipped"] += 1
 
+    # インフルエンサー投稿を保存（Notion API キーがあれば）
+    if notion is not None:
+        inf_saved = save_influencer_posts_to_notion(notion, date)
+        result["influencer_saved"] = inf_saved
+
     print(
         f"[notify_notion] 完了 — AI: {result['ai_saved']} 件, "
-        f"NFC: {result['nfc_saved']} 件, スキップ: {result['skipped']} 件"
+        f"NFC: {result['nfc_saved']} 件, "
+        f"インフルエンサー: {result.get('influencer_saved', 0)} 件, "
+        f"スキップ: {result['skipped']} 件"
     )
     return result
 

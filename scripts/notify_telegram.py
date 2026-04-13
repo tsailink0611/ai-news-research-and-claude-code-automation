@@ -213,7 +213,7 @@ def build_drafts_message(date: str) -> str | None:
 
 
 def build_influencer_message(date: str) -> str | None:
-    """AIインフルエンサーの直近投稿ハイライトを構築する"""
+    """AIインフルエンサーの直近投稿を全件・全文で構築する"""
     influencer_path = Path(__file__).parent.parent / "data" / "raw" / date / "ai_influencers_raw.json"
     if not influencer_path.exists():
         return None
@@ -228,25 +228,31 @@ def build_influencer_message(date: str) -> str | None:
     if not posts:
         return None
 
-    # 重要度5 → 4 → いいね数の順で上位5件
+    # 重要度 → いいね数の順でソート（全件表示）
     posts = sorted(posts, key=lambda x: (x.get("importance", 0), x.get("likes", 0)), reverse=True)
-    top = posts[:5]
 
     lines = []
     lines.append(f"<b>AI インフルエンサー速報 (48h)  {len(posts)} 件</b>")
     lines.append("")
 
-    for i, post in enumerate(top, 1):
+    for i, post in enumerate(posts, 1):
         author = _escape_html(post.get("author", ""))
+        author_name = _escape_html(post.get("author_name", "") or post.get("author", ""))
         topic = _escape_html(post.get("topic", ""))
         imp = post.get("importance", 1)
         likes = post.get("likes", 0)
-        text_ja = _escape_html(post.get("text_ja", "") or post.get("text", "")[:100])
+        retweets = post.get("retweets", 0)
+        text = _escape_html(post.get("text", ""))
+        text_ja = _escape_html(post.get("text_ja", ""))
         hours_ago = post.get("posted_hours_ago", "?")
         stars = "★" * min(imp, 5)
 
-        lines.append(f"<b>{i}. {author}</b>  {stars}  {likes:,}♥  {hours_ago}h前")
-        lines.append(f"   [{topic}] {text_ja[:120]}")
+        lines.append(f"<b>{i}. {author_name} ({author})</b>")
+        lines.append(f"   {stars}  ♥{likes:,}  RT{retweets:,}  {hours_ago}h前  [{topic}]")
+        if text:
+            lines.append(f"   <i>{text[:280]}</i>")
+        if text_ja:
+            lines.append(f"   【日本語】{text_ja[:200]}")
         lines.append("")
 
     return "\n".join(lines)

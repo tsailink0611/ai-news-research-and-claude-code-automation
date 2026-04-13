@@ -184,9 +184,9 @@ def enrich_items(items: list[dict]) -> list[dict]:
         # 出力ブロック判定
         f = item["frontier_score"]
         p = item["proposal_score"]
-        if p >= 5:
+        if p >= 3:
             item["output_block"] = "A"   # 今すぐ提案ネタ
-        elif f >= 6 and p >= 2:
+        elif f >= 6 and p >= 1:
             item["output_block"] = "B"   # 今週触るべき先端シグナル
         elif f >= 4:
             item["output_block"] = "C"   # 将来ネタ保存
