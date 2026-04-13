@@ -112,12 +112,16 @@ def fetch_influencer_posts(hours: int = 48) -> list[dict]:
 
 
 def _call_grok(handles: list[str], hours: int) -> list[dict]:
-    """Grok API を呼び出す"""
+    """Grok API を呼び出す（リアルタイムX検索有効）"""
     headers = {
         "Authorization": f"Bearer {GROK_API_KEY}",
         "Content-Type": "application/json",
     }
     prompt = _build_influencer_prompt(handles, hours)
+
+    # @を除いたハンドル名リスト（xAI search_parameters用）
+    clean_handles = [h.lstrip("@") for h in handles]
+
     payload = {
         "model": "grok-4-1-fast-non-reasoning",
         "messages": [
@@ -128,6 +132,17 @@ def _call_grok(handles: list[str], hours: int) -> list[dict]:
             {"role": "user", "content": prompt},
         ],
         "temperature": 0.3,
+        # リアルタイムX投稿検索を有効化
+        "search_parameters": {
+            "mode": "on",
+            "sources": [
+                {
+                    "type": "x",
+                    "x_handles": clean_handles,
+                }
+            ],
+            "max_search_results": 20,
+        },
     }
 
     response = requests.post(
