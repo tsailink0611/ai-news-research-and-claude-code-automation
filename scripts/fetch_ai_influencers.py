@@ -119,7 +119,7 @@ def _call_grok(handles: list[str], hours: int) -> list[dict]:
     }
     prompt = _build_influencer_prompt(handles, hours)
     payload = {
-        "model": "grok-3-latest",
+        "model": "grok-4-1-fast-non-reasoning",
         "messages": [
             {
                 "role": "system",
