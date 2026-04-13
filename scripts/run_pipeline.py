@@ -172,7 +172,7 @@ def step_notion():
 
     from notify_notion import run as save_notion
     result = save_notion()
-    print(f"\n  Notion: AI={result['ai_saved']} NFC={result['nfc_saved']} skip={result['skipped']}")
+    print(f"\n  Notion: AI={result['ai_saved']} NFC={result['nfc_saved']} INF={result.get('influencer_saved', 0)} skip={result['skipped']}")
     return result
 
 
