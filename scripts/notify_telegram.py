@@ -155,17 +155,22 @@ def build_digest_message(date: str) -> str | None:
     else:
         lines.append("   <i>今日は該当なし（F≥6かつP≥2の記事なし）</i>")
 
-    # ── Block C: 将来ネタ保存（件数のみ） ────────────────────
+    # ── Block C: 将来ネタ保存（技術ブログ上位5件を表示） ─────────
     lines.append("")
-    lines.append("<b>Block C — 将来ネタ保存</b>")
+    lines.append("<b>Block C — 技術ブログ・海外速報</b>")
     if block_c:
-        # カテゴリ別集計
-        cat_count: dict[str, int] = {}
-        for item in block_c:
-            lane = item.get("lane", "frontier")
-            cat_count[lane] = cat_count.get(lane, 0) + 1
-        detail = "  ".join(f"{k}:{v}件" for k, v in cat_count.items())
-        lines.append(f"   Notionに {len(block_c)} 件を保存  |  {detail}")
+        # frontier_score上位5件を表示
+        frontier_top = sorted(block_c, key=lambda x: x.get("frontier_score", 0), reverse=True)[:5]
+        lines.append(f"   <code>{len(block_c)} 件 | 上位5件：</code>")
+        for item in frontier_top:
+            title = _escape_html((item.get("title") or "")[:55])
+            source = item.get("source", "")
+            f_val = item.get("frontier_score", 0)
+            url = item.get("url", "")
+            if url and url.startswith("http"):
+                lines.append(f"   F:{f_val}  <a href=\"{url}\">{title}</a>  <i>{source}</i>")
+            else:
+                lines.append(f"   F:{f_val}  {title}  <i>{source}</i>")
     else:
         lines.append("   <i>なし</i>")
 
