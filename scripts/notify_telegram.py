@@ -134,26 +134,26 @@ def build_digest_message(date: str) -> str | None:
     else:
         lines.append("   <i>今日は該当なし（P≥5の記事なし）</i>")
 
-    # ── Block B: 今週触るべき先端シグナル ───────────────────
+    # ── Block B: 今週触るべき先端シグナル（技術ブログ・YouTube含む） ─
     lines.append("")
-    lines.append("<b>Block B — 今週触るべき先端シグナル</b>")
+    lines.append("<b>Block B — 技術ブログ・YouTube・先端シグナル</b>")
     if block_b:
-        for i, item in enumerate(block_b[:3], 1):
-            title = _escape_html((item.get("title") or "")[:60])
+        for i, item in enumerate(block_b[:5], 1):
+            title = _escape_html((item.get("title") or "")[:65])
             p = item.get("proposal_score", 0)
             f = item.get("frontier_score", 0)
-            source = item.get("source", "")
+            source = _escape_html(item.get("source", ""))
             point = item.get("summary_ja") or item.get("point") or ""
             url = item.get("url", "")
 
             lines.append(f"\n<b>{i}. {title}</b>")
             lines.append(f"   F:{f}  P:{p}  |  {source}")
             if point:
-                lines.append(f"   <i>{_escape_html(point[:90])}</i>")
+                lines.append(f"   <i>{_escape_html(point[:100])}</i>")
             if url and url.startswith("http"):
-                lines.append(f"   <a href=\"{url}\">記事を読む</a>")
+                lines.append(f"   <a href=\"{url}\">読む / 視聴する</a>")
     else:
-        lines.append("   <i>今日は該当なし（F≥6かつP≥2の記事なし）</i>")
+        lines.append("   <i>今日は該当なし</i>")
 
     # ── Block C: 将来ネタ保存（技術ブログ上位5件を表示） ─────────
     lines.append("")

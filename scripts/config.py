@@ -115,6 +115,7 @@ FRONTIER_SOURCES = {
     "MIT Tech Review AI", "Simon Willison", "Latent Space", "Import AI",
     "TheSequence", "HuggingFace Blog", "GitHub Trending",
     "HackerNews", "Reddit", "Product Hunt", "China SNS",
+    "youtube", "youtube_influencer",
 }
 
 # Proposal Radar: 今すぐ提案に使える国内事例・ツール・業種情報

@@ -30,7 +30,13 @@ def step_fetch():
     from fetch_rss_news import run as fetch_rss
     rss_results = fetch_rss(fetch_body=True)
     results["rss"] = len(rss_results)
-    print(f"  [1] RSS記事: {len(rss_results)} 件（5ソース）")
+    print(f"  [1] RSS記事: {len(rss_results)} 件（技術ブログ含む10ソース）")
+
+    # 2. YouTube（AI動画・インフルエンサーチャンネル・再生数上位）
+    from fetch_youtube import run as fetch_youtube
+    yt_results = fetch_youtube(limit=5)
+    results["youtube"] = len(yt_results)
+    print(f"  [2] YouTube: {len(yt_results)} videos")
 
     # 3. HackerNews（エンジニア・開発者トレンド）
     from fetch_hn import run as fetch_hn
@@ -228,8 +234,8 @@ def run_pipeline(steps: list[str] | None = None):
     print(f"\n{'#' * 60}")
     print(f"  AI News Pipeline - {date}")
     print(f"  Steps: {', '.join(steps)}")
-    print(f"  Sources: RSS(TechCrunch/VentureBeat/Verge/MIT), HN, Reddit,")
-    print(f"           China SNS, Google Trends, Product Hunt, SerpApi,")
+    print(f"  Sources: RSS(TechCrunch/VentureBeat/Verge/SimonWillison/MIT...), YouTube,")
+    print(f"           HN, Reddit, China SNS, Google Trends, Product Hunt, SerpApi,")
     print(f"           X Bookmarks, Japan AI(ITmedia/Zenn/Qiita/AINOW), GitHub Trending")
     print(f"{'#' * 60}")
 

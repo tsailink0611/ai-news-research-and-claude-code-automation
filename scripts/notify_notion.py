@@ -38,6 +38,7 @@ NFC_KEYWORDS = [
 
 # AIカテゴリ判定マッピング
 AI_CATEGORY_RULES = [
+    (["youtube", "youtu.be"], "YouTube AI"),
     (["github", "github trending", "star", "repository", "plugin", "extension", "vscode", "cursor", "cline"], "AI Tools & GitHub"),
     (["n8n", "dify", "langchain", "automate", "workflow", "自動化", "ノーコード", "rpa"], "n8n/Automation"),
     (["agent", "agents", "エージェント"], "AI Agents"),
@@ -47,6 +48,8 @@ AI_CATEGORY_RULES = [
     (["中小企業", "大企業", "企業", "dx", "デジタル", "活用事例", "導入", "business"], "Japan AI Business"),
     (["itmedia", "zenn", "qiita", "classmethod", "ainow", "日本", "国内"], "Japan AI Industry"),
     (["gpt", "claude", "gemini", "llm", "model", "大規模言語"], "LLM/Models"),
+    (["techcrunch", "venturebeat", "verge", "ars technica", "mit tech", "simonwillison",
+       "latent space", "import ai", "thesequence", "huggingface"], "Tech Blog"),
 ]
 
 # タグ判定マッピング
@@ -89,6 +92,7 @@ def detect_ai_category(item: dict) -> str:
     text = (
         (item.get("title") or "").lower() + " " +
         (item.get("url") or "").lower() + " " +
+        (item.get("source") or "").lower() + " " +
         (item.get("summary") or "").lower()
     )
     for keywords, category in AI_CATEGORY_RULES:
@@ -190,6 +194,8 @@ CATEGORY_EMOJI = {
     "Prompt Engineering": "✏️",
     "Japan AI Business":  "🏢",
     "Japan AI Industry":  "🇯🇵",
+    "YouTube AI":         "▶",
+    "Tech Blog":          "📰",
     "Other":              "📌",
     "NFC / Global":       "🌐",
     "NFC / Japan":        "🇯🇵",
