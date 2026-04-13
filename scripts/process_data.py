@@ -128,6 +128,14 @@ def calc_frontier_score(item: dict) -> float:
     if "china" in (item.get("source") or "").lower():
         score += 1.5
 
+    # YouTube: 再生数ボーナス（常にBlock B以上を保証）
+    src_lower = (item.get("source") or "").lower()
+    if "youtube" in src_lower:
+        views = item.get("views", 0)
+        score += 2.5  # YouTube base bonus
+        score += min(views / 40000, 2.0)  # 40k views → +1.0, 100k+ → +2.0
+        score = max(score, 4.1)  # 最低でもBlock B(f≥4)
+
     # エンゲージメント補正
     score += min(item.get("importance_score", 0) * 0.3, 1.5)
 
