@@ -68,11 +68,7 @@ def step_fetch():
     results["producthunt"] = len(ph_results)
     print(f"  [7/10] Product Hunt: {len(ph_results)} products")
 
-    # 8. SerpApi × Google検索分析
-    from fetch_serpapi import run as fetch_serp
-    serp_results = fetch_serp()
-    results["serpapi"] = len(serp_results)
-    print(f"  [8/10] SerpApi: {len(serp_results)} items")
+    # 8. SerpApi → 削除（他ソースと重複・月$50コスト削減のため廃止）
 
     # 9. Xブックマーク
     from fetch_x_bookmarks import run as fetch_bm
@@ -235,7 +231,7 @@ def run_pipeline(steps: list[str] | None = None):
     print(f"  AI News Pipeline - {date}")
     print(f"  Steps: {', '.join(steps)}")
     print(f"  Sources: RSS(TechCrunch/VentureBeat/Verge/SimonWillison/MIT...), YouTube,")
-    print(f"           HN, Reddit, China SNS, Google Trends, Product Hunt, SerpApi,")
+    print(f"           HN, Reddit, China SNS, Google Trends, Product Hunt,")
     print(f"           X Bookmarks, Japan AI(ITmedia/Zenn/Qiita/AINOW), GitHub Trending")
     print(f"{'#' * 60}")
 
