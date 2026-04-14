@@ -53,15 +53,26 @@ def load_raw_data(date: str) -> list[dict]:
 
 
 def deduplicate(items: list[dict]) -> list[dict]:
-    """タイトルまたはテキストベースで重複排除"""
-    seen = set()
+    """URL・タイトル両方で重複排除（URLを優先キーにする）"""
+    seen_urls: set = set()
+    seen_titles: set = set()
     unique = []
     for item in items:
-        key = item.get("title") or item.get("text") or item.get("id", "")
-        key = str(key).strip().lower()[:100]
-        if key and key not in seen:
-            seen.add(key)
-            unique.append(item)
+        url = str(item.get("url") or "").strip().lower()
+        title_key = str(item.get("title") or item.get("text") or item.get("id", "")).strip().lower()[:100]
+
+        # URLが有効かつ重複していればスキップ
+        if url and url.startswith("http") and url in seen_urls:
+            continue
+        # タイトルが重複していればスキップ
+        if title_key and title_key in seen_titles:
+            continue
+
+        if url and url.startswith("http"):
+            seen_urls.add(url)
+        if title_key:
+            seen_titles.add(title_key)
+        unique.append(item)
     return unique
 
 

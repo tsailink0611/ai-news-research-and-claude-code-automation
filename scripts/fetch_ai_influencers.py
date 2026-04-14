@@ -132,17 +132,8 @@ def _call_grok(handles: list[str], hours: int) -> list[dict]:
             {"role": "user", "content": prompt},
         ],
         "temperature": 0.3,
-        # リアルタイムX投稿検索を有効化
-        "search_parameters": {
-            "mode": "on",
-            "sources": [
-                {
-                    "type": "x",
-                    "x_handles": clean_handles,
-                }
-            ],
-            "max_search_results": 20,
-        },
+        # Agent Tools API でリアルタイムX検索（search_parameters は廃止済み）
+        "tools": [{"type": "x_search"}],
     }
 
     response = requests.post(

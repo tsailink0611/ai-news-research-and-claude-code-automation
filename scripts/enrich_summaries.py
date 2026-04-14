@@ -25,7 +25,7 @@ def build_batch_prompt(articles: list) -> str:
     """バッチ処理用プロンプトを生成する"""
     lines = ["以下の記事それぞれについて、日本語で要約してください。\n"]
     lines.append("出力形式（各記事をJSON配列で）:\n")
-    lines.append('[{"id":0,"summary_ja":"〜","point":"〜","relevance":"AI/NFC/その他"},...]\n')
+    lines.append('[{"id":0,"title_ja":"〜","summary_ja":"〜","point":"〜","relevance":"AI/NFC/その他","stars_context":"〜"},...]\n')
     lines.append("\n---\n")
 
     for i, article in enumerate(articles):
@@ -33,18 +33,26 @@ def build_batch_prompt(articles: list) -> str:
         text = article.get("text", "") or article.get("summary", "") or ""
         source = article.get("source", "")
         url = article.get("url", "")
+        stars_today = article.get("stars_today", 0)
+        total_stars = article.get("total_stars", 0)
+        language = article.get("language", "")
 
         lines.append(f"[{i}] タイトル: {title}")
         if text and len(text) > 10:
             lines.append(f"    本文: {text[:300]}")
         if url:
             lines.append(f"    URL: {url}")
-        lines.append(f"    ソース: {source}\n")
+        lines.append(f"    ソース: {source}")
+        if stars_today or total_stars:
+            lines.append(f"    GitHubスター: 今日+{stars_today} / 累計{total_stars:,} / 言語:{language}")
+        lines.append("")
 
     lines.append("\n各記事について以下を含めてください:")
+    lines.append("- title_ja: 日本語タイトル（GitHubリポジトリはリポジトリ名+機能説明で30字以内、一般記事はタイトル翻訳）")
     lines.append("- summary_ja: 日本語要約（100〜150字）")
     lines.append("- point: なぜ重要か・何が新しいか（50字以内）")
     lines.append("- relevance: AI活用/LLM/エージェント/自動化/NFC/その他 のいずれか")
+    lines.append("- stars_context: GitHubリポジトリのみ「今日+N stars、累計N,NNN stars」形式、それ以外は空文字")
 
     return "\n".join(lines)
 
@@ -157,9 +165,11 @@ def run(date: str = None, top_n: int = TOP_N, force: bool = False) -> dict:
         for j, idx in enumerate(batch_indices):
             if j < len(summaries):
                 s = summaries[j]
+                articles[idx]["title_ja"] = s.get("title_ja", "")
                 articles[idx]["summary_ja"] = s.get("summary_ja", "")
                 articles[idx]["point"] = s.get("point", "")
                 articles[idx]["relevance"] = s.get("relevance", "その他")
+                articles[idx]["stars_context"] = s.get("stars_context", "")
                 if articles[idx]["summary_ja"]:
                     result["enriched"] += 1
                     title = articles[idx].get("title") or articles[idx].get("text", "")[:40]

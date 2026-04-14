@@ -118,15 +118,20 @@ def build_digest_message(date: str) -> str | None:
     lines.append("<b>Block A — 今すぐ提案ネタ</b>")
     if block_a:
         for i, item in enumerate(block_a[:3], 1):
-            title = _escape_html((item.get("title") or "")[:60])
+            title_ja = item.get("title_ja") or ""
+            title_en = _escape_html((item.get("title") or "")[:60])
+            display_title = _escape_html(title_ja[:60]) if title_ja else title_en
             p = item.get("proposal_score", 0)
             f = item.get("frontier_score", 0)
             source = item.get("source", "")
             point = item.get("summary_ja") or item.get("point") or ""
             url = item.get("url", "")
+            stars_ctx = item.get("stars_context", "")
 
-            lines.append(f"\n<b>{i}. {title}</b>")
-            lines.append(f"   P:{p}  F:{f}  |  {source}")
+            lines.append(f"\n<b>{i}. {display_title}</b>")
+            lines.append(f"   P:{p}  F:{f}  |  {_escape_html(source)}")
+            if stars_ctx:
+                lines.append(f"   ⭐ {_escape_html(stars_ctx)}")
             if point:
                 lines.append(f"   <i>{_escape_html(point[:90])}</i>")
             if url and url.startswith("http"):
@@ -139,15 +144,20 @@ def build_digest_message(date: str) -> str | None:
     lines.append("<b>Block B — 技術ブログ・YouTube・先端シグナル</b>")
     if block_b:
         for i, item in enumerate(block_b[:5], 1):
-            title = _escape_html((item.get("title") or "")[:65])
+            title_ja = item.get("title_ja") or ""
+            title_en = _escape_html((item.get("title") or "")[:65])
+            display_title = _escape_html(title_ja[:65]) if title_ja else title_en
             p = item.get("proposal_score", 0)
             f = item.get("frontier_score", 0)
             source = _escape_html(item.get("source", ""))
             point = item.get("summary_ja") or item.get("point") or ""
             url = item.get("url", "")
+            stars_ctx = item.get("stars_context", "")
 
-            lines.append(f"\n<b>{i}. {title}</b>")
+            lines.append(f"\n<b>{i}. {display_title}</b>")
             lines.append(f"   F:{f}  P:{p}  |  {source}")
+            if stars_ctx:
+                lines.append(f"   ⭐ {_escape_html(stars_ctx)}")
             if point:
                 lines.append(f"   <i>{_escape_html(point[:100])}</i>")
             if url and url.startswith("http"):
@@ -333,7 +343,7 @@ def _update_telegram_delivery_state(supabase, date: str, run_id: str | None) -> 
         print(f"[TELEGRAM] delivery_state 更新失敗: {e}")
 
 
-def notify(date: str | None = None, compact: bool = False) -> bool:
+def notify(date: str | None = None, compact: bool = False, force: bool = False) -> bool:
     """パイプライン結果をTelegramに送信する"""
     if date is None:
         date = today_str()
@@ -341,6 +351,12 @@ def notify(date: str | None = None, compact: bool = False) -> bool:
     if not TELEGRAM_BOT_TOKEN or not TELEGRAM_CHAT_ID:
         print("[TELEGRAM] Skipped: TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID not set")
         return False
+
+    # 当日分が送信済みかチェック（手動再実行での重複送信防止）
+    sent_flag = PROCESSED_DIR / date / "telegram_sent.flag"
+    if sent_flag.exists() and not force:
+        print(f"[TELEGRAM] Already sent for {date} — skipping. (--force で再送可)")
+        return True
 
     supabase = get_supabase()
     run_id = get_current_run_id(date)
@@ -385,14 +401,22 @@ def notify(date: str | None = None, compact: bool = False) -> bool:
         print("[TELEGRAM] No data to send")
         return False
 
+    # 送信済みフラグを記録
+    if success:
+        try:
+            sent_flag.parent.mkdir(parents=True, exist_ok=True)
+            sent_flag.write_text(datetime.now().isoformat())
+        except Exception:
+            pass
+
     return success
 
 
-def run(date: str | None = None, test: bool = False, compact: bool = False) -> bool:
+def run(date: str | None = None, test: bool = False, compact: bool = False, force: bool = False) -> bool:
     """メイン実行"""
     if test:
         return send_test()
-    return notify(date, compact)
+    return notify(date, compact, force=force)
 
 
 if __name__ == "__main__":
@@ -400,6 +424,7 @@ if __name__ == "__main__":
     parser.add_argument("--date", default=None, help="Date (YYYY-MM-DD)")
     parser.add_argument("--test", action="store_true", help="Send test message")
     parser.add_argument("--compact", action="store_true", help="Send compact summary only")
+    parser.add_argument("--force", action="store_true", help="Force resend even if already sent today")
     args = parser.parse_args()
-    result = run(args.date, args.test, args.compact)
+    result = run(args.date, args.test, args.compact, force=args.force)
     print(f"\n=== {'Sent!' if result else 'Not sent (check settings)'} ===")

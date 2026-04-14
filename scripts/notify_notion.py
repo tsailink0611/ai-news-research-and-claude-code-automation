@@ -139,12 +139,16 @@ def detect_nfc_category(item: dict) -> str:
     return "Tech Trend"
 
 
-def _make_page_title(category: str, title: str, score: float, point: str = "") -> str:
+def _make_page_title(category: str, title: str, score: float, point: str = "", title_ja: str = "") -> str:
     """ページタイトルを生成する
-    - 日本語の要点があればそれを先頭に
-    - なければ英語タイトルをそのまま使う
+    - title_ja（日本語タイトル）があれば優先
+    - なければpoint（日本語要点）を先頭に
+    - それもなければ英語タイトルをそのまま使う
     """
-    if point and len(point) > 5:
+    if title_ja and len(title_ja) > 3:
+        stars_prefix = f"[{category}] " if category else ""
+        return f"{stars_prefix}{title_ja[:120]}"[:200]
+    elif point and len(point) > 5:
         # 日本語要点を先頭に、英語タイトルは括弧内に短縮
         en_short = title[:40] if title else ""
         return f"{point[:80]}（{en_short}）"[:200]
@@ -295,8 +299,24 @@ def _make_blocks(meta: dict) -> list:
     tags = meta.get("tags") or []
     summary = meta.get("summary") or ""
     en_title = meta.get("en_title") or ""
+    stars_context = meta.get("stars_context") or ""
+    stars_today = meta.get("stars_today") or 0
+    total_stars = meta.get("total_stars") or 0
 
     blocks = []
+
+    # GitHubスター情報（GitHub Trendingのみ）
+    if stars_today or total_stars or stars_context:
+        star_text = stars_context if stars_context else f"今日 +{stars_today:,} stars  /  累計 {total_stars:,} stars"
+        blocks.append({
+            "object": "block",
+            "type": "callout",
+            "callout": {
+                "rich_text": [{"type": "text", "text": {"content": f"⭐ {star_text}"}}],
+                "icon": {"emoji": "⭐"},
+                "color": "yellow_background"
+            }
+        })
 
     # 元記事タイトル（英語）
     if en_title:
@@ -390,7 +410,11 @@ def create_ai_page(notion: "Client", db_id: str, item: dict) -> "str | None":
     category = detect_ai_category(item)
     tags = detect_ai_tags(item, score)
 
-    page_title = _make_page_title(category, title, score, point=item.get("point", ""))
+    page_title = _make_page_title(
+        category, title, score,
+        point=item.get("point", ""),
+        title_ja=item.get("title_ja", ""),
+    )
 
     blocks = _make_blocks({
         "url": url,
@@ -401,6 +425,9 @@ def create_ai_page(notion: "Client", db_id: str, item: dict) -> "str | None":
         "tags": tags,
         "summary": summary,
         "en_title": title,
+        "stars_context": item.get("stars_context", ""),
+        "stars_today": item.get("stars_today", 0),
+        "total_stars": item.get("total_stars", 0),
     })
 
     # 親ページが設定されている場合はデュアル階層で保存
