@@ -121,80 +121,83 @@ def build_digest_message(date: str) -> str | None:
             title_ja = item.get("title_ja") or ""
             title_en = _escape_html((item.get("title") or "")[:60])
             display_title = _escape_html(title_ja[:60]) if title_ja else title_en
-            p = item.get("proposal_score", 0)
-            f = item.get("frontier_score", 0)
-            source = item.get("source", "")
+            label = _escape_html(_source_label(item))
             point = item.get("summary_ja") or item.get("point") or ""
             url = item.get("url", "")
-            stars_ctx = item.get("stars_context", "")
 
-            lines.append(f"\n<b>{i}. {display_title}</b>")
-            lines.append(f"   P:{p}  F:{f}  |  {_escape_html(source)}")
-            if stars_ctx:
-                lines.append(f"   ⭐ {_escape_html(stars_ctx)}")
+            lines.append(f"\n<b>A{i}. {display_title}</b>")
+            lines.append(f"   <i>{label}</i>")
             if point:
-                lines.append(f"   <i>{_escape_html(point[:90])}</i>")
+                lines.append(f"   → {_escape_html(point[:100])}")
             if url and url.startswith("http"):
                 lines.append(f"   <a href=\"{url}\">記事を読む</a>")
     else:
-        lines.append("   <i>今日は該当なし（P≥5の記事なし）</i>")
+        lines.append("   <i>今日は該当なし</i>")
 
     # ── Block B: 今週触るべき先端シグナル（技術ブログ・YouTube含む） ─
     lines.append("")
-    lines.append("<b>Block B — 技術ブログ・YouTube・先端シグナル</b>")
+    lines.append("<b>Block B — 公式発表・技術ブログ・先端シグナル</b>")
     if block_b:
         for i, item in enumerate(block_b[:5], 1):
             title_ja = item.get("title_ja") or ""
             title_en = _escape_html((item.get("title") or "")[:65])
             display_title = _escape_html(title_ja[:65]) if title_ja else title_en
-            p = item.get("proposal_score", 0)
-            f = item.get("frontier_score", 0)
-            source = _escape_html(item.get("source", ""))
+            label = _escape_html(_source_label(item))
             point = item.get("summary_ja") or item.get("point") or ""
             url = item.get("url", "")
-            stars_ctx = item.get("stars_context", "")
-
+            stars = _escape_html(_stars_display(item))
             author = item.get("author", "")
-            lines.append(f"\n<b>{i}. {display_title}</b>")
-            lines.append(f"   F:{f}  P:{p}  |  {source}")
+
+            # メタ情報行（ソース + スター + 投稿者）
+            meta_parts = [label]
+            if stars:
+                meta_parts.append(stars)
             if author and "influencer" in (item.get("source") or ""):
-                lines.append(f"   投稿者: {_escape_html(author)}")
-            if stars_ctx:
-                lines.append(f"   ⭐ {_escape_html(stars_ctx)}")
+                meta_parts.append(_escape_html(author))
+            meta = "  ·  ".join(meta_parts)
+
+            lines.append(f"\n<b>{i}. {display_title}</b>")
+            lines.append(f"   <i>{meta}</i>")
             if point:
-                lines.append(f"   <i>{_escape_html(point[:100])}</i>")
+                lines.append(f"   → {_escape_html(point[:100])}")
             if url and url.startswith("http"):
                 lines.append(f"   <a href=\"{url}\">読む / 視聴する</a>")
     else:
         lines.append("   <i>今日は該当なし</i>")
 
-    # ── Block C: 将来ネタ保存（技術ブログ上位5件を表示） ─────────
+    # ── Block C: 将来ネタ保存（frontier上位5件）──────────────
     lines.append("")
-    lines.append("<b>Block C — 技術ブログ・海外速報</b>")
+    lines.append("<b>Block C — 海外速報・その他（上位5件）</b>")
     if block_c:
-        # frontier_score上位5件を表示
         frontier_top = sorted(block_c, key=lambda x: x.get("frontier_score", 0), reverse=True)[:5]
-        lines.append(f"   <code>{len(block_c)} 件 | 上位5件：</code>")
+        lines.append(f"   <code>{len(block_c)} 件</code>")
         for item in frontier_top:
             title_ja = item.get("title_ja") or ""
             title_en = _escape_html((item.get("title") or "")[:55])
             display_title = _escape_html(title_ja[:55]) if title_ja else title_en
-            source = item.get("source", "")
-            f_val = item.get("frontier_score", 0)
-            url = item.get("url", "")
-            stars_ctx = item.get("stars_context", "")
-            author = item.get("author", "")
-            if url and url.startswith("http"):
-                lines.append(f"   F:{f_val}  <a href=\"{url}\">{display_title}</a>  <i>{_escape_html(source)}</i>")
-            else:
-                lines.append(f"   F:{f_val}  {display_title}  <i>{_escape_html(source)}</i>")
-            if author and "influencer" in source:
-                lines.append(f"        投稿者: {_escape_html(author)}")
-            if stars_ctx:
-                lines.append(f"        ⭐ {_escape_html(stars_ctx)}")
+            label = _escape_html(_source_label(item))
+            stars = _escape_html(_stars_display(item))
             point = item.get("summary_ja") or item.get("point") or ""
+            url = item.get("url", "")
+            author = item.get("author", "")
+
+            # タイトル（リンク付きまたはテキスト）
+            if url and url.startswith("http"):
+                title_line = f"   ▸ <a href=\"{url}\"><b>{display_title}</b></a>"
+            else:
+                title_line = f"   ▸ <b>{display_title}</b>"
+            lines.append(f"\n{title_line}")
+
+            # メタ情報（ソース + スター + 投稿者）
+            meta_parts = [label]
+            if stars:
+                meta_parts.append(stars)
+            if author and "influencer" in (item.get("source") or ""):
+                meta_parts.append(_escape_html(author))
+            lines.append(f"     <i>{'  ·  '.join(meta_parts)}</i>")
+
             if point:
-                lines.append(f"        <i>{_escape_html(point[:90])}</i>")
+                lines.append(f"     → {_escape_html(point[:80])}")
     else:
         lines.append("   <i>なし</i>")
 
@@ -322,6 +325,74 @@ def build_summary_message(date: str) -> str | None:
 def _escape_html(text: str) -> str:
     """Telegram HTML用エスケープ"""
     return text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+
+
+def _stars_display(item: dict) -> str:
+    """
+    スター数を視覚的に表示する
+    例: ⭐★★★★ 8.1k  +342今日
+    """
+    total = item.get("total_stars", 0) or 0
+    today = item.get("stars_today", 0) or 0
+    ctx = item.get("stars_context", "") or ""
+
+    if not total and not today and not ctx:
+        return ""
+
+    # ★評価（総スター数ベース）
+    if total >= 20000:   rating = "★★★★★"
+    elif total >= 8000:  rating = "★★★★"
+    elif total >= 3000:  rating = "★★★"
+    elif total >= 1000:  rating = "★★"
+    elif total > 0:      rating = "★"
+    else:                rating = ""
+
+    # 数値フォーマット（k単位）
+    if total >= 1000:
+        t = f"{total / 1000:.1f}k".rstrip("0").rstrip(".")
+    elif total > 0:
+        t = str(total)
+    else:
+        t = ""
+
+    today_str = f"  +{today:,}今日" if today else ""
+
+    if t:
+        return f"⭐{rating} {t}{today_str}"
+    elif today:
+        return f"⭐{rating} +{today:,}今日"
+    elif ctx:
+        return f"⭐ {ctx[:40]}"
+    return ""
+
+
+def _source_label(item: dict) -> str:
+    """ソース名を短縮表示する"""
+    src = item.get("source", "")
+    label_map = {
+        "OpenAI Blog": "OpenAI公式",
+        "Anthropic News": "Anthropic公式",
+        "Google DeepMind Blog": "DeepMind公式",
+        "Meta AI Blog": "Meta AI公式",
+        "HuggingFace Blog": "HuggingFace",
+        "TechCrunch AI": "TechCrunch",
+        "VentureBeat AI": "VentureBeat",
+        "The Verge AI": "The Verge",
+        "Ars Technica Tech": "Ars Technica",
+        "MIT Tech Review AI": "MIT TR",
+        "Simon Willison": "Simon Willison",
+        "Latent Space": "Latent Space",
+        "Import AI": "Import AI",
+        "TheSequence": "TheSequence",
+        "GitHub Trending": "GitHub",
+        "HackerNews": "HN",
+        "x_influencer": "X Influencer",
+        "ITmedia AI+": "ITmedia",
+        "Zenn AI": "Zenn",
+        "Qiita AI": "Qiita",
+        "AINOW": "AINOW",
+    }
+    return label_map.get(src, src)
 
 
 def send_test() -> bool:
