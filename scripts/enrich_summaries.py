@@ -121,9 +121,14 @@ def run(date: str = None, top_n: int = TOP_N, force: bool = False) -> dict:
         return result
 
     # スコア順にソートして上位N件を対象にする
+    # frontier_score / proposal_score も考慮し GitHub Trending 等も確実に対象に入れる
     scored = sorted(
         enumerate(articles),
-        key=lambda x: float(x[1].get("importance_score") or x[1].get("score") or 0),
+        key=lambda x: max(
+            float(x[1].get("importance_score") or 0),
+            float(x[1].get("frontier_score") or 0),
+            float(x[1].get("proposal_score") or 0),
+        ),
         reverse=True
     )
     target_indices = [idx for idx, _ in scored[:top_n]]

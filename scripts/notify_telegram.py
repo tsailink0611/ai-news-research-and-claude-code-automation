@@ -154,8 +154,11 @@ def build_digest_message(date: str) -> str | None:
             url = item.get("url", "")
             stars_ctx = item.get("stars_context", "")
 
+            author = item.get("author", "")
             lines.append(f"\n<b>{i}. {display_title}</b>")
             lines.append(f"   F:{f}  P:{p}  |  {source}")
+            if author and "influencer" in (item.get("source") or ""):
+                lines.append(f"   投稿者: {_escape_html(author)}")
             if stars_ctx:
                 lines.append(f"   ⭐ {_escape_html(stars_ctx)}")
             if point:
@@ -173,14 +176,22 @@ def build_digest_message(date: str) -> str | None:
         frontier_top = sorted(block_c, key=lambda x: x.get("frontier_score", 0), reverse=True)[:5]
         lines.append(f"   <code>{len(block_c)} 件 | 上位5件：</code>")
         for item in frontier_top:
-            title = _escape_html((item.get("title") or "")[:55])
+            title_ja = item.get("title_ja") or ""
+            title_en = _escape_html((item.get("title") or "")[:55])
+            display_title = _escape_html(title_ja[:55]) if title_ja else title_en
             source = item.get("source", "")
             f_val = item.get("frontier_score", 0)
             url = item.get("url", "")
+            stars_ctx = item.get("stars_context", "")
+            author = item.get("author", "")
             if url and url.startswith("http"):
-                lines.append(f"   F:{f_val}  <a href=\"{url}\">{title}</a>  <i>{source}</i>")
+                lines.append(f"   F:{f_val}  <a href=\"{url}\">{display_title}</a>  <i>{_escape_html(source)}</i>")
             else:
-                lines.append(f"   F:{f_val}  {title}  <i>{source}</i>")
+                lines.append(f"   F:{f_val}  {display_title}  <i>{_escape_html(source)}</i>")
+            if author and "influencer" in source:
+                lines.append(f"        投稿者: {_escape_html(author)}")
+            if stars_ctx:
+                lines.append(f"        ⭐ {_escape_html(stars_ctx)}")
     else:
         lines.append("   <i>なし</i>")
 

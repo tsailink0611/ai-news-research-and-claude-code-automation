@@ -158,10 +158,18 @@ def _call_grok(handles: list[str], hours: int) -> list[dict]:
     for p in posts:
         if not isinstance(p, dict):
             continue
+        author_handle = str(p.get("author", "@unknown"))
+        if not author_handle.startswith("@"):
+            author_handle = f"@{author_handle}"
+        # author_name が空の場合は AI_INFLUENCERS の説明文からフォールバック
+        raw_name = str(p.get("author_name", "") or "").strip()
+        if not raw_name:
+            desc = AI_INFLUENCERS.get(author_handle.lower(), "") or AI_INFLUENCERS.get(author_handle, "")
+            raw_name = desc.split("(")[0].strip() if desc else author_handle
         validated.append({
             "id": str(p.get("id", f"inf_{len(validated)}")),
-            "author": p.get("author", "@unknown"),
-            "author_name": p.get("author_name", ""),
+            "author": author_handle,
+            "author_name": raw_name,
             "text": str(p.get("text", ""))[:500],
             "text_ja": str(p.get("text_ja", ""))[:300],
             "title": f"[{p.get('author', '')}] {str(p.get('text', ''))[:80]}",
