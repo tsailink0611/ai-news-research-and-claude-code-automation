@@ -1,13 +1,11 @@
 """
 AI系RSSフィード取得スクリプト
-厳選5ソースから最新記事を取得する（1ソース最大5件・合計25件上限）
+厳選ソースから最新記事を取得する
 
 ソース:
-  - TechCrunch AI
-  - VentureBeat AI
-  - The Verge AI
-  - Anthropic Blog
-  - MIT Technology Review AI
+  速報・業界メディア: TechCrunch AI / VentureBeat AI / The Verge AI / Ars Technica / MIT Tech Review
+  公式ブログ: OpenAI / Anthropic / Google DeepMind / Meta AI
+  実践・研究: Simon Willison / Latent Space / Import AI / TheSequence / HuggingFace Blog
 """
 import json
 import time
@@ -85,6 +83,31 @@ RSS_SOURCES = [
             "model", "llm", "agent", "fine-tun", "rag", "research",
             "open source", "release", "benchmark", "multimodal"
         ],
+    },
+    # ── 企業公式ブログ（モデル発表・新機能・研究成果）────────────────
+    {
+        "name": "OpenAI Blog",
+        "url": "https://openai.com/blog/rss.xml",
+        "limit": 5,
+        # GPT-5/o3/Sora等の新モデル・新機能・研究発表
+    },
+    {
+        "name": "Anthropic News",
+        "url": "https://www.anthropic.com/rss.xml",
+        "limit": 5,
+        # Claude新バージョン・安全性研究・製品発表
+    },
+    {
+        "name": "Google DeepMind Blog",
+        "url": "https://blog.google/technology/ai/rss/",
+        "limit": 4,
+        # Gemini / AlphaFold / 研究発表
+    },
+    {
+        "name": "Meta AI Blog",
+        "url": "https://ai.meta.com/blog/rss/",
+        "limit": 4,
+        # Llama / AudioCraft / ImageBind 等のオープンソースAI
     },
 ]
 

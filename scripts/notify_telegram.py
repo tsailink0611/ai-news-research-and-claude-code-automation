@@ -192,6 +192,9 @@ def build_digest_message(date: str) -> str | None:
                 lines.append(f"        投稿者: {_escape_html(author)}")
             if stars_ctx:
                 lines.append(f"        ⭐ {_escape_html(stars_ctx)}")
+            point = item.get("summary_ja") or item.get("point") or ""
+            if point:
+                lines.append(f"        <i>{_escape_html(point[:90])}</i>")
     else:
         lines.append("   <i>なし</i>")
 

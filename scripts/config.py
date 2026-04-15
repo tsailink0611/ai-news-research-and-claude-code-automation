@@ -116,6 +116,8 @@ FRONTIER_SOURCES = {
     "TheSequence", "HuggingFace Blog", "GitHub Trending",
     "HackerNews", "Reddit", "Product Hunt", "China SNS",
     "youtube", "youtube_influencer",
+    # 企業公式ブログ（モデル発表・新機能）
+    "OpenAI Blog", "Anthropic News", "Google DeepMind Blog", "Meta AI Blog",
 }
 
 # Proposal Radar: 今すぐ提案に使える国内事例・ツール・業種情報
@@ -132,6 +134,10 @@ FRONTIER_KEYWORDS = [
     "arxiv", "research", "multimodal", "reasoning", "autonomous", "agentic",
     "中国", "china", "alibaba", "tencent", "baidu", "wechat",
     "plugin", "extension", "workflow", "automation tool",
+    # 公式発表キーワード
+    "introducing", "announcing", "launch", "new model", "gpt", "claude",
+    "gemini", "llama", "mistral", "deepseek", "qwen", "o3", "o4",
+    "api", "update", "capability", "safety",
 ]
 
 # Proposal Score 計算用キーワード
