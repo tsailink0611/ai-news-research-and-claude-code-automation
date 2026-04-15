@@ -23,15 +23,14 @@ X_API_BASE = "https://api.twitter.com/2"
 def fetch_bookmarks(limit: int = 50) -> list[dict]:
     """Xのブックマークを取得する"""
     if not X_BEARER_TOKEN:
-        print("[X-BOOKMARKS] NOTE: Using mock data. Set X_BEARER_TOKEN in .env for real data.")
-        return _get_mock_data()
+        print("[X-BOOKMARKS] NOTE: X_BEARER_TOKEN not set → skipping (no mock fallback)")
+        return []
 
     try:
         return _fetch_via_api(limit)
     except Exception as e:
-        print(f"[X-BOOKMARKS] API error: {e}")
-        print("[X-BOOKMARKS] Falling back to mock data.")
-        return _get_mock_data()
+        print(f"[X-BOOKMARKS] API error: {e} → skipping (no mock fallback)")
+        return []
 
 
 def _fetch_via_api(limit: int) -> list[dict]:

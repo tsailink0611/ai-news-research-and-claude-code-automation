@@ -23,15 +23,14 @@ PH_GRAPHQL_URL = "https://api.producthunt.com/v2/api/graphql"
 def fetch_producthunt(limit: int = 20) -> list[dict]:
     """Product Hunt から最新のAIツールを取得する"""
     if not PRODUCTHUNT_ACCESS_TOKEN:
-        print("[PH] NOTE: Using mock data. Set PRODUCTHUNT_ACCESS_TOKEN in .env for real data.")
-        return _get_mock_data()
+        print("[PH] NOTE: PRODUCTHUNT_ACCESS_TOKEN not set → skipping (no mock fallback)")
+        return []
 
     try:
         return _fetch_via_api(limit)
     except Exception as e:
-        print(f"[PH] API error: {e}")
-        print("[PH] Falling back to mock data.")
-        return _get_mock_data()
+        print(f"[PH] API error: {e} → skipping (no mock fallback)")
+        return []
 
 
 def _fetch_via_api(limit: int) -> list[dict]:

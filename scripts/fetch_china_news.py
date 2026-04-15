@@ -189,8 +189,7 @@ def fetch_all() -> list[dict]:
         print(f"  {name}: {len(posts)} AI posts")
 
     if not all_posts:
-        print("[CHINA] No live data available. Using mock data.")
-        all_posts = _get_mock_data()
+        print("[CHINA] No live data available from any platform → skipping (no mock fallback)")
 
     print(f"[CHINA] Total: {len(all_posts)} posts")
     return all_posts
