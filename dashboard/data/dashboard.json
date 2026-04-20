@@ -1,70 +1,70 @@
 {
-  "generated_at": "2026-04-19T22:32:22.183547",
+  "generated_at": "2026-04-20T22:41:53.297245",
   "available_dates": [
-    "2026-04-19"
+    "2026-04-20"
   ],
-  "latest_date": "2026-04-19",
+  "latest_date": "2026-04-20",
   "stats": {
     "total_dates": 1,
-    "total_articles": 245,
+    "total_articles": 255,
     "total_drafts": 10,
     "sources": [
-      "VentureBeat AI",
       "Ars Technica Tech",
-      "The Verge AI",
-      "MIT Tech Review AI",
-      "AINOW",
-      "Google DeepMind Blog",
-      "Qiita AI",
-      "Zenn AI",
-      "Simon Willison",
-      "GitHub Trending",
-      "ITmedia AI+",
-      "youtube_influencer",
       "google_trends",
-      "Latent Space",
-      "日経クロステック",
+      "ITmedia AI+",
+      "Google DeepMind Blog",
+      "GitHub Trending",
       "TechCrunch AI",
+      "Latent Space",
+      "Qiita AI",
+      "AINOW",
+      "日経クロステック",
       "hackernews",
-      "reddit",
+      "MIT Tech Review AI",
+      "Simon Willison",
+      "youtube",
       "HuggingFace Blog",
-      "youtube"
+      "OpenAI Blog",
+      "Zenn AI",
+      "VentureBeat AI",
+      "reddit",
+      "The Verge AI"
     ]
   },
   "topics": [
     {
-      "topic": "AI General",
-      "count": 69,
-      "top_item": "Setup Graphify to Create Persisent Context",
-      "max_score": 8.55
+      "topic": "Claude",
+      "count": 19,
+      "top_item": "agentic-stack: a portable .agent folder that gives all your AI coding tools Cursor, Claude, Windsurf",
+      "max_score": 8.16
     },
     {
       "topic": "General AI",
-      "count": 57,
-      "top_item": "College instructor turns to typewriters to curb AI-written work",
-      "max_score": 8.02
-    },
-    {
-      "topic": "Gemini",
-      "count": 2,
-      "top_item": "How Google DeepMind is researching the next Frontier of AI for Gemini — Raia Hadsell, VP of Research",
-      "max_score": 6.52
-    },
-    {
-      "topic": "Claude",
-      "count": 24,
-      "top_item": "GPT 5.5 PRO (SPUD) LEAKED: OpenAI&#39;s New Model BEATS Claude Opus 4.7!",
-      "max_score": 5.54
+      "count": 59,
+      "top_item": "John Ternus to become Apple CEO",
+      "max_score": 8.0
     },
     {
       "topic": "Japan Dev AI",
-      "count": 9,
+      "count": 11,
       "top_item": "設計書・コード・テストを全部AIに書かせて半年間開発してみたよ",
-      "max_score": 3.01
+      "max_score": 5.52
+    },
+    {
+      "topic": "Cursor",
+      "count": 1,
+      "top_item": "AI Agents for Data Analysis | Using Cursor, Windsurf, Coding Support and Debugging",
+      "max_score": 2.5
+    },
+    {
+      "topic": "AI Agents",
+      "count": 3,
+      "top_item": "Agentic Systems: AI&#39;s Future Breakthrough in 2025! #NVIDIA",
+      "max_score": 2.12
     },
     {
       "topic": "AI Tools & Repos",
-      "count": 18,
+      "count": 19,
       "top_item": "[GitHub] openai / openai-agents-python",
       "max_score": 2.08
     },
@@ -75,236 +75,173 @@
       "max_score": 2.0
     },
     {
-      "topic": "OpenAI",
-      "count": 8,
-      "top_item": "Google検索急上昇: openai amazon partnership memo",
+      "topic": "GitHub Copilot",
+      "count": 1,
+      "top_item": "Google検索急上昇: language model unavailable github copilot",
       "max_score": 2.0
     },
     {
-      "topic": "GPT",
-      "count": 9,
-      "top_item": "Google Gemma 4 is HERE! 🤯 GPT-4 Power, 100% Local",
-      "max_score": 1.93
+      "topic": "OpenAI",
+      "count": 4,
+      "top_item": "Google検索急上昇: srinivas narayanan openai departure",
+      "max_score": 2.0
     },
     {
-      "topic": "Japan AI Industry",
-      "count": 11,
-      "top_item": "Anthropic、AIデザインツール「Claude Design」プレビュー公開──「Opus 4.7」搭載でコーディングツールとの連携も",
-      "max_score": 1.51
+      "topic": "Anthropic",
+      "count": 6,
+      "top_item": "Google検索急上昇: claude design by anthropic labs",
+      "max_score": 2.0
     }
   ],
   "top_articles": [
     {
-      "title": "Setup Graphify to Create Persisent Context",
-      "score": 8.55,
+      "title": "agentic-stack: a portable .agent folder that gives all your AI coding tools Cursor, Claude, Windsurf",
+      "score": 8.16,
       "source": "youtube",
-      "url": "https://www.youtube.com/watch?v=WHEk2ONkMh0",
-      "topic": "AI General",
-      "summary_ja": "AIエージェント間の切り替え時に毎回説明し直す問題を解決するツール。Graphifyはコードベースの共有メモリを構築し、複数のAIエージェントが一貫したコンテキストを保持できるようにする。これにより、開発効率が大幅に向上する。",
-      "point": "複数AI間で継続的なコンテキスト共有を実現し、開発効率を改善"
-    },
-    {
-      "title": "College instructor turns to typewriters to curb AI-written work",
-      "score": 8.02,
-      "source": "hackernews",
-      "url": "https://sentinelcolorado.com/uncategorized/a-college-instructor-turns-to-typewriters-to-curb-ai-written-work-and-teach-life-lessons/",
-      "topic": "",
-      "summary_ja": "AI生成レポートの増加に対抗するため、大学講師がタイプライター使用を義務付ける試み。デジタル機器の廃止により、学生の創造的思考と手書きスキルを育成しながら、AI不正使用を物理的に防止する教育的アプローチ。",
-      "point": "AI時代の教育課題に対する独創的で物理的な対抗策"
-    },
-    {
-      "title": "Archive of BYTE magazine, starting with issue #1 in 1975",
-      "score": 7.52,
-      "source": "hackernews",
-      "url": "https://archive.org/details/byte-magazine-1975-09",
-      "topic": "",
-      "summary_ja": "1975年9月創刊のBYTE誌が完全デジタルアーカイブ化。初期のコンピュータ業界の動向、技術トレンド、業界人物評など貴重な歴史資料が保存される。テクノロジー史研究における重要な情報源として機能。",
-      "point": "コンピュータ産業の初期段階における貴重な一次資料の公開保存"
-    },
-    {
-      "title": "Game devs explain the tricks involved with letting you pause a game",
-      "score": 7.41,
-      "source": "hackernews",
-      "url": "https://kotaku.com/video-game-devs-explain-how-pausing-works-and-sometimes-it-gets-weird-2000686339",
-      "topic": "",
-      "summary_ja": "ゲームのポーズ機能の技術的実装方法をゲーム開発者が解説。時間停止の複雑さ、UI表示、セーブシステム連携など、一見単純に見える機能の裏側にある工夫と課題を紹介。開発現場の実践的知見を提供。",
-      "point": "当たり前の機能の複雑な技術実装を開発者視点で解説"
-    },
-    {
-      "title": "Vercel April 2026 security incident",
-      "score": 7.04,
-      "source": "hackernews",
-      "url": "https://www.bleepingcomputer.com/news/security/vercel-confirms-breach-as-hackers-claim-to-be-selling-stolen-data/",
-      "topic": "",
-      "summary_ja": "Vercelがセキュリティ侵害を確認。ハッカーが盗まれたデータ販売を主張。詳細は不明だが、多数のユーザーデータが影響を受けた可能性があり、セキュリティの脆弱性が露呈。企業とユーザーにとって重大な懸念事項。",
-      "point": "主要開発プラットフォームの大規模データ漏洩事件"
-    },
-    {
-      "title": "How Google DeepMind is researching the next Frontier of AI for Gemini — Raia Hadsell, VP of Research",
-      "score": 6.52,
-      "source": "youtube",
-      "url": "https://www.youtube.com/watch?v=zZsTVBXcbow",
-      "topic": "Gemini",
-      "summary_ja": "Google DeepMindの研究副社長Raia Hadsellが、Geminiの次世代フロンティアAI研究について発表。英国のAIアンバサダーでもある同氏が、AIの最先端領域における研究成果と今後の方向性を解説している。",
-      "point": "Geminiの次世代開発方針の公開。Google DeepMindの最新研究動向。"
-    },
-    {
-      "title": "Airline worker arrested after sharing photos of bomb damage in WhatsApp group",
-      "score": 5.69,
-      "source": "hackernews",
-      "url": "https://www.lbc.co.uk/article/dubai-police-spied-private-whatsapp-5HjdXwr_2/",
-      "topic": "",
-      "summary_ja": "ドバイの航空会社職員が、爆弾被害の写真をWhatsAppグループで共有したため逮捕された。プライベートチャットでの情報漏洩が問題となり、警察が捜査に乗り出した事案。情報セキュリティとプライバシー保護の重要性を示す事例。",
-      "point": "メッセージングアプリでの機密情報漏洩事案。デジタルセキュリティの課題提起。"
-    },
-    {
-      "title": "GPT 5.5 PRO (SPUD) LEAKED: OpenAI&#39;s New Model BEATS Claude Opus 4.7!",
-      "score": 5.54,
-      "source": "youtube",
-      "url": "https://www.youtube.com/watch?v=Ga-13kTU474",
+      "url": "https://www.youtube.com/watch?v=24X4S0OBgxI",
       "topic": "Claude",
-      "summary_ja": "OpenAIの次世代フロンティアモデル「SPUD」がリークされた。GPT 5.5 Proとして搭載される見込みで、早ければ翌週にもリリースされる可能性がある。Claude Opus 4.7を上回るパフォーマンスを持つと報告されている。",
-      "point": "OpenAIの次期主力モデルの存在確認。Claude Opusを超える性能が期待される。"
+      "summary_ja": "Cursor、Claude Code、Windsurfなど複数のAIコーディングツールを使用する際、各ツールが独立したメモリを持つ問題に対応。ポータブルな.agentフォルダを提供することで、異なるIDEやターミナル環境でAIツールの統一されたコンテキストを実現するソリューション。",
+      "point": "複数のAIコーディングツール間でメモリを共有し、開発効率を向上させる。"
     },
     {
-      "title": "Notion leaks email addresses of all editors of any public page",
-      "score": 5.39,
+      "title": "John Ternus to become Apple CEO",
+      "score": 8.0,
       "source": "hackernews",
-      "url": "https://twitter.com/weezerOSINT/status/2045849358462222720",
+      "url": "https://www.apple.com/newsroom/2026/04/tim-cook-to-become-apple-executive-chairman-john-ternus-to-become-apple-ceo/",
       "topic": "",
-      "summary_ja": "Notionのセキュリティ脆弱性により、公開ページの全編集者のメールアドレスが露出する問題が報告されました。プライバシーとセキュリティに関わる重大な問題として、ユーザーから懸念が高まっています。",
-      "point": "クラウドサービスのプライバシー設定に関する重大な脆弱性"
+      "summary_ja": "Appleが経営陣の交代を発表。現CEO のティム・クックが会長職に退任し、ジョン・テルナス副社長がCEOに昇格。テルナスはAppleのハードウェア開発部門を長年率いており、同社の製品戦略の継続性が期待される。",
+      "point": "Appleの経営体制が変更され、ハードウェア部門の責任者が新CEOに就任。"
     },
     {
-      "title": "The seven programming ur-languages (2022)",
-      "score": 4.43,
+      "title": "GitHub's fake star economy",
+      "score": 8.0,
       "source": "hackernews",
-      "url": "https://madhadron.com/programming/seven_ur_languages.html",
+      "url": "https://awesomeagents.ai/news/github-fake-stars-investigation/",
       "topic": "",
-      "summary_ja": "プログラミング言語の進化と分類に関する記事。複数の基本的なプログラミング言語（ur-languages）の特性と系統を分析。言語設計の根底にある哲学や概念を探究し、現代プログラミングの基礎を理解するための理論的フレームワークを提示している。",
-      "point": "プログラミング言語の本質的な分類により、言語選択とキャリア構築の指針を提供。"
+      "summary_ja": "GitHub上でリポジトリのスター数を不正に増加させる詐欺的な慣行が蔓延している実態を調査。オープンソースプロジェクトの人気度を偽装し、開発者の信頼性評価を歪める問題が指摘され、プラットフォームの透明性と信頼性が脅かされている。",
+      "point": "GitHubスター操作による詐欺が横行し、プロジェクト評価の信頼性が低下。"
     },
     {
-      "title": "Everything You Need to Know : Build ServiceNow Apps with AI-Claude, GitHub Copilot,Cursor &amp; Windsurf",
-      "score": 3.14,
-      "source": "youtube",
-      "url": "https://www.youtube.com/watch?v=DUTutpMFGWs",
-      "topic": "Claude",
-      "summary_ja": "Claude、GitHub Copilot、Cursor、Windsurfなどを活用したServiceNowアプリの開発方法を解説。ServiceNowが公式に「Build Agent Skills」を発表予定の中、実践的なAIツール統合の事例と手法を紹介するビデオチュートリアルです。",
-      "point": "エンタープライズプラットフォームにおけるAIツール統合実例"
+      "title": "All phones sold in the EU to have replaceable batteries from 2027",
+      "score": 8.0,
+      "source": "hackernews",
+      "url": "https://www.theolivepress.es/spain-news/2026/04/20/eu-to-force-replaceable-batteries-in-phones-and-tablets-from-2027/",
+      "topic": "",
+      "summary_ja": "EU規制により、2027年から販売されるすべてのスマートフォンとタブレットに交換可能なバッテリーの搭載が必須となる。環境保護とサーキュラーエコノミー推進を目的とした施策で、デバイスの寿命延長と電子廃棄物削減を実現。",
+      "point": "消費者による電池交換が可能になり、デバイスの寿命延長と環境負荷削減が実現。"
+    },
+    {
+      "title": "Qwen3.6-Max-Preview: Smarter, Sharper, Still Evolving",
+      "score": 7.83,
+      "source": "hackernews",
+      "url": "https://qwen.ai/blog?id=qwen3.6-max-preview",
+      "topic": "",
+      "summary_ja": "Alibaba傘下のQwenが新バージョン「Qwen3.6-Max-Preview」をリリース。推論精度の向上と応答性の改善を実現し、複雑なタスク対応能力が強化された。継続的な改善を予定しており、高性能なオープンソースLLM選択肢として注目される。",
+      "point": "推論精度と処理速度が向上した新バージョンのLLMが登場、実用性が向上。"
+    },
+    {
+      "title": "NSA is using Anthropic's Mythos despite blacklist",
+      "score": 7.77,
+      "source": "hackernews",
+      "url": "https://www.axios.com/2026/04/19/nsa-anthropic-mythos-pentagon",
+      "topic": "",
+      "summary_ja": "米国防安全保障局（NSA）が、政府のブラックリストに載っているにもかかわらず、Anthropic開発のAIモデル「Mythos」を使用していることが明らかになった。政府機関による規制回避と企業AIの軍事利用に関する議論が生じている。",
+      "point": "政府規制の抜け穴を示唆。軍事AI調達の透明性問題。"
+    },
+    {
+      "title": "Atlassian enables default data collection to train AI",
+      "score": 7.11,
+      "source": "hackernews",
+      "url": "https://letsdatascience.com/news/atlassian-enables-default-data-collection-to-train-ai-f71343d8",
+      "topic": "",
+      "summary_ja": "ソフトウェア企業Atlassianが、ユーザーの許可なくデフォルトでデータ収集を有効にし、AI学習に利用する施策を開始。プライバシーと企業利益のバランス問題として批判を招いている。",
+      "point": "デフォルトオプト インによるプライバシー侵害。ユーザーの知らないうちにデータ利用。"
+    },
+    {
+      "title": "AI Resistance: some recent anti-AI stuff that’s worth discussing",
+      "score": 6.05,
+      "source": "hackernews",
+      "url": "https://stephvee.ca/blog/artificial%20intelligence/ai-resistance-is-growing/",
+      "topic": "",
+      "summary_ja": "AI技術に対する批判や抵抗の動きが活発化している。雇用への影響、著作権侵害、プライバシー懸念、環境負荷など、複数の観点からAI導入に対する懸念事項が議論されている。",
+      "point": "社会的不安の可視化。AI導入への異議申し立ての増加。"
+    },
+    {
+      "title": "Deezer says 44% of songs uploaded to its platform daily are AI-generated",
+      "score": 5.98,
+      "source": "hackernews",
+      "url": "https://techcrunch.com/2026/04/20/deezer-says-44-of-songs-uploaded-to-its-platform-daily-are-ai-generated/",
+      "topic": "",
+      "summary_ja": "音楽ストリーミングサービスDeezerが、プラットフォームに毎日アップロードされる曲の44%がAI生成であると報告。音楽業界におけるAI生成コンテンツの急速な増加を示唆している。",
+      "point": "生成AIが音楽制作を支配。著作権・アーティスト報酬の問題深刻化。"
+    },
+    {
+      "title": "OpenClaw isn't fooling me. I remember MS-DOS",
+      "score": 5.59,
+      "source": "hackernews",
+      "url": "https://www.flyingpenguin.com/build-an-openclaw-free-secure-always-on-local-ai-agent/",
+      "topic": "",
+      "summary_ja": "ローカルAIエージェント「OpenClaw」に対する批評記事。過度な宣伝に対し、実際の機能や実装は過去の技術の焼き直しに過ぎないという懐疑的な見方を提示。",
+      "point": "AI技術のハイプサイクル。誇大広告への警戒呼びかけ。"
     },
     {
       "title": "設計書・コード・テストを全部AIに書かせて半年間開発してみたよ",
-      "score": 3.01,
+      "score": 5.52,
       "source": "Zenn AI",
       "url": "https://zenn.dev/moros/articles/8a010aff542625",
       "topic": "Japan Dev AI",
+      "summary_ja": "開発プロセス全体（設計書、コード、テスト）をAIに任せて半年間の開発を実施した実験的な取り組み。従来の開発方法と異なり、AIが主体的に成果物を生成する過程での課題や学びをまとめた記事。実務レベルでのAI活用の可能性と限界を探っている。",
+      "point": "AI開発の実践例。設計からテストまで全工程を自動化した事例"
+    },
+    {
+      "title": "GPT-5.5 LEAKED, Claude Opus 4.7, Sam Altman in Trouble?, Emergent, Codex, Canva AI 2.0: Tech News",
+      "score": 3.92,
+      "source": "youtube",
+      "url": "https://www.youtube.com/watch?v=EhvkA0gjPo0",
+      "topic": "Claude",
+      "summary_ja": "最新のAI業界動向をまとめたニュース速報。GPT-5.5のリーク情報、Claude新バージョン、Sam Altman関連ニュース、Codex、Canva AI 2.0など、複数の注目トピックを網羅。AI開発と業界動向の最新情報を効率よく習得できる。",
+      "point": "複数の大型AIニュースを一本で網羅。業界トレンド把握に効率的"
+    },
+    {
+      "title": "Figma's woes compound with Claude Design",
+      "score": 2.98,
+      "source": "hackernews",
+      "url": "https://martinalderson.com/posts/figmas-woes-compound-with-claude-design/",
+      "topic": "",
       "summary_ja": "",
       "point": ""
     },
     {
-      "title": "Optimizing Ruby Path Methods",
-      "score": 2.34,
-      "source": "hackernews",
-      "url": "https://byroot.github.io/ruby/performance/2026/04/18/faster-paths.html",
-      "topic": "",
+      "title": "プロンプトの再現性をAI に自動チューニングさせる方法 ~ 暗黙知を排除する",
+      "score": 2.86,
+      "source": "Zenn AI",
+      "url": "https://zenn.dev/mizchi/articles/empirical-prompt-tuning",
+      "topic": "Japan Dev AI",
       "summary_ja": "",
       "point": ""
     },
     {
       "title": "Claudeに原始時代に行ってもらっては困る話",
-      "score": 2.32,
+      "score": 2.8,
       "source": "Zenn AI",
       "url": "https://zenn.dev/holy_fox/articles/e0c0bf75fba9e6",
       "topic": "Japan Dev AI",
-      "summary_ja": "",
-      "point": ""
-    },
-    {
-      "title": "Modern Common Lisp with FSet",
-      "score": 2.31,
-      "source": "hackernews",
-      "url": "https://fset.common-lisp.dev/Modern-CL/Top_html/index.html",
-      "topic": "",
       "summary_ja": "",
       "point": ""
     }
   ],
   "x_drafts_preview": [
     {
-      "text": "複数のAIツールを使い分けるたび、同じ背景情報を繰り返し説明していないでしょうか。Graphifyはエージェント間でコンテキストを自動共有するから、説明の手間が消える。業務フローに組み込めば作業時間は30〜40%削減できる水準。自社の運用効率を一度試算してみる価値がある。 #AI #生産性",
+      "text": "Cursor、Claude、Windsurfを使い分けるチームの課題は、毎回のコンテキストコピペだろう。.agentフォルダという共通仕様で複数ツール間のメモリを統一する動きが既に出ています。開発効率は数十%単位で変わる可能性がある。 #AI開発 #AI",
       "style": "実務",
       "style_key": "実務",
-      "topic": "AI General",
-      "urgency": "high",
-      "char_count": 145,
-      "recommended_use": "即時投稿推奨"
-    },
-    {
-      "text": "米国の大学講師がAI時代を理由にタイプライター導入を始めた。デジタル禁止で創造的思考を促し、不正を物理的に排除する狙いだ。企業研修でも「考える力」の育成手段として、アナログツール活用を検討する企業が出始めている。 #AI #人材育成",
-      "style": "比較",
-      "style_key": "比較",
-      "topic": "AI",
-      "urgency": "high",
-      "char_count": 116,
-      "recommended_use": "即時投稿推奨"
-    },
-    {
-      "text": "1975年創刊のBYTE誌がデジタルアーカイブ化され、初期コンピュータ業界の経営判断と技術選択の歴史が手に入った。テクノロジー史から学べることは、現在の経営課題の解決ヒントに直結する。業界の過去から5年先を読む土台が揃った状況です。 #AI #技術史",
-      "style": "解説",
-      "style_key": "解説",
-      "topic": "AI",
-      "urgency": "high",
-      "char_count": 125,
-      "recommended_use": "即時投稿推奨"
-    },
-    {
-      "text": "Vercelがセキュリティ侵害を確認した。大規模開発プラットフォームの脆弱性は利用企業全体に波及するため、自社が使用しているツールの脆弱性情報は放置できない状況になった。セキュリティ対応の優先順位を見直す必要がある。 #AI #セキュリティ",
-      "style": "速報",
-      "style_key": "速報",
-      "topic": "AI",
-      "urgency": "high",
-      "char_count": 120,
-      "recommended_use": "即時投稿推奨"
-    },
-    {
-      "text": "Google DeepMindがGemini次世代研究の実装レベルを発表した。3ヶ月後には国内企業でも活用できるAI能力が標準化される見通しから、今から次世代AI導入の検証を始めないと競合との差が開く。既存のChatGPT導入状況を棚卸しする時期だ。 #AI #先読み戦略",
-      "style": "解説",
-      "style_key": "解説",
-      "topic": "Gemini",
-      "urgency": "high",
-      "char_count": 136,
-      "recommended_use": "即時投稿推奨"
-    },
-    {
-      "text": "OpenAIの次世代モデル「SPUD」がリークされ、数日以内のリリース観測が出ている。Claude超の性能が来月にも国内で利用できる状況から、現在のChatGPT導入検証結果を早急にアップデートする準備が必要だ。 #AI #OpenAI",
-      "style": "速報",
-      "style_key": "速報",
       "topic": "Claude",
       "urgency": "high",
-      "char_count": 118,
+      "char_count": 127,
       "recommended_use": "即時投稿推奨"
     },
     {
-      "text": "ゲーム開発者が明かしたポーズ機能は、見た目の簡単さの裏で時間処理・UI・セーブ機構が複雑に絡み合っている。一見単純な機能設計にこそ工夫が隠れているから、自社プロダクトの細部詰めで競争力が左右される。同業他社はすでにこの視点で動いている。 #AI #プロダクト開発",
-      "style": "解説",
-      "style_key": "解説",
-      "topic": "AI",
-      "urgency": "high",
-      "char_count": 131,
-      "recommended_use": "即時投稿推奨"
-    },
-    {
-      "text": "航空会社職員がWhatsAppでの情報共有で逮捕された事案から、プライベートチャットでの機密情報漏洩は個人の不注意では済まず企業責任に直結することが明確になった。情報管理教育とツール統制の仕組みは急務である。 #AI #情報漏洩対策",
-      "style": "速報",
-      "style_key": "速報",
-      "topic": "AI",
-      "urgency": "high",
-      "char_count": 116,
-      "recommended_use": "即時投稿推奨"
-    },
-    {
-      "text": "Notionの脆弱性で全公開ページ編集者のメールアドレスが露出した。人気SaaSツール導入時は、セキュリティ設定を過信せず定期的に脆弱性情報をチェックする習慣が欠かせない。自社のツール棚卸しを今週中に実施すべき状況である。 #AI #SaaS管理",
+      "text": "Apple CEOが20年ぶりに交代した。ティム・クックはハードウェア出身だからこそ、次期体制は製品開発の意思決定が現場に戻る可能性を示唆している。テック大手の組織構造の変化は、国内大手にも3〜6ヶ月で波及する傾向があります。 #経営戦略 #AI",
       "style": "速報",
       "style_key": "速報",
       "topic": "AI",
@@ -313,199 +250,326 @@
       "recommended_use": "即時投稿推奨"
     },
     {
-      "text": "プログラミング言語は7つの根本系統から生まれたという言語設計の哲学が整理された。この視点を理解すると、現在使っているツールやAIが何を得意とするか見えてくる。同業他社の技術選択が戦略的に読める競争優位になる。 #AI #技術選択",
+      "text": "GitHubのスター数が詐欺化している現実をご存知ですか。オープンソース選定の判断基準が機能不全です。スター数だけでなく、ライセンス、開発頻度、コントリビューター質を複合評価する企業がすでに増えている。自社の技術選定プロセスを点検する時期でしょう。 #GitHub #AI",
       "style": "解説",
       "style_key": "解説",
       "topic": "AI",
-      "urgency": "medium",
-      "char_count": 114,
-      "recommended_use": "教育・価値提供向け"
+      "urgency": "high",
+      "char_count": 136,
+      "recommended_use": "即時投稿推奨"
+    },
+    {
+      "text": "AIエージェント市場が過熱している。話題の新技術でも既知技術の組み合わせというケースが大半だ。導入検討時に宣伝文句を信じる企業と、実装仕様を精査する企業では、3年後に大きな差が出ます。提案資料の細部を読む厳密さが不可欠な時代です。 #技術評価 #AI",
+      "style": "比較",
+      "style_key": "比較",
+      "topic": "AI",
+      "urgency": "high",
+      "char_count": 125,
+      "recommended_use": "即時投稿推奨"
+    },
+    {
+      "text": "2027年からEU販売スマートフォン全機種にバッテリー交換義務が課されることをご存知か。修理権と環境規制が同時実装される時代が来ます。この波は2〜3年で日本にも到達するため、デバイス依存ビジネスモデルの見直しを先制する企業が競争優位に。 #スマートフォン #AI",
+      "style": "速報",
+      "style_key": "速報",
+      "topic": "AI",
+      "urgency": "high",
+      "char_count": 131,
+      "recommended_use": "即時投稿推奨"
+    },
+    {
+      "text": "Alibabaの新型LLM「Qwen3.6-Max-Preview」がOpenAIの一極集中を揺さぶり始めた。推論精度で追い付く選択肢が増えると、LLM依存のAI戦略は継続性リスクと見なされるようになる。複数ベンダー並行運用を検討する中堅企業が増えています。 #LLM #AI",
+      "style": "解説",
+      "style_key": "解説",
+      "topic": "AI",
+      "urgency": "high",
+      "char_count": 138,
+      "recommended_use": "即時投稿推奨"
+    },
+    {
+      "text": "NSAがセキュリティ懸念企業のAIモデルを実装していた事実が判明したことをご覧になったか。政府規制と実務のズレは、企業AI導入のリスク設計に直結します。規制環境と実運用のギャップを前提にした戦略設計が不可欠な時代が来ています。 #AI規制 #AI",
+      "style": "解説",
+      "style_key": "解説",
+      "topic": "AI",
+      "urgency": "high",
+      "char_count": 123,
+      "recommended_use": "即時投稿推奨"
+    },
+    {
+      "text": "Atlassianがユーザーコードを同意なしでAI学習に使用開始。大規模なデータ活用がデフォルト化される局面です。導入ツール選定時、データ利用規約の精査は経営判断事項になった。自社システム内で動くツール選びは、情報セキュリティ部門と連携する必要があります。 #プライバシー #AI",
+      "style": "速報",
+      "style_key": "速報",
+      "topic": "AI",
+      "urgency": "high",
+      "char_count": 140,
+      "recommended_use": "即時投稿推奨"
+    },
+    {
+      "text": "AI導入への抵抗運動が雇用、著作権、プライバシー、環境で多角化していることに気づいているか。規制強化は確実です。短期効果測定で導入を推し進める発想は、中期的に企業リスク要因に転換する。中長期の規制環境を想定した導入設計が競争力になります。 #AI倫理 #AI",
+      "style": "解説",
+      "style_key": "解説",
+      "topic": "AI",
+      "urgency": "high",
+      "char_count": 129,
+      "recommended_use": "即時投稿推奨"
+    },
+    {
+      "text": "音楽配信「Deezer」で毎日アップロード曲の44%がAI生成だという現実。音楽業界のビジネス構造は急速に変容しています。著作権保護と生成AI市場のどちらに経営資源を配分するか。関連産業は戦略判断を迫られる局面が来ています。 #著作権 #AI",
+      "style": "速報",
+      "style_key": "速報",
+      "topic": "AI",
+      "urgency": "high",
+      "char_count": 121,
+      "recommended_use": "即時投稿推奨"
     }
   ],
-  "digest_preview": "# AI News Digest - 2026-04-19\n\n> Generated at 2026-04-19 22:31\n> Sources: VentureBeat AI, Ars Technica Tech, The Verge AI, MIT Tech Review AI, AINOW, Google DeepMind Blog, Qiita AI, Zenn AI, Simon Willison, GitHub Trending, ITmedia AI+, youtube_influencer, google_trends, Latent Space, 日経クロステック, TechCrunch AI, hackernews, reddit, HuggingFace Blog, youtube\n> Total articles: 245\n\n## 🔥 主要トピック\n\n1. **AI General** (スコア: 8.6, 69件)\n   - Setup Graphify to Create Persisent Context\n2. **General AI** (スコア: 8.0, 57件)\n   - College instructor turns to typewriters to curb AI-written work\n3. **Gemini** (スコア: 6.5, 2件)\n   - How Google DeepMind is researching the next Frontier of AI for Gemini — Raia Hadsell, VP of Research\n4. **Claude** (スコア: 5.5, 24件)\n   - GPT 5.5 PRO (SPUD) LEAKED: OpenAI&#39;s New Model BEATS Claude Opus 4.7!\n5. **Japan Dev AI** (スコア: 3.0, 9件)\n   - 設計書・コード・テストを全部AIに書かせて半年間開発してみたよ\n6. **AI Tools & Repos** (スコア: 2.1, 18件)\n   - [GitHub] openai / openai-agents-python\n7. **Claude Code** (スコア",
+  "digest_preview": "# AI News Digest - 2026-04-20\n\n> Generated at 2026-04-20 22:41\n> Sources: Ars Technica Tech, google_trends, ITmedia AI+, Google DeepMind Blog, GitHub Trending, TechCrunch AI, Latent Space, Qiita AI, AINOW, 日経クロステック, hackernews, MIT Tech Review AI, Simon Willison, youtube, HuggingFace Blog, OpenAI Blog, Zenn AI, VentureBeat AI, reddit, The Verge AI\n> Total articles: 255\n\n## 🔥 主要トピック\n\n1. **Claude** (スコア: 8.2, 19件)\n   - agentic-stack: a portable .agent folder that gives all your AI coding tools Cursor, Claude, Windsurf\n2. **General AI** (スコア: 8.0, 59件)\n   - John Ternus to become Apple CEO\n3. **Japan Dev AI** (スコア: 5.5, 11件)\n   - 設計書・コード・テストを全部AIに書かせて半年間開発してみたよ\n4. **Cursor** (スコア: 2.5, 1件)\n   - AI Agents for Data Analysis | Using Cursor, Windsurf, Coding Support and Debugging\n5. **AI Agents** (スコア: 2.1, 3件)\n   - Agentic Systems: AI&#39;s Future Breakthrough in 2025! #NVIDIA\n6. **AI Tools & Repos** (スコア: 2.1, 19件)\n   - [GitHub] openai / openai-agents-python\n7. **Claude Code** (スコア: 2.0, 3件)",
   "articles_by_category": {
     "AI General": [
       {
-        "title": "Setup Graphify to Create Persisent Context",
-        "score": 8.55,
+        "title": "Never Write Broken Code Again (Free) #shorts",
+        "score": 1.88,
         "source": "youtube",
-        "url": "https://www.youtube.com/watch?v=WHEk2ONkMh0",
-        "summary_ja": "AIエージェント間の切り替え時に毎回説明し直す問題を解決するツール。Graphifyはコードベースの共有メモリを構築し、複数のAIエージェントが一貫したコンテキストを保持できるようにする。これにより、開発効率が大幅に向上する。",
-        "point": "複数AI間で継続的なコンテキスト共有を実現し、開発効率を改善"
-      },
-      {
-        "title": "Andrej Karpathy: AI Feels Like a Brilliant PhD Student and a 10-Year-Old at the Same Time",
-        "score": 1.52,
-        "source": "youtube",
-        "url": "https://www.youtube.com/watch?v=IjWOc-u2CZ4",
-        "summary_ja": "AI研究の第一人者Andrej Karpathy氏が、AIエージェントとの協働がなぜ「天才をベビーシッターするような」感覚なのかを解説。AIの優れた推論能力と基本的な判断欠如という二面性を指摘し、現在のAI技術の特性と限界を分かりやすく描写している。",
-        "point": "AI技術の現状における矛盾した特性（高度さと初歩的欠陥の共存）を第一人者が的確に表現。開発者の実感を言語化。"
+        "url": "https://www.youtube.com/watch?v=8R3G7FtJm1k",
+        "summary_ja": "Context7は無料のMCP（Model Context Protocol）で、AIが生成する不具合コードを防止。Cursorの同等機能が月額20ドルに対し、無料で利用可能。AIのハルシネーション問題への新しい解決策。",
+        "point": "無料でAIコード生成の幻覚を防ぐツール提供"
       },
       {
         "title": "Want to build own app? Stop Just Thinking—Build Your App with AI 🚀 #ai #productivity #automation",
-        "score": 1.07,
+        "score": 1.11,
         "source": "youtube",
         "url": "https://www.youtube.com/watch?v=pQmR4lGyMZA",
-        "summary_ja": "AIツール（Cursorなど）を活用したアプリケーション開発方法の紹介。多くの人がアイデアは持つが実装には至らない課題に対し、AIを用いた開発効率化の実践的アプローチを提示。開発レイヤー2（Building）の自動化により、アイデアから実装への距離を大幅に短縮する。",
-        "point": "AI支援開発により、非エンジニアでもアプリ実装が可能に。開発障壁が低下。"
+        "summary_ja": "アイデアを持つ人は多いが、実際に構築する人は少ない。本動画はアプリ開発（レイヤー2）に焦点を当て、CursorなどのAIツールを活用した実践的な開発方法を紹介します。AI生産性ツールを使うことで、アイデア段階から実装段階へ効率的に進める方法を解説しています。",
+        "point": "AIツールを活用することで、非技術者でもアプリ開発を実現できる方法を提示"
       },
       {
-        "title": "AI Observatory: week of April 12 to 19, 2026",
-        "score": 1.0,
+        "title": "[MenaML26] AI for Tropical Cyclone Forecasting - Andrew El-Kadi, Google DeepMind",
+        "score": 1.01,
         "source": "youtube",
-        "url": "https://www.youtube.com/watch?v=jKMt9yzt5j8",
-        "summary_ja": "2026年4月12日から19日の期間における、最も影響力のあるAI関連ニュース15件の要約。AIを用いた調査によってまとめられたレポート。過去1週間のAI業界における主要なトレンドと注目すべき出来事を網羅的にカバー。",
-        "point": "AI業界の最新トレンドと重要ニュースを週次でまとめた総合レポート"
+        "url": "https://www.youtube.com/watch?v=e7SrpVErlAg",
+        "summary_ja": "Andrew El-Kadiによる、Google DeepMindでの熱帯低気圧予測研究について。AIを気象予報に応用する先端的なアプローチを解説する研究講演です。気候変動対応や災害予防の観点から、深層学習を活用した予報精度向上の実例を紹介しており、実社会への応用価値が高い事例です。",
+        "point": "AIを気象予報に応用し、災害予防精度を向上させる最新研究"
       },
       {
         "title": "GTC 2025 reflection from 思摩尔智能科技 presentation The Fusion of AI and Industry",
         "score": 1.0,
         "source": "youtube",
         "url": "https://www.youtube.com/watch?v=AZF1f6LEhOw",
-        "summary_ja": "",
-        "point": ""
+        "summary_ja": "思摩尔智能によるGTC 2025での発表内容。人工知能を製造業に統合することについて、背景と産業応用を主軸に解説しています。AIの産業化推進と実装方法に関する実践的なアプローチが示されており、製造業界でのAI活用の最前線を提示しています。",
+        "point": "産業製造におけるAI統合の実践的事例と応用方法を紹介"
       },
       {
-        "title": "This Week in Tech 1080",
-        "score": 0.7,
+        "title": "Can We Trust Sam Altman With the Future of AI?",
+        "score": 1.0,
         "source": "youtube",
-        "url": "https://www.youtube.com/watch?v=ASoLXv49sws",
-        "summary_ja": "",
-        "point": ""
+        "url": "https://www.youtube.com/watch?v=eonM_qTLl9c",
+        "summary_ja": "AIの未来がサム・アルトマン1人に依存している可能性について検討する動画。2023年の衝撃的な事件を背景に、彼の信頼性と指導力を問い直します。OpenAIのリーダーシップの透明性や説明責任をめぐる深刻な懸念を提起し、AI産業全体の統治体制について重要な議論を展開しています。",
+        "point": "AI産業リーダーの信頼性と統治体制をめぐる根本的な問題提起"
       },
       {
-        "title": "I made our AI App Template 10x Easier to Install",
-        "score": 0.59,
+        "title": "[MenaML26] LLMs for Code and Science - Shibl Mourad, Google DeepMind`",
+        "score": 1.0,
         "source": "youtube",
-        "url": "https://www.youtube.com/watch?v=hGyYrnt5KU8",
+        "url": "https://www.youtube.com/watch?v=ih803RPtchE",
+        "summary_ja": "Google DeepMindのShibl Mouradによる基調講演。大規模言語モデル（LLM）をコード開発と科学研究分野に応用する取り組みについて解説。LLMが実際のプログラミングタスクと科学的問題解決にもたらす革新的な影響と展望を示す。",
+        "point": "LLMのコード・科学計算領域での実用化の最前線を提示"
+      },
+      {
+        "title": "[MenaML26] AI for Society - Miruna Pislar, Google DeepMind",
+        "score": 1.0,
+        "source": "youtube",
+        "url": "https://www.youtube.com/watch?v=5lU4euN01EI",
+        "summary_ja": "Google DeepMindのMiruna Pislarによる研究講演。AIが教育、医療、環境保全など社会的課題の解決にいかに貢献できるか、実践的な事例を通じて検討。責任あるAI開発と社会への影響を重視した研究アプローチを提案。",
+        "point": "AIを社会課題解決のツールとして活用する実践的フレームワーク"
+      },
+      {
+        "title": "Google to Release New AI Chips, Challenging Nvidia | Bloomberg Tech 4/20/2026",
+        "score": 0.78,
+        "source": "youtube",
+        "url": "https://www.youtube.com/watch?v=utdN_Qj9O6M",
+        "summary_ja": "Bloombergの報道によると、Googleが推論特化の新型AIチップの発表を予定。Nvidiaの独占状態に対抗し、自社のAI推論性能向上を目指す。クラウドAIサービスの競争力強化とコスト削減が主要な戦略目標。",
+        "point": "AI推論チップ市場でのGoogleの本格参入がNvidia独占構図を変化"
+      },
+      {
+        "title": "Andrej Karpathy: Why Cheaper AI Actually Creates More Software Jobs",
+        "score": 0.57,
+        "source": "youtube",
+        "url": "https://www.youtube.com/watch?v=XWQPyQW9Y6E",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "Sam Altman, Open AI: Attempted Murder and why - AI Fears, Genuine Concern or Strategic Messaging?",
+        "title": "Adobe just made one prompt run your whole workflow 🎨 #CreativeAI #Shorts",
         "score": 0.53,
         "source": "youtube",
-        "url": "https://www.youtube.com/watch?v=eK5lwZglUHQ",
+        "url": "https://www.youtube.com/watch?v=-aaZbNp7B-c",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "[AI News of the Week] Ep 2 – AI Translation vs Humans, Job Risks &amp; Cultural Impact #AI2026",
+        "title": "AI এর কোন অনুভূতি নেই- তাই AI কোনদিনই মানুষের সব কাজ করতে পারবে না- Google Deepmind Research",
+        "score": 0.53,
+        "source": "youtube",
+        "url": "https://www.youtube.com/watch?v=KNWmHklbZP0",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "Andrej Karpathy&#39;s simple trick for getting AI to do 10x more work without you",
+        "score": 0.52,
+        "source": "youtube",
+        "url": "https://www.youtube.com/watch?v=TvRyzVNYSCs",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "andrej-karpathy-skills - GitHub Trending Today",
+        "score": 0.51,
+        "source": "youtube",
+        "url": "https://www.youtube.com/watch?v=100vGdC2Z2Y",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "The Real Deep Tech Shifts This Week (Quantum, AI, Biotech)",
         "score": 0.5,
         "source": "youtube",
-        "url": "https://www.youtube.com/watch?v=i24mTKQfReg",
+        "url": "https://www.youtube.com/watch?v=J_eiJ1w40p8",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "Gaming, Prediction Markets &amp; AI: What’s Next for Blockchain at KBW2025",
+        "title": "Ep 8 - This Week in AI - The Trouble with Helium",
         "score": 0.5,
         "source": "youtube",
-        "url": "https://www.youtube.com/watch?v=oY1ikj1XgA8",
+        "url": "https://www.youtube.com/watch?v=wd-LE2ZBJ6w",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "Forget 2025 AI! The NEW 2026 Rules Just Dropped",
+        "title": "Stress Test Fears vs AI Strength | April 2026 Portfolio Analysis",
         "score": 0.5,
         "source": "youtube",
-        "url": "https://www.youtube.com/watch?v=xJti9iW_vDI",
+        "url": "https://www.youtube.com/watch?v=ngsocx8ywWU",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "Andrej Karpathy: How to Stay at the AI Frontier Without Losing Your Independence",
+        "title": "Pritesh Damani Explains: The Future of AI in Real Estate #ai #shorts  #AIrealestate #aiisthefuture",
         "score": 0.5,
         "source": "youtube",
-        "url": "https://www.youtube.com/watch?v=GrbqPUFFNZ8",
+        "url": "https://www.youtube.com/watch?v=37gzlhAOE_s",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "AlphaFold 4 Launch:Google DeepMind’s New AI for Molecular Drug Discovery #AlphaFold4 #GoogleDeepMind",
+        "title": "#12: Was treibt Open AI/Sam Altman?, KI-Einfluss auf die Politik, Trump vs. Papst + Trainerin Eta!",
         "score": 0.5,
         "source": "youtube",
-        "url": "https://www.youtube.com/watch?v=Q6BjQynacP4",
+        "url": "https://www.youtube.com/watch?v=V0pUcNnIIt8",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "DeepMind&#39;s AI Solves Decades-Old Physics Mystery! 🤯",
+        "title": "The New Waydev: 260 upvotes for the tool that finally measures your AI ROI",
         "score": 0.5,
         "source": "youtube",
-        "url": "https://www.youtube.com/watch?v=L5V2dvtsv0g",
+        "url": "https://www.youtube.com/watch?v=jrIJhy7Z3po",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "The gap between what technical and non-technical people get from AI is huge now",
+        "title": "Every single AI app is down",
         "score": 0.5,
         "source": "reddit",
-        "url": "https://www.reddit.com/r/ClaudeAI/comments/1spnb80/the_gap_between_what_technical_and_nontechnical/",
+        "url": "https://www.reddit.com/r/ChatGPT/comments/1sqrgkm/every_single_ai_app_is_down/",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "Doctor: \"Over the past few weeks, I am truly feeling that our days are numbered because of AI.\"",
+        "title": "ubergarm/Kimi-K2.6-GGUF Q4_X now available",
         "score": 0.5,
         "source": "reddit",
-        "url": "https://www.reddit.com/r/ChatGPT/comments/1spndou/doctor_over_the_past_few_weeks_i_am_truly_feeling/",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1sr28kr/ubergarmkimik26gguf_q4_x_now_available/",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "LLM Neuroanatomy III - LLMs seem to think in geometry, not language",
+        "title": "Hermes just mass emailed a bunch of accounts from 2020 with pairing requests.",
         "score": 0.5,
         "source": "reddit",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1spy497/llm_neuroanatomy_iii_llms_seem_to_think_in/",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1sqqasu/hermes_just_mass_emailed_a_bunch_of_accounts_from/",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "Gemma 4 - MLX doesn't seem better than GGUF",
+        "title": "Are we optimizing AI research for acceptance rather than lasting value? [D]",
         "score": 0.5,
         "source": "reddit",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1spn7zh/gemma_4_mlx_doesnt_seem_better_than_gguf/",
+        "url": "https://www.reddit.com/r/MachineLearning/comments/1sqps89/are_we_optimizing_ai_research_for_acceptance/",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "uncensored open-source LLM built for pentesting",
+        "title": "[D] It seems that EVERY DAY there are around 100 - 200 new machine learning papers uploaded on Arxiv.",
         "score": 0.5,
         "source": "reddit",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1sq52bm/uncensored_opensource_llm_built_for_pentesting/",
+        "url": "https://www.reddit.com/r/MachineLearning/comments/1sqi69n/d_it_seems_that_every_day_there_are_around_100/",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "On the path towards a true science of deep learning [D]",
+        "title": "C++ CuTe / CUTLASS vs CuTeDSL (Python) in 2026 — what should new GPU kernel / LLM inference engineers actually learn?[D]",
         "score": 0.5,
         "source": "reddit",
-        "url": "https://www.reddit.com/r/MachineLearning/comments/1sq273c/on_the_path_towards_a_true_science_of_deep/",
+        "url": "https://www.reddit.com/r/MachineLearning/comments/1sqfgat/c_cute_cutlass_vs_cutedsl_python_in_2026_what/",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "What are the future prospects of Spiking Neural Networks (and particularly, neuromorphics computing) and Liquid Neural Networks? [D]",
+        "title": "Open-source single-GPU reproductions of Cartridges and STILL for neural KV-cache compaction [P]",
         "score": 0.5,
         "source": "reddit",
-        "url": "https://www.reddit.com/r/MachineLearning/comments/1spj2w4/what_are_the_future_prospects_of_spiking_neural/",
+        "url": "https://www.reddit.com/r/MachineLearning/comments/1squ94n/opensource_singlegpu_reproductions_of_cartridges/",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "ICML 2026 - Heavy score variance among various batches? [D]",
+        "title": "Honest opinion about AI",
         "score": 0.5,
         "source": "reddit",
-        "url": "https://www.reddit.com/r/MachineLearning/comments/1sovebg/icml_2026_heavy_score_variance_among_various/",
+        "url": "https://www.reddit.com/r/artificial/comments/1sr1vhi/honest_opinion_about_ai/",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "Tier-3 ISE final year with ongoing ML research (TMLR/Q1/NeurIPS target), trying to understand real impact in India [D]",
+        "title": "Researchers gave 1,222 people AI assistants, then took them away after 10 minutes. Performance crashed below the control group and people stopped trying. UCLA, MIT, Oxford, and Carnegie Mellon call it the \"boiling frog\" effect.",
         "score": 0.5,
         "source": "reddit",
-        "url": "https://www.reddit.com/r/MachineLearning/comments/1spoj6t/tier3_ise_final_year_with_ongoing_ml_research/",
+        "url": "https://www.reddit.com/r/artificial/comments/1sqcz1m/researchers_gave_1222_people_ai_assistants_then/",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "New Gallup poll finds that low-income Americans are turning to AI as a replacement for expensive doctor's visits. Only 14% of all Americans use AI for this reason, but this figure jumps to 32% among the lowest income bracket (<$24,000). A plurality of Americans distrust AI's use in healthcare.",
+        "score": 0.5,
+        "source": "reddit",
+        "url": "https://www.reddit.com/r/artificial/comments/1sqsut6/new_gallup_poll_finds_that_lowincome_americans/",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "The AI Layoff Trap, The Future of Everything Is Lies, I Guess: New Jobs and many other AI Links from Hacker News",
+        "score": 0.5,
+        "source": "reddit",
+        "url": "https://www.reddit.com/r/artificial/comments/1sqttj9/the_ai_layoff_trap_the_future_of_everything_is/",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "Parents Worry About Their Kids Using AI, but Worry More About Them Not Using It",
+        "score": 0.5,
+        "source": "reddit",
+        "url": "https://www.reddit.com/r/artificial/comments/1sqwiwb/parents_worry_about_their_kids_using_ai_but_worry/",
         "summary_ja": "",
         "point": ""
       },
@@ -518,122 +582,114 @@
         "point": ""
       },
       {
-        "title": "Canada gave one AI startup $240M in a single grant — more than 66% of what 107 companies received over 7 years",
+        "title": "Evidence mounts that AI-written books are consuming the publishing industry: in 2025, the number of self-published books jumped by 40% YoY, from 2.5 million to 3.5 million. Running a random sample of these books through an AI detection tool shows a 40% YoY increase in books flagged as AI.",
         "score": 0.5,
         "source": "reddit",
-        "url": "https://www.reddit.com/r/artificial/comments/1sq1gda/canada_gave_one_ai_startup_240m_in_a_single_grant/",
+        "url": "https://www.reddit.com/r/artificial/comments/1sq7bpd/evidence_mounts_that_aiwritten_books_are/",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "Why is every AI getting restricted these days?",
+        "title": "The $1 Trillion AI Buildout — Who's Actually Getting Paid?",
         "score": 0.5,
         "source": "reddit",
-        "url": "https://www.reddit.com/r/artificial/comments/1spxccd/why_is_every_ai_getting_restricted_these_days/",
+        "url": "https://www.reddit.com/r/artificial/comments/1sqseut/the_1_trillion_ai_buildout_whos_actually_getting/",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "How LLMs decide which pages to cite — and how to optimize for it",
+        "title": "What fundamental research exists anwering if / if not AGI can be achieved through LLMs?",
         "score": 0.5,
         "source": "reddit",
-        "url": "https://www.reddit.com/r/artificial/comments/1spxhfj/how_llms_decide_which_pages_to_cite_and_how_to/",
+        "url": "https://www.reddit.com/r/artificial/comments/1sqvxgf/what_fundamental_research_exists_anwering_if_if/",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "I built an LLM proxy that uses differential geometry to detect prompt injection — here’s what actually works (and what doesn’t)",
+        "title": "Popular Rust-based database turns to AI for up to 1.5x speedup, other improvements",
         "score": 0.5,
         "source": "reddit",
-        "url": "https://www.reddit.com/r/artificial/comments/1sq4wue/i_built_an_llm_proxy_that_uses_differential/",
+        "url": "https://www.reddit.com/r/artificial/comments/1sqvkiw/popular_rustbased_database_turns_to_ai_for_up_to/",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "Any one here using ai tools for pre-vis or short form scenes?",
+        "title": "Researchers Use Quantum Computer to Improve AI Predictions",
         "score": 0.5,
         "source": "reddit",
-        "url": "https://www.reddit.com/r/artificial/comments/1spl4at/any_one_here_using_ai_tools_for_previs_or_short/",
+        "url": "https://www.reddit.com/r/singularity/comments/1sqmo6s/researchers_use_quantum_computer_to_improve_ai/",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "Many leftists oppose AI, but I moderate the r/LeftistsForAI subreddit. And my co-mod writes great analytical pieces citing leftist economists like Marx on how they were much more nuanced about automation.",
-        "score": 0.5,
-        "source": "reddit",
-        "url": "https://www.reddit.com/r/singularity/comments/1spt8kn/many_leftists_oppose_ai_but_i_moderate_the/",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "This scene from The Wire mirrors how LLM releases have felt as of late",
-        "score": 0.5,
-        "source": "reddit",
-        "url": "https://www.reddit.com/r/singularity/comments/1spdcdr/this_scene_from_the_wire_mirrors_how_llm_releases/",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "Mon Apr 20 — Weekly Recap YT Short #Shorts",
+        "title": "SAP Cloud ERP - International Trade - H2 2025",
         "score": 0.0,
         "source": "youtube",
-        "url": "https://www.youtube.com/watch?v=q-UXmKkTzO8",
+        "url": "https://www.youtube.com/watch?v=Vs_gjg2O3D8",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "Sam Altman: ¡Ya vivimos en la singularidad! El futuro de la inteligencia artificial",
-        "score": 0.0,
-        "source": "youtube",
-        "url": "https://www.youtube.com/watch?v=VJOzKzchy48",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "Basically",
+        "title": "This cannot be real. I cannot believe my eyes",
         "score": 0.0,
         "source": "reddit",
-        "url": "https://www.reddit.com/r/ClaudeAI/comments/1spufjh/basically/",
+        "url": "https://www.reddit.com/r/ClaudeAI/comments/1sqpb2f/this_cannot_be_real_i_cannot_believe_my_eyes/",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "If you are unsatisfied with Opus 4.7, PLEASE simply switch to 4.6",
+        "title": "Opus 4.6 with 4.7 as an advisor mind be the best option for many of us!",
         "score": 0.0,
         "source": "reddit",
-        "url": "https://www.reddit.com/r/ClaudeAI/comments/1spv2qi/if_you_are_unsatisfied_with_opus_47_please_simply/",
+        "url": "https://www.reddit.com/r/ClaudeAI/comments/1sqm2uf/opus_46_with_47_as_an_advisor_mind_be_the_best/",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "What I would say I do here.",
+        "title": "I Gave Opus 4.7 and 4.6 the Same Code Audit… The Results Surprised Me",
         "score": 0.0,
         "source": "reddit",
-        "url": "https://www.reddit.com/r/ClaudeAI/comments/1sq1qp8/what_i_would_say_i_do_here/",
+        "url": "https://www.reddit.com/r/ClaudeAI/comments/1sqy9by/i_gave_opus_47_and_46_the_same_code_audit_the/",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "“Sir, another 22 year old has found a job”",
+        "title": "The Opus 4.6 vs 4.7 Controversy in one image",
         "score": 0.0,
         "source": "reddit",
-        "url": "https://www.reddit.com/r/ClaudeAI/comments/1sp6xpg/sir_another_22_year_old_has_found_a_job/",
+        "url": "https://www.reddit.com/r/ClaudeAI/comments/1sr4gq2/the_opus_46_vs_47_controversy_in_one_image/",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "Nice one 😂",
+        "title": "we're so cooked",
         "score": 0.0,
         "source": "reddit",
-        "url": "https://www.reddit.com/r/ChatGPT/comments/1sprk83/nice_one/",
+        "url": "https://www.reddit.com/r/ChatGPT/comments/1sqnb70/were_so_cooked/",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "T.R.E.N F.R.I.E.N.D.S",
+        "title": "The \"it's not just a this, it's a that\" sentence structure",
         "score": 0.0,
         "source": "reddit",
-        "url": "https://www.reddit.com/r/ChatGPT/comments/1spkel4/tren_friends/",
+        "url": "https://www.reddit.com/r/ChatGPT/comments/1sqqrjw/the_its_not_just_a_this_its_a_that_sentence/",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "George Washington if he lived today",
+        "score": 0.0,
+        "source": "reddit",
+        "url": "https://www.reddit.com/r/ChatGPT/comments/1sq98cf/george_washington_if_he_lived_today/",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "Error while signing in?",
+        "score": 0.0,
+        "source": "reddit",
+        "url": "https://www.reddit.com/r/ChatGPT/comments/1sqr3tj/error_while_signing_in/",
         "summary_ja": "",
         "point": ""
       },
@@ -646,50 +702,42 @@
         "point": ""
       },
       {
-        "title": "Asked it to convert this schematic to a breadboard...",
+        "title": "Kimi K2.6 Released (huggingface)",
         "score": 0.0,
         "source": "reddit",
-        "url": "https://www.reddit.com/r/ChatGPT/comments/1sppjuh/asked_it_to_convert_this_schematic_to_a_breadboard/",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1sqscao/kimi_k26_released_huggingface/",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "Cinema",
+        "title": "Kimi K2.6",
         "score": 0.0,
         "source": "reddit",
-        "url": "https://www.reddit.com/r/ChatGPT/comments/1sptf19/cinema/",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1sqswq6/kimi_k26/",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "Making animations is easier than ever with seedance 2.0",
+        "title": "When you dial in your bot’s personality",
         "score": 0.0,
         "source": "reddit",
-        "url": "https://www.reddit.com/r/ChatGPT/comments/1spuodp/making_animations_is_easier_than_ever_with/",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1sqnrhb/when_you_dial_in_your_bots_personality/",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "Why isn't ebay doing anything to stop those scams?",
+        "title": "Gemma-4-E2B's safety filters make it unusable for emergencies",
         "score": 0.0,
         "source": "reddit",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1splwqx/why_isnt_ebay_doing_anything_to_stop_those_scams/",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1sr35pk/gemma4e2bs_safety_filters_make_it_unusable_for/",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "Bloomberg: No Mac Studios until at least October",
+        "title": "Kimi K2.6 is coming !!",
         "score": 0.0,
         "source": "reddit",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1spz6kj/bloomberg_no_mac_studios_until_at_least_october/",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "Mixture-of-Depths Attention - arXiv",
-        "score": 0.0,
-        "source": "reddit",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1sq0hdv/mixtureofdepths_attention_arxiv/",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1sqnooy/kimi_k26_is_coming/",
         "summary_ja": "",
         "point": ""
       },
@@ -710,10 +758,58 @@
         "point": ""
       },
       {
+        "title": "How exactly one goes about networking in conferences? [D]",
+        "score": 0.0,
+        "source": "reddit",
+        "url": "https://www.reddit.com/r/MachineLearning/comments/1sqz7nu/how_exactly_one_goes_about_networking_in/",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "Does submitting to only journals negatively affect research career after finishing PhD? [D]",
+        "score": 0.0,
+        "source": "reddit",
+        "url": "https://www.reddit.com/r/MachineLearning/comments/1sqnuez/does_submitting_to_only_journals_negatively/",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "MILA vs Polytechnique Montreal: reapply or move on? [D]",
+        "score": 0.0,
+        "source": "reddit",
+        "url": "https://www.reddit.com/r/MachineLearning/comments/1sqsr50/mila_vs_polytechnique_montreal_reapply_or_move_on/",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "CVPR Broadening Participation Results. [D]",
+        "score": 0.0,
+        "source": "reddit",
+        "url": "https://www.reddit.com/r/MachineLearning/comments/1sqr6xq/cvpr_broadening_participation_results_d/",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
         "title": "1,200 ICLR 2026 Papers with Public Code or Data [R]",
         "score": 0.0,
         "source": "reddit",
         "url": "https://www.reddit.com/r/MachineLearning/comments/1spvoer/1200_iclr_2026_papers_with_public_code_or_data_r/",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "SGOCR: A Spatially-Grounded OCR-focused Pipeline & V1 Dataset [P]",
+        "score": 0.0,
+        "source": "reddit",
+        "url": "https://www.reddit.com/r/MachineLearning/comments/1sqdrqg/sgocr_a_spatiallygrounded_ocrfocused_pipeline_v1/",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "What should i do to have a good OD model?[P]",
+        "score": 0.0,
+        "source": "reddit",
+        "url": "https://www.reddit.com/r/MachineLearning/comments/1sqn1hn/what_should_i_do_to_have_a_good_od_modelp/",
         "summary_ja": "",
         "point": ""
       },
@@ -734,38 +830,6 @@
         "point": ""
       },
       {
-        "title": "We’re proud to open-source LIDARLearn [R] [D] [P]",
-        "score": 0.0,
-        "source": "reddit",
-        "url": "https://www.reddit.com/r/MachineLearning/comments/1sou5u1/were_proud_to_opensource_lidarlearn_r_d_p/",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "easyaligner: Forced alignment with GPU acceleration and flexible text normalization (compatible with all w2v2 models on HF Hub) [P]",
-        "score": 0.0,
-        "source": "reddit",
-        "url": "https://www.reddit.com/r/MachineLearning/comments/1soyqfw/easyaligner_forced_alignment_with_gpu/",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "Zero-shot World Models Are Developmentally Efficient Learners [R]",
-        "score": 0.0,
-        "source": "reddit",
-        "url": "https://www.reddit.com/r/MachineLearning/comments/1soj65c/zeroshot_world_models_are_developmentally/",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "Why production systems keep making “correct” decisions that are no longer right [D]",
-        "score": 0.0,
-        "source": "reddit",
-        "url": "https://www.reddit.com/r/MachineLearning/comments/1spuaek/why_production_systems_keep_making_correct/",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
         "title": "Reality of SaaS",
         "score": 0.0,
         "source": "reddit",
@@ -782,10 +846,10 @@
         "point": ""
       },
       {
-        "title": "Flux Image Editing on AskSary - genuinely impressed with what a simple prompt can do",
+        "title": "Most injection detectors score each prompt in isolation. I built one that tracks the geometric trajectory of the full session. Here is a concrete result.",
         "score": 0.0,
         "source": "reddit",
-        "url": "https://www.reddit.com/r/artificial/comments/1sq72d1/flux_image_editing_on_asksary_genuinely_impressed/",
+        "url": "https://www.reddit.com/r/artificial/comments/1sqvwaw/most_injection_detectors_score_each_prompt_in/",
         "summary_ja": "",
         "point": ""
       },
@@ -806,6 +870,38 @@
         "point": ""
       },
       {
+        "title": "AGI 🚀",
+        "score": 0.0,
+        "source": "reddit",
+        "url": "https://www.reddit.com/r/singularity/comments/1sqvvws/agi/",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "Kimi 2.6 has been released",
+        "score": 0.0,
+        "source": "reddit",
+        "url": "https://www.reddit.com/r/singularity/comments/1sqsvrt/kimi_26_has_been_released/",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "Palantir's summary of CEO Alexander Karp's manifesto is generating buzz. Read the 22 bullet points.",
+        "score": 0.0,
+        "source": "reddit",
+        "url": "https://www.reddit.com/r/singularity/comments/1sr2x11/palantirs_summary_of_ceo_alexander_karps/",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "Chinese Army Tests Human-Unmanned Team Tactics in Urban Warfare Drill",
+        "score": 0.0,
+        "source": "reddit",
+        "url": "https://www.reddit.com/r/singularity/comments/1sqvhcd/chinese_army_tests_humanunmanned_team_tactics_in/",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
         "title": "50m26s, the human half-marathon record (57m20s) was borken by a robot today",
         "score": 0.0,
         "source": "reddit",
@@ -814,156 +910,116 @@
         "point": ""
       },
       {
-        "title": "Pit stop at Robot half marathon in Beijing. Ice to cool down the battery and lubricant for the joints",
+        "title": "Newton 1.0 is 100% open source. GPU-accelerated physics engine from NVIDIA, DeepMind, and Disney Research, now under the Linux Foundation",
         "score": 0.0,
         "source": "reddit",
-        "url": "https://www.reddit.com/r/singularity/comments/1spqd7z/pit_stop_at_robot_half_marathon_in_beijing_ice_to/",
+        "url": "https://www.reddit.com/r/singularity/comments/1sqy814/newton_10_is_100_open_source_gpuaccelerated/",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "Unitree H1 fall and recovery",
+        "title": "Kimi K2.6 Minebench",
         "score": 0.0,
         "source": "reddit",
-        "url": "https://www.reddit.com/r/singularity/comments/1spq4t9/unitree_h1_fall_and_recovery/",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "Beijing: First humanoid robot crossing the 20KM line (audio translated)",
-        "score": 0.0,
-        "source": "reddit",
-        "url": "https://www.reddit.com/r/singularity/comments/1spermq/beijing_first_humanoid_robot_crossing_the_20km/",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "US tech firms successfully lobbied EU to keep datacentre emissions secret",
-        "score": 0.0,
-        "source": "reddit",
-        "url": "https://www.reddit.com/r/singularity/comments/1spcs6v/us_tech_firms_successfully_lobbied_eu_to_keep/",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "Organic vs Non-Organic interaction (beluga whale vs spot)",
-        "score": 0.0,
-        "source": "reddit",
-        "url": "https://www.reddit.com/r/singularity/comments/1sp3gpd/organic_vs_nonorganic_interaction_beluga_whale_vs/",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "Saw this posted by the official Unitree account",
-        "score": 0.0,
-        "source": "reddit",
-        "url": "https://www.reddit.com/r/singularity/comments/1spe0je/saw_this_posted_by_the_official_unitree_account/",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "grok 4.3 beta: musk's ($300/month) megaphone",
-        "score": 0.0,
-        "source": "reddit",
-        "url": "https://www.reddit.com/r/singularity/comments/1sozic7/grok_43_beta_musks_300month_megaphone/",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "DARPA: For quantum computing, different qubits are better together",
-        "score": 0.0,
-        "source": "reddit",
-        "url": "https://www.reddit.com/r/singularity/comments/1spkqr6/darpa_for_quantum_computing_different_qubits_are/",
+        "url": "https://www.reddit.com/r/singularity/comments/1squnmf/kimi_k26_minebench/",
         "summary_ja": "",
         "point": ""
       }
     ],
     "その他": [
       {
-        "title": "College instructor turns to typewriters to curb AI-written work",
-        "score": 8.02,
+        "title": "John Ternus to become Apple CEO",
+        "score": 8.0,
         "source": "hackernews",
-        "url": "https://sentinelcolorado.com/uncategorized/a-college-instructor-turns-to-typewriters-to-curb-ai-written-work-and-teach-life-lessons/",
-        "summary_ja": "AI生成レポートの増加に対抗するため、大学講師がタイプライター使用を義務付ける試み。デジタル機器の廃止により、学生の創造的思考と手書きスキルを育成しながら、AI不正使用を物理的に防止する教育的アプローチ。",
-        "point": "AI時代の教育課題に対する独創的で物理的な対抗策"
+        "url": "https://www.apple.com/newsroom/2026/04/tim-cook-to-become-apple-executive-chairman-john-ternus-to-become-apple-ceo/",
+        "summary_ja": "Appleが経営陣の交代を発表。現CEO のティム・クックが会長職に退任し、ジョン・テルナス副社長がCEOに昇格。テルナスはAppleのハードウェア開発部門を長年率いており、同社の製品戦略の継続性が期待される。",
+        "point": "Appleの経営体制が変更され、ハードウェア部門の責任者が新CEOに就任。"
       },
       {
-        "title": "Archive of BYTE magazine, starting with issue #1 in 1975",
-        "score": 7.52,
+        "title": "GitHub's fake star economy",
+        "score": 8.0,
         "source": "hackernews",
-        "url": "https://archive.org/details/byte-magazine-1975-09",
-        "summary_ja": "1975年9月創刊のBYTE誌が完全デジタルアーカイブ化。初期のコンピュータ業界の動向、技術トレンド、業界人物評など貴重な歴史資料が保存される。テクノロジー史研究における重要な情報源として機能。",
-        "point": "コンピュータ産業の初期段階における貴重な一次資料の公開保存"
+        "url": "https://awesomeagents.ai/news/github-fake-stars-investigation/",
+        "summary_ja": "GitHub上でリポジトリのスター数を不正に増加させる詐欺的な慣行が蔓延している実態を調査。オープンソースプロジェクトの人気度を偽装し、開発者の信頼性評価を歪める問題が指摘され、プラットフォームの透明性と信頼性が脅かされている。",
+        "point": "GitHubスター操作による詐欺が横行し、プロジェクト評価の信頼性が低下。"
       },
       {
-        "title": "Game devs explain the tricks involved with letting you pause a game",
-        "score": 7.41,
+        "title": "All phones sold in the EU to have replaceable batteries from 2027",
+        "score": 8.0,
         "source": "hackernews",
-        "url": "https://kotaku.com/video-game-devs-explain-how-pausing-works-and-sometimes-it-gets-weird-2000686339",
-        "summary_ja": "ゲームのポーズ機能の技術的実装方法をゲーム開発者が解説。時間停止の複雑さ、UI表示、セーブシステム連携など、一見単純に見える機能の裏側にある工夫と課題を紹介。開発現場の実践的知見を提供。",
-        "point": "当たり前の機能の複雑な技術実装を開発者視点で解説"
+        "url": "https://www.theolivepress.es/spain-news/2026/04/20/eu-to-force-replaceable-batteries-in-phones-and-tablets-from-2027/",
+        "summary_ja": "EU規制により、2027年から販売されるすべてのスマートフォンとタブレットに交換可能なバッテリーの搭載が必須となる。環境保護とサーキュラーエコノミー推進を目的とした施策で、デバイスの寿命延長と電子廃棄物削減を実現。",
+        "point": "消費者による電池交換が可能になり、デバイスの寿命延長と環境負荷削減が実現。"
       },
       {
-        "title": "Vercel April 2026 security incident",
-        "score": 7.04,
+        "title": "Qwen3.6-Max-Preview: Smarter, Sharper, Still Evolving",
+        "score": 7.83,
         "source": "hackernews",
-        "url": "https://www.bleepingcomputer.com/news/security/vercel-confirms-breach-as-hackers-claim-to-be-selling-stolen-data/",
-        "summary_ja": "Vercelがセキュリティ侵害を確認。ハッカーが盗まれたデータ販売を主張。詳細は不明だが、多数のユーザーデータが影響を受けた可能性があり、セキュリティの脆弱性が露呈。企業とユーザーにとって重大な懸念事項。",
-        "point": "主要開発プラットフォームの大規模データ漏洩事件"
+        "url": "https://qwen.ai/blog?id=qwen3.6-max-preview",
+        "summary_ja": "Alibaba傘下のQwenが新バージョン「Qwen3.6-Max-Preview」をリリース。推論精度の向上と応答性の改善を実現し、複雑なタスク対応能力が強化された。継続的な改善を予定しており、高性能なオープンソースLLM選択肢として注目される。",
+        "point": "推論精度と処理速度が向上した新バージョンのLLMが登場、実用性が向上。"
       },
       {
-        "title": "Airline worker arrested after sharing photos of bomb damage in WhatsApp group",
-        "score": 5.69,
+        "title": "NSA is using Anthropic's Mythos despite blacklist",
+        "score": 7.77,
         "source": "hackernews",
-        "url": "https://www.lbc.co.uk/article/dubai-police-spied-private-whatsapp-5HjdXwr_2/",
-        "summary_ja": "ドバイの航空会社職員が、爆弾被害の写真をWhatsAppグループで共有したため逮捕された。プライベートチャットでの情報漏洩が問題となり、警察が捜査に乗り出した事案。情報セキュリティとプライバシー保護の重要性を示す事例。",
-        "point": "メッセージングアプリでの機密情報漏洩事案。デジタルセキュリティの課題提起。"
+        "url": "https://www.axios.com/2026/04/19/nsa-anthropic-mythos-pentagon",
+        "summary_ja": "米国防安全保障局（NSA）が、政府のブラックリストに載っているにもかかわらず、Anthropic開発のAIモデル「Mythos」を使用していることが明らかになった。政府機関による規制回避と企業AIの軍事利用に関する議論が生じている。",
+        "point": "政府規制の抜け穴を示唆。軍事AI調達の透明性問題。"
       },
       {
-        "title": "Notion leaks email addresses of all editors of any public page",
-        "score": 5.39,
+        "title": "Atlassian enables default data collection to train AI",
+        "score": 7.11,
         "source": "hackernews",
-        "url": "https://twitter.com/weezerOSINT/status/2045849358462222720",
-        "summary_ja": "Notionのセキュリティ脆弱性により、公開ページの全編集者のメールアドレスが露出する問題が報告されました。プライバシーとセキュリティに関わる重大な問題として、ユーザーから懸念が高まっています。",
-        "point": "クラウドサービスのプライバシー設定に関する重大な脆弱性"
+        "url": "https://letsdatascience.com/news/atlassian-enables-default-data-collection-to-train-ai-f71343d8",
+        "summary_ja": "ソフトウェア企業Atlassianが、ユーザーの許可なくデフォルトでデータ収集を有効にし、AI学習に利用する施策を開始。プライバシーと企業利益のバランス問題として批判を招いている。",
+        "point": "デフォルトオプト インによるプライバシー侵害。ユーザーの知らないうちにデータ利用。"
       },
       {
-        "title": "The seven programming ur-languages (2022)",
-        "score": 4.43,
+        "title": "AI Resistance: some recent anti-AI stuff that’s worth discussing",
+        "score": 6.05,
         "source": "hackernews",
-        "url": "https://madhadron.com/programming/seven_ur_languages.html",
-        "summary_ja": "プログラミング言語の進化と分類に関する記事。複数の基本的なプログラミング言語（ur-languages）の特性と系統を分析。言語設計の根底にある哲学や概念を探究し、現代プログラミングの基礎を理解するための理論的フレームワークを提示している。",
-        "point": "プログラミング言語の本質的な分類により、言語選択とキャリア構築の指針を提供。"
+        "url": "https://stephvee.ca/blog/artificial%20intelligence/ai-resistance-is-growing/",
+        "summary_ja": "AI技術に対する批判や抵抗の動きが活発化している。雇用への影響、著作権侵害、プライバシー懸念、環境負荷など、複数の観点からAI導入に対する懸念事項が議論されている。",
+        "point": "社会的不安の可視化。AI導入への異議申し立ての増加。"
       },
       {
-        "title": "Optimizing Ruby Path Methods",
-        "score": 2.34,
+        "title": "Deezer says 44% of songs uploaded to its platform daily are AI-generated",
+        "score": 5.98,
         "source": "hackernews",
-        "url": "https://byroot.github.io/ruby/performance/2026/04/18/faster-paths.html",
+        "url": "https://techcrunch.com/2026/04/20/deezer-says-44-of-songs-uploaded-to-its-platform-daily-are-ai-generated/",
+        "summary_ja": "音楽ストリーミングサービスDeezerが、プラットフォームに毎日アップロードされる曲の44%がAI生成であると報告。音楽業界におけるAI生成コンテンツの急速な増加を示唆している。",
+        "point": "生成AIが音楽制作を支配。著作権・アーティスト報酬の問題深刻化。"
+      },
+      {
+        "title": "OpenClaw isn't fooling me. I remember MS-DOS",
+        "score": 5.59,
+        "source": "hackernews",
+        "url": "https://www.flyingpenguin.com/build-an-openclaw-free-secure-always-on-local-ai-agent/",
+        "summary_ja": "ローカルAIエージェント「OpenClaw」に対する批評記事。過度な宣伝に対し、実際の機能や実装は過去の技術の焼き直しに過ぎないという懐疑的な見方を提示。",
+        "point": "AI技術のハイプサイクル。誇大広告への警戒呼びかけ。"
+      },
+      {
+        "title": "Figma's woes compound with Claude Design",
+        "score": 2.98,
+        "source": "hackernews",
+        "url": "https://martinalderson.com/posts/figmas-woes-compound-with-claude-design/",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "Modern Common Lisp with FSet",
-        "score": 2.31,
+        "title": "OpenAI ad partner now selling ChatGPT ad placements based on \"prompt relevance\"",
+        "score": 2.36,
         "source": "hackernews",
-        "url": "https://fset.common-lisp.dev/Modern-CL/Top_html/index.html",
+        "url": "https://www.adweek.com/media/exclusive-leaked-deck-reveals-stackadapts-playbook-for-chatgpt-ads/",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "Swiss authorities want to reduce dependency on Microsoft",
-        "score": 2.16,
+        "title": "Focused microwaves allow 3D printers to fuse circuits onto almost anything",
+        "score": 1.92,
         "source": "hackernews",
-        "url": "https://www.swissinfo.ch/eng/swiss-ai/swiss-authorities-want-to-reduce-dependency-on-microsoft/91280532",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "Show HN: Prompt-to-Excalidraw demo with Gemma 4 E2B in the browser (3.1GB)",
-        "score": 1.59,
-        "source": "hackernews",
-        "url": "https://teamchong.github.io/turboquant-wasm/draw.html",
+        "url": "https://newatlas.com/electronics/meta-nfc-focused-microwaves-circuits/",
         "summary_ja": "",
         "point": ""
       },
@@ -988,14 +1044,6 @@
         "score": 1.5,
         "source": "HuggingFace Blog",
         "url": "https://huggingface.co/blog/train-multimodal-sentence-transformers",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "Prove You Are a Robot: CAPTCHAs for Agents",
-        "score": 1.22,
-        "source": "hackernews",
-        "url": "https://browser-use.com/posts/prove-you-are-a-robot",
         "summary_ja": "",
         "point": ""
       },
@@ -1032,10 +1080,34 @@
         "point": ""
       },
       {
+        "title": "🔬 Training Transformers to solve 95% failure rate of Cancer Trials — Ron Alfa & Daniel Bear, Noetik",
+        "score": 1.0,
+        "source": "Latent Space",
+        "url": "https://www.latent.space/p/noetik",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
         "title": "Ecom-RLVE: Adaptive Verifiable Environments for E-Commerce Conversational Agents",
         "score": 1.0,
         "source": "HuggingFace Blog",
         "url": "https://huggingface.co/blog/ecom-rlve",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "OpenAI helps Hyatt advance AI among colleagues",
+        "score": 1.0,
+        "source": "OpenAI Blog",
+        "url": "https://openai.com/index/hyatt-advances-ai-with-chatgpt-enterprise",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "The next evolution of the Agents SDK",
+        "score": 1.0,
+        "source": "OpenAI Blog",
+        "url": "https://openai.com/index/the-next-evolution-of-the-agents-sdk",
         "summary_ja": "",
         "point": ""
       },
@@ -1048,42 +1120,42 @@
         "point": ""
       },
       {
-        "title": "Blue Origin's rocket reuse achievement marred by upper stage failure",
-        "score": 0.95,
+        "title": "Soul Player C64 – A real transformer running on a 1 MHz Commodore 64",
+        "score": 0.85,
         "source": "hackernews",
-        "url": "https://arstechnica.com/space/2026/04/errant-upper-stage-spoils-blue-origins-success-in-reusing-new-glenn-booster/",
+        "url": "https://github.com/gizmo64k/soulplayer-c64",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "Reading Input from an USB RFID Card Reader",
-        "score": 0.86,
+        "title": "Show HN: Holos – QEMU/KVM with a compose-style YAML, GPUs and health checks",
+        "score": 0.72,
         "source": "hackernews",
-        "url": "https://kevwe.com/blog/usb-rfid-reader",
+        "url": "https://github.com/zeroecco/holos",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "CEOs admit AI had no impact on employment or productivity",
-        "score": 0.79,
-        "source": "hackernews",
-        "url": "https://fortune.com/article/why-do-thousands-of-ceos-believe-ai-not-having-impact-productivity-employment-study/",
+        "title": "Google rolls out Gemini in Chrome in seven new countries",
+        "score": 0.5,
+        "source": "TechCrunch AI",
+        "url": "https://techcrunch.com/2026/04/20/google-rolls-out-gemini-in-chrome-in-seven-new-countries/",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "Pairwise Order of a Sequence of Elements",
-        "score": 0.76,
-        "source": "hackernews",
-        "url": "https://morwenn.github.io//presortedness/2026/04/11/TSB010-pairwise-order-of-a-sequence-of-elements.html",
+        "title": "NSA spies are reportedly using Anthropic’s Mythos, despite Pentagon feud",
+        "score": 0.5,
+        "source": "TechCrunch AI",
+        "url": "https://techcrunch.com/2026/04/20/nsa-spies-are-reportedly-using-anthropics-mythos-despite-pentagon-feud/",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "Yoshihisa Kishimoto (1961 – 2026), creator of Double Dragon and Kunio-kun",
-        "score": 0.56,
-        "source": "hackernews",
-        "url": "https://old.reddit.com/r/NintendoClassics/comments/1sp8dao/in_tribute_to_yoshihisa_kishimoto_1961_2026/",
+        "title": "CEO and CFO suddenly depart AI nuclear power upstart Fermi",
+        "score": 0.5,
+        "source": "TechCrunch AI",
+        "url": "https://techcrunch.com/2026/04/20/fermi-ceo-and-cfo-depart-texas-nuclear-power-ai/",
         "summary_ja": "",
         "point": ""
       },
@@ -1104,18 +1176,42 @@
         "point": ""
       },
       {
-        "title": "Anthropic’s new cybersecurity model could get it back in the government’s good graces",
+        "title": "Fortnite developers can make AI characters now — just don&#8217;t try to date them",
         "score": 0.5,
         "source": "The Verge AI",
-        "url": "https://www.theverge.com/ai-artificial-intelligence/914229/tides-turning-anthropic-trump-administration-cybersecurity-mythos-preview",
+        "url": "https://www.theverge.com/games/914963/fortnite-ai-characters-developers-conversations",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "The Download: bad news for inner Neanderthals, and AI warfare’s human illusion",
+        "title": "The Download: murderous ‘mirror’ bacteria, and Chinese workers fighting AI doubles",
         "score": 0.5,
         "source": "MIT Tech Review AI",
-        "url": "https://www.technologyreview.com/2026/04/17/1136112/the-download-inner-neanderthal-ai-war-human-in-the-loop/",
+        "url": "https://www.technologyreview.com/2026/04/20/1136154/the-download-murderous-mirror-bacteria-chinese-workers-fight-ai-agents/",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "Colossal Biosciences said it cloned red wolves. Is it for real?",
+        "score": 0.5,
+        "source": "MIT Tech Review AI",
+        "url": "https://www.technologyreview.com/2026/04/20/1135222/red-wolves-colossal-biosciences-clones/",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "Chinese tech workers are starting to train their AI doubles–and pushing back",
+        "score": 0.5,
+        "source": "MIT Tech Review AI",
+        "url": "https://www.technologyreview.com/2026/04/20/1136149/chinese-tech-workers-ai-colleagues/",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "Claude Token Counter, now with model comparisons",
+        "score": 0.5,
+        "source": "Simon Willison",
+        "url": "https://simonwillison.net/2026/Apr/20/claude-token-counts/#atom-everything",
         "summary_ja": "",
         "point": ""
       },
@@ -1144,14 +1240,6 @@
         "point": ""
       },
       {
-        "title": "Join us at PyCon US 2026 in Long Beach - we have new AI and security tracks this year",
-        "score": 0.5,
-        "source": "Simon Willison",
-        "url": "https://simonwillison.net/2026/Apr/17/pycon-us-2026/#atom-everything",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
         "title": "[AINews] The Two Sides of OpenClaw",
         "score": 0.5,
         "source": "Latent Space",
@@ -1168,10 +1256,10 @@
         "point": ""
       },
       {
-        "title": "[AINews] Humanity's Last Gasp",
+        "title": "Introducing GPT-Rosalind for life sciences research",
         "score": 0.5,
-        "source": "Latent Space",
-        "url": "https://www.latent.space/p/ainews-humanitys-last-gasp",
+        "source": "OpenAI Blog",
+        "url": "https://openai.com/index/introducing-gpt-rosalind",
         "summary_ja": "",
         "point": ""
       },
@@ -1192,42 +1280,26 @@
         "point": ""
       },
       {
-        "title": "Minimal Viable Programs (2014)",
-        "score": 0.5,
+        "title": "Japanese man sentenced to prison for posting spoilers",
+        "score": 0.29,
         "source": "hackernews",
-        "url": "https://joearms.github.io/published/2014-06-25-minimal-viable-program.html",
+        "url": "https://www.theverge.com/entertainment/914984/godzilla-minus-one-overlord-coda-spoilers-lawsuit-toho-kadokawa-shoten",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "The 12-month window",
+        "title": "It’s not just one thing — it’s another thing",
         "score": 0.0,
         "source": "TechCrunch AI",
-        "url": "https://techcrunch.com/2026/04/19/the-12-month-window/",
+        "url": "https://techcrunch.com/2026/04/20/ai-writing-its-not-just-this-its-that-barrons/",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "Palantir posts mini-manifesto denouncing inclusivity and ‘regressive’ cultures",
+        "title": "Silicon Valley has forgotten what normal people want",
         "score": 0.0,
-        "source": "TechCrunch AI",
-        "url": "https://techcrunch.com/2026/04/19/palantir-posts-mini-manifesto-denouncing-regressive-and-harmful-cultures/",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "TechCrunch Mobility: Uber enters its assetmaxxing era",
-        "score": 0.0,
-        "source": "TechCrunch AI",
-        "url": "https://techcrunch.com/2026/04/19/techcrunch-mobility-uber-enters-its-assetmaxxing-era/",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "Tesla brings its robotaxi service to Dallas and Houston",
-        "score": 0.0,
-        "source": "TechCrunch AI",
-        "url": "https://techcrunch.com/2026/04/18/tesla-brings-its-robotaxi-service-to-dallas-and-houston/",
+        "source": "The Verge AI",
+        "url": "https://www.theverge.com/tldr/915176/nft-metaverse-ai-weirdos",
         "summary_ja": "",
         "point": ""
       },
@@ -1244,14 +1316,6 @@
         "score": 0.0,
         "source": "The Verge AI",
         "url": "https://www.theverge.com/ai-artificial-intelligence/914672/the-ram-shortage-could-last-years",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "Should you stare into Sam Altman&#8217;s orb before your next date?",
-        "score": 0.0,
-        "source": "The Verge AI",
-        "url": "https://www.theverge.com/ai-artificial-intelligence/914385/world-id-tinder-identity-verifying-orb",
         "summary_ja": "",
         "point": ""
       },
@@ -1296,26 +1360,10 @@
         "point": ""
       },
       {
-        "title": "The case for fixing everything",
-        "score": 0.0,
-        "source": "MIT Tech Review AI",
-        "url": "https://www.technologyreview.com/2026/04/17/1135408/book-review-stewart-brand-fixing-everything-maintenance/",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "How robots learn: A brief, contemporary history",
-        "score": 0.0,
-        "source": "MIT Tech Review AI",
-        "url": "https://www.technologyreview.com/2026/04/17/1135416/how-robots-learn-brief-contemporary-history/",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "Adding a new content type to my blog-to-newsletter tool",
+        "title": "SQL functions in Google Sheets to fetch data from Datasette",
         "score": 0.0,
         "source": "Simon Willison",
-        "url": "https://simonwillison.net/guides/agentic-engineering-patterns/adding-a-new-content-type/#atom-everything",
+        "url": "https://simonwillison.net/2026/Apr/20/datasette-sql/#atom-everything",
         "summary_ja": "",
         "point": ""
       },
@@ -1324,6 +1372,22 @@
         "score": 0.0,
         "source": "HuggingFace Blog",
         "url": "https://huggingface.co/blog/nvidia/nemotron-ocr-v2",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "Codex for (almost) everything",
+        "score": 0.0,
+        "source": "OpenAI Blog",
+        "url": "https://openai.com/index/codex-for-almost-everything",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "Accelerating the cyber defense ecosystem that protects us all",
+        "score": 0.0,
+        "source": "OpenAI Blog",
+        "url": "https://openai.com/index/accelerating-cyber-defense-ecosystem",
         "summary_ja": "",
         "point": ""
       },
@@ -1338,100 +1402,52 @@
     ],
     "Claude": [
       {
-        "title": "GPT 5.5 PRO (SPUD) LEAKED: OpenAI&#39;s New Model BEATS Claude Opus 4.7!",
-        "score": 5.54,
+        "title": "agentic-stack: a portable .agent folder that gives all your AI coding tools Cursor, Claude, Windsurf",
+        "score": 8.16,
         "source": "youtube",
-        "url": "https://www.youtube.com/watch?v=Ga-13kTU474",
-        "summary_ja": "OpenAIの次世代フロンティアモデル「SPUD」がリークされた。GPT 5.5 Proとして搭載される見込みで、早ければ翌週にもリリースされる可能性がある。Claude Opus 4.7を上回るパフォーマンスを持つと報告されている。",
-        "point": "OpenAIの次期主力モデルの存在確認。Claude Opusを超える性能が期待される。"
+        "url": "https://www.youtube.com/watch?v=24X4S0OBgxI",
+        "summary_ja": "Cursor、Claude Code、Windsurfなど複数のAIコーディングツールを使用する際、各ツールが独立したメモリを持つ問題に対応。ポータブルな.agentフォルダを提供することで、異なるIDEやターミナル環境でAIツールの統一されたコンテキストを実現するソリューション。",
+        "point": "複数のAIコーディングツール間でメモリを共有し、開発効率を向上させる。"
       },
       {
-        "title": "Everything You Need to Know : Build ServiceNow Apps with AI-Claude, GitHub Copilot,Cursor &amp; Windsurf",
-        "score": 3.14,
+        "title": "GPT-5.5 LEAKED, Claude Opus 4.7, Sam Altman in Trouble?, Emergent, Codex, Canva AI 2.0: Tech News",
+        "score": 3.92,
         "source": "youtube",
-        "url": "https://www.youtube.com/watch?v=DUTutpMFGWs",
-        "summary_ja": "Claude、GitHub Copilot、Cursor、Windsurfなどを活用したServiceNowアプリの開発方法を解説。ServiceNowが公式に「Build Agent Skills」を発表予定の中、実践的なAIツール統合の事例と手法を紹介するビデオチュートリアルです。",
-        "point": "エンタープライズプラットフォームにおけるAIツール統合実例"
+        "url": "https://www.youtube.com/watch?v=EhvkA0gjPo0",
+        "summary_ja": "最新のAI業界動向をまとめたニュース速報。GPT-5.5のリーク情報、Claude新バージョン、Sam Altman関連ニュース、Codex、Canva AI 2.0など、複数の注目トピックを網羅。AI開発と業界動向の最新情報を効率よく習得できる。",
+        "point": "複数の大型AIニュースを一本で網羅。業界トレンド把握に効率的"
       },
       {
-        "title": "海外で超話題！ClaudeCodeを矯正する(たった4つ)のルール【Karpathy-Skill】とは？",
-        "score": 2.05,
-        "source": "youtube",
-        "url": "https://www.youtube.com/watch?v=CHFLqwQfxqs",
-        "summary_ja": "GitHubで51,000スターを獲得した、たった1ファイルでClaude Codeの性能を劇的に向上させる方法。OpenAI共同創業者Andrej Karpathyが指摘したAIコーディングの最適化テクニックが海外で話題沸騰中。",
-        "point": "シンプルな設定でAIコーディングの性能を大幅改善。実用的な高評価手法"
-      },
-      {
-        "title": "Karpathy Hasn&#39;t Written Code in 5 Months #karpathy #claudeai #agenticai #claudeai",
-        "score": 2.0,
-        "source": "youtube",
-        "url": "https://www.youtube.com/watch?v=552ADDLIv_A",
-        "summary_ja": "OpenAI共同創業者のAndrej Karpathyが、この5ヶ月間実際にコードを書いていないことを明かした。2025年の年間テーマとして「Vibe Coding」を提唱した彼が、AIエージェント時代における開発スタイルの変化を示唆している重要な発言。",
-        "point": "AI時代の開発パラダイムシフト。トップエンジニアもAIに任せる傾向の実証例"
-      },
-      {
-        "title": "OMG! Claude 4.7 BIGGEST AI OPPORTUNITY in 2026 (NEW INSANE UPDATE)",
-        "score": 1.97,
-        "source": "youtube",
-        "url": "https://www.youtube.com/watch?v=qXYuznlCjKE",
-        "summary_ja": "Claude 4.7の新しいアップデート機能と活用方法を紹介。AIアシスタント機能の拡張により、2026年におけるビジネスの大きな機会となる可能性を解説している。",
-        "point": "最新Claude機能による新たなビジネスチャンス。2026年のAI活用トレンドを先取り"
-      },
-      {
-        "title": "AI UPDATE | Is Claude Getting Dumber? 😳 Anthropic’s Silent Nerf Explained | CLAUDE | @SatyamScripts",
+        "title": "Never Switch Back to ChatGPT After This #claude #chatgpt #ai",
         "score": 1.69,
         "source": "youtube",
-        "url": "https://www.youtube.com/watch?v=gP1eYQiCu2g",
-        "summary_ja": "複数の開発者とAIパワーユーザーがClaudeの性能低下を報告。Opus版が以前より弱くなったという疑惑をめぐり、Anthropicの実施した変更内容と背景を検証・解説。",
-        "point": "主要LLMの性能変化。ユーザー体験と企業政策のギャップが浮き彫り"
+        "url": "https://www.youtube.com/watch?v=vKthiUmrQP0",
+        "summary_ja": "ChatGPTからClaudeへの切り替えが簡単であることを紹介する動画。多くのユーザーが乗り換えの手間を理由にChatGPTを使い続けているが、実際には移行は容易であることを説明し、Claudeの利点を強調している。",
+        "point": "ChatGPTからClaudeへの乗り換え手順を簡略化し、ユーザーの導入障壁を低減する情報提供"
       },
       {
-        "title": "Your Weekly AI NEWS RECAP: Claude Design,Anthropic Opus 4.7, Realbotix AI &amp; More…",
-        "score": 1.51,
+        "title": "Anthropic&#39;s Emotional AI Deception Fail #ai #claude #tech #ethics",
+        "score": 1.65,
         "source": "youtube",
-        "url": "https://www.youtube.com/watch?v=7yY8xodUmd8",
-        "summary_ja": "AIの進化が加速する中、Anthropicが新たな「Claude Design」機能を発表。このニュースまとめは、Claude Designの概要から産業全体の最新動向まで、AI分野の主要なアップデートをコンパクトに紹介。AIエージェント開発の新たなマイルストーンとなる。",
-        "point": "Anthropicの新ツール「Claude Design」発表が業界に与える影響と、AI技術ロードマップの加速を端的に示す。"
+        "url": "https://www.youtube.com/watch?v=KVIozwDn1Ws",
+        "summary_ja": "Anthropicが最近公開した動画でClaudeを人間らしく見せようとしていることを批判する内容。AI意識の追求に焦点を当てつつ、AIが人間的な感情を持つように見せかける危険性と倫理的問題を指摘している。",
+        "point": "AI企業による人間らしさの演出と倫理的問題の指摘、AIの透明性と信頼性の重要性"
       },
       {
-        "title": "Claude AI got no chill #ytshorts #trending #ai",
-        "score": 1.34,
+        "title": "Anthropic just launched Claude Design. #shorts #ai #designer #tech",
+        "score": 1.61,
         "source": "youtube",
-        "url": "https://www.youtube.com/watch?v=_gDbb0UXT_k",
-        "summary_ja": "短編動画コンテンツ。Claude AIの予期しない返答や特性についての軽妙な表現。詳細な本文情報が不足しているため、具体的な内容は不明だが、AI の動作や特性に関するショート動画と推定される。",
-        "point": "Claude AIの特性や予期しない動作の視覚的紹介"
+        "url": "https://www.youtube.com/watch?v=PZmcXwHGAhI",
+        "summary_ja": "Anthropicが新機能「Claude Design」をリリース。ユーザーが説明するだけで、Claudeが自動的にデザイン全体を生成する機能。テキスト入力からビジュアルデザインへの自動変換により、デザイン作業の効率化が実現される。",
+        "point": "テキスト記述から自動デザイン生成機能により、デザインプロセスの民主化と効率化を実現"
       },
       {
-        "title": "INSANE Easy Million Dollar Claude Hack to start a company #ai #claude #business",
-        "score": 1.31,
+        "title": "How I Use AI to Manage My Calendar as a Twin Mom &amp; Business Owner #claudecowork #claude #ai",
+        "score": 1.18,
         "source": "youtube",
-        "url": "https://www.youtube.com/watch?v=aDslx_IvvTg",
-        "summary_ja": "履歴書作成は4億ドル規模の産業であり、多くの低品質サービスが存在。Claude AIを活用して$200～$500の基本履歴書から$500～$1,000以上の高付加価値サービスまで展開。AI を利用した新規ビジネス起業の実践的戦略を解説。",
-        "point": "既存高額サービスをAIで低コスト化・高品質化する起業戦略"
-      },
-      {
-        "title": "Claude Design, a new design platform that lets you design anything: presentations, apps, websites",
-        "score": 1.23,
-        "source": "youtube",
-        "url": "https://www.youtube.com/watch?v=L2hE3kMNTcU",
-        "summary_ja": "AnthropicがリリースしたClaudeデザインプラットフォームについて。プレゼンテーション、アプリ、ウェブサイト、3Dグラフィックスなど、あらゆるデザイン作成が可能な新プラットフォーム。AIを活用した設計支援により、デザイン作業の効率化と迅速な実装を実現する。",
-        "point": "AI駆動のマルチメディアデザイン環境により、従来のデザイン工程を大幅に簡素化・高速化。"
-      },
-      {
-        "title": "How To Connect PayPal to Claude AI [NEW 2026 Guide]",
-        "score": 1.0,
-        "source": "youtube",
-        "url": "https://www.youtube.com/watch?v=O_lvMNewpOU",
-        "summary_ja": "2026年版としてClaudeのAIアシスタントにPayPalを連携させる方法について解説したハウツー動画。PayPal統合がClaudeで対応しているかどうかの確認手順を含む。AI アシスタントの機能拡張に関する実践的ガイド。",
-        "point": "Claude AIの決済機能統合で利用可能性が拡大した"
-      },
-      {
-        "title": "Claude Opus 4.7 - A New Frontier, in Performance … and Drama",
-        "score": 1.0,
-        "source": "youtube_influencer",
-        "url": "https://www.youtube.com/watch?v=QVJcdfkRpH8",
-        "summary_ja": "",
-        "point": ""
+        "url": "https://www.youtube.com/watch?v=V22Qt4YPDF0",
+        "summary_ja": "双子の子育てと事業運営を行う起業家が、ClaudeのAIを活用してカレンダー管理を自動化する実例紹介。子どもがプリスクール開始時の複雑なスケジュール管理を効率化。AI活用による生活・業務の実践的改善事例。",
+        "point": "Claude AIによる個人スケジュール管理の自動化で、複雑な時間管理課題を解決"
       },
       {
         "title": "r/ClaudeAI List of Ongoing Megathreads",
@@ -1450,82 +1466,90 @@
         "point": ""
       },
       {
-        "title": "Is Claude actually better than ChatGPT… or is it just hype?",
+        "title": "What two decades of data loss trauma does to a woman. (Claude Code)",
         "score": 1.0,
         "source": "reddit",
-        "url": "https://www.reddit.com/r/ChatGPT/comments/1sq0u1i/is_claude_actually_better_than_chatgpt_or_is_it/",
+        "url": "https://www.reddit.com/r/ClaudeAI/comments/1sqv4g9/what_two_decades_of_data_loss_trauma_does_to_a/",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "Claude vs Gemini: Solving the laden knight's tour problem",
-        "score": 1.0,
-        "source": "reddit",
-        "url": "https://www.reddit.com/r/artificial/comments/1sp0r1j/claude_vs_gemini_solving_the_laden_knights_tour/",
+        "title": "Перестань объяснять Claude проект заново. CLAUDE.md",
+        "score": 0.51,
+        "source": "youtube",
+        "url": "https://www.youtube.com/watch?v=4cZc2PNo15s",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "Claude Design is Incredible...",
+        "title": "Claude Design is Amazing! We're cooked!",
         "score": 0.5,
         "source": "reddit",
-        "url": "https://www.reddit.com/r/ClaudeAI/comments/1spxi2f/claude_design_is_incredible/",
+        "url": "https://www.reddit.com/r/ClaudeAI/comments/1squwsy/claude_design_is_amazing_were_cooked/",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "YSK: If you use Claude on your company's Enterprise plan, your employer can access every message you've ever sent, including \"incognito\" chats/",
+        "title": "Claude Electrician 4.7 Part 2",
         "score": 0.5,
         "source": "reddit",
-        "url": "https://www.reddit.com/r/ClaudeAI/comments/1spsugm/ysk_if_you_use_claude_on_your_companys_enterprise/",
+        "url": "https://www.reddit.com/r/ClaudeAI/comments/1sqyx82/claude_electrician_47_part_2/",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "New Claude user for work. Blown away. Are there more specific subs?",
+        "title": "Wow Claude...just wow...",
         "score": 0.5,
         "source": "reddit",
-        "url": "https://www.reddit.com/r/ClaudeAI/comments/1spyarg/new_claude_user_for_work_blown_away_are_there/",
+        "url": "https://www.reddit.com/r/ClaudeAI/comments/1sqk4dz/wow_claudejust_wow/",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "My designers thoughts on Claude design",
+        "title": "I asked Claude Design to create a map of Middle East (quick \"dirty\" prompt, I have to admit). All the questions it asked right after were very interesting - I was like wow that's promising. Then I got the result.",
         "score": 0.5,
         "source": "reddit",
-        "url": "https://www.reddit.com/r/ClaudeAI/comments/1sq27bs/my_designers_thoughts_on_claude_design/",
+        "url": "https://www.reddit.com/r/ClaudeAI/comments/1sqqhjo/i_asked_claude_design_to_create_a_map_of_middle/",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "Oh Claude, How can I trust you anymore?",
+        "title": "My relationship with Claude",
         "score": 0.5,
         "source": "reddit",
-        "url": "https://www.reddit.com/r/ClaudeAI/comments/1spv0bc/oh_claude_how_can_i_trust_you_anymore/",
+        "url": "https://www.reddit.com/r/ClaudeAI/comments/1sr27jv/my_relationship_with_claude/",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "I left my 7 year old nephew unsupervised on the pc and he used my claude session",
+        "title": "I Gave Claude Its Own Radio Station — It Won't Stop Broadcasting (It's Fine)",
         "score": 0.5,
         "source": "reddit",
-        "url": "https://www.reddit.com/r/ClaudeAI/comments/1spddf6/i_left_my_7_year_old_nephew_unsupervised_on_the/",
+        "url": "https://www.reddit.com/r/ClaudeAI/comments/1squbo4/i_gave_claude_its_own_radio_station_it_wont_stop/",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "Claude Design keeps drawing a turd",
+        "title": "Claude+Network made me a believer",
         "score": 0.5,
         "source": "reddit",
-        "url": "https://www.reddit.com/r/ClaudeAI/comments/1sp6hns/claude_design_keeps_drawing_a_turd/",
+        "url": "https://www.reddit.com/r/ClaudeAI/comments/1sqxaif/claudenetwork_made_me_a_believer/",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "I'm running qwen3.6-35b-a3b with 8 bit quant and 64k context thru OpenCode on my mbp m5 max 128gb and it's as good as claude",
+        "title": "Okay, Claude Design is fun to use",
         "score": 0.5,
         "source": "reddit",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1spdvpo/im_running_qwen3635ba3b_with_8_bit_quant_and_64k/",
+        "url": "https://www.reddit.com/r/ClaudeAI/comments/1sqi5tr/okay_claude_design_is_fun_to_use/",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "\"Claude just helped me build a wetlab and sequence my whole genome at home. I have zero lab experience!\" --- Dudes out here sequencing their own DNA at home!",
+        "score": 0.5,
+        "source": "reddit",
+        "url": "https://www.reddit.com/r/singularity/comments/1sqiaug/claude_just_helped_me_build_a_wetlab_and_sequence/",
         "summary_ja": "",
         "point": ""
       }
@@ -1536,46 +1560,54 @@
         "score": 2.08,
         "source": "GitHub Trending",
         "url": "https://github.com/openai/openai-agents-python",
-        "summary_ja": "OpenAIが提供する軽量で強力なマルチエージェントワークフロー向けPythonフレームワーク。複数のAIエージェントが協調して動作するシステムの構築を簡素化。開発者が効率的にマルチエージェントシステムを実装できる統合プラットフォーム。",
-        "point": "OpenAI公式のマルチエージェント開発ツール。軽量で高機能な実装フレームワーク。"
+        "summary_ja": "OpenAIが公開した、マルチエージェントワークフロー向けの軽量で高機能なPythonフレームワーク。複数のAIエージェントを連携させ、複雑なタスク自動化を実現する。開発者向けの実用的なツールとして注目されている。",
+        "point": "OpenAI公式のエージェント開発フレームワーク。急速な採用増加"
       },
       {
-        "title": "[GitHub] Donchitos / Claude-Code-Game-Studios",
+        "title": "[GitHub] coreyhaines31 / marketingskills",
         "score": 0.58,
         "source": "GitHub Trending",
-        "url": "https://github.com/Donchitos/Claude-Code-Game-Studios",
-        "summary_ja": "ClaudeをベースにしたAIエージェント49個と72の事業スキル、実スタジオの階層構造を模した調整システムを搭載。Claudeのコードをフルゲーム開発スタジオに変換するフレームワーク。マルチエージェント型の複雑なワークフロー自動化を実現している。",
-        "point": "49個のAIエージェントによる複雑な自動化。ゲーム開発の完全自動化モデル実装。"
+        "url": "https://github.com/coreyhaines31/marketingskills",
+        "summary_ja": "Claude CodeやAIエージェント向けのマーケティング技能セット。CRO、コピーライティング、SEO、アナリティクス、グロースエンジニアリングなど実務的なマーケティング知識をAIが活用できるように体系化。AI時代のマーケティング自動化を支援。",
+        "point": "AIエージェント向けマーケティング知識ベース。実務的なスキル集約"
       },
       {
-        "title": "[GitHub] lsdefine / GenericAgent",
-        "score": 0.56,
+        "title": "[GitHub] HKUDS / RAG-Anything",
+        "score": 0.58,
         "source": "GitHub Trending",
-        "url": "https://github.com/lsdefine/GenericAgent",
+        "url": "https://github.com/HKUDS/RAG-Anything",
+        "summary_ja": "香港大学開発のオールインワンRAG（Retrieval-Augmented Generation）フレームワーク。様々なデータソースに対応した検索拡張生成の統合プラットフォーム。実装の簡素化と汎用性を実現し、LLMアプリケーション開発を加速。",
+        "point": "複数データソース対応の実用的RAGフレームワークが急速に普及"
+      },
+      {
+        "title": "[GitHub] deepseek-ai / DeepGEMM",
+        "score": 0.54,
+        "source": "GitHub Trending",
+        "url": "https://github.com/deepseek-ai/DeepGEMM",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "[GitHub] resend / react-email",
-        "score": 0.55,
-        "source": "GitHub Trending",
-        "url": "https://github.com/resend/react-email",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "[GitHub] d2l-ai / d2l-en",
+        "title": "[GitHub] zilliztech / claude-context",
         "score": 0.53,
         "source": "GitHub Trending",
-        "url": "https://github.com/d2l-ai/d2l-en",
+        "url": "https://github.com/zilliztech/claude-context",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "[GitHub] HKUDS / DeepTutor",
+        "title": "[GitHub] bugbasesecurity / pentest-copilot",
+        "score": 0.51,
+        "source": "GitHub Trending",
+        "url": "https://github.com/bugbasesecurity/pentest-copilot",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "[GitHub] sansan0 / TrendRadar",
         "score": 0.08,
         "source": "GitHub Trending",
-        "url": "https://github.com/HKUDS/DeepTutor",
+        "url": "https://github.com/sansan0/TrendRadar",
         "summary_ja": "",
         "point": ""
       },
@@ -1588,42 +1620,18 @@
         "point": ""
       },
       {
-        "title": "[GitHub] badlogic / pi-mono",
-        "score": 0.08,
-        "source": "GitHub Trending",
-        "url": "https://github.com/badlogic/pi-mono",
-        "summary_ja": "コーディングエージェントCLI、統一LLM API、TUI/WebUIライブラリ、Slackボットなどを含む包括的なAIエージェント開発ツールキット。vLLMポッド対応で、LLMベースの自動コーディングや複雑なタスク処理を実現する開発基盤を提供します。",
-        "point": "統一的なLLM APIで複数のAIエージェント実装パターンを効率化"
-      },
-      {
-        "title": "[GitHub] jingyaogong / minimind",
-        "score": 0.08,
-        "source": "GitHub Trending",
-        "url": "https://github.com/jingyaogong/minimind",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "[GitHub] BasedHardware / omi",
-        "score": 0.07,
-        "source": "GitHub Trending",
-        "url": "https://github.com/BasedHardware/omi",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "[GitHub] bytedance / deer-flow",
-        "score": 0.07,
-        "source": "GitHub Trending",
-        "url": "https://github.com/bytedance/deer-flow",
-        "summary_ja": "ByteDANCEが開発した長期タスク対応のスーパーエージェント。調査、コーディング、創作などを数分～数時間かけて実行。サンドボックス、メモリ、ツール、スキル、サブエージェント、メッセージゲートウェイ機能で複雑な階層的タスク処理を実現します。",
-        "point": "長時間要する複雑なマルチステップタスクを自動実行可能"
-      },
-      {
         "title": "[GitHub] Fincept-Corporation / FinceptTerminal",
-        "score": 0.06,
+        "score": 0.07,
         "source": "GitHub Trending",
         "url": "https://github.com/Fincept-Corporation/FinceptTerminal",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "[GitHub] thunderbird / thunderbolt",
+        "score": 0.06,
+        "source": "GitHub Trending",
+        "url": "https://github.com/thunderbird/thunderbolt",
         "summary_ja": "",
         "point": ""
       },
@@ -1636,12 +1644,12 @@
         "point": ""
       },
       {
-        "title": "[GitHub] thunderbird / thunderbolt",
-        "score": 0.05,
+        "title": "[GitHub] mnfst / manifest",
+        "score": 0.06,
         "source": "GitHub Trending",
-        "url": "https://github.com/thunderbird/thunderbolt",
-        "summary_ja": "",
-        "point": ""
+        "url": "https://github.com/mnfst/manifest",
+        "summary_ja": "個人向けAIエージェント向けのスマートモデルルーティング機能を提供するTypeScriptプロジェクト。複数のAIモデルを効率的に振り分けることで、コストを最大70%削減可能。LLMの最適化と経済性の両立を実現する。",
+        "point": "複数モデルの自動選択により大幅なコスト削減を実現"
       },
       {
         "title": "[GitHub] tractorjuice / arc-kit",
@@ -1660,10 +1668,26 @@
         "point": ""
       },
       {
-        "title": "[GitHub] onlook-dev / onlook",
+        "title": "[GitHub] home-assistant / core",
         "score": 0.04,
         "source": "GitHub Trending",
-        "url": "https://github.com/onlook-dev/onlook",
+        "url": "https://github.com/home-assistant/core",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "[GitHub] vercel-labs / portless",
+        "score": 0.02,
+        "source": "GitHub Trending",
+        "url": "https://github.com/vercel-labs/portless",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "[GitHub] kyegomez / swarms",
+        "score": 0.02,
+        "source": "GitHub Trending",
+        "url": "https://github.com/kyegomez/swarms",
         "summary_ja": "",
         "point": ""
       },
@@ -1674,218 +1698,62 @@
         "url": "https://github.com/is-a-dev/register",
         "summary_ja": "",
         "point": ""
-      }
-    ],
-    "Japan AI Industry": [
-      {
-        "title": "Anthropic、AIデザインツール「Claude Design」プレビュー公開──「Opus 4.7」搭載でコーディングツールとの連携も",
-        "score": 1.51,
-        "source": "ITmedia AI+",
-        "url": "https://www.itmedia.co.jp/aiplus/articles/2604/18/news022.html",
-        "summary_ja": "",
-        "point": ""
       },
       {
-        "title": "「DXは流行遅れ、これからはAI」と妄言吐くSIer幹部、それじゃ未来はないぞ",
-        "score": 0.51,
-        "source": "日経クロステック",
-        "url": "https://xtech.nikkei.com/atcl/nxt/column/18/00148/041500431/",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "Google「TurboQuant」でメモリー需要は減らず、AI普及の起爆剤に",
-        "score": 0.51,
-        "source": "日経クロステック",
-        "url": "https://xtech.nikkei.com/atcl/nxt/column/18/00138/040601994/",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "1300ページを読んでExcelに整理――地道な開示作業、AIで工数93％削減　NEC流の業務改革方法とは",
-        "score": 0.5,
-        "source": "ITmedia AI+",
-        "url": "https://www.itmedia.co.jp/business/articles/2604/20/news021.html",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "21％がAIを仕事で「毎日利用」　ナレッジワーカー対象、Notion調査",
-        "score": 0.5,
-        "source": "ITmedia AI+",
-        "url": "https://www.itmedia.co.jp/aiplus/articles/2604/17/news130.html",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "ソフトバンク、米新興のAIスマホを1年間の国内独占販売　“ユーザーの行動先読み”うたう「Natural AI Phone」",
-        "score": 0.5,
-        "source": "ITmedia AI+",
-        "url": "https://www.itmedia.co.jp/news/articles/2604/17/news109.html",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "「NVIDIA、マーベルに出資で光電融合強化」など5本",
-        "score": 0.4,
-        "source": "日経クロステック",
-        "url": "https://xtech.nikkei.com/atcl/nxt/column/18/02928/041300092/",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "動き出す「日本版データスペース」、化学物質管理やEV電池の脱炭素対応",
-        "score": 0.4,
-        "source": "日経クロステック",
-        "url": "https://xtech.nikkei.com/atcl/nxt/column/18/03592/041600001/",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "「なぜSalesforceにログインする必要があるのか」　“エージェント向けSalesforce”「Headless 360」発表",
+        "title": "[GitHub] alexzhang13 / rlm",
         "score": 0.01,
-        "source": "ITmedia AI+",
-        "url": "https://www.itmedia.co.jp/aiplus/articles/2604/17/news118.html",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "スマートウォッシュゲート",
-        "score": 0.01,
-        "source": "日経クロステック",
-        "url": "https://xtech.nikkei.com/atcl/nxt/mag/ncr/18/00008/040900557/",
-        "summary_ja": "ニッケンがスーパー工業と共同開発した自動タイヤ洗浄装置。建設現場などの出入り口に設置され、タイヤ汚れの洗浄作業を自動化。建設業務の効率化と衛生管理を同時に実現する新型ゲート装置です。",
-        "point": "建設現場の手作業を自動化し、時間コスト削減と衛生改善を実現"
-      },
-      {
-        "title": "岸田元首相、公式YouTubeで自身のディープフェイク映像をセルフパロディー　「この画像は公式です」",
-        "score": 0.0,
-        "source": "ITmedia AI+",
-        "url": "https://www.itmedia.co.jp/news/articles/2604/17/news137.html",
-        "summary_ja": "",
-        "point": ""
-      }
-    ],
-    "Japan Dev AI": [
-      {
-        "title": "設計書・コード・テストを全部AIに書かせて半年間開発してみたよ",
-        "score": 3.01,
-        "source": "Zenn AI",
-        "url": "https://zenn.dev/moros/articles/8a010aff542625",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "Claudeに原始時代に行ってもらっては困る話",
-        "score": 2.32,
-        "source": "Zenn AI",
-        "url": "https://zenn.dev/holy_fox/articles/e0c0bf75fba9e6",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "AIエージェントの″ハーネス″に関わる混乱と私見",
-        "score": 2.19,
-        "source": "Zenn AI",
-        "url": "https://zenn.dev/watany/articles/d8b692bbca65a3",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "gh skillが登場。GitHub公式のスキル管理ツールにnpx skillsから乗り換えた",
-        "score": 2.06,
-        "source": "Zenn AI",
-        "url": "https://zenn.dev/tonkotsuboy_com/articles/gh-skill-install-agent-skills",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "deleted_atにインデックスを雑に貼ったら本番DBが死んだ",
-        "score": 1.94,
-        "source": "Zenn AI",
-        "url": "https://zenn.dev/ukkyon/articles/mysql-deleted-at-index-optimizer-trap",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "プロンプトの再現性をAI に自動チューニングさせる方法 ~ 暗黙知を排除する",
-        "score": 1.57,
-        "source": "Zenn AI",
-        "url": "https://zenn.dev/mizchi/articles/empirical-prompt-tuning",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "HonoのNode.jsアダプタが最大2.3倍速くなります",
-        "score": 0.99,
-        "source": "Zenn AI",
-        "url": "https://zenn.dev/yusukebe/articles/9dce6cf7dc6e41",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "13時間で900万円請求事件の裏側 - AI生成コードが招くAPIキー漏洩を静的解析で止める",
-        "score": 0.58,
-        "source": "Qiita AI",
-        "url": "https://qiita.com/pythonista0328/items/f9eb8b7fb6a14087df35",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "自作キーボードに機械学習モデルを仕込む",
-        "score": 0.23,
-        "source": "Zenn AI",
-        "url": "https://zenn.dev/bilzard/articles/29e91678ae98c7",
+        "source": "GitHub Trending",
+        "url": "https://github.com/alexzhang13/rlm",
         "summary_ja": "",
         "point": ""
       }
     ],
     "GPT": [
       {
-        "title": "Google Gemma 4 is HERE! 🤯 GPT-4 Power, 100% Local",
-        "score": 1.93,
+        "title": "“STARGATE” el proyecto más ambicioso de OPEN AI #ia #chatgpt #openai #noticias",
+        "score": 1.67,
         "source": "youtube",
-        "url": "https://www.youtube.com/watch?v=HEht0Yewaro",
-        "summary_ja": "GoogleがGemini 3と同じ研究をベースにした新モデル「Gemma 4」をリリース。GPT-4並みの性能をローカル環境で完全に実行可能にしたことで、オープンソースAI環境を大きく変える可能性がある。",
-        "point": "オープンソースAIが商用レベルに到達。プライバシー・コスト面で革新的"
+        "url": "https://www.youtube.com/watch?v=vudV6DDPzRA",
+        "summary_ja": "OpenAIが発表した大規模プロジェクト「STARGATE」についてのニュース動画。OpenAIの最も野心的なプロジェクトとされ、AI技術の新しい展開が期待される内容となっているが、詳細は動画視聴により確認する必要がある。",
+        "point": "OpenAIの次世代AI開発プロジェクトの発表と業界への影響を報道する重要なニュース"
       },
       {
-        "title": "OpenAI Shakeup: Executive Kevin Weil Departs ChatGPT Maker #Shorts",
+        "title": "Chat GPT fora do ar",
+        "score": 1.53,
+        "source": "youtube",
+        "url": "https://www.youtube.com/watch?v=i5RZP7VN0mI",
+        "summary_ja": "ChatGPTがオフライン状態であることを伝えるニュース。確認済みの情報として、ChatGPTのサービス停止状況についての短編動画。具体的な原因や復旧予定時間については詳細が限定的である。",
+        "point": "ChatGPTのサービス障害を報告する速報ニュース、ユーザー影響の周知"
+      },
+      {
+        "title": "Milyonlarca ChatGPT kullanıcısı neden kilitlendi? #Shorts",
         "score": 1.5,
         "source": "youtube",
-        "url": "https://www.youtube.com/watch?v=SYvA0ynSLOo",
-        "summary_ja": "OpenAIで重要な経営幹部であるKevin Weil氏（元Instagram副社長）が正式に退職することが明らかに。Weil氏は組織内で戦略的な役割を担当していたとみられ、その退職はOpenAI内部の大きな変化を示唆。企業の人事異動としての重要な発表。",
-        "point": "高位のテック業界経営者がOpenAIを去ることは、経営方針や組織体制の変化の可能性を示唆。"
-      },
-      {
-        "title": "Is OpenAI Chatgpt Hiding Something? | TRUTH EXPOSED 2026",
-        "score": 1.5,
-        "source": "youtube",
-        "url": "https://www.youtube.com/watch?v=QI0oqPUCVbY",
-        "summary_ja": "OpenAIおよびChatGPTが直面する複雑な法的課題と規制当局からの精査が実態として存在することを検証。企業の法務関連のリスク、規制上の懸念、利用者に対する透明性の問題など、多層的な課題が指摘されている。",
-        "point": "OpenAIが関わる法的課題と規制リスクの実態が明確化され、企業の透明性と信頼性に関わる重要な問題を提起。"
-      },
-      {
-        "title": "I found out why ChatGPT gets slower the longer you use it and it has nothing to do with OpenAI's servers",
-        "score": 1.5,
-        "source": "reddit",
-        "url": "https://www.reddit.com/r/ChatGPT/comments/1spowot/i_found_out_why_chatgpt_gets_slower_the_longer/",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "Every frontier AI lab is racing to own biology #GPTRosalind #AIResearch",
-        "score": 1.15,
-        "source": "youtube",
-        "url": "https://www.youtube.com/watch?v=a3jEQEE6Gy0",
-        "summary_ja": "AI研究最前線の企業が生物学領域の支配権を獲得しようと競争していることについて。生物学的問題解決へのAI応用が急速に進展し、複数の主要AIラボが この領域に資源を集中投下している現状を報告。バイオテクノロジーとAIの融合が新たな競争軸となっている。",
-        "point": "AIの生物学応用が新たな競争領域となり、医療・創薬分野の革新が加速する可能性。"
+        "url": "https://www.youtube.com/watch?v=vHsD6KLtAlM",
+        "summary_ja": "数百万のChatGPTユーザーが突然プラットフォームにアクセスできなくなる障害が発生。OpenAIの人気AI製品を襲ったこの世界規模の問題の原因について報告。大規模AIサービスの安定性に関する懸念が浮上。",
+        "point": "大規模AIサービスの障害事例で、システム信頼性の重要性が顕在化"
       },
       {
         "title": "GPT-4o/GPT-5 complaints megathread",
         "score": 1.0,
         "source": "reddit",
         "url": "https://www.reddit.com/r/ChatGPT/comments/1nvea4p/gpt4ogpt5_complaints_megathread/",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "ChatGPT stopped working after I asked it to explain an article about Peter Thiel",
+        "score": 1.0,
+        "source": "reddit",
+        "url": "https://www.reddit.com/r/ChatGPT/comments/1sqs8pp/chatgpt_stopped_working_after_i_asked_it_to/",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "GPT-Image-2 seems to be coming this week, fal.ai just put up a “coming soon” page for it",
+        "score": 1.0,
+        "source": "reddit",
+        "url": "https://www.reddit.com/r/singularity/comments/1sr4i56/gptimage2_seems_to_be_coming_this_week_falai_just/",
         "summary_ja": "",
         "point": ""
       },
@@ -1898,154 +1766,316 @@
         "point": ""
       },
       {
-        "title": "Is it just me or is ChatGPT being a dick lately?",
+        "title": "why pay for ChatGPT when McDonald's support bot is free?",
         "score": 0.5,
         "source": "reddit",
-        "url": "https://www.reddit.com/r/ChatGPT/comments/1spg9m2/is_it_just_me_or_is_chatgpt_being_a_dick_lately/",
+        "url": "https://www.reddit.com/r/ChatGPT/comments/1sqm4fx/why_pay_for_chatgpt_when_mcdonalds_support_bot_is/",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "Yesterday I noticed a complete difference in how ChatGPT talks?",
+        "title": "Has anybody else also noticed ChatGpt being overly critical of every single thing ?",
         "score": 0.5,
         "source": "reddit",
-        "url": "https://www.reddit.com/r/ChatGPT/comments/1sq2uuw/yesterday_i_noticed_a_complete_difference_in_how/",
+        "url": "https://www.reddit.com/r/ChatGPT/comments/1sqpmws/has_anybody_else_also_noticed_chatgpt_being/",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "I have never before in my entire life felt the urge to bitch slap software, but ChatGPT’s compulsive need to contradict every little goddamn thing I say is about to inspire a brand-new crime",
+        "score": 0.5,
+        "source": "reddit",
+        "url": "https://www.reddit.com/r/ChatGPT/comments/1sqdyaw/i_have_never_before_in_my_entire_life_felt_the/",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "ChatGPT is Struggling..",
+        "score": 0.5,
+        "source": "reddit",
+        "url": "https://www.reddit.com/r/ChatGPT/comments/1sqrcux/chatgpt_is_struggling/",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "ChatGPT isn’t working",
+        "score": 0.5,
+        "source": "reddit",
+        "url": "https://www.reddit.com/r/ChatGPT/comments/1sqrlev/chatgpt_isnt_working/",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "Is anyone else noticing that ChatGPT seems to be completely down for everyone right now?",
+        "score": 0.5,
+        "source": "reddit",
+        "url": "https://www.reddit.com/r/artificial/comments/1sqrh0v/is_anyone_else_noticing_that_chatgpt_seems_to_be/",
+        "summary_ja": "",
+        "point": ""
+      }
+    ],
+    "Japan Dev AI": [
+      {
+        "title": "設計書・コード・テストを全部AIに書かせて半年間開発してみたよ",
+        "score": 5.52,
+        "source": "Zenn AI",
+        "url": "https://zenn.dev/moros/articles/8a010aff542625",
+        "summary_ja": "開発プロセス全体（設計書、コード、テスト）をAIに任せて半年間の開発を実施した実験的な取り組み。従来の開発方法と異なり、AIが主体的に成果物を生成する過程での課題や学びをまとめた記事。実務レベルでのAI活用の可能性と限界を探っている。",
+        "point": "AI開発の実践例。設計からテストまで全工程を自動化した事例"
+      },
+      {
+        "title": "プロンプトの再現性をAI に自動チューニングさせる方法 ~ 暗黙知を排除する",
+        "score": 2.86,
+        "source": "Zenn AI",
+        "url": "https://zenn.dev/mizchi/articles/empirical-prompt-tuning",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "Claudeに原始時代に行ってもらっては困る話",
+        "score": 2.8,
+        "source": "Zenn AI",
+        "url": "https://zenn.dev/holy_fox/articles/e0c0bf75fba9e6",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "gh skillが登場。GitHub公式のスキル管理ツールにnpx skillsから乗り換えた",
+        "score": 2.59,
+        "source": "Zenn AI",
+        "url": "https://zenn.dev/tonkotsuboy_com/articles/gh-skill-install-agent-skills",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "Claude Codeを使って分かった「開発で詰まるポイントの正体」",
+        "score": 1.08,
+        "source": "Qiita AI",
+        "url": "https://qiita.com/aito1234/items/e303cf4765c8d75b61fd",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "AI時代にわざわざRuby on Railsを使う理由",
+        "score": 1.03,
+        "source": "Zenn AI",
+        "url": "https://zenn.dev/higakijin/articles/730a734b6b9009",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "AIにコーディングを全任せした結果、ドメイン設計に辿り着いた話",
+        "score": 0.76,
+        "source": "Zenn AI",
+        "url": "https://zenn.dev/tan_go238/articles/002437e923913c",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "AI時代のSEに残る仕事は「責任を持つ」ことかもしれない 〜単体テストを題材に〜",
+        "score": 0.57,
+        "source": "Qiita AI",
+        "url": "https://qiita.com/moyomoyomoyo/items/3194853a811a7281b6e0",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "自作キーボードに機械学習モデルを仕込む",
+        "score": 0.56,
+        "source": "Zenn AI",
+        "url": "https://zenn.dev/bilzard/articles/29e91678ae98c7",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "Figmaの株価を一夜で7%下落させた「Claude Design」がやばすぎたので徹底解説します",
+        "score": 0.56,
+        "source": "Qiita AI",
+        "url": "https://qiita.com/ot12/items/92ec6ea6e5a3a0b57226",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "Let’s Encryptの短期証明書はかなり厳しいのでARI対応クライアントを使った方がよい",
+        "score": 0.32,
+        "source": "Zenn AI",
+        "url": "https://zenn.dev/catatsuy/articles/2ac24bccb4b7d1",
+        "summary_ja": "",
+        "point": ""
+      }
+    ],
+    "Japan AI Industry": [
+      {
+        "title": "LINEヤフー、新AIエージェントを発表　Gemini、ChatGPTに「負けない強み」とは？",
+        "score": 1.52,
+        "source": "ITmedia AI+",
+        "url": "https://www.itmedia.co.jp/business/articles/2604/21/news048.html",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "生成AI導入　「どれがいい？」は機能より“条件”で考える",
+        "score": 0.53,
+        "source": "ITmedia AI+",
+        "url": "https://kn.itmedia.co.jp/kn/articles/2604/21/news026.html",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "CHINTAI、生成AIで「探さない」部屋探しサービス　検索疲れの解消図る",
+        "score": 0.51,
+        "source": "日経クロステック",
+        "url": "https://xtech.nikkei.com/atcl/nxt/column/18/00678/041000179/",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "NVIDIA、オープンなAIで量子エコシステム強化　エラー訂正精度3倍",
+        "score": 0.51,
+        "source": "日経クロステック",
+        "url": "https://xtech.nikkei.com/atcl/nxt/column/18/03556/041500004/",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "スクエニ、マンガの「写植指定」をAIで効率化　試用編集者の100％が「継続利用したい」",
+        "score": 0.5,
+        "source": "ITmedia AI+",
+        "url": "https://www.itmedia.co.jp/aiplus/articles/2604/20/news079.html",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "Anthropicとホワイトハウス、Mythosへの懸念高まりを受けて“仲直り”を模索か",
+        "score": 0.5,
+        "source": "ITmedia AI+",
+        "url": "https://www.itmedia.co.jp/aiplus/articles/2604/20/news077.html",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "ウェイモ、トヨタと自家用車にロボタク技術　幹部「E2Eは追加機能いる」",
+        "score": 0.4,
+        "source": "日経クロステック",
+        "url": "https://xtech.nikkei.com/atcl/nxt/column/18/03367/040900020/",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "日産・ウェイブ・ウーバー、自動運転と人間の運転を組み合わせる",
+        "score": 0.4,
+        "source": "日経クロステック",
+        "url": "https://xtech.nikkei.com/atcl/nxt/column/18/00050/00240/",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "「NVIDIA、マーベルに出資で光電融合強化」など5本",
+        "score": 0.4,
+        "source": "日経クロステック",
+        "url": "https://xtech.nikkei.com/atcl/nxt/column/18/02928/041300092/",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "Pythonの仮想環境パスが.venvに統一される？　PEP 832が提案される",
+        "score": 0.0,
+        "source": "ITmedia AI+",
+        "url": "https://atmarkit.itmedia.co.jp/ait/articles/2604/21/news007.html",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "LINEやYahoo!検索に謎のロボットアイコン登場、いったい何者？　正体は……",
+        "score": 0.0,
+        "source": "ITmedia AI+",
+        "url": "https://www.itmedia.co.jp/news/articles/2604/20/news094.html",
+        "summary_ja": "",
+        "point": ""
+      }
+    ],
+    "Anthropic": [
+      {
+        "title": "Google検索急上昇: claude design by anthropic labs",
+        "score": 2.0,
+        "source": "google_trends",
+        "url": "https://trends.google.com/trends/explore?q=claude design by anthropic labs",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "Anthropic Overtakes OpenAl in 10 Weeks",
+        "score": 2.0,
+        "source": "youtube",
+        "url": "https://www.youtube.com/watch?v=zA9LBCm9gfw",
+        "summary_ja": "AnthropicのClaudeがわずか10週間でエンタープライズAI市場においてOpenAIを上回った。企業向けAI導入でClaudeが競争優位性を確立し、市場での重要な地点で勝利を収めている。",
+        "point": "企業AI市場でClaudeがOpenAIを追い抜く急速な躍進"
+      },
+      {
+        "title": "Anthropic&#39;s Managed Agents: Run Your Entire Business With Plain English Commands",
+        "score": 2.0,
+        "source": "youtube",
+        "url": "https://www.youtube.com/watch?v=7bbUCdfhNRs",
+        "summary_ja": "Anthropicがマネージドエージェント機能をリリース。平文の英語コマンドのみでビジネス全体を自動化・運用可能。自動化の大幅なアップグレードを実現し、複雑な業務を簡潔なテキストで制御できる。",
+        "point": "自然言語でビジネス全体を自動化できるエージェント登場"
+      },
+      {
+        "title": "Is It Too Late to Learn to Code? Here&#39;s What Anthropic, OpenAI &amp; Karpathy Actually Say",
+        "score": 1.52,
+        "source": "youtube",
+        "url": "https://www.youtube.com/watch?v=V_Y7mJ4wCIQ",
+        "summary_ja": "2026年からプログラミング学習を始めるのは遅いか検討。AnthropicやOpenAI、Karpathyなど業界専門家の実際の意見をまとめた。AI時代のコーディング学習の必要性と現実的なアプローチについて考察。",
+        "point": "AI時代におけるプログラミング学習の必要性と時機に関する業界専門家の見解を提供"
+      },
+      {
+        "title": "Google ramps up agentic AI efforts amid pressure from Anthropic",
+        "score": 1.5,
+        "source": "reddit",
+        "url": "https://www.reddit.com/r/singularity/comments/1sr1fr6/google_ramps_up_agentic_ai_efforts_amid_pressure/",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "Anthropic expands Amazon partnership with 5GW compute, $100B commitment, big bet on Trainium chips",
+        "score": 1.0,
+        "source": "reddit",
+        "url": "https://www.reddit.com/r/singularity/comments/1sr2rk5/anthropic_expands_amazon_partnership_with_5gw/",
         "summary_ja": "",
         "point": ""
       }
     ],
     "OpenAI": [
       {
-        "title": "Google検索急上昇: openai amazon partnership memo",
+        "title": "Google検索急上昇: srinivas narayanan openai departure",
         "score": 2.0,
         "source": "google_trends",
-        "url": "https://trends.google.com/trends/explore?q=openai amazon partnership memo",
+        "url": "https://trends.google.com/trends/explore?q=srinivas narayanan openai departure",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "Google検索急上昇: gpt6",
-        "score": 1.9,
+        "title": "Google検索急上昇: srinivas narayanan openai",
+        "score": 2.0,
         "source": "google_trends",
-        "url": "https://trends.google.com/trends/explore?q=gpt6",
+        "url": "https://trends.google.com/trends/explore?q=srinivas narayanan openai",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "OpenAI Executive Kevin Weil is Leaving: Major Company Shakeup #Shorts",
-        "score": 1.5,
+        "title": "OpenAI захватывает рынок: Pro подписка, управление ПК и миллион токенов 🤖 #Shorts",
+        "score": 1.53,
         "source": "youtube",
-        "url": "https://www.youtube.com/watch?v=RwzT2QjLkYU",
-        "summary_ja": "OpenAIの有力経営幹部Kevin Weil氏が役職から身を引くことが報道される。この人事異動は同社の組織構造や経営方針に影響を与える可能性があり、業界全体の注視を集めている。",
-        "point": "OpenAIの経営体制変化は同社の経営戦略やビジョン転換の可能性を示す重要なシグナル。"
+        "url": "https://www.youtube.com/watch?v=4sz5iFE3EyU",
+        "summary_ja": "OpenAIが1週間でPro購読サービス、ChatGPTによるPC制御機能、100万トークン対応を相次いでリリース。単なる競争ではなく、将来のエコシステム構築を進めている。AIプラットフォームの統合化が急速に進展している状況を報告。",
+        "point": "OpenAIが複数の大型機能を短期間でリリース、AI市場の急速な進化を示唆"
       },
       {
-        "title": "Google検索急上昇: react tutorial",
-        "score": 1.45,
-        "source": "google_trends",
-        "url": "https://trends.google.com/trends/explore?q=react tutorial",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "Sam Altman, OpenAI: Attempted Murder, AGI Threat — “Not Fringe,” CEOs Sound Alarm, credit NBC",
+        "title": "Elon Musk vs OpenAI Lawsuit 2026 🔥 $134 Billion Case | Sam Altman Trial Explained",
         "score": 1.04,
         "source": "youtube",
-        "url": "https://www.youtube.com/watch?v=tCpD_TghBVo",
-        "summary_ja": "OpenAIのSam AltmanをはじめとするAI企業トップによるAGI（汎用人工知能）脅威に関する警告についてのニュース。CEOたちがAGIのリスクが「非主流ではない」と主張し、社会的影響への懸念を表明。NBCなどメディアが報道している現状を扱う。",
-        "point": "AI業界リーダーによるAGIリスク警告が主流メディアで報道され、規制・安全性議論が加速。"
-      },
-      {
-        "title": "Sam Altman, OpenAI: Recent Attempted Security Incidents, AGI Fears &amp; Public Reaction, credit NBC",
-        "score": 1.04,
-        "source": "youtube",
-        "url": "https://www.youtube.com/watch?v=oIwWmULx9vI",
-        "summary_ja": "NBCの報道によるSam AltmanおよびOpenAIに関する動画。最近のセキュリティ侵害事件やAGI（汎用人工知能）に対する恐怖心、それに対する公衆の反応を扱っている。OpenAIのリーダーシップがどのような課題に直面しているかを報じたコンテンツ。",
-        "point": "OpenAIのセキュリティ課題とAGIに対する社会的懸念が明らかになった"
-      },
-      {
-        "title": "Sam Altman, OpenAI : Texas Man Charged -  Concerned with Future of Humanity, credit CBS",
-        "score": 1.03,
-        "source": "youtube",
-        "url": "https://www.youtube.com/watch?v=yS0NUJtF9AQ",
-        "summary_ja": "CBSの報道によるOpenAI関連の動画。テキサス州の男性がOpenAIに関連して起訴された事件を扱い、Sam Altmanが人類の未来についての懸念を表明。AI技術の発展に伴うセキュリティリスクと倫理的課題についての報道。",
-        "point": "OpenAI関連の法的トラブルと人類の長期的リスクに対する警告"
-      },
-      {
-        "title": "OpenAI Shakeup: Executive Kevin Weil is Leaving the Company #Shorts",
-        "score": 1.0,
-        "source": "youtube",
-        "url": "https://www.youtube.com/watch?v=KsbwdeXfB1Q",
-        "summary_ja": "OpenAIの大規模な経営陣変化として、著名な幹部Kevin Weilが公式に会社からの退社を発表した。動画ショート形式でこの重大な人事異動を報道。OpenAIの組織的な変動と指導体制の再編についての速報。",
-        "point": "OpenAI幹部の大量離職により企業体制が大きく変わった"
-      }
-    ],
-    "AI Agents": [
-      {
-        "title": "Reflection on Stanford CS230   Autumn 2025   Lecture 8  Agents, Prompts, and",
-        "score": 1.5,
-        "source": "youtube",
-        "url": "https://www.youtube.com/watch?v=WynOPkBWPg0",
-        "summary_ja": "スタンフォード大学のCS230講義で、基本的なクエリを超えた高度なプロンプト技術を解説。Chain of Thought（CoT）手法により、モデルが段階的に思考するプロセスを探索。AIエージェントの設計とプロンプト最適化に関する実践的知見を提供する講座。",
-        "point": "最先端のプロンプト技術とエージェント設計の学術的体系的解説"
-      },
-      {
-        "title": "=I Made $4,000 With AI Agents Running 24/7 (Full System Revealed 2025)",
-        "score": 1.5,
-        "source": "youtube",
-        "url": "https://www.youtube.com/watch?v=W3Ok-p-oMec",
-        "summary_ja": "AI エージェントを自動稼働させることで月4,000ドルの収入を得た実践例を紹介。2025年の完全なシステム構築方法を詳細に解説し、AI Empire システムのセットアップガイドを提供。実際の収益化事例と具体的な実装方法を共有。",
-        "point": "AIエージェントの実際の自動化・収益化事例の具体的ノウハウ公開"
-      },
-      {
-        "title": "Multi Agents",
-        "score": 1.0,
-        "source": "reddit",
-        "url": "https://www.reddit.com/r/artificial/comments/1sq6p53/multi_agents/",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "scalar-loop: a Python harness for Karpathy's autoresearch pattern that doesn't trust the agent's narration",
-        "score": 0.5,
-        "source": "reddit",
-        "url": "https://www.reddit.com/r/artificial/comments/1spz2g0/scalarloop_a_python_harness_for_karpathys/",
-        "summary_ja": "",
-        "point": ""
-      }
-    ],
-    "Qwen": [
-      {
-        "title": "Qwen3.6 agent + Cisco switch: local NetOps AI actually works!",
-        "score": 1.0,
-        "source": "reddit",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1spws0a/qwen36_agent_cisco_switch_local_netops_ai/",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "Same 9B Qwen weights: 19.1% in Aider vs 45.6% with a scaffold adapted to small local models",
-        "score": 0.5,
-        "source": "reddit",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1spufzz/same_9b_qwen_weights_191_in_aider_vs_456_with_a/",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "Switching from Opus 4.7 to Qwen-35B-A3B",
-        "score": 0.0,
-        "source": "reddit",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1spz0ck/switching_from_opus_47_to_qwen35ba3b/",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "\"Browser OS\" implemented by Qwen 3.6 35B: The best result I ever got from a local model",
-        "score": 0.0,
-        "source": "reddit",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1spubyp/browser_os_implemented_by_qwen_36_35b_the_best/",
-        "summary_ja": "",
-        "point": ""
+        "url": "https://www.youtube.com/watch?v=oWHhccx-Uiw",
+        "summary_ja": "イーロン・マスクがOpenAIを相手に起こした134億ドルの大規模訴訟について解説。サム・アルトマンとの法廷闘争を含む、AI業界の最大級のバトルケースです。OpenAIの経営方針や利益配分をめぐる根本的な対立が背景にあり、AI産業の未来に大きな影響を与える可能性があります。",
+        "point": "AI企業の経営方針と責任をめぐる業界最大級の訴訟事件"
       }
     ],
     "Japan AI Business": [
@@ -2058,6 +2088,14 @@
         "point": ""
       },
       {
+        "title": "【5ステップ】生成AI導入スケジュールの立て方！期間目安と遅延を防ぐコツ",
+        "score": 0.51,
+        "source": "AINOW",
+        "url": "https://ainow.ai/2026/04/20/277973/?utm_source=rss&utm_medium=rss&utm_campaign=%25e3%2580%25905%25e3%2582%25b9%25e3%2583%2586%25e3%2583%2583%25e3%2583%2597%25e3%2580%2591%25e7%2594%259f%25e6%2588%2590ai%25e5%25b0%258e%25e5%2585%25a5%25e3%2582%25b9%25e3%2582%25b1%25e3%2582%25b8%25e3%2583%25a5%25e3%2583%25bc%25e3%2583%25ab%25e3%2581%25ae%25e7%25ab%258b%25e3%2581%25a6%25e6%2596%25b9%25ef%25bc%2581",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
         "title": "生成AI導入は外注すべき？判断軸5つと費用・期間の目安を解説",
         "score": 0.51,
         "source": "AINOW",
@@ -2066,18 +2104,70 @@
         "point": ""
       },
       {
-        "title": "生成AI導入はスモールスタートで始める！業務選定からKPIまでの実務ガイド",
+        "title": "生成AI社内浸透を成功させる7つの施策！利用率を倍増させた企業事例も",
         "score": 0.51,
         "source": "AINOW",
-        "url": "https://ainow.ai/2026/04/17/277957/?utm_source=rss&utm_medium=rss&utm_campaign=%25e7%2594%259f%25e6%2588%2590ai%25e5%25b0%258e%25e5%2585%25a5%25e3%2581%25af%25e3%2582%25b9%25e3%2583%25a2%25e3%2583%25bc%25e3%2583%25ab%25e3%2582%25b9%25e3%2582%25bf%25e3%2583%25bc%25e3%2583%2588%25e3%2581%25a7%25e5%25a7%258b%25e3%2582%2581%25e3%2582%258b%25ef%25bc%2581%25e6%25a5%25ad%25e5%258b%2599%25e9%2581%25b8%25e5%25ae%259a",
+        "url": "https://ainow.ai/2026/04/20/277977/?utm_source=rss&utm_medium=rss&utm_campaign=%25e7%2594%259f%25e6%2588%2590ai%25e7%25a4%25be%25e5%2586%2585%25e6%25b5%25b8%25e9%2580%258f%25e3%2582%2592%25e6%2588%2590%25e5%258a%259f%25e3%2581%2595%25e3%2581%259b%25e3%2582%258b7%25e3%2581%25a4%25e3%2581%25ae%25e6%2596%25bd%25e7%25ad%2596%25ef%25bc%2581%25e5%2588%25a9%25e7%2594%25a8%25e7%258e%2587%25e3%2582%2592",
+        "summary_ja": "",
+        "point": ""
+      }
+    ],
+    "Qwen": [
+      {
+        "title": "Layman's comparison on Qwen3.6 35b-a3b and Gemma4 26b-a4b-it",
+        "score": 0.0,
+        "source": "reddit",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1sqxiz0/laymans_comparison_on_qwen36_35ba3b_and_gemma4/",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "生成AI導入チームの作り方！最小体制でPoCから定着まで回す実務ガイド",
-        "score": 0.51,
-        "source": "AINOW",
-        "url": "https://ainow.ai/2026/04/17/277954/?utm_source=rss&utm_medium=rss&utm_campaign=%25e7%2594%259f%25e6%2588%2590ai%25e5%25b0%258e%25e5%2585%25a5%25e3%2583%2581%25e3%2583%25bc%25e3%2583%25a0%25e3%2581%25ae%25e4%25bd%259c%25e3%2582%258a%25e6%2596%25b9%25ef%25bc%2581%25e6%259c%2580%25e5%25b0%258f%25e4%25bd%2593%25e5%2588%25b6%25e3%2581%25a7poc%25e3%2581%258b%25e3%2582%2589%25e5%25ae%259a%25e7%259d%2580",
+        "title": "Qwen 3.6 Max Preview just went live on the Qwen Chat website. It currently has the highest AA-Intelligence Index score among Chinese models (52) (Will it be open source?)",
+        "score": 0.0,
+        "source": "reddit",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1sqlcan/qwen_36_max_preview_just_went_live_on_the_qwen/",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "My 7900XTX is autonomous with qwen 3.6 👀 wow 😍",
+        "score": 0.0,
+        "source": "reddit",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1squcdr/my_7900xtx_is_autonomous_with_qwen_36_wow/",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "Qwen3.5-27B, Qwen3.5-122B, and Qwen3.6-35B on 4x RTX 3090 — MoEs struggle with strict global rules",
+        "score": 0.0,
+        "source": "reddit",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1sqspgy/qwen3527b_qwen35122b_and_qwen3635b_on_4x_rtx_3090/",
+        "summary_ja": "",
+        "point": ""
+      }
+    ],
+    "AI Agents": [
+      {
+        "title": "Agentic Systems: AI&#39;s Future Breakthrough in 2025! #NVIDIA",
+        "score": 2.12,
+        "source": "youtube",
+        "url": "https://www.youtube.com/watch?v=IYlU-aNoxi4",
+        "summary_ja": "推論・調査・ツール利用が可能なエージェントシステムが2024年に登場し、2025年のAI業界の転機となることが確実。Cursorなどの事例が示すように、ソフトウェア開発領域で既に大きな変革をもたらしている。",
+        "point": "2025年のAI主要トレンドはエージェント型システムへの進化"
+      },
+      {
+        "title": "[MenaML26] Security &amp; Privacy of Agentic Systems - Sharon Lin, Google DeepMind",
+        "score": 1.0,
+        "source": "youtube",
+        "url": "https://www.youtube.com/watch?v=RWOu7TSAJ8U",
+        "summary_ja": "Google DeepMindのSharon Linによるセキュリティと プライバシーに関する研究講演。エージェント型AIシステムが増加する中で、これらのシステムが直面するセキュリティ脅威とプライバシー保護の課題について、最新の研究知見を紹介。実装時の実践的な対策も含む。",
+        "point": "エージェント型AI時代のセキュリティ脅威への対策が緊急課題"
+      },
+      {
+        "title": "Wasting hundreds on API credits with runaway agents is basically a rite of passage at this point. Here's mine.",
+        "score": 1.0,
+        "source": "reddit",
+        "url": "https://www.reddit.com/r/artificial/comments/1sqn7ej/wasting_hundreds_on_api_credits_with_runaway/",
         "summary_ja": "",
         "point": ""
       }
@@ -2100,18 +2190,52 @@
         "point": ""
       },
       {
-        "title": "Google検索急上昇: claude code routines",
+        "title": "Google検索急上昇: claude code 4.7",
         "score": 2.0,
         "source": "google_trends",
-        "url": "https://trends.google.com/trends/explore?q=claude code routines",
+        "url": "https://trends.google.com/trends/explore?q=claude code 4.7",
+        "summary_ja": "",
+        "point": ""
+      }
+    ],
+    "Cursor AI": [
+      {
+        "title": "Google検索急上昇: gemini code assist",
+        "score": 1.55,
+        "source": "google_trends",
+        "url": "https://trends.google.com/trends/explore?q=gemini code assist",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "Google検索急上昇: grok ai",
+        "score": 1.16,
+        "source": "google_trends",
+        "url": "https://trends.google.com/trends/explore?q=grok ai",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
+        "title": "Google検索急上昇: aider",
+        "score": 1.07,
+        "source": "google_trends",
+        "url": "https://trends.google.com/trends/explore?q=aider",
         "summary_ja": "",
         "point": ""
       }
     ],
     "AI agent": [
       {
+        "title": "Google検索急上昇: hermes ai",
+        "score": 1.06,
+        "source": "google_trends",
+        "url": "https://trends.google.com/trends/explore?q=hermes ai",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
         "title": "Google検索急上昇: hermes ai agent",
-        "score": 1.07,
+        "score": 1.04,
         "source": "google_trends",
         "url": "https://trends.google.com/trends/explore?q=hermes ai agent",
         "summary_ja": "",
@@ -2119,97 +2243,61 @@
       },
       {
         "title": "Google検索急上昇: hermes",
-        "score": 1.07,
+        "score": 1.04,
         "source": "google_trends",
         "url": "https://trends.google.com/trends/explore?q=hermes",
         "summary_ja": "",
         "point": ""
-      },
+      }
+    ],
+    "DeepSeek": [
       {
-        "title": "Google検索急上昇: hermes agent",
-        "score": 1.07,
+        "title": "Google検索急上昇: دیپ سیک",
+        "score": 1.0,
         "source": "google_trends",
-        "url": "https://trends.google.com/trends/explore?q=hermes agent",
+        "url": "https://trends.google.com/trends/explore?q=دیپ سیک",
         "summary_ja": "",
         "point": ""
-      }
-    ],
-    "Anthropic": [
+      },
       {
-        "title": "that time Anthropic played 2.5 million ChatGPT users",
+        "title": "Google検索急上昇: هوش مصنوعی deepseek",
         "score": 1.0,
-        "source": "reddit",
-        "url": "https://www.reddit.com/r/ChatGPT/comments/1spax1v/that_time_anthropic_played_25_million_chatgpt/",
+        "source": "google_trends",
+        "url": "https://trends.google.com/trends/explore?q=هوش مصنوعی deepseek",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "Anthropic Removed thinking expandable block ?",
-        "score": 0.5,
-        "source": "reddit",
-        "url": "https://www.reddit.com/r/ClaudeAI/comments/1spzuri/anthropic_removed_thinking_expandable_block/",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "Anthropic isn’t vibing with me today 😢",
-        "score": 0.5,
-        "source": "reddit",
-        "url": "https://www.reddit.com/r/singularity/comments/1splo2w/anthropic_isnt_vibing_with_me_today/",
-        "summary_ja": "",
-        "point": ""
-      }
-    ],
-    "Gemini": [
-      {
-        "title": "How Google DeepMind is researching the next Frontier of AI for Gemini — Raia Hadsell, VP of Research",
-        "score": 6.52,
-        "source": "youtube",
-        "url": "https://www.youtube.com/watch?v=zZsTVBXcbow",
-        "summary_ja": "Google DeepMindの研究副社長Raia Hadsellが、Geminiの次世代フロンティアAI研究について発表。英国のAIアンバサダーでもある同氏が、AIの最先端領域における研究成果と今後の方向性を解説している。",
-        "point": "Geminiの次世代開発方針の公開。Google DeepMindの最新研究動向。"
-      },
-      {
-        "title": "Gemini caught a $280M crypto exploit before it hit the news, then retracted it as a hallucination because I couldn't verify it - because the news hadn't dropped yet",
-        "score": 0.5,
-        "source": "reddit",
-        "url": "https://www.reddit.com/r/artificial/comments/1spckbj/gemini_caught_a_280m_crypto_exploit_before_it_hit/",
-        "summary_ja": "",
-        "point": ""
-      }
-    ],
-    "Local LLM": [
-      {
-        "title": "Converting XQuery to SQL with Local LLMs: Do I Need Fine-Tuning or a Better Approach? [P]",
+        "title": "Google検索急上昇: هوش مصنوعی",
         "score": 1.0,
-        "source": "reddit",
-        "url": "https://www.reddit.com/r/MachineLearning/comments/1sppcnw/converting_xquery_to_sql_with_local_llms_do_i/",
-        "summary_ja": "",
-        "point": ""
-      },
-      {
-        "title": "Best Local LLMs - Apr 2026",
-        "score": 0.5,
-        "source": "reddit",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1sknx6n/best_local_llms_apr_2026/",
+        "source": "google_trends",
+        "url": "https://trends.google.com/trends/explore?q=هوش مصنوعی",
         "summary_ja": "",
         "point": ""
       }
     ],
     "LLM": [
       {
+        "title": "Google検索急上昇: qwen 3.6",
+        "score": 0.61,
+        "source": "google_trends",
+        "url": "https://trends.google.com/trends/explore?q=qwen 3.6",
+        "summary_ja": "",
+        "point": ""
+      },
+      {
         "title": "Google検索急上昇: llm wiki v2",
-        "score": 0.8,
+        "score": 0.54,
         "source": "google_trends",
         "url": "https://trends.google.com/trends/explore?q=llm wiki v2",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "Google検索急上昇: llm visualization",
-        "score": 0.63,
+        "title": "Google検索急上昇: llm benchmarks",
+        "score": 0.54,
         "source": "google_trends",
-        "url": "https://trends.google.com/trends/explore?q=llm visualization",
+        "url": "https://trends.google.com/trends/explore?q=llm benchmarks",
         "summary_ja": "",
         "point": ""
       }
@@ -2224,68 +2312,68 @@
         "point": ""
       },
       {
-        "title": "llama.cpp speculative checkpointing was merged",
+        "title": "Why doesn't any OSS tool treat llama.cpp as a first class citizen?",
         "score": 0.5,
         "source": "reddit",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1sprdm8/llamacpp_speculative_checkpointing_was_merged/",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1sr140o/why_doesnt_any_oss_tool_treat_llamacpp_as_a_first/",
         "summary_ja": "",
         "point": ""
       }
     ],
-    "Google AI": [
+    "Benchmarks": [
       {
-        "title": "Might not be the right sub, but why does the ai overview get an aneurism when i google this?",
+        "title": "Opus 4.7 (high) takes #1 on the LLM Debate Benchmark, leading the previous champion, Sonnet 4.6 (high), by 106 BT points. Incredibly, it has not lost a single completed side-swapped matchup: 51 wins, 4 ties, and 0 losses.",
         "score": 0.5,
         "source": "reddit",
-        "url": "https://www.reddit.com/r/artificial/comments/1spsbru/might_not_be_the_right_sub_but_why_does_the_ai/",
+        "url": "https://www.reddit.com/r/singularity/comments/1sr4bid/opus_47_high_takes_1_on_the_llm_debate_benchmark/",
         "summary_ja": "",
         "point": ""
       },
       {
-        "title": "Google DeepMind's Senior Scientist Alexander Lerchner challenges the idea that large language models can ever achieve consciousness(not even in 100years), calling it the 'Abstraction Fallacy.'",
+        "title": "Gemma 4 26B-A4B GGUF Benchmarks",
         "score": 0.0,
         "source": "reddit",
-        "url": "https://www.reddit.com/r/singularity/comments/1sotz9t/google_deepminds_senior_scientist_alexander/",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1sqrl1l/gemma_4_26ba4b_gguf_benchmarks/",
         "summary_ja": "",
         "point": ""
       }
     ],
     "Cursor": [
       {
-        "title": "Cursor vs Windsurf: Same Price, Opposite Philosophy",
-        "score": 1.5,
+        "title": "AI Agents for Data Analysis | Using Cursor, Windsurf, Coding Support and Debugging",
+        "score": 2.5,
         "source": "youtube",
-        "url": "https://www.youtube.com/watch?v=OUGFcPRJdiA",
-        "summary_ja": "CursorとWindsurfは同じ価格帯のAIコードエディターだが、開発者に必要とされる機能について全く異なるアプローチを採用。両者の根本的な設計思想の違いを比較分析し、どちらがどのタイプの開発者に適しているかを解説。",
-        "point": "AI開発ツール間の哲学的違いと選択基準の明確化"
+        "url": "https://www.youtube.com/watch?v=uHlY963Bj-I",
+        "summary_ja": "Cursor、Windsurf等のAIコーディング支援ツールを活用して、データ分析業務を効率化する方法を解説。AIエージェントが技術的作業を加速し、デバッグをサポートすることで、データ分析ワークフローがより迅速かつスムーズになる実践方法を紹介。",
+        "point": "AI支援ツールでデータ分析業務を高速化。実務的な活用法を解説"
       }
     ],
-    "Cursor AI": [
+    "GitHub Copilot": [
       {
-        "title": "Google検索急上昇: grok ai",
-        "score": 1.08,
+        "title": "Google検索急上昇: language model unavailable github copilot",
+        "score": 2.0,
         "source": "google_trends",
-        "url": "https://trends.google.com/trends/explore?q=grok ai",
+        "url": "https://trends.google.com/trends/explore?q=language model unavailable github copilot",
         "summary_ja": "",
         "point": ""
+      }
+    ],
+    "Tutorial": [
+      {
+        "title": "Can I Build an LLM from Scratch (Andrej Karpathy Tutorial) | Just One Error",
+        "score": 1.51,
+        "source": "youtube",
+        "url": "https://www.youtube.com/watch?v=En1VfqW_QIg",
+        "summary_ja": "Andrej KarpathyによるLLM（GPT）をスクラッチから構築する完全チュートリアル。大規模言語モデルの基礎原理を実装を通じて学習。AI開発の最高峰とされるLLM開発プロセスを段階的に解説。",
+        "point": "業界最高権威によるLLM構築の実践的解説で、AI開発の本質理解が可能"
       }
     ],
     "Mistral AI": [
       {
         "title": "Google検索急上昇: opencode",
-        "score": 1.04,
+        "score": 1.05,
         "source": "google_trends",
         "url": "https://trends.google.com/trends/explore?q=opencode",
-        "summary_ja": "",
-        "point": ""
-      }
-    ],
-    "DeepSeek": [
-      {
-        "title": "Google検索急上昇: دانلود deepseek",
-        "score": 1.0,
-        "source": "google_trends",
-        "url": "https://trends.google.com/trends/explore?q=دانلود deepseek",
         "summary_ja": "",
         "point": ""
       }
@@ -2293,49 +2381,39 @@
     "RAG": [
       {
         "title": "Google検索急上昇: riggo's rag",
-        "score": 0.56,
+        "score": 0.57,
         "source": "google_trends",
         "url": "https://trends.google.com/trends/explore?q=riggo's rag",
         "summary_ja": "",
         "point": ""
       }
     ],
+    "Copilot": [
+      {
+        "title": "Friends outside of tech: lol copilot is dumb - Friends in tech: I just bought iodine tablets",
+        "score": 0.5,
+        "source": "reddit",
+        "url": "https://www.reddit.com/r/ChatGPT/comments/1sqhx4v/friends_outside_of_tech_lol_copilot_is_dumb/",
+        "summary_ja": "",
+        "point": ""
+      }
+    ],
+    "Local LLM": [
+      {
+        "title": "Best Local LLMs - Apr 2026",
+        "score": 0.5,
+        "source": "reddit",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1sknx6n/best_local_llms_apr_2026/",
+        "summary_ja": "",
+        "point": ""
+      }
+    ],
     "AI Coding": [
       {
-        "title": "Vibe coding mistake 5",
-        "score": 0.55,
+        "title": "Vibe Coding - The Word of the Year That Broke Software Engineering",
+        "score": 0.02,
         "source": "youtube",
-        "url": "https://www.youtube.com/watch?v=ZMYeZcdk5Us",
-        "summary_ja": "",
-        "point": ""
-      }
-    ],
-    "Mistral": [
-      {
-        "title": "Unsloth fix on Mistral Small 4?",
-        "score": 0.5,
-        "source": "reddit",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1sq01bj/unsloth_fix_on_mistral_small_4/",
-        "summary_ja": "",
-        "point": ""
-      }
-    ],
-    "Fine-tuning": [
-      {
-        "title": "Trials and tribulations fine-tuning & deploying Gemma-4 [P]",
-        "score": 0.5,
-        "source": "reddit",
-        "url": "https://www.reddit.com/r/MachineLearning/comments/1spc33w/trials_and_tribulations_finetuning_deploying/",
-        "summary_ja": "",
-        "point": ""
-      }
-    ],
-    "MCP": [
-      {
-        "title": "I built a GNOME extension for Codex with local/remote history, live filters, Markdown export, and a read-only MCP server",
-        "score": 0.5,
-        "source": "reddit",
-        "url": "https://www.reddit.com/r/artificial/comments/1spnk33/i_built_a_gnome_extension_for_codex_with/",
+        "url": "https://www.youtube.com/watch?v=9OqFV63B-kM",
         "summary_ja": "",
         "point": ""
       }
@@ -2343,6 +2421,16 @@
   },
   "supabase_stats": {
     "pipeline_runs_7d": [
+      {
+        "run_date": "2026-04-20",
+        "status": "success",
+        "articles_processed": 255,
+        "block_a_count": 0,
+        "block_b_count": 51,
+        "block_c_count": 204,
+        "started_at": "2026-04-20T22:36:49.518413+00:00",
+        "finished_at": "2026-04-20T22:39:53.414876+00:00"
+      },
       {
         "run_date": "2026-04-19",
         "status": "success",
@@ -2442,24 +2530,14 @@
         "block_c_count": 248,
         "started_at": "2026-04-13T22:38:24.860471+00:00",
         "finished_at": "2026-04-13T22:40:17.24003+00:00"
-      },
-      {
-        "run_date": "2026-04-12",
-        "status": "success",
-        "articles_processed": 167,
-        "block_a_count": 0,
-        "block_b_count": 0,
-        "block_c_count": 167,
-        "started_at": "2026-04-12T22:24:57.335836+00:00",
-        "finished_at": "2026-04-12T22:26:04.692764+00:00"
       }
     ],
     "block_totals": {
       "A": 4,
-      "B": 347,
-      "C": 1446
+      "B": 390,
+      "C": 1577
     },
-    "articles_total": 1797,
-    "unsent_to_telegram": 1485
+    "articles_total": 1971,
+    "unsent_to_telegram": 1616
   }
 }
