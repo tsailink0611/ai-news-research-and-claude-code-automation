@@ -1,209 +1,212 @@
-# AI News Digest - 2026-04-24
+# AI News Digest - 2026-04-25
 
-> Generated at 2026-04-24 22:38
-> Sources: Simon Willison, youtube_influencer, Zenn AI, The Verge AI, Ars Technica Tech, ITmedia AI+, youtube, MIT Tech Review AI, OpenAI Blog, GitHub Trending, reddit, AINOW, google_trends, HuggingFace Blog, TechCrunch AI, 日経クロステック, Google DeepMind Blog, hackernews, Latent Space, VentureBeat AI, Qiita AI
-> Total articles: 267
+> Generated at 2026-04-25 22:33
+> Sources: google_trends, VentureBeat AI, reddit, TechCrunch AI, youtube_influencer, HuggingFace Blog, GitHub Trending, The Verge AI, Simon Willison, MIT Tech Review AI, Google DeepMind Blog, 日経クロステック, AINOW, hackernews, Ars Technica Tech, ITmedia AI+, youtube, Zenn AI, Latent Space, OpenAI Blog
+> Total articles: 256
 
 ## 🔥 主要トピック
 
-1. **General AI** (スコア: 8.5, 69件)
-   - I cancelled Claude: Token issues, declining quality, and poor support
-2. **AI General** (スコア: 3.1, 62件)
-   - top 10 of AI tools 2026
-3. **AI Agents** (スコア: 3.0, 3件)
+1. **General AI** (スコア: 8.5, 64件)
+   - Google plans to invest up to $40B in Anthropic
+2. **Claude** (スコア: 4.3, 21件)
+   - How to 10x Your Claude Code Projects (Karpathy&#39;s Method)
+3. **Anthropic** (スコア: 3.1, 6件)
+   - &quot;The AI Flaw Anthropic Won&#39;t Fix&quot; 🔥
+4. **AI Agents** (スコア: 3.0, 6件)
    - I Built a CLI to Version-Control My AI Agent Skills (and You Should Too)
-4. **Claude** (スコア: 2.5, 19件)
-   - AI Coding Showdown: Cursor vs Windsurf vs Claude Code, Which One’s Worth Your Money
-5. **GPT** (スコア: 2.4, 15件)
-   - From Level 1 to 8: Become a Real Vibe Coder AI #Coding #VibeCoding #ChatGPT #Nextjs #Cursor #Copilot
-6. **Japan Dev AI** (スコア: 2.0, 10件)
+5. **OpenAI** (スコア: 2.5, 9件)
+   - Google検索急上昇: gpt 5.5
+6. **GPT** (スコア: 2.5, 16件)
+   - GPT 5.5 and Kimi K2 -6 new LLM capabilities released, AI agent ecosystems evolve
+7. **Japan Dev AI** (スコア: 2.3, 8件)
    - Claude Codeを24時間常駐させる自宅ホームラボを月500円で運用している話(Ubuntu + Tailscale + tmux)
-7. **Cursor AI** (スコア: 2.0, 3件)
-   - Google検索急上昇: lahore qalandars vs karachi kings
-8. **OpenAI** (スコア: 2.0, 6件)
-   - Google検索急上昇: srinivas narayanan openai departure
+8. **Claude Code** (スコア: 2.0, 3件)
+   - Google検索急上昇: kimi k2.6
 
 ## 📰 注目記事 TOP 10
 
-### 1. I cancelled Claude: Token issues, declining quality, and poor support
+### 1. Google plans to invest up to $40B in Anthropic
 - **スコア**: 8.5 | **ソース**: hackernews
-- **URL**: https://nickyreinert.de/en/2026/2026-04-24-claude-critics/
-- **キーワード**: claude
-
-### 2. GPT-5.5
-- **スコア**: 8.5 | **ソース**: hackernews
-- **URL**: https://openai.com/index/introducing-gpt-5-5/
-- **キーワード**: gpt
-
-### 3. US special forces soldier arrested after allegedly winning $400k on Maduro raid
-- **スコア**: 8.5 | **ソース**: hackernews
-- **URL**: https://www.cnn.com/2026/04/23/politics/us-special-forces-soldier-arrested-maduro-raid-trade
-- **キーワード**: ai
-
-### 4. OpenAI releases GPT-5.5 and GPT-5.5 Pro in the API
-- **スコア**: 5.3 | **ソース**: hackernews
-- **URL**: https://developers.openai.com/api/docs/changelog
-- **キーワード**: ai, gpt, openai
-
-### 5. Using the internet like it's 1999
-- **スコア**: 5.3 | **ソース**: hackernews
-- **URL**: https://joshblais.com/blog/using-the-internet-like-its-1999/
-
-### 6. Google Plans to Invest Up to $40B in Anthropic
-- **スコア**: 4.8 | **ソース**: hackernews
 - **URL**: https://www.bloomberg.com/news/articles/2026-04-24/google-plans-to-invest-up-to-40-billion-in-anthropic
 - **キーワード**: anthropic
 
-### 7. Refuse to let your doctor record you
-- **スコア**: 4.3 | **ソース**: hackernews
-- **URL**: https://buttondown.com/maiht3k/archive/why-you-should-refuse-to-let-your-doctor-record/
+### 2. 1-Bit Hokusai's "The Great Wave" (2023)
+- **スコア**: 7.0 | **ソース**: hackernews
+- **URL**: https://www.hypertalking.com/2023/05/08/1-bit-pixel-art-of-hokusais-the-great-wave-off-kanagawa/
+- **キーワード**: ai
 
-### 8. Hear your agent suffer through your code
-- **スコア**: 3.9 | **ソース**: hackernews
-- **URL**: https://github.com/AndrewVos/endless-toil
-- **キーワード**: agent
+### 3. There Will Be a Scientific Theory of Deep Learning
+- **スコア**: 6.9 | **ソース**: hackernews
+- **URL**: https://arxiv.org/abs/2604.21691
+- **キーワード**: deep learning
 
-### 9. MacBook Neo and how the iPad should be
-- **スコア**: 3.5 | **ソース**: hackernews
-- **URL**: https://craigmod.com/essays/ipad_neo/
+### 4. Show HN: A Karpathy-style LLM wiki your agents maintain (Markdown and Git)
+- **スコア**: 6.2 | **ソース**: hackernews
+- **URL**: https://github.com/nex-crm/wuphf
+- **キーワード**: ai, llm, agent, agents
 
-### 10. top 10 of AI tools 2026
-- **スコア**: 3.1 | **ソース**: youtube
-- **URL**: https://www.youtube.com/watch?v=dzl_B8YHJ80
-- **キーワード**: ai, claude, openai, gemini, copilot
+### 5. Email could have been X.400 times better
+- **スコア**: 5.8 | **ソース**: hackernews
+- **URL**: https://buttondown.com/blog/x400-vs-smtp-email
+- **キーワード**: ai
+
+### 6. Plain text has been around for decades and it’s here to stay
+- **スコア**: 5.6 | **ソース**: hackernews
+- **URL**: https://unsung.aresluna.org/plain-text-has-been-around-for-decades-and-its-here-to-stay/
+- **キーワード**: ai
+
+### 7. Open source memory layer so any AI agent can do what Claude.ai and ChatGPT do
+- **スコア**: 5.0 | **ソース**: hackernews
+- **URL**: https://alash3al.github.io/stash?_v01
+- **キーワード**: ai, gpt, claude, agent
+
+### 8. The AI Industry Is Discovering That the Public Hates It
+- **スコア**: 4.9 | **ソース**: hackernews
+- **URL**: https://newrepublic.com/article/209163/ai-industry-discovering-public-backlash
+- **キーワード**: ai
+
+### 9. Work with the garage door up (2024)
+- **スコア**: 4.8 | **ソース**: hackernews
+- **URL**: https://notes.andymatuschak.org/Work_with_the_garage_door_up
+- **キーワード**: rag
+
+### 10. Iliad fragment found in Roman-era mummy
+- **スコア**: 4.6 | **ソース**: hackernews
+- **URL**: https://www.thehistoryblog.com/archives/75877
+- **キーワード**: rag
 
 
 ## 📋 全記事一覧
 
 | # | タイトル | スコア | ソース |
 |---|---------|--------|--------|
-| 1 | I cancelled Claude: Token issues, declining quality, and poo | 8.5 | hackernews |
-| 2 | GPT-5.5 | 8.5 | hackernews |
-| 3 | US special forces soldier arrested after allegedly winning $ | 8.5 | hackernews |
-| 4 | OpenAI releases GPT-5.5 and GPT-5.5 Pro in the API | 5.3 | hackernews |
-| 5 | Using the internet like it's 1999 | 5.3 | hackernews |
-| 6 | Google Plans to Invest Up to $40B in Anthropic | 4.8 | hackernews |
-| 7 | Refuse to let your doctor record you | 4.3 | hackernews |
-| 8 | Hear your agent suffer through your code | 3.9 | hackernews |
-| 9 | MacBook Neo and how the iPad should be | 3.5 | hackernews |
-| 10 | top 10 of AI tools 2026 | 3.1 | youtube |
-| 11 | Email could have been X.400 times better | 3.1 | hackernews |
-| 12 | I Built a CLI to Version-Control My AI Agent Skills (and You | 3.0 | youtube |
-| 13 | Work with the garage door up | 2.7 | hackernews |
-| 14 | Could a Claude Code routine watch my finances? | 2.7 | hackernews |
-| 15 | SFO Quiet Airport (2025) | 2.7 | hackernews |
-| 16 | Tariffs Raised Consumers' Prices, but the Refunds Go Only to | 2.5 | hackernews |
-| 17 | AI Coding Showdown: Cursor vs Windsurf vs Claude Code, Which | 2.5 | youtube |
-| 18 | From Level 1 to 8: Become a Real Vibe Coder AI #Coding #Vibe | 2.4 | youtube |
-| 19 | Chatgpt vs Claude vs Grok! Which one to use?🤔 #ai | 2.2 | youtube |
-| 20 | How to 10x Your Claude Code Projects (Karpathy&#39;s Method) | 2.1 | youtube |
-| 21 | Claude Codeを24時間常駐させる自宅ホームラボを月500円で運用している話(Ubuntu + Tailscal | 2.0 | Zenn AI |
-| 22 | ChatGPT Agent Is Goku&#39;s Ultra Instinct. Prompt Engineeri | 2.0 | youtube |
-| 23 | ML supports existence of unrecognized transient astronomical | 2.0 | hackernews |
-| 24 | その生産性向上、現場が静かに支払っているコストの話 | 2.0 | Zenn AI |
-| 25 | Tesla discloses $2B AI hardware company acquisition in filin | 2.0 | hackernews |
-| 26 | Google検索急上昇: lahore qalandars vs karachi kings | 2.0 | google_trends |
-| 27 | Google検索急上昇: solar system nepra license | 2.0 | google_trends |
-| 28 | Google検索急上昇: sualeh asif cursor ai | 2.0 | google_trends |
-| 29 | Google検索急上昇: srinivas narayanan openai departure | 2.0 | google_trends |
-| 30 | Google検索急上昇: srinivas narayanan openai | 2.0 | google_trends |
-| 31 | Google検索急上昇: robinhood invests in openai | 2.0 | google_trends |
-| 32 | OpenAI lanzó GPT-5.5 y Claude está en problemas | 2.0 | youtube |
-| 33 | Cursor vs Windsurf: The Real Winner in 2024 #AI #AITools #Co | 2.0 | youtube |
-| 34 | Show HN: Atomic – Local-first, AI-augmented personal knowled | 1.8 | hackernews |
-| 35 | Show HN: Browser Harness – Gives LLM freedom to complete any | 1.7 | hackernews |
-| 36 | There Will Be a Scientific Theory of Deep Learning | 1.6 | hackernews |
-| 37 | Claude AI vs ChatGPT 2026 कौन है सबसे Powerful | Explained   | 1.6 | youtube |
-| 38 | CC-Canary: Detect early signs of regressions in Claude Code | 1.6 | hackernews |
-| 39 | Google検索急上昇: cursor ai | 1.6 | google_trends |
-| 40 | 🚨 FREE Google AI Course 2026 | 5-Day AI Agents by Kaggle 😳 | 1.6 | youtube |
-| 41 | 【Oracle】Pre-Built AI Agents の「Select AI Inspect」で自然言語でデータベース | 1.6 | Qiita AI |
-| 42 | AIがソフトウェア開発を革命：2025年以降の未来 #shorts | 1.6 | youtube |
-| 43 | MenteDB – open-source memory database for AI agents (Rust) | 1.5 | hackernews |
-| 44 | Claude Account Bans, Karpathy Skills, Hermes Agent &amp; Hua | 1.5 | youtube |
-| 45 | OpenAI&#39;s Sam Altman sends apology letter to Tumbler Ridg | 1.5 | youtube |
-| 46 | Tell HN: Claude 4.7 is ignoring stop hooks | 1.5 | hackernews |
-| 47 | 【アンソロピックが負ける！？】OpenAIが反撃開始！ChatGPT5.5の衝撃 #米国株投資マット | 1.5 | youtube |
-| 48 | GPT-5.5: OpenAI’s Comeback or Benchmark Theater? #shorts  #a | 1.5 | youtube |
-| 49 | Claude封號潮、Karpathy Skills、Hermes Agent、Huashu Design｜AI Shor | 1.5 | youtube |
-| 50 | Claude封号潮、Karpathy Skills、Hermes Agent、花叔Design｜《AI观·观AI》第49 | 1.5 | youtube |
-| 51 | OpenAI Just Released GPT-5.5 #Shorts | 1.5 | youtube |
-| 52 | 🚨JUST IN: OpenAI officially releasesnew ChatGPT AI model GPT | 1.5 | youtube |
-| 53 | 米OpenAIがGPT-5.5発表、コーディング能力やセーフガードなど強化 | 1.5 | 日経クロステック |
-| 54 | Anthropicと協業のNEC、「Claude Code」をグループ3万人に展開　「Mythos」利用可否については「 | 1.5 | ITmedia AI+ |
-| 55 | Anthropic launches Cowork, a Claude Desktop agent that works | 1.5 | VentureBeat AI |
-| 56 | [AINews] GPT 5.5 and OpenAI Codex Superapp | 1.5 | Latent Space |
-| 57 | Google検索急上昇: kimi k2.6 | 1.5 | google_trends |
-| 58 | From Google&#39;s Deepmind blog - AI Training is Fragile. Th | 1.5 | youtube |
-| 59 | Used or using the openAI agent builder? | 1.5 | reddit |
-| 60 | Secret Prompt to make millions with Claude AI business hack  | 1.4 | youtube |
-| 61 | Google検索急上昇: claude design | 1.1 | google_trends |
-| 62 | Google検索急上昇: claude design by anthropic labs | 1.1 | google_trends |
-| 63 | Iliad fragment found in Roman-era mummy | 1.1 | hackernews |
-| 64 | Google検索急上昇: kimi | 1.1 | google_trends |
-| 65 | Why human connection matters more than AI efficiency. | 1.1 | youtube |
-| 66 | Google検索急上昇: ai agent คือ | 1.1 | google_trends |
-| 67 | Google検索急上昇: kimi ai | 1.1 | google_trends |
-| 68 | Google検索急上昇: claude pro | 1.1 | google_trends |
-| 69 | Google検索急上昇: claude code pro | 1.1 | google_trends |
-| 70 | [GitHub] openai / skills | 1.1 | GitHub Trending |
-| 71 | Is Claude Design A Figma Killer? | 1.0 | youtube |
-| 72 | Claude Code costs up to $200 a month. Goose does the same th | 1.0 | VentureBeat AI |
-| 73 | Salesforce rolls out new Slackbot AI agent as it battles Mic | 1.0 | VentureBeat AI |
-| 74 | An update on recent Claude Code quality reports | 1.0 | Simon Willison |
-| 75 | AIE Europe Debrief + Agent Labs Thesis: Unsupervised Learnin | 1.0 | Latent Space |
-| 76 | DeepSeek-V4: a million-token context that agents can actuall | 1.0 | HuggingFace Blog |
-| 77 | Claude AI: Export Chat to Excel &amp; PDF (New FREE Feature! | 1.0 | youtube |
-| 78 | The $7 Trillion War: Sam Altman vs Jensen Huang 🚀 | 1.0 | youtube |
-| 79 | OpenAI CEO Sam Altman on AI in Hollywood: “People Will Care  | 1.0 | youtube |
-| 80 | GPT 5.5 Arrives, DeepSeek V4 Drops, and the Compute War Inte | 1.0 | youtube_influencer |
-| 81 | r/ClaudeAI List of Ongoing Megathreads | 1.0 | reddit |
-| 82 | Post-mortem on recent Claude Code quality issues | 1.0 | reddit |
-| 83 | I asked ChatGPT how it feels to be an AI. | 1.0 | reddit |
-| 84 | DharmaOCR: Open-Source Specialized SLM (3B) + Cost–Performan | 1.0 | reddit |
-| 85 | Is the ds/ml slowly being morphed into an AI engineer? [D] | 1.0 | reddit |
-| 86 | ICML 2026 - Final Predictions on Average Score Needed Before | 1.0 | reddit |
-| 87 | Nanochat vs Llama for training from scratch? [P] | 1.0 | reddit |
-| 88 | Exactly 1 year ago, Anthropic said fully AI employees were j | 1.0 | reddit |
-| 89 | 実装コストが下がった今、エンジニアの仕事はどう変わるか | 0.8 | Zenn AI |
-| 90 | Google検索急上昇: gapgpt | 0.8 | google_trends |
-| 91 | Google検索急上昇: qwen3.6 | 0.8 | google_trends |
-| 92 | Google検索急上昇: qwen 3.6 | 0.7 | google_trends |
-| 93 | 😱$CHIP WILL SHOCK EVERYONE NEXT WEEK!!!! 🚀 USD.AI PRICE PRED | 0.7 | youtube |
-| 94 | TIPSv2: Advancing Vision-Language Pretraining with Enhanced  | 0.7 | hackernews |
-| 95 | MiniZinc, constraint modelling language solve discrete optim | 0.6 | hackernews |
-| 96 | Google検索急上昇: figma stock | 0.6 | google_trends |
-| 97 | Physicists revive 1990s laser concept to propose a next-gene | 0.6 | hackernews |
-| 98 | [GitHub] coreyhaines31 / marketingskills | 0.6 | GitHub Trending |
-| 99 | [GitHub] affaan-m / everything-claude-code | 0.6 | GitHub Trending |
-| 100 | [GitHub] code-yeongyu / oh-my-openagent | 0.6 | GitHub Trending |
-| 101 | [GitHub] unslothai / unsloth | 0.6 | GitHub Trending |
-| 102 | [GitHub] Alishahryar1 / free-claude-code | 0.6 | GitHub Trending |
-| 103 | [GitHub] Anil-matcha / Open-Generative-AI | 0.6 | GitHub Trending |
-| 104 | [GitHub] zilliztech / claude-context | 0.6 | GitHub Trending |
-| 105 | [GitHub] Shubhamsaboo / awesome-llm-apps | 0.6 | GitHub Trending |
-| 106 | [GitHub] ZhuLinsen / daily_stock_analysis | 0.6 | GitHub Trending |
-| 107 | [GitHub] huggingface / ml-intern | 0.6 | GitHub Trending |
-| 108 | [GitHub] AIDC-AI / Pixelle-Video | 0.6 | GitHub Trending |
-| 109 | Google検索急上昇: best coding fonts | 0.6 | google_trends |
-| 110 | This Week in AI: 24 April | 0.5 | youtube |
-| 111 | The AI Market Is Exploding: $2.4 Trillion by 2032 | 0.5 | youtube |
-| 112 | 生成AI導入で法務が押さえるべき7つの論点と対応手順！必見のチェックリストも | 0.5 | AINOW |
-| 113 | 生成AI活用のモチベーションが続かない原因と維持するための7つの施策！企業事例も解説 | 0.5 | AINOW |
-| 114 | Googleの「TorchTPU」構想が揺さぶるNVIDIAの独壇場、AI開発環境に選択肢 | 0.5 | 日経クロステック |
-| 115 | Andrej Karpathy Called This ‘A Radical New Way to Use Comput | 0.5 | youtube |
-| 116 | ハーネスエンジニアリングとは何で、何ではないのか 〜作る側のハーネス、使う側のハーネス〜 | 0.5 | Zenn AI |
-| 117 | MetaとAWSが提携　エージェント型AI強化に最新のArmベースチップ「Graviton5」を大量採用 | 0.5 | ITmedia AI+ |
-| 118 | 生成AIを予算内で導入する5つの鉄則！相場・配分・補助金で投資額を最大化 | 0.5 | AINOW |
-| 119 | 「AIの脅威にAIが必要」、なぜGoogleは5兆円でWizを買収したのか | 0.5 | 日経クロステック |
-| 120 | Googleの“AI講座”人気　無料枠1万人分が1日で終了　受講者は「Google AI Pro」3カ月無料 | 0.5 | ITmedia AI+ |
-| 121 | 発表の2日前に決まった――NECとAnthropicが“電撃的協業”　3週間のスピード協議の舞台裏 | 0.5 | ITmedia AI+ |
-| 122 | 生成AIの保守運用費用は？内訳と予算超過を防ぐ7つの削減策も | 0.5 | AINOW |
-| 123 | Meta’s loss is Thinking Machines’ gain | 0.5 | TechCrunch AI |
-| 124 | ComfyUI hits $500M valuation as creators seek more control o | 0.5 | TechCrunch AI |
-| 125 | Google to invest up to $40B in Anthropic in cash and compute | 0.5 | TechCrunch AI |
-| 126 | Apple’s new CEO, and why Elon Musk wants to buy Cursor for $ | 0.5 | TechCrunch AI |
-| 127 | Marked-up Mac minis flood eBay amid shortages driven by AI | 0.5 | TechCrunch AI |
+| 1 | Google plans to invest up to $40B in Anthropic | 8.5 | hackernews |
+| 2 | 1-Bit Hokusai's "The Great Wave" (2023) | 7.0 | hackernews |
+| 3 | There Will Be a Scientific Theory of Deep Learning | 6.9 | hackernews |
+| 4 | Show HN: A Karpathy-style LLM wiki your agents maintain (Mar | 6.2 | hackernews |
+| 5 | Email could have been X.400 times better | 5.8 | hackernews |
+| 6 | Plain text has been around for decades and it’s here to stay | 5.6 | hackernews |
+| 7 | Open source memory layer so any AI agent can do what Claude. | 5.0 | hackernews |
+| 8 | The AI Industry Is Discovering That the Public Hates It | 4.9 | hackernews |
+| 9 | Work with the garage door up (2024) | 4.8 | hackernews |
+| 10 | Iliad fragment found in Roman-era mummy | 4.6 | hackernews |
+| 11 | How to 10x Your Claude Code Projects (Karpathy&#39;s Method) | 4.3 | youtube |
+| 12 | GPT‑5.5 Bio Bug Bounty | 3.4 | hackernews |
+| 13 | &quot;The AI Flaw Anthropic Won&#39;t Fix&quot; 🔥 | 3.1 | youtube |
+| 14 | I Built a CLI to Version-Control My AI Agent Skills (and You | 3.0 | youtube |
+| 15 | Education must go beyond the mere production of words | 2.9 | hackernews |
+| 16 | AI Coding Showdown: Cursor vs Windsurf vs Claude Code, Which | 2.5 | youtube |
+| 17 | Google検索急上昇: gpt 5.5 | 2.5 | google_trends |
+| 18 | Google検索急上昇: openai gpt 5.5 | 2.5 | google_trends |
+| 19 | GPT 5.5 and Kimi K2 -6 new LLM capabilities released, AI age | 2.5 | youtube |
+| 20 | Lambda Calculus Benchmark for AI | 2.5 | hackernews |
+| 21 | Claude Codeを24時間常駐させる自宅ホームラボを月500円で運用している話(Ubuntu + Tailscal | 2.3 | Zenn AI |
+| 22 | Google検索急上昇: kimi k2.6 | 2.0 | google_trends |
+| 23 | GPT-5.5, DeepSeek V4, and Claude’s $100B Compute Bet - Summa | 2.0 | youtube |
+| 24 | Agents Take the Workplace &amp; The Trust Reckonings Begin - | 2.0 | youtube |
+| 25 | Florida Opens Investigation Into ChatGPT. OpenAI Pushes Back | 2.0 | youtube |
+| 26 | Cursor vs Windsurf: The Real Winner in 2024 #AI #AITools #Co | 2.0 | youtube |
+| 27 | AI agents that argue with each other to improve decisions | 1.9 | hackernews |
+| 28 | The mail sent to a video game publisher | 1.9 | hackernews |
+| 29 | Google検索急上昇: openai image 2.0 | 1.8 | google_trends |
+| 30 | A 3D Body from Eight Questions – No Photo, No GPU | 1.8 | hackernews |
+| 31 | Claude Design NEW AI Can Build ANYTHING! (INSANE UPDATE) | 1.6 | youtube |
+| 32 | How to Implement an FPS Counter | 1.6 | hackernews |
+| 33 | Hokusai and Tesselations | 1.6 | hackernews |
+| 34 | Website In 30 Seconds Claude Code #claudecode #claude #ai | 1.6 | youtube |
+| 35 | 米OpenAIがGPT-5.5発表、コーディング能力やセーフガードなど強化 | 1.5 | 日経クロステック |
+| 36 | Anthropicと協業のNEC、「Claude Code」をグループ3万人に展開　「Mythos」利用可否については「 | 1.5 | ITmedia AI+ |
+| 37 | Anthropic launches Cowork, a Claude Desktop agent that works | 1.5 | VentureBeat AI |
+| 38 | [AINews] GPT 5.5 and OpenAI Codex Superapp | 1.5 | Latent Space |
+| 39 | 287 | GPT 5.5, GPT Images 2.0, GPT Chronicle and more Ai new | 1.5 | youtube |
+| 40 | Claude&#39;s New AI Connectors: Streamline Your Everyday Lif | 1.5 | youtube |
+| 41 | AI Knew ChatGPT Scandal Silence Before the Storm #shorts | 1.5 | youtube |
+| 42 | OpenAI Drops GPT-5.5 Into ChatGPT — What Changed #Shorts | 1.5 | youtube |
+| 43 | [2025 AI 트렌드] 7가지 키워드로 분석하는 AI 활용 추세 | AI 에이전트부터 바이브 코딩까지 | 1.5 | youtube |
+| 44 | AI Agent 的「工作记忆」是怎么坏掉的｜上下文工程 · Anthropic 精讲 Ep1 | 1.5 | youtube |
+| 45 | Claude Code cheat sheet after 6 months of daily use | 1.5 | reddit |
+| 46 | GPT-5.5: 'strongest agentic coding model ever' failing spect | 1.5 | reddit |
+| 47 | ALL Agents deviate, fail and mess up because no enforcement  | 1.5 | reddit |
+| 48 | This is Andrej Karpathy. He co-founded OpenAI. He hasn&#39;t | 1.3 | youtube |
+| 49 | Claude Code と二人七脚 DB 設計 | 1.3 | Zenn AI |
+| 50 | 人間が寝ている間にClaude CodeがPlaywrightのE2Eテストを直してPRを出す | 1.3 | Zenn AI |
+| 51 | Google検索急上昇: claude code pro plan | 1.2 | google_trends |
+| 52 | Claude Limit Hack 🔥 Use 5X More FREE #claudeai #aitools #ai  | 1.2 | youtube |
+| 53 | Google検索急上昇: kimi | 1.1 | google_trends |
+| 54 | Google検索急上昇: kimi ai | 1.1 | google_trends |
+| 55 | Google検索急上昇: claude pro claude code | 1.1 | google_trends |
+| 56 | Google検索急上昇: ai agent คือ | 1.1 | google_trends |
+| 57 | Google検索急上昇: claude design | 1.1 | google_trends |
+| 58 | Google検索急上昇: anthropic claude performance issues | 1.1 | google_trends |
+| 59 | Sam Altman Apologized to an Entire Canadian Town and It&#39; | 1.0 | youtube |
+| 60 | Deep Research and Deep Research Max land on Gemini API | 1.0 | youtube |
+| 61 | AI, Aliens, and OpenAI  Unpacking Ronan Farrow&#39;s Claims | 1.0 | youtube |
+| 62 | Anthropic created a test marketplace for agent-on-agent comm | 1.0 | TechCrunch AI |
+| 63 | OpenAI CEO apologizes to Tumbler Ridge community | 1.0 | TechCrunch AI |
+| 64 | Claude Code costs up to $200 a month. Goose does the same th | 1.0 | VentureBeat AI |
+| 65 | Salesforce rolls out new Slackbot AI agent as it battles Mic | 1.0 | VentureBeat AI |
+| 66 | AIE Europe Debrief + Agent Labs Thesis: Unsupervised Learnin | 1.0 | Latent Space |
+| 67 | DeepSeek-V4: a million-token context that agents can actuall | 1.0 | HuggingFace Blog |
+| 68 | Why AI Systems Use Claude for Risk Analysis #wealth #wealthb | 1.0 | youtube |
+| 69 | BREAKING NEWS: OpenAI Under Scrutiny 🚨. #breakingnews #world | 1.0 | youtube |
+| 70 | OpenAI&#39;s Screenshot Feature Sparks Microsoft Recall Comp | 1.0 | youtube |
+| 71 | Future of Humanity: AI, WALL-E, and Starfleet Academy #short | 1.0 | youtube |
+| 72 | AI founders safety norms #OpenAI #AISafety #AGI | 1.0 | youtube |
+| 73 | Google’s Vision Banana AI Just Changed Computer Vision Forev | 1.0 | youtube |
+| 74 | NVIDIA&#39;s New AI Broke My Brain | 1.0 | youtube_influencer |
+| 75 | GPT 5.5 Arrives, DeepSeek V4 Drops, and the Compute War Inte | 1.0 | youtube_influencer |
+| 76 | r/ClaudeAI List of Ongoing Megathreads | 1.0 | reddit |
+| 77 | Post-mortem on recent Claude Code quality issues | 1.0 | reddit |
+| 78 | PSA: The string "HERMES.md" in your git commit history silen | 1.0 | reddit |
+| 79 | I’m a nursing student who built a 660K-page pharmaceutical d | 1.0 | reddit |
+| 80 | I open sourced a project tracker for Claude Code that lives  | 1.0 | reddit |
+| 81 | Claude Status Update : Investigated elevated errors and slow | 1.0 | reddit |
+| 82 | two years ago this sub had 12k members asking "is claude bet | 1.0 | reddit |
+| 83 | DharmaOCR: Open-Source Specialized SLM (3B) + Cost–Performan | 1.0 | reddit |
+| 84 | Is the ds/ml slowly being morphed into an AI engineer? [D] | 1.0 | reddit |
+| 85 | Gemini AI is doing free marketing for my private discord com | 1.0 | reddit |
+| 86 | Built cross-model persistent memory - told GPT-5 Nano I live | 1.0 | reddit |
+| 87 | Got into the Anthropic Claude Partner Network — have spots f | 1.0 | reddit |
+| 88 | We released an open source tool that handles AI agent setup  | 1.0 | reddit |
+| 89 | Don’t tell me that we have to wait until google i/o for a ne | 1.0 | reddit |
+| 90 | OpenAI scores on artificial analysis over time | 1.0 | reddit |
+| 91 | GPT 5.5 vs Opus 4.6/7 vs Gemini 3.1 Pro | 1.0 | reddit |
+| 92 | A 21 Year Old Built an AI With Its Own Bank Account | 0.8 | youtube |
+| 93 | AIの成果物に責任を取る方法 | 0.8 | Zenn AI |
+| 94 | AIレビューの「で、これ合ってんの？」を減らす | 0.8 | Zenn AI |
+| 95 | America's Geothermal Breakthrough Could Unlock a 150-Gigawat | 0.8 | hackernews |
+| 96 | Google検索急上昇: gapgpt | 0.6 | google_trends |
+| 97 | Nicholas Carlini – Black-hat LLMs [video] | 0.6 | hackernews |
+| 98 | Google検索急上昇: github copilot rate limit | 0.6 | google_trends |
+| 99 | Google検索急上昇: deepseek v4 | 0.6 | google_trends |
+| 100 | Google検索急上昇: github copilot plans | 0.6 | google_trends |
+| 101 | [GitHub] affaan-m / everything-claude-code | 0.6 | GitHub Trending |
+| 102 | [GitHub] coreyhaines31 / marketingskills | 0.6 | GitHub Trending |
+| 103 | [GitHub] luongnv89 / claude-howto | 0.6 | GitHub Trending |
+| 104 | ハーネスエンジニアリングとは何で、何ではないのか 〜作る側のハーネス、使う側のハーネス〜 | 0.6 | Zenn AI |
+| 105 | [GitHub] Alishahryar1 / free-claude-code | 0.6 | GitHub Trending |
+| 106 | [GitHub] Anil-matcha / Open-Generative-AI | 0.6 | GitHub Trending |
+| 107 | [GitHub] zilliztech / claude-context | 0.6 | GitHub Trending |
+| 108 | [GitHub] huggingface / ml-intern | 0.6 | GitHub Trending |
+| 109 | [GitHub] deepseek-ai / DeepEP | 0.6 | GitHub Trending |
+| 110 | Google検索急上昇: amazon anthropic | 0.6 | google_trends |
+| 111 | The AI Market Is Exploding: $2.4 Trillion by 2032 | 0.6 | youtube |
+| 112 | [GitHub] davila7 / claude-code-templates | 0.6 | GitHub Trending |
+| 113 | AI news : You cannot miss !!!  🚨🚨 | 0.5 | youtube |
+| 114 | Andrej Karpathy Called This ‘A Radical New Way to Use Comput | 0.5 | youtube |
+| 115 | Google Now 75% AI-Coded! | New AI Lab Core Automation | Deep | 0.5 | youtube |
+| 116 | 生成AI導入で法務が押さえるべき7つの論点と対応手順！必見のチェックリストも | 0.5 | AINOW |
+| 117 | 生成AI活用のモチベーションが続かない原因と維持するための7つの施策！企業事例も解説 | 0.5 | AINOW |
+| 118 | Anthropicのエージェント市場実験「Project Deal」で浮き彫りになる無自覚な経済格差 | 0.5 | ITmedia AI+ |
+| 119 | Googleの「TorchTPU」構想が揺さぶるNVIDIAの独壇場、AI開発環境に選択肢 | 0.5 | 日経クロステック |
+| 120 | Why Microsoft Just Spent $18 Billion in Australia, Google St | 0.5 | youtube |
+| 121 | MetaとAWSが提携　エージェント型AI強化に最新のArmベースチップ「Graviton5」を大量採用 | 0.5 | ITmedia AI+ |
+| 122 | 生成AIを予算内で導入する5つの鉄則！相場・配分・補助金で投資額を最大化 | 0.5 | AINOW |
+| 123 | 「AIの脅威にAIが必要」、なぜGoogleは5兆円でWizを買収したのか | 0.5 | 日経クロステック |
+| 124 | Googleの“AI講座”人気　無料枠1万人分が1日で終了　受講者は「Google AI Pro」3カ月無料 | 0.5 | ITmedia AI+ |
+| 125 | 発表の2日前に決まった――NECとAnthropicが“電撃的協業”　3週間のスピード協議の舞台裏 | 0.5 | ITmedia AI+ |
+| 126 | 生成AIの保守運用費用は？内訳と予算超過を防ぐ7つの削減策も | 0.5 | AINOW |
+| 127 | Maine’s governor vetoes data center moratorium | 0.5 | TechCrunch AI |
 | 128 | Railway secures $100 million to challenge AWS with AI-native | 0.5 | VentureBeat AI |
 | 129 | Listen Labs raises $69M after viral billboard hiring stunt t | 0.5 | VentureBeat AI |
 | 130 | How Project Maven taught the military to love AI | 0.5 | The Verge AI |
@@ -211,142 +214,131 @@
 | 132 | China’s DeepSeek previews new AI model a year after jolting  | 0.5 | The Verge AI |
 | 133 | The Download: supercharged scams and studying AI healthcare | 0.5 | MIT Tech Review AI |
 | 134 | Health-care AI is here. We don’t know if it actually helps p | 0.5 | MIT Tech Review AI |
-| 135 | [AINews] Tasteful Tokenmaxxing | 0.5 | Latent Space |
-| 136 | Shopify’s AI Phase Transition: 2026 Usage Explosion, Unlimit | 0.5 | Latent Space |
-| 137 | QIMMA قِمّة ⛰: A Quality-First Arabic LLM Leaderboard | 0.5 | HuggingFace Blog |
-| 138 | Introducing GPT-5.5 | 0.5 | OpenAI Blog |
-| 139 | GPT-5.5 System Card | 0.5 | OpenAI Blog |
-| 140 | 8 Gemini tips for organizing your space (and life) | 0.5 | Google DeepMind Blog |
-| 141 | Here’s how our TPUs power increasingly demanding AI workload | 0.5 | Google DeepMind Blog |
-| 142 | We're launching two specialized TPUs for the agentic era. | 0.5 | Google DeepMind Blog |
-| 143 | Rapid Fire Top AI News This Week | 0.5 | youtube |
-| 144 | Do Businesses Still Need Human Receptionists? | AI vs Humans | 0.5 | youtube |
-| 145 | Are Human Receptionists Necessary Anymore? | AI vs Humans | 0.5 | youtube |
-| 146 | Why Microsoft Just Spent $18 Billion in Australia, Google St | 0.5 | youtube |
-| 147 | Why Human Researchers Are Becoming Obsolete #Shorts | 0.5 | youtube |
-| 148 | The Hidden Flaw in Google&#39;s SynthID Nobody Talked About | 0.5 | youtube |
-| 149 | क्या Doctor से पहले AI बता देगा कि कौन सा Patient Critical ह | 0.5 | youtube |
-| 150 | Google Plans to Invest Up to $40 Billion in Anthropic (Gift  | 0.5 | reddit |
-| 151 | Claude limits no longer round to the nearest hour | 0.5 | reddit |
-| 152 | You need a lot of wheat to buy some of Claude. Data seldom l | 0.5 | reddit |
-| 153 | Claude is extremely expensive but works like Magic! (For a n | 0.5 | reddit |
-| 154 | Claude + Codex = Excellence | 0.5 | reddit |
-| 155 | You are an expert "Claude" | 0.5 | reddit |
-| 156 | Made with ChatGPT Images 2.0 | 0.5 | reddit |
-| 157 | Updates for ChatGPT | 0.5 | reddit |
-| 158 | Asked it to create the average Redditor meetup, how’s the ac | 0.5 | reddit |
-| 159 | I asked GPT to recreate my photo by changing only the time o | 0.5 | reddit |
-| 160 | Just "Hello" to Claude, Tokens : | 0.5 | reddit |
-| 161 | Blown away by ChatGpt 5.5 image gen : Paris in 1995 | 0.5 | reddit |
-| 162 | r/LocalLLaMa Rule Updates | 0.5 | reddit |
-| 163 | Best Local LLMs - Apr 2026 | 0.5 | reddit |
-| 164 | This is where we are right now, LocalLLaMA | 0.5 | reddit |
-| 165 | Anthropic admits to have made hosted models more stupid, pro | 0.5 | reddit |
-| 166 | VLLM PR : New MoE model from Cohere soon | 0.5 | reddit |
-| 167 | There Will Be a Scientific Theory of Deep Learning [R] | 0.5 | reddit |
-| 168 | We're open-sourcing the first publicly available blood detec | 0.5 | reddit |
-| 169 | We benchmarked 18 LLMs on OCR (7k+ calls) — cheaper/old mode | 0.5 | reddit |
-| 170 | AI swarms could hijack democracy without anyone noticing | 0.5 | reddit |
-| 171 | I tracked 1,100 times an AI said "great question" — 940 were | 0.5 | reddit |
-| 172 | White House Accuses China of Industrial-Scale Theft of AI Te | 0.5 | reddit |
-| 173 | Does the use of AI have the same value as when personal comp | 0.5 | reddit |
-| 174 | The traditional "app" might be a transitional form. What act | 0.5 | reddit |
-| 175 | Wright State University leads $2.5 million federal initiativ | 0.5 | reddit |
-| 176 | Open-source AI vs Big Tech: real disruption or just hype? | 0.5 | reddit |
-| 177 | Built a multi-model AI platform with real-time WebRTC voice, | 0.5 | reddit |
-| 178 | Alexion UK Patient Insights Forum on artificial intelligence | 0.5 | reddit |
-| 179 | Guardrails | 0.5 | reddit |
-| 180 | Agentic Company OS update: project-scoped runtimes, governan | 0.5 | reddit |
-| 181 | A Yale ethicist who has studied AI for 25 years says the rea | 0.5 | reddit |
-| 182 | Mozilla Used Anthropic’s Mythos to Find and Fix 271 Bugs in  | 0.5 | reddit |
-| 183 | Nature-published Chinese semiconductor researcher fell to hi | 0.5 | reddit |
-| 184 | Deepseek V4 Pro is 15x cost to run Artificial Analysis bench | 0.5 | reddit |
-| 185 | Bolt by MirrorMe | Claims speeds of 11m/s indoors, 10.09 m/s | 0.5 | reddit |
-| 186 | Some realism attempts with GPT Image 2.0. | 0.5 | reddit |
-| 187 | Big model feel with GPT 5.5 | 0.5 | reddit |
-| 188 | My favorite ChatGPT Images 2.0 infographic so far | 0.5 | reddit |
-| 189 | 高度AIによるサイバー攻撃、片山金融相「今そこにある危機」　官民連携作業部会で対策 | 0.5 | ITmedia AI+ |
-| 190 | 政府AI「源内」オープンソース化　GitHubで公開、商用利用もOK　民間と共創へ | 0.5 | ITmedia AI+ |
-| 191 | Google検索急上昇: deepseek v4 | 0.5 | google_trends |
-| 192 | PMP（Project Management Professional）を取ろうとしている人に読んでほしい、PMPの話 | 0.4 | Zenn AI |
-| 193 | Next.js を SSG 化しようとして、最終的に React SPA に落ち着いた理由 | 0.4 | Zenn AI |
-| 194 | Next.js (Turbopack) のバンドルサイズを元の半分まで削減した話 | 0.3 | Zenn AI |
-| 195 | Google検索急上昇: گپ جی پی تی | 0.2 | google_trends |
-| 196 | 技術同人誌を作る技術 | 0.2 | Zenn AI |
-| 197 | [Frontend Performance - Part 7] Long Task を分解する：なぜ50msがUXを壊す | 0.1 | Qiita AI |
-| 198 | [GitHub] Z4nzu / hackingtool | 0.1 | GitHub Trending |
-| 199 | [GitHub] gsd-build / get-shit-done | 0.1 | GitHub Trending |
-| 200 | [GitHub] koala73 / worldmonitor | 0.1 | GitHub Trending |
-| 201 | [GitHub] louislam / uptime-kuma | 0.1 | GitHub Trending |
-| 202 | [GitHub] KeygraphHQ / shannon | 0.1 | GitHub Trending |
-| 203 | [GitHub] Tracer-Cloud / opensre | 0.1 | GitHub Trending |
-| 204 | [GitHub] PostHog / posthog | 0.1 | GitHub Trending |
-| 205 | Prediction Markets: Last Week Tonight with John Oliver (HBO) | 0.0 | youtube |
-| 206 | [GitHub] google-labs-code / stitch-skills | 0.0 | GitHub Trending |
-| 207 | Musk vs. Altman is here, and it&#8217;s going to get messy | 0.0 | The Verge AI |
-| 208 | Prestigious photo contest answers ‘what is a photo?’ | 0.0 | The Verge AI |
-| 209 | Why are top university websites serving porn? It comes down  | 0.0 | Ars Technica Tech |
-| 210 | In a first, a ransomware family is confirmed to be quantum-s | 0.0 | Ars Technica Tech |
-| 211 | Microsoft issues emergency update for macOS and Linux ASP.NE | 0.0 | Ars Technica Tech |
-| 212 | Contrary to popular superstition, AES 128 is just fine in a  | 0.0 | Ars Technica Tech |
-| 213 | Three reasons why DeepSeek’s new model V4 matters | 0.0 | MIT Tech Review AI |
-| 214 | The Download: introducing the Nature issue | 0.0 | MIT Tech Review AI |
-| 215 | DeepSeek V4 - almost on the frontier, a fraction of the pric | 0.0 | Simon Willison |
-| 216 | Millisecond Converter | 0.0 | Simon Willison |
-| 217 | It's a big one | 0.0 | Simon Willison |
-| 218 | russellromney/honker | 0.0 | Simon Willison |
-| 219 | Automations | 0.0 | OpenAI Blog |
-| 220 | Top 10 uses for Codex at work | 0.0 | OpenAI Blog |
-| 221 | Plugins and skills | 0.0 | OpenAI Blog |
-| 222 | Elevating Austria: Google invests in its first data center i | 0.0 | Google DeepMind Blog |
-| 223 | The Week in Numbers: Gas, Protests, and Big Tech #breakingne | 0.0 | youtube |
-| 224 | I'm somewhat of a coder myself | 0.0 | reddit |
-| 225 | That's me and claud 🤣 | 0.0 | reddit |
-| 226 | Ok dude | 0.0 | reddit |
-| 227 | How nosy 🧐 | 0.0 | reddit |
-| 228 | Can we have a feature to show 24-h format instead of America | 0.0 | reddit |
-| 229 | I vibe-coded GTA: Google Earth over the weekend | 0.0 | reddit |
-| 230 | From the client* | 0.0 | reddit |
-| 231 | 😭 | 0.0 | reddit |
-| 232 | Screenshots from 2D Games Reimagined in 3D | 0.0 | reddit |
-| 233 | Claud vibing 🤣 | 0.0 | reddit |
-| 234 | "I can’t create content that uses slurs or dehumanizing lang | 0.0 | reddit |
-| 235 | 90s LAN party - List any errors or inaccuracies you might fi | 0.0 | reddit |
-| 236 | I asked for this picture and I can see it. | 0.0 | reddit |
-| 237 | This is too scary.. | 0.0 | reddit |
-| 238 | Censoring of political images seems to be a lot less strict | 0.0 | reddit |
-| 239 | Deepseek V4 AGI comfirmed | 0.0 | reddit |
-| 240 | Deepseek v4 people | 0.0 | reddit |
-| 241 | Gemma 4 and Qwen 3.6 with q8_0 and q4_0 KV cache: KL diverge | 0.0 | reddit |
-| 242 | DS4-Flash vs Qwen3.6 | 0.0 | reddit |
-| 243 | Tested Deepseek v4 flash with some large code change evals.  | 0.0 | reddit |
-| 244 | I just had a little ghost in the shell moment... | 0.0 | reddit |
-| 245 | Qwen3.6-35B-A3B - even in VRAM limited scenarios it can be b | 0.0 | reddit |
-| 246 | DeepSeek-v4 has a comical 384K max output capability | 0.0 | reddit |
-| 247 | Deepseek V4 Flash and Non-Flash Out on HuggingFace | 0.0 | reddit |
-| 248 | Opinion: Qwen 3.6 27b Beats Sonnet 4.6 on Feature Planning | 0.0 | reddit |
-| 249 | [D] Self-Promotion Thread | 0.0 | reddit |
-| 250 | [D] Monthly Who's Hiring and Who wants to be Hired? | 0.0 | reddit |
-| 251 | Everything is so casual at CS Conferences. Why charge exorbi | 0.0 | reddit |
-| 252 | Research taste is a skill nobody talks about. How do you dev | 0.0 | reddit |
-| 253 | [New Optimizer] 🌹 Rose: low VRAM, easy to use, great results | 0.0 | reddit |
-| 254 | HPO - hyperparameter drift [D] | 0.0 | reddit |
-| 255 | Mitigating hallucination [P] | 0.0 | reddit |
-| 256 | Built a normalizer so WER stops penalizing formatting differ | 0.0 | reddit |
-| 257 | Sam Altman wants to sell you these sneakers for $160, plus t | 0.0 | reddit |
-| 258 | Kelp DAO $292M Hack Exploited the Exact Vulnerability Class  | 0.0 | reddit |
-| 259 | Researchers Induce Smells With Ultrasound, No Chemical Cartr | 0.0 | reddit |
-| 260 | It has genuinely been a terrible week for Luddites | 0.0 | reddit |
-| 261 | DeepSeek V4 has released | 0.0 | reddit |
-| 262 | This is getting insane (image gen 2) | 0.0 | reddit |
-| 263 | DeepSeek V4 Benchmarks! | 0.0 | reddit |
-| 264 | DeepSeek confirms Huawei-based V4 inference: "After the 950  | 0.0 | reddit |
-| 265 | DeepSeek V4 Pro underwhelms on Arena (crowdsourced user pref | 0.0 | reddit |
-| 266 | NECのDXブランド「BluStellar」、2030年度までに売上高1兆3000億円へ | 0.0 | 日経クロステック |
-| 267 | ドイツ、官民一体でデジタル主権に注力　1万基のGPUが描く「6G」 | 0.0 | 日経クロステック |
+| 135 | Quoting Romain Huet | 0.5 | Simon Willison |
+| 136 | GPT-5.5 prompting guide | 0.5 | Simon Willison |
+| 137 | llm 0.31 | 0.5 | Simon Willison |
+| 138 | [AINews] DeepSeek V4 Pro (1.6T-A49B) and Flash (284B-A13B),  | 0.5 | Latent Space |
+| 139 | [AINews] Tasteful Tokenmaxxing | 0.5 | Latent Space |
+| 140 | QIMMA قِمّة ⛰: A Quality-First Arabic LLM Leaderboard | 0.5 | HuggingFace Blog |
+| 141 | Introducing GPT-5.5 | 0.5 | OpenAI Blog |
+| 142 | GPT-5.5 System Card | 0.5 | OpenAI Blog |
+| 143 | 8 Gemini tips for organizing your space (and life) | 0.5 | Google DeepMind Blog |
+| 144 | Here’s how our TPUs power increasingly demanding AI workload | 0.5 | Google DeepMind Blog |
+| 145 | We're launching two specialized TPUs for the agentic era. | 0.5 | Google DeepMind Blog |
+| 146 | Do Businesses Still Need Human Receptionists? | AI vs Humans | 0.5 | youtube |
+| 147 | Are Human Receptionists Necessary Anymore? | AI vs Humans | 0.5 | youtube |
+| 148 | Sam Altman&#39;s Home Attacked TWICE Coincidence or Cover | 0.5 | youtube |
+| 149 | AI Code Editors for Debugging: Which One Is Right for You in | 0.5 | youtube |
+| 150 | Claude discovering modern SSD prices, lol. | 0.5 | reddit |
+| 151 | How Anthropic can save Opus 4.7 with one change. | 0.5 | reddit |
+| 152 | What do you do while Claude is thinking? | 0.5 | reddit |
+| 153 | Claude estimates work in human time, not Claude time | 0.5 | reddit |
+| 154 | Made with ChatGPT Images 2.0 | 0.5 | reddit |
+| 155 | Updates for ChatGPT | 0.5 | reddit |
+| 156 | ChatGPT Images 2.0 - compared to 1.5 years ago (Photosynthes | 0.5 | reddit |
+| 157 | I thought I could trick ChatGPT into answering the “STRAWBER | 0.5 | reddit |
+| 158 | ChatGPT generated images from a British nightclub. | 0.5 | reddit |
+| 159 | GPT Image 2 keeps adding weird tiling texture/grime artifact | 0.5 | reddit |
+| 160 | AMA Announcement: Nous Research, The Opensource Lab Behind H | 0.5 | reddit |
+| 161 | r/LocalLLaMa Rule Updates | 0.5 | reddit |
+| 162 | Qwen3.6-27B at ~80 tps with 218k context window on 1x RTX 50 | 0.5 | reddit |
+| 163 | This is where we are right now, LocalLLaMA | 0.5 | reddit |
+| 164 | There Will Be a Scientific Theory of Deep Learning [R] | 0.5 | reddit |
+| 165 | Interview Request for Academic Research Project on AI [P] | 0.5 | reddit |
+| 166 | UAI 2026 rebuttal [D] | 0.5 | reddit |
+| 167 | Palantir employees are talking about company's "descent into | 0.5 | reddit |
+| 168 | Gen Alpha boys are preferring “AI girlfriends” over real one | 0.5 | reddit |
+| 169 | Fortune 100 AI Use | 0.5 | reddit |
+| 170 | 'Too Dangerous to Release' Is Becoming AI's New Normal | 0.5 | reddit |
+| 171 | If I work on something in codex, and future models are train | 0.5 | reddit |
+| 172 | I got tired of watching my ideas go nowhere, so I built an A | 0.5 | reddit |
+| 173 | updated the AI tools library, new tools, a whole new categor | 0.5 | reddit |
+| 174 | The AI that actually helps vs the AI that's just hype | 0.5 | reddit |
+| 175 | What AI models/companies you think is best value? | 0.5 | reddit |
+| 176 | Mozilla Used Anthropic’s Mythos to Find and Fix 271 Bugs in  | 0.5 | reddit |
+| 177 | GPT 5.5 Xhigh VoxelBench test. Minecraft builders got automa | 0.5 | reddit |
+| 178 | Found online: "Suspiciously precise floats, or, how I got Cl | 0.5 | reddit |
+| 179 | 高度AIによるサイバー攻撃、片山金融相「今そこにある危機」　官民連携作業部会で対策 | 0.5 | ITmedia AI+ |
+| 180 | Which one is more important: more parameters or more computa | 0.5 | hackernews |
+| 181 | 技術同人誌を作る技術 | 0.3 | Zenn AI |
+| 182 | Google検索急上昇: opencode | 0.2 | google_trends |
+| 183 | VS Code 拡張機能の Webview での描画性能をテトリスで検証してみた | 0.1 | Zenn AI |
+| 184 | [GitHub] Z4nzu / hackingtool | 0.1 | GitHub Trending |
+| 185 | [GitHub] mattpocock / skills | 0.1 | GitHub Trending |
+| 186 | [GitHub] badlogic / pi-mono | 0.1 | GitHub Trending |
+| 187 | [GitHub] PostHog / posthog | 0.1 | GitHub Trending |
+| 188 | [GitHub] gsd-build / get-shit-done | 0.1 | GitHub Trending |
+| 189 | [GitHub] clash-verge-rev / clash-verge-rev | 0.1 | GitHub Trending |
+| 190 | [GitHub] shiyu-coder / Kronos | 0.1 | GitHub Trending |
+| 191 | [GitHub] HunxByts / GhostTrack | 0.1 | GitHub Trending |
+| 192 | [GitHub] ruvnet / ruflo | 0.1 | GitHub Trending |
+| 193 | [GitHub] MemoriLabs / Memori | 0.1 | GitHub Trending |
+| 194 | [GitHub] ComposioHQ / awesome-codex-skills | 0.0 | GitHub Trending |
+| 195 | Prediction Markets: Last Week Tonight with John Oliver (HBO) | 0.0 | youtube |
+| 196 | Why Cohere is merging with Aleph Alpha | 0.0 | TechCrunch AI |
+| 197 | Why Tokyo is the most important tech destination of 2026 | 0.0 | TechCrunch AI |
+| 198 | Musk vs. Altman is here, and it&#8217;s going to get messy | 0.0 | The Verge AI |
+| 199 | Prestigious photo contest answers ‘what is a photo?’ | 0.0 | The Verge AI |
+| 200 | Why are top university websites serving porn? It comes down  | 0.0 | Ars Technica Tech |
+| 201 | In a first, a ransomware family is confirmed to be quantum-s | 0.0 | Ars Technica Tech |
+| 202 | Microsoft issues emergency update for macOS and Linux ASP.NE | 0.0 | Ars Technica Tech |
+| 203 | Contrary to popular superstition, AES 128 is just fine in a  | 0.0 | Ars Technica Tech |
+| 204 | Three reasons why DeepSeek’s new model matters | 0.0 | MIT Tech Review AI |
+| 205 | The Download: introducing the Nature issue | 0.0 | MIT Tech Review AI |
+| 206 | WHY ARE YOU LIKE THIS | 0.0 | Simon Willison |
+| 207 | The people do not yearn for automation | 0.0 | Simon Willison |
+| 208 | Automations | 0.0 | OpenAI Blog |
+| 209 | Top 10 uses for Codex at work | 0.0 | OpenAI Blog |
+| 210 | Plugins and skills | 0.0 | OpenAI Blog |
+| 211 | Elevating Austria: Google invests in its first data center i | 0.0 | Google DeepMind Blog |
+| 212 | 4월 26일 오전 5시 화제 뉴스 10선 | 국내외 핵심 브리핑 #뉴스 #헤드라인 #쇼츠 #국내뉴스 #해외뉴 | 0.0 | youtube |
+| 213 | Older models moving back to 200k context window. FYI | 0.0 | reddit |
+| 214 | Successfully updated from 2.1.120 to version 2.1.119 | 0.0 | reddit |
+| 215 | me after telling Opus 4.7 it's an expert software engineer | 0.0 | reddit |
+| 216 | When you trust the process too much | 0.0 | reddit |
+| 217 | Babe? | 0.0 | reddit |
+| 218 | Picked a random person from a generated image and followed t | 0.0 | reddit |
+| 219 | What my desktop looked like 18 years ago | 0.0 | reddit |
+| 220 | Image 2.0 is unreal | 0.0 | reddit |
+| 221 | The Telekinetic Pig (please don't ban me for this) | 0.0 | reddit |
+| 222 | "It's not X, it's Y" - I wish it would just stop talking lik | 0.0 | reddit |
+| 223 | 😭 | 0.0 | reddit |
+| 224 | Image Gen and family analysis | 0.0 | reddit |
+| 225 | "Weights are coming".Xiaomi’s MiMo V2.5 Pro has landed at 54 | 0.0 | reddit |
+| 226 | 2x RTX 6000 build during an extended bench test | 0.0 | reddit |
+| 227 | Decreased Intelligence Density in DeepSeek V4 Pro | 0.0 | reddit |
+| 228 | GLM 5.1 Locally: 40tps, 2000+ pp/s | 0.0 | reddit |
+| 229 | DeepSeek V4 Update | 0.0 | reddit |
+| 230 | FINAL-Bench/Darwin-36B-Opus · Hugging Face | 0.0 | reddit |
+| 231 | PSA: Ubuntu 26.04 makes it easier to get started with AMD XD | 0.0 | reddit |
+| 232 | Deepseek V4 AGI comfirmed | 0.0 | reddit |
+| 233 | I'm glad we have deepseek | 0.0 | reddit |
+| 234 | Field report: coding with Qwen 3.6 35B-A3B on an M2 Macbook  | 0.0 | reddit |
+| 235 | Qwen3.6 35b a3b Particle System | 0.0 | reddit |
+| 236 | [D] Self-Promotion Thread | 0.0 | reddit |
+| 237 | [D] Monthly Who's Hiring and Who wants to be Hired? | 0.0 | reddit |
+| 238 | How Visual-Language-Action (VLA) Models Work [D] | 0.0 | reddit |
+| 239 | Visualization help [D] | 0.0 | reddit |
+| 240 | What actually breaks when you try to scale vehicle routing t | 0.0 | reddit |
+| 241 | How to find to 'collaborate' with Professors to get funding  | 0.0 | reddit |
+| 242 | How to deal with rebuttal character limit for long reviews?  | 0.0 | reddit |
+| 243 | Everything is so casual at CS Conferences. Why charge exorbi | 0.0 | reddit |
+| 244 | Research taste is a skill nobody talks about. How do you dev | 0.0 | reddit |
+| 245 | [New Optimizer] 🌹 Rose: low VRAM, easy to use, great results | 0.0 | reddit |
+| 246 | Researchers Induce Smells With Ultrasound, No Chemical Cartr | 0.0 | reddit |
+| 247 | The recent news just feels like this. | 0.0 | reddit |
+| 248 | How it feels this month | 0.0 | reddit |
+| 249 | The mysterious smile... of your replacement. | 0.0 | reddit |
+| 250 | Gas power projects for just 11 US data center 'campuses' cou | 0.0 | reddit |
+| 251 | Definitive proof shows we are indeed accelerating towards si | 0.0 | reddit |
+| 252 | [Demo] Real-time EEG analysis-driven guided-meditation syste | 0.0 | reddit |
+| 253 | Did everyone suddenly forget how much white-collar work used | 0.0 | reddit |
+| 254 | The Singularity Is Always Near - Kevin Kelly | 0.0 | reddit |
+| 255 | NECのDXブランド「BluStellar」、2030年度までに売上高1兆3000億円へ | 0.0 | 日経クロステック |
+| 256 | ドイツ、官民一体でデジタル主権に注力　1万基のGPUが描く「6G」 | 0.0 | 日経クロステック |
 
 ## 💡 今日のポイント
 
 - 上位トピックを中心にX投稿ドラフトを作成可能
 - `python scripts/generate_x_drafts.py` でドラフト量産
-- 全267件のデータが保存済み
+- 全256件のデータが保存済み
